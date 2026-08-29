@@ -80,8 +80,8 @@ export const PERSONAS_BY_CODE = Object.values(PERSONAS).reduce<Record<string, Pe
   return index;
 }, {});
 
-// 人格文案的多语言目录（按 mark 索引）。API 只提供 nameEn/nameZh/roastEn，
-// ko/ja（以及 zh 的 roast）由本地目录补齐；未知人格回退 API 英文原文。
+// 人格文案的多语言目录（按 mark 索引）。API 提供 nameEn/nameZh/roastEn/roastZh；
+// ko/ja 由本地目录补齐，API 空串时回退本地文案，未知人格回退 API 英文原文。
 const PERSONA_L10N: Record<string, { name: MessageDescriptor; roast: MessageDescriptor }> = {
   LQD: {
     name: msg`The Liquidity Donor`,
@@ -133,7 +133,9 @@ export function localizedPersonaName(persona: Persona): string {
 }
 
 export function localizedPersonaRoast(persona: Persona): string {
-  if (!persona.roast || i18n.locale === "en") return persona.roast;
+  if (i18n.locale === "en") return persona.roast;
+  if (i18n.locale === "zh-CN" && persona.roastZh) return persona.roastZh;
+  if (!persona.roast) return "";
   const entry = personaL10n(persona);
   return entry ? i18n._(entry.roast) : persona.roast;
 }
@@ -169,17 +171,40 @@ const SIDE_TO_POLE: Record<string, Pole> = {
 };
 
 const QUESTION_ART: Record<string, { src: string; alt: string }> = {
-  art_r1: { src: "/assets/waitlist/question-1.png", alt: "A rising market visual climbing translucent steps" },
-  art_r2: { src: "/assets/waitlist/question-2.png", alt: "A falling red market line approaching a physical stop marker" },
-  art_d1: { src: "/assets/waitlist/question-3.png", alt: "A magnifying lens inspecting wallet flows and market evidence" },
-  art_d2: { src: "/assets/waitlist/question-4.png", alt: "A lens verifying two overlapping market evidence sheets" },
-  art_s1: { src: "/assets/waitlist/question-5.png", alt: "A winning chart on a phone surrounded by message tokens" },
-  art_s2: { src: "/assets/waitlist/question-6.png", alt: "Four different directional choices surrounding one decision marker" },
+  art_r1: {
+    src: "/assets/waitlist/question-1-v2.webp",
+    alt: "The SmartX owl weighing whether to chase a 40 percent move at a launch platform",
+  },
+  art_r2: {
+    src: "/assets/waitlist/question-2-v2.webp",
+    alt: "The SmartX owl reacting as a spacecraft position moves sharply against it",
+  },
+  art_d1: {
+    src: "/assets/waitlist/question-3-v2.webp",
+    alt: "The SmartX owl comparing market analysis, social sentiment, wallet flow, and news",
+  },
+  art_d2: {
+    src: "/assets/waitlist/question-4-v2.webp",
+    alt: "The SmartX owl checking an unexpected signal before acting on it",
+  },
+  art_s1: {
+    src: "/assets/waitlist/question-5-v2.webp",
+    alt: "The SmartX owl deciding who to tell first after catching a ten-times trade",
+  },
+  art_s2: {
+    src: "/assets/waitlist/question-6-v2.webp",
+    alt: "The SmartX owl listening while a trading group challenges its decision",
+  },
 };
 
 const QUESTION_ART_BY_INDEX = Object.values(QUESTION_ART);
 
 export const QUIZ_ART_SRCS = QUESTION_ART_BY_INDEX.map((item) => item.src);
+
+export const WAITLIST_VERIFICATION_ART_SRC =
+  "/assets/waitlist/waitlist-verification-v2.webp";
+export const WAITLIST_UNLOCK_ART_SRC =
+  "/assets/waitlist/waitlist-unlock-v2.webp";
 
 const prefetchedQuizArt = new Set<string>();
 
@@ -241,6 +266,7 @@ function mapPersona(personaId: string, overrides?: Partial<Persona> & { imageUrl
     code: personaId || fallback.mark,
     mark: personaId || fallback.mark,
     roast: overrides?.roast || fallback.roast,
+    roastZh: overrides?.roastZh || fallback.roastZh,
     artSrc: resolveWaitlistAssetUrl(overrides?.imageUrl || "") || overrides?.artSrc || fallback.artSrc,
     artAlt: overrides?.artAlt || fallback.artAlt,
   };
@@ -259,6 +285,7 @@ export function mapCardToOutcome(card: ResultCard): Outcome {
     name: card.nameEn,
     cn: card.nameZh,
     roast: card.roastEn,
+    roastZh: card.roastZh,
     imageUrl: card.imageUrl,
   });
   const chemistry = CHEMISTRY[persona.mark] ?? CHEMISTRY.LQD;
