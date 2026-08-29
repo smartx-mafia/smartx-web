@@ -75,7 +75,7 @@ import {
 import { WaitlistActionScope, WaitlistButton } from "./waitlist-button";
 import { WaitlistDemoControl, type WaitlistDemoTarget } from "./waitlist-demo-control";
 
-import { renderResultCard, type RenderedResultCard, type ResultCardFormat } from "./result-card-export";
+import { fetchResultCard, type RenderedResultCard } from "./result-card-export";
 import styles from "./waitlist.module.css";
 
 const WAITLIST_URL = "https://smartx.io/waitlist/";
@@ -406,7 +406,7 @@ function PersonaPoster({
 }
 
 export function WaitlistExperience() {
-  const { i18n: activeI18n } = useLingui();
+  useLingui(); // 订阅语言切换，保证组件内 t 宏文案随 locale 重渲染
   const router = useRouter();
   const pathname = usePathname();
   const shareParams = useSearchParams();
@@ -446,12 +446,12 @@ export function WaitlistExperience() {
   const [verifiedFriends, setVerifiedFriends] = useState(0);
   const [ownInviteCode, setOwnInviteCode] = useState("");
   const [rank, setRank] = useState<number | null>(null);
-  const [preparedCards, setPreparedCards] = useState<Partial<Record<ResultCardFormat, RenderedResultCard>>>({});
+  const [preparedCard, setPreparedCard] = useState<RenderedResultCard | null>(null);
   const [exportError, setExportError] = useState(false);
   const [sharePreview, setSharePreview] = useState<{ url: string; tip: string } | null>(null);
   const [exporting, setExporting] = useState(false);
-  const preparedCardsRef = useRef(preparedCards);
-  preparedCardsRef.current = preparedCards;
+  const preparedCardRef = useRef(preparedCard);
+  preparedCardRef.current = preparedCard;
   const [demoActive, setDemoActive] = useState(() => shareParams.get("demo") === "1");
   const [demoTarget, setDemoTarget] = useState<WaitlistDemoTarget>("gate");
   const demoRequestIdRef = useRef(0);
@@ -749,50 +749,29 @@ export function WaitlistExperience() {
     return () => window.clearInterval(timer);
   }, [demoActive, stage, userToken]);
 
-  const resultCardData = (outcome: Outcome) => ({
-    name: localizedPersonaName(outcome.persona),
-    code: outcome.persona.mark,
-    roast: localizedPersonaRoast(outcome.persona),
-    artSrc: outcome.persona.artSrc,
-    localArtSrc: PERSONAS_BY_CODE[outcome.persona.mark]?.artSrc
-      || PERSONAS_BY_CODE[outcome.persona.code]?.artSrc,
-    poles: outcome.poles.map(localizedPole),
-    scores: outcome.stats,
-    rank: rank ?? 0,
-    labels: {
-      traderType: t`Trader type`,
-      waitlistRank: t`Waitlist rank`,
-      conviction: t`Conviction`,
-      instinct: t`Instinct`,
-      resilience: t`Resilience`,
-    },
-  });
-
   useEffect(() => {
-    if (stage !== "result" || !ownOutcome) return;
+    if (stage !== "result" || !ownInviteCode) return;
     let disposed = false;
-    let rendered: RenderedResultCard[] = [];
-    setPreparedCards({});
+    let rendered: RenderedResultCard | null = null;
+    setPreparedCard(null);
     setExportError(false);
-    const data = resultCardData(ownOutcome);
-    Promise.all([renderResultCard(data, "story"), renderResultCard(data, "og")])
-      .then((cards) => {
-        rendered = cards;
+    fetchResultCard(ownInviteCode)
+      .then((card) => {
+        rendered = card;
         if (disposed) {
-          cards.forEach((card) => URL.revokeObjectURL(card.href));
+          URL.revokeObjectURL(card.href);
           return;
         }
-        setPreparedCards({ story: cards[0], og: cards[1] });
+        setPreparedCard(card);
       })
       .catch(() => {
         if (!disposed) setExportError(true);
       });
     return () => {
       disposed = true;
-      rendered.forEach((card) => URL.revokeObjectURL(card.href));
+      if (rendered) URL.revokeObjectURL(rendered.href);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- render from outcome, locale, and rank
-  }, [stage, ownOutcome, activeI18n.locale, rank]);
+  }, [stage, ownInviteCode]);
 
   const ensureQuestions = async () => {
     if (questions.length) return questions;
@@ -811,7 +790,7 @@ export function WaitlistExperience() {
     setQuizWarning("");
     setRecoveryError("");
     setOtpError("");
-    setPreparedCards({});
+    setPreparedCard(null);
     setExportError(false);
 
     if (target.startsWith("quiz-")) {
@@ -1275,21 +1254,21 @@ export function WaitlistExperience() {
   };
 
   const downloadResultCard = () => {
-    const card = preparedCardsRef.current.story;
+    const card = preparedCardRef.current;
     if (card) {
       void runDownloadButtonAction(card);
       return;
     }
 
-    if (!ownOutcome || exporting) {
+    if (!ownInviteCode || exporting) {
       notifyNotice(t`Preparing…`);
       return;
     }
 
     setExporting(true);
-    void renderResultCard(resultCardData(ownOutcome), "story")
+    void fetchResultCard(ownInviteCode)
       .then((rendered) => {
-        setPreparedCards((current) => ({ ...current, story: rendered }));
+        setPreparedCard(rendered);
         setExportError(false);
         return runDownloadButtonAction(rendered);
       })
@@ -1301,7 +1280,7 @@ export function WaitlistExperience() {
   };
 
   const onPreparedDownloadClick = (event: { preventDefault: () => void }) => {
-    const card = preparedCardsRef.current.story;
+    const card = preparedCardRef.current;
     if (!card) {
       event.preventDefault();
       downloadResultCard();
@@ -1784,11 +1763,11 @@ export function WaitlistExperience() {
                   <Trans>Priority improves your score; rank updates against the live waitlist.</Trans>
                 </small>
                 <div className={styles.resultActions}>
-                  {preparedCards.story ? (
+                  {preparedCard ? (
                     <a
                       className={styles.downloadButton}
-                      href={preparedCards.story.href}
-                      download={`${shareFileName(preparedCards.story.filename)}.${SHARE_IMAGE_EXT}`}
+                      href={preparedCard.href}
+                      download={`${shareFileName(preparedCard.filename)}.${SHARE_IMAGE_EXT}`}
                       onClick={onPreparedDownloadClick}
                     >
                       <Image src="/assets/waitlist/download.svg" alt="" width={20} height={20} aria-hidden="true" />
