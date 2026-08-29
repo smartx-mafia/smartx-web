@@ -19,6 +19,7 @@
     "test:blog": "tsc -p tsconfig.blog-tests.json && node --test .test-dist/tests/blog/*.test.js"
   },
   "dependencies": {
+    "@fontsource/ibm-plex-sans": "^5.3.0",
     "@fontsource/ibm-plex-serif": "^5.2.7",
     "@lingui/core": "^5.9.5",
     "@lingui/message-utils": "^5.9.5",

@@ -1,6 +1,5 @@
-export const SHARE_IMAGE_MIME = "image/jpeg";
-export const SHARE_IMAGE_QUALITY = 0.92;
-export const SHARE_IMAGE_EXT = "jpg";
+export const SHARE_IMAGE_MIME = "image/png";
+export const SHARE_IMAGE_EXT = "png";
 
 export type ShareImageAction = "copy" | "download";
 export type ShareImageActionResult =
