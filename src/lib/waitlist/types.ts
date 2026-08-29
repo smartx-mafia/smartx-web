@@ -10,6 +10,7 @@ export type Persona = {
   code: string;
   mark: string;
   roast: string;
+  roastZh?: string;
   artSrc: string;
   artAlt: string;
 };

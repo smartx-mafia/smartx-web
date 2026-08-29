@@ -21,6 +21,8 @@ import {
   PERSONAS_BY_CODE,
   prefetchQuizArtwork,
   QUIZ_ART_SRCS,
+  WAITLIST_UNLOCK_ART_SRC,
+  WAITLIST_VERIFICATION_ART_SRC,
 } from "@/lib/waitlist/persona";
 import { localizedOptionLabel, localizedQuestionPrompt } from "@/lib/waitlist/quiz-i18n";
 import {
@@ -197,6 +199,14 @@ function formatClock(total: number) {
   return `${minutes}:${String(seconds).padStart(2, "0")}`;
 }
 
+function personaTitleFit(name: string) {
+  const units = Array.from(name.trim()).reduce((total, character) => {
+    if (/\s/u.test(character)) return total + 0.35;
+    return total + (/[^\u0000-\u00ff]/u.test(character) ? 1 : 0.49);
+  }, 0);
+  return `${Math.min(16, 100 / Math.max(units, 1)).toFixed(3)}cqw`;
+}
+
 function formatWaitlistCopy(message: string) {
   if (message === "ERROR") return GENERIC_ERROR;
   return message;
@@ -280,16 +290,16 @@ function QuestionArtwork({
             key={item.questionId}
             className={styles.questionArtLayer}
             data-active={active ? "true" : undefined}
-          >
-            <Image
-              src={item.artSrc}
-              alt={active ? item.artAlt : ""}
-              fill
-              sizes="(max-width: 750px) 100vw, 50vw"
-              priority
-              loading="eager"
-              aria-hidden={!active}
-            />
+            >
+              <Image
+                src={item.artSrc}
+                alt=""
+                fill
+                sizes="(max-width: 750px) 100vw, 50vw"
+                priority
+                loading="eager"
+                aria-hidden="true"
+              />
           </div>
         );
       })}
@@ -334,12 +344,43 @@ function AccountSession({
   );
 }
 
+function PersonaArtwork({ outcome }: { outcome: Outcome }) {
+  const artSrc = outcome.persona.artSrc;
+  const [imageState, setImageState] = useState<"loading" | "ready" | "error">(
+    artSrc ? "loading" : "error",
+  );
+
+  return (
+    <div className={styles.personaArt} data-image-state={imageState}>
+      {imageState !== "ready" ? (
+        <div className={styles.personaArtPlaceholder} aria-hidden="true">
+          <Image src="/assets/consumer-network/logo-white.svg" alt="" width={34} height={28} />
+          <span>SmartX</span>
+        </div>
+      ) : null}
+      {artSrc && imageState !== "error" ? (
+        <Image
+          src={artSrc}
+          alt={outcome.persona.artAlt}
+          fill
+          sizes="(max-width: 750px) calc(100vw - 40px), (max-width: 1200px) 46vw, 700px"
+          priority
+          onLoad={() => setImageState("ready")}
+          onError={() => setImageState("error")}
+        />
+      ) : null}
+    </div>
+  );
+}
+
 function PersonaPoster({
   outcome,
 }: {
   outcome: Outcome;
 }) {
   useLingui();
+  const personaName = localizedPersonaName(outcome.persona);
+  const titleStyle = { "--persona-title-fit": personaTitleFit(personaName) } as CSSProperties;
 
   return (
     <article className={styles.personaPoster}>
@@ -347,17 +388,9 @@ function PersonaPoster({
         <div className={styles.posterPoles}>
           {outcome.poles.map((pole) => <span key={pole}>{localizedPole(pole)}</span>)}
         </div>
-        <h2>{localizedPersonaName(outcome.persona)}</h2>
+        <h2 style={titleStyle}>{personaName}</h2>
       </div>
-      <div className={styles.personaArt}>
-        <Image
-          src={outcome.persona.artSrc}
-          alt={outcome.persona.artAlt}
-          fill
-          sizes="(max-width: 880px) 320px, 400px"
-          priority
-        />
-      </div>
+      <PersonaArtwork key={outcome.persona.artSrc} outcome={outcome} />
       <div className={styles.posterScores}>
         <ScoreAxis label={t`Conviction`} score={outcome.stats.conviction} />
         <ScoreAxis label={t`Instinct`} score={outcome.stats.instinct} />
@@ -408,7 +441,7 @@ export function WaitlistExperience() {
   const inviteCodeRef = useRef(inviteCode);
   inviteCodeRef.current = inviteCode;
   const [quizWarning, setQuizWarning] = useState("");
-  const [copiedCode, setCopiedCode] = useState<string | null>(null);
+  const [inviteLinkCopied, setInviteLinkCopied] = useState(false);
   const [shareCompleted, setShareCompleted] = useState(false);
   const [verifiedFriends, setVerifiedFriends] = useState(0);
   const [ownInviteCode, setOwnInviteCode] = useState("");
@@ -421,6 +454,7 @@ export function WaitlistExperience() {
   preparedCardsRef.current = preparedCards;
   const [demoActive, setDemoActive] = useState(() => shareParams.get("demo") === "1");
   const [demoTarget, setDemoTarget] = useState<WaitlistDemoTarget>("gate");
+  const demoRequestIdRef = useRef(0);
 
   useEffect(() => {
     prefetchQuizArtwork();
@@ -770,6 +804,7 @@ export function WaitlistExperience() {
   };
 
   const showDemoTarget = async (target: WaitlistDemoTarget) => {
+    const requestId = ++demoRequestIdRef.current;
     setDemoActive(true);
     setDemoTarget(target);
     setGateError("");
@@ -782,11 +817,13 @@ export function WaitlistExperience() {
     if (target.startsWith("quiz-")) {
       try {
         const nextQuestions = await ensureQuestions();
+        if (requestId !== demoRequestIdRef.current) return;
         const requested = Number(target.slice("quiz-".length)) - 1;
         setQuestionIndex(Math.min(Math.max(requested, 0), Math.max(nextQuestions.length - 1, 0)));
         setReferralOutcome(null);
         setStage("quiz");
       } catch (error) {
+        if (requestId !== demoRequestIdRef.current) return;
         setGateError(errorMessage(error));
         setStage("gate");
       }
@@ -826,6 +863,21 @@ export function WaitlistExperience() {
       setXOpened(completed);
       setStage("unlock");
       return;
+    }
+
+    if (target === "result" && userToken) {
+      try {
+        const workspace = await fetchWorkspace(userToken);
+        if (requestId !== demoRequestIdRef.current) return;
+        applyWorkspace(workspace);
+        return;
+      } catch (error) {
+        if (requestId !== demoRequestIdRef.current) return;
+        if (!handleUserApiError(error)) {
+          notifyError(localizeWaitlistMessage(errorMessage(error)));
+        }
+        return;
+      }
     }
 
     setSessionEmail("demo@smartx.io");
@@ -1168,8 +1220,8 @@ export function WaitlistExperience() {
     if (!code) return;
     try {
       await navigator.clipboard.writeText(makeInvitationUrl(code, true));
-    setCopiedCode(code);
-    window.setTimeout(() => setCopiedCode(null), 1400);
+      setInviteLinkCopied(true);
+      window.setTimeout(() => setInviteLinkCopied(false), 1400);
     } catch (error) {
       notifyError(
         errorMessage(error) === GENERIC_ERROR
@@ -1330,9 +1382,25 @@ export function WaitlistExperience() {
           <div className={styles.gateBackdrop}>
             <Image src="/assets/waitlist/waitlist-intro.png" alt="" fill sizes="70vw" priority />
       </div>
-        ) : stage === "email" || stage === "verify" || stage === "unlock" ? (
+        ) : stage === "email" || stage === "verify" ? (
           <div className={styles.flowBackdrop}>
-            <Image src="/assets/waitlist/waitlist-verification.png" alt="" fill sizes="50vw" priority />
+            <Image
+              src={WAITLIST_VERIFICATION_ART_SRC}
+              alt=""
+              fill
+              sizes="(max-width: 880px) 100vw, 50vw"
+              priority
+            />
+          </div>
+        ) : stage === "unlock" ? (
+          <div className={styles.flowBackdrop}>
+            <Image
+              src={WAITLIST_UNLOCK_ART_SRC}
+              alt=""
+              fill
+              sizes="(max-width: 880px) 100vw, 50vw"
+              priority
+            />
           </div>
         ) : (
           <Image src="/assets/consumer-network/hero-product.png" alt="" fill sizes="100vw" priority />
@@ -1745,34 +1813,33 @@ export function WaitlistExperience() {
               </div>
               <section className={styles.invitationDeck} aria-label={t`Your invitation link`}>
                 <header>
-                  <div>
-                    <span>
-                      <Trans>Your invite link</Trans>
-                    </span>
-                    <p>
-                      <Trans>Share one link with every friend you invite.</Trans>
-                    </p>
-                  </div>
+                  <span>
+                    <Trans>Invite friends</Trans>
+                  </span>
                   {verifiedFriends > 0 ? (
                     <p className={styles.inviteCount}>
                       {t`${verifiedFriends} friends joined via your invite.`}
                     </p>
                   ) : null}
                 </header>
-                <div className={styles.primaryInviteCard} data-empty={ownInviteCode ? undefined : "true"}>
-                  <div>
-                    <span><Trans>Invite code</Trans></span>
-                    <strong>{ownInviteCode || t`Invite link is being prepared`}</strong>
+                <div className={styles.inviteFields}>
+                  <div className={styles.primaryInviteCard} data-empty={ownInviteCode ? undefined : "true"}>
+                    <div>
+                      <span><Trans>Your invite link</Trans></span>
+                      <strong title={ownInviteCode ? makeInvitationUrl(ownInviteCode, true) : undefined}>
+                        {ownInviteCode ? makeInvitationUrl(ownInviteCode, true) : t`Invite link is being prepared`}
+                      </strong>
+                    </div>
+                    <WaitlistButton
+                      type="button"
+                      lock={false}
+                      disabled={!ownInviteCode}
+                      onClick={() => { void copyInvitation(ownInviteCode); }}
+                    >
+                      <Image src="/assets/waitlist/copy.svg" alt="" width={20} height={20} aria-hidden="true" />
+                      {inviteLinkCopied ? t`Copied` : t`Copy link`}
+                    </WaitlistButton>
                   </div>
-                  <WaitlistButton
-                        type="button"
-                    lock={false}
-                    disabled={!ownInviteCode}
-                    onClick={() => { void copyInvitation(ownInviteCode); }}
-                  >
-                    <Image src="/assets/waitlist/copy.svg" alt="" width={20} height={20} aria-hidden="true" />
-                    {copiedCode === ownInviteCode ? t`Copied` : t`Copy link`}
-                  </WaitlistButton>
                 </div>
               </section>
             </aside>

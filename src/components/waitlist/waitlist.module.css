@@ -2942,6 +2942,7 @@
     width: 46px;
     height: 38px;
     background: url("/assets/waitlist/quote.svg") center / contain no-repeat;
+    transform: rotate(180deg);
     content: "";
   }
 
@@ -4149,6 +4150,7 @@
     width: 36px;
     height: 30px;
     background: url("/assets/waitlist/quote.svg") center / contain no-repeat;
+    transform: rotate(180deg);
     content: "";
   }
 
@@ -4896,3 +4898,592 @@
   }
 }
 
+/* Waitlist result — aligned to Figma node 22582:41822. */
+.page[data-stage="result"] .stage {
+  width: 100%;
+  min-height: calc(100svh - 65px);
+  margin: 0;
+  padding: 0;
+}
+
+.page[data-stage="result"] .resultStage {
+  display: grid;
+  width: 100%;
+  min-height: calc(100svh - 65px);
+  align-items: start;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  animation: stage-enter 380ms var(--ease-out) both;
+}
+
+.page[data-stage="result"] .personaPoster,
+.page[data-stage="result"] .resultPanel {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 700px;
+  min-width: 0;
+  min-height: 0;
+  align-self: start;
+  justify-self: center;
+  padding: clamp(40px, 3.34vw, 64px) 0;
+}
+
+.page[data-stage="result"] .personaPoster {
+  display: block;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.page[data-stage="result"] .posterIdentity {
+  margin: 0 0 16px;
+  container-type: inline-size;
+}
+
+.page[data-stage="result"] .posterPoles {
+  display: flex;
+  gap: 12px;
+}
+
+.page[data-stage="result"] .posterPoles span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--teal-soft);
+  color: var(--teal);
+  font-size: clamp(13px, 0.84vw, 16px);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.page[data-stage="result"] .posterIdentity h2 {
+  margin: 8px 0 0;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(52px, 4.17vw, 80px);
+  font-size: min(80px, var(--persona-title-fit, 64px));
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+
+.page[data-stage="result"] .personaArt {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  aspect-ratio: 700 / 330;
+  overflow: hidden;
+  background: #121212;
+}
+
+.page[data-stage="result"] .personaArt img {
+  z-index: 1;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  object-position: center;
+}
+
+.personaArtPlaceholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #121212;
+  color: #747474;
+}
+
+.personaArtPlaceholder img {
+  position: static !important;
+  width: 34px !important;
+  height: 28px !important;
+  opacity: 0.42;
+}
+
+.personaArtPlaceholder span {
+  font-family: var(--font-brand), var(--font-inter);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.42;
+}
+
+.page[data-stage="result"] .posterScores {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.page[data-stage="result"] .scoreAxis > div:first-child span,
+.page[data-stage="result"] .scoreAxis > div:first-child strong {
+  font-family: var(--font-plex), var(--font-inter);
+  font-size: clamp(12px, 0.84vw, 16px);
+  line-height: normal;
+}
+
+.page[data-stage="result"] .scoreAxis > div:first-child span {
+  color: var(--muted);
+}
+
+.page[data-stage="result"] .scoreTrack {
+  height: 8px;
+  margin-top: 4px;
+  background: rgb(8 223 181 / 12%);
+}
+
+.page[data-stage="result"] .scoreAxis:nth-child(2) .scoreTrack {
+  background: rgb(169 87 214 / 20%);
+}
+
+.page[data-stage="result"] .scoreAxis:nth-child(2) .scoreTrack i {
+  background: #a957d6;
+}
+
+.page[data-stage="result"] .scoreAxis:nth-child(3) .scoreTrack {
+  background: rgb(246 144 2 / 14%);
+}
+
+.page[data-stage="result"] .scoreAxis:nth-child(3) .scoreTrack i {
+  background: #f69002;
+}
+
+.page[data-stage="result"] .personaPoster blockquote {
+  position: relative;
+  max-width: none;
+  margin: 32px 0 0;
+  padding: 24px;
+  border-radius: 16px;
+  background: #121212;
+  color: #fff;
+  font: 500 clamp(18px, 1.25vw, 24px)/1.35 var(--font-plex), var(--font-inter);
+}
+
+.page[data-stage="result"] .personaPoster blockquote::after {
+  position: absolute;
+  top: -9px;
+  right: 11px;
+  width: 46px;
+  height: 38px;
+  background: url("/assets/waitlist/quote.svg") center / contain no-repeat;
+  transform: rotate(180deg);
+  content: "";
+}
+
+.page[data-stage="result"] .chemistryBlock {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 16px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.page[data-stage="result"] .chemistryBlock > div {
+  min-height: 96px;
+  align-content: start;
+  padding: 18px 20px;
+  border: 1px solid rgb(96 177 239 / 48%);
+  border-radius: 16px;
+  background: rgb(96 177 239 / 7%);
+}
+
+.page[data-stage="result"] .chemistryBlock > div:nth-child(2) {
+  border-color: rgb(255 93 96 / 48%);
+  background: rgb(255 93 96 / 7%);
+}
+
+.page[data-stage="result"] .chemistryBlock span {
+  color: rgb(96 177 239 / 78%);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.page[data-stage="result"] .chemistryBlock > div:nth-child(2) span {
+  color: rgb(255 93 96 / 78%);
+}
+
+.page[data-stage="result"] .chemistryBlock strong {
+  margin-top: 7px;
+  color: #e5e7e7;
+  font-size: clamp(15px, 0.95vw, 18px);
+  font-weight: 550;
+  line-height: 1.2;
+}
+
+.page[data-stage="result"] .resultPanel {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: left;
+}
+
+.page[data-stage="result"] .resultPanel > * {
+  width: 100%;
+  max-width: none;
+}
+
+.page[data-stage="result"] .accountStrip {
+  display: flex;
+  margin: 0 0 28px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid #202020;
+  text-align: left;
+}
+
+.page[data-stage="result"] .accountStrip > div span {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.page[data-stage="result"] .accountStrip > div {
+  flex: 1 1 auto;
+}
+
+.page[data-stage="result"] .accountStrip strong {
+  max-width: 100%;
+  color: #f5f5f5;
+  font-size: 16px;
+}
+
+.page[data-stage="result"] .accountStrip button {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.page[data-stage="result"] .rankBlock {
+  display: grid;
+  padding: 0;
+  border: 0;
+}
+
+.page[data-stage="result"] .rankBlock > span {
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.page[data-stage="result"] .rankBlock > strong {
+  margin: 8px 0 16px;
+  font: 600 48px/normal var(--font-plex), var(--font-inter);
+  letter-spacing: 0;
+  animation: rank-settle 340ms var(--ease-out) both;
+}
+
+.page[data-stage="result"] .rankRewards {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 8px 24px;
+  border-radius: 16px;
+  background: #121212;
+}
+
+.page[data-stage="result"] .rankRewards > div {
+  min-height: 48px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.page[data-stage="result"] .rankRewards > div + div {
+  border-top: 1px solid #202020;
+}
+
+.page[data-stage="result"] .rankRewards b {
+  color: var(--teal);
+  font: 600 16px/normal var(--font-plex), var(--font-inter);
+}
+
+.page[data-stage="result"] .rankBlock > small {
+  max-width: none;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.page[data-stage="result"] .resultActions {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.page[data-stage="result"] .downloadButton,
+.page[data-stage="result"] .rankBlock .shareButton {
+  width: 100%;
+  min-height: 56px;
+  margin: 0;
+  padding: 0 20px;
+  font-size: 18px;
+}
+
+.page[data-stage="result"] .invitationDeck {
+  width: 100%;
+  padding-top: 36px;
+}
+
+.page[data-stage="result"] .invitationDeck > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.page[data-stage="result"] .invitationDeck > header > span {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.page[data-stage="result"] .invitationDeck > header .inviteCount {
+  margin: 0;
+  color: var(--teal);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: right;
+  white-space: normal;
+}
+
+.inviteFields {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  gap: 8px;
+}
+
+.page[data-stage="result"] .primaryInviteCard {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  min-height: 60px;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px 10px 24px;
+  border: 0;
+  border-radius: 16px;
+  background: #121212;
+}
+
+.page[data-stage="result"] .primaryInviteCard > div {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.page[data-stage="result"] .primaryInviteCard > div span {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.page[data-stage="result"] .primaryInviteCard > div strong {
+  min-width: 0;
+  overflow: hidden;
+  color: #f5f5f5;
+  font: 600 14px var(--font-plex), var(--font-inter);
+  letter-spacing: 0;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.page[data-stage="result"] .primaryInviteCard > button {
+  min-width: 104px;
+  min-height: 40px;
+  padding: 0 12px;
+  font-size: 13px;
+}
+
+@media (min-width: 1101px) {
+  .page[data-stage="result"] .resultStage {
+    width: min(calc(100% - 80px), 1560px);
+    margin-inline: auto;
+    column-gap: clamp(56px, 5vw, 96px);
+  }
+}
+
+@media (min-width: 751px) and (max-width: 1100px) {
+  .page[data-stage="result"] .resultStage {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .page[data-stage="result"] .personaPoster,
+  .page[data-stage="result"] .resultPanel {
+    width: min(calc(100% - 64px), 700px);
+  }
+
+  .page[data-stage="result"] .resultPanel {
+    padding-top: 0;
+    padding-bottom: 64px;
+  }
+}
+
+@media (max-width: 750px) {
+  .page[data-stage="result"] .stage {
+    min-height: 0;
+    padding: 0 20px 48px;
+  }
+
+  .page[data-stage="result"] .resultStage {
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+    padding-top: 24px;
+  }
+
+  .page[data-stage="result"] .personaPoster,
+  .page[data-stage="result"] .resultPanel {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+
+  .page[data-stage="result"] .posterPoles {
+    gap: 8px;
+  }
+
+  .page[data-stage="result"] .posterPoles span {
+    padding: 4px 12px;
+    font-size: 12px;
+  }
+
+  .page[data-stage="result"] .posterIdentity h2 {
+    font-size: min(46px, var(--persona-title-fit, 34px));
+    line-height: 1.06;
+  }
+
+  .page[data-stage="result"] .personaArt {
+    aspect-ratio: 5 / 4;
+  }
+
+  .page[data-stage="result"] .posterScores {
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .page[data-stage="result"] .scoreAxis > div:first-child {
+    gap: 4px;
+  }
+
+  .page[data-stage="result"] .scoreAxis > div:first-child span,
+  .page[data-stage="result"] .scoreAxis > div:first-child strong {
+    font-size: 11px;
+  }
+
+  .page[data-stage="result"] .personaPoster blockquote {
+    margin-top: 24px;
+    padding: 18px;
+    font-size: 17px;
+  }
+
+  .page[data-stage="result"] .chemistryBlock {
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .page[data-stage="result"] .chemistryBlock > div {
+    min-height: 100px;
+    padding: 16px;
+  }
+
+  .page[data-stage="result"] .chemistryBlock strong {
+    font-size: 16px;
+  }
+
+  .page[data-stage="result"] .resultPanel {
+    align-items: stretch;
+    text-align: left;
+  }
+
+  .page[data-stage="result"] .resultPanel > * {
+    width: 100%;
+  }
+
+  .page[data-stage="result"] .accountStrip {
+    margin-bottom: 24px;
+  }
+
+  .page[data-stage="result"] .rankBlock > span,
+  .page[data-stage="result"] .rankBlock > strong,
+  .page[data-stage="result"] .rankBlock > small {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .page[data-stage="result"] .rankRewards {
+    padding: 6px 16px;
+  }
+
+  .page[data-stage="result"] .rankRewards > div {
+    align-items: center;
+    font-size: 13px;
+  }
+
+  .page[data-stage="result"] .rankRewards b {
+    font-size: 13px;
+  }
+
+  .page[data-stage="result"] .invitationDeck > header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .page[data-stage="result"] .invitationDeck > header .inviteCount {
+    text-align: left;
+  }
+
+  .page[data-stage="result"] .primaryInviteCard {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 14px;
+  }
+
+  .page[data-stage="result"] .primaryInviteCard > div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .page[data-stage="result"] .primaryInviteCard > div strong {
+    width: 100%;
+    text-align: left;
+  }
+
+  .page[data-stage="result"] .primaryInviteCard > button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .page[data-stage="result"] .chemistryBlock,
+  .page[data-stage="result"] .resultActions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page[data-stage="result"] .resultStage,
+  .page[data-stage="result"] .rankBlock > strong {
+    animation: none;
+  }
+}
