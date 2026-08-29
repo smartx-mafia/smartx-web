@@ -1,0 +1,1178 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2026-08-27 18:24+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. placeholder {0}: i18n._(handle)
+#: src/components/consumer-network/network-product-previews.tsx:129
+msgid "{0} · now"
+msgstr "{0} · now"
+
+#. placeholder {0}: signal.copied
+#: src/components/consumer-network/network-product-previews.tsx:383
+msgid "{0} copied"
+msgstr "{0} copied"
+
+#: src/components/blog/blog-i18n.tsx:47
+msgid "{minutes} min read"
+msgstr "{minutes} min read"
+
+#: src/components/waitlist/waitlist-experience.tsx:1760
+msgid "{verifiedFriends} friends joined via your invite."
+msgstr "{verifiedFriends} friends joined via your invite."
+
+#: src/components/waitlist/waitlist-experience.tsx:1576
+msgid "← Back"
+msgstr "← Back"
+
+#. placeholder {0}: friendPriority.toLocaleString("en-US")
+#: src/components/waitlist/waitlist-experience.tsx:1713
+msgid "+{0} priority"
+msgstr "+{0} priority"
+
+#: src/components/waitlist/waitlist-experience.tsx:1703
+msgid "+500 priority"
+msgstr "+500 priority"
+
+#: src/components/consumer-network/consumer-home.tsx:209
+msgid "<0>The social trading app for memes, perps,</0><1>stocks and prediction markets. Follow</1><2>verified traders and trade in one tap.</2>"
+msgstr "<0>The social trading app for memes, perps,</0><1>stocks and prediction markets. Follow</1><2>verified traders and trade in one tap.</2>"
+
+#: src/components/consumer-network/network-product-previews.tsx:182
+msgid "3 traders you follow liked this"
+msgstr "3 traders you follow liked this"
+
+#: src/components/consumer-network/network-product-previews.tsx:301
+msgid "30d 68% win · 282 trades"
+msgstr "30d 68% win · 282 trades"
+
+#: src/components/consumer-network/network-product-previews.tsx:285
+msgid "30d 72% win · 982 trades"
+msgstr "30d 72% win · 982 trades"
+
+#: src/components/consumer-network/network-product-previews.tsx:84
+#: src/components/consumer-network/network-product-previews.tsx:335
+msgid "30D P&L"
+msgstr "30D P&L"
+
+#: src/app/not-found.tsx:20
+msgid "404 / SIGNAL LOST"
+msgstr "404 / SIGNAL LOST"
+
+#. placeholder {0}: i18n._(firstSignal.side)
+#. placeholder {1}: firstSignal.current
+#: src/components/consumer-network/network-product-previews.tsx:448
+msgid "5 USDC · {0} at {1}"
+msgstr "5 USDC · {0} at {1}"
+
+#: src/lib/waitlist/quiz-i18n.ts:9
+msgid "A coin you do not own is up 40%. What do you do?"
+msgstr "A coin you do not own is up 40%. What do you do?"
+
+#. placeholder {0}: localizedPersonaName(referralOutcome.persona)
+#: src/components/waitlist/waitlist-experience.tsx:1368
+msgid "A friend trades like <0>{0}.</0>"
+msgstr "A friend trades like <0>{0}.</0>"
+
+#: src/components/waitlist/waitlist-experience.tsx:1365
+msgid "A result was shared with you"
+msgstr "A result was shared with you"
+
+#: src/lib/waitlist/quiz-i18n.ts:29
+msgid "A strong thesis that simply feels early."
+msgstr "A strong thesis that simply feels early."
+
+#: src/components/consumer-network/network-product-previews.tsx:165
+#: src/components/consumer-network/network-product-previews.tsx:216
+msgid "A trader you follow liked this"
+msgstr "A trader you follow liked this"
+
+#: src/lib/waitlist/quiz-i18n.ts:12
+msgid "A trader you trust posts a high-conviction call. What do you do?"
+msgstr "A trader you trust posts a high-conviction call. What do you do?"
+
+#: src/components/consumer-network/network-product-previews.tsx:199
+msgid "A verified trader liked this"
+msgstr "A verified trader liked this"
+
+#: src/lib/waitlist/quiz-i18n.ts:22
+msgid "Add immediately. The market is improving my entry."
+msgstr "Add immediately. The market is improving my entry."
+
+#: src/components/waitlist/waitlist-experience.tsx:1541
+msgid "Already tested?"
+msgstr "Already tested?"
+
+#: src/components/waitlist/waitlist-experience.tsx:1405
+#: src/components/waitlist/waitlist-experience.tsx:1447
+msgid "Already tested? View my result"
+msgstr "Already tested? View my result"
+
+#: src/components/consumer-network/consumer-home.tsx:478
+#: src/components/site/site-footer.tsx:74
+msgid "App"
+msgstr "App"
+
+#: src/components/blog/article-contents.tsx:67
+msgid "Article contents"
+msgstr "Article contents"
+
+#: src/components/consumer-network/consumer-home.tsx:45
+msgid "Audience"
+msgstr "Audience"
+
+#: src/components/consumer-network/network-product-previews.tsx:187
+msgid "Avg entry · $1.52B MC"
+msgstr "Avg entry · $1.52B MC"
+
+#: src/components/consumer-network/network-product-previews.tsx:204
+msgid "Avg entry · $228.40"
+msgstr "Avg entry · $228.40"
+
+#: src/components/waitlist/waitlist-experience.tsx:1489
+msgid "Back"
+msgstr "Back"
+
+#: src/components/waitlist/waitlist-experience.tsx:1467
+msgid "Back to start"
+msgstr "Back to start"
+
+#: src/components/consumer-network/consumer-home.tsx:422
+msgid "Be early"
+msgstr "Be early"
+
+#: src/lib/waitlist/quiz-i18n.ts:11
+msgid "Before entering a trade, what convinces you most?"
+msgstr "Before entering a trade, what convinces you most?"
+
+#: src/components/waitlist/waitlist-experience.tsx:360
+msgid "Best match"
+msgstr "Best match"
+
+#: src/components/waitlist/waitlist-experience.tsx:1543
+msgid "Bind an email to save your result and join the waitlist."
+msgstr "Bind an email to save your result and join the waitlist."
+
+#: src/components/consumer-network/consumer-header.tsx:75
+#: src/components/consumer-network/consumer-header.tsx:143
+#: src/components/consumer-network/consumer-home.tsx:484
+#: src/components/site/site-footer.tsx:80
+#: src/components/site/site-header.tsx:76
+#: src/components/site/site-header.tsx:155
+msgid "Blog"
+msgstr "Blog"
+
+#: src/components/waitlist/waitlist-experience.tsx:1684
+msgid "Both steps are required to continue."
+msgstr "Both steps are required to continue."
+
+#: src/lib/waitlist/quiz-i18n.ts:18
+msgid "Buy now. Momentum rarely waits."
+msgstr "Buy now. Momentum rarely waits."
+
+#: src/components/blog/blog-i18n.tsx:32
+msgid "Campaign"
+msgstr "Campaign"
+
+#: src/components/waitlist/waitlist-experience.tsx:1638
+msgid "Change Email"
+msgstr "Change Email"
+
+#: src/lib/waitlist/quiz-i18n.ts:27
+msgid "Chart structure and price confirmation."
+msgstr "Chart structure and price confirmation."
+
+#: src/lib/waitlist/quiz-i18n.ts:31
+msgid "Check the chart before taking a position."
+msgstr "Check the chart before taking a position."
+
+#: src/components/waitlist/waitlist-experience.tsx:1589
+msgid "Check your inbox"
+msgstr "Check your inbox"
+
+#: src/components/waitlist/waitlist-experience.tsx:1355
+msgid "Checking invite, result, and sign-in state."
+msgstr "Checking invite, result, and sign-in state."
+
+#: src/components/site/app-notice.tsx:56
+#: src/components/waitlist/waitlist-experience.tsx:1792
+msgid "Close"
+msgstr "Close"
+
+#: src/components/consumer-network/consumer-header.tsx:83
+#: src/components/site/site-header.tsx:98
+msgid "Close navigation"
+msgstr "Close navigation"
+
+#: src/components/blog/blog-i18n.tsx:33
+#: src/components/consumer-network/consumer-header.tsx:72
+#: src/components/consumer-network/consumer-header.tsx:140
+#: src/components/site/site-header.tsx:69
+#: src/components/site/site-header.tsx:147
+msgid "Community"
+msgstr "Community"
+
+#: src/components/waitlist/waitlist-experience.tsx:1669
+#: src/components/waitlist/waitlist-experience.tsx:1676
+msgid "Completed"
+msgstr "Completed"
+
+#: src/components/waitlist/waitlist-experience.tsx:1567
+#: src/components/waitlist/waitlist-experience.tsx:1629
+msgid "Continue"
+msgstr "Continue"
+
+#: src/components/waitlist/waitlist-experience.tsx:354
+#: src/components/waitlist/waitlist-experience.tsx:733
+msgid "Conviction"
+msgstr "Conviction"
+
+#: src/components/waitlist/waitlist-experience.tsx:1776
+msgid "Copied"
+msgstr "Copied"
+
+#: src/components/waitlist/waitlist-experience.tsx:1185
+msgid "Copied Success!"
+msgstr "Copied Success!"
+
+#: src/components/consumer-network/network-product-previews.tsx:417
+msgid "Copy"
+msgstr "Copy"
+
+#: src/components/waitlist/waitlist-experience.tsx:1776
+msgid "Copy link"
+msgstr "Copy link"
+
+#: src/components/waitlist/waitlist-experience.tsx:1178
+msgid "Couldn’t copy the invite link. Try again."
+msgstr "Couldn’t copy the invite link. Try again."
+
+#: src/components/waitlist/waitlist-experience.tsx:1224
+#: src/components/waitlist/waitlist-experience.tsx:1248
+#: src/components/waitlist/waitlist-experience.tsx:1736
+msgid "Couldn’t export the image. Try again."
+msgstr "Couldn’t export the image. Try again."
+
+#: src/components/waitlist/waitlist-experience.tsx:1460
+msgid "Couldn’t load the test."
+msgstr "Couldn’t load the test."
+
+#: src/lib/waitlist/persona.ts:145
+msgid "DATA"
+msgstr "DATA"
+
+#: src/lib/waitlist/quiz-i18n.ts:38
+msgid "Debate it with the group and adjust if they have a point."
+msgstr "Debate it with the group and adjust if they have a point."
+
+#: src/lib/waitlist/persona.ts:142
+msgid "DEGEN"
+msgstr "DEGEN"
+
+#: src/components/consumer-network/network-product-previews.tsx:162
+#: src/components/consumer-network/network-product-previews.tsx:179
+#: src/components/consumer-network/network-product-previews.tsx:196
+#: src/components/consumer-network/network-product-previews.tsx:213
+msgid "Demo profile"
+msgstr "Demo profile"
+
+#: src/components/waitlist/waitlist-experience.tsx:1376
+msgid "Different score, same type—or something else entirely? Six decisions reveal how you trade when it gets real."
+msgstr "Different score, same type—or something else entirely? Six decisions reveal how you trade when it gets real."
+
+#: src/components/consumer-network/consumer-home.tsx:357
+msgid "Discover · Follow · Copy"
+msgstr "Discover · Follow · Copy"
+
+#: src/components/site/app-notice.tsx:55
+msgid "Dismiss notification"
+msgstr "Dismiss notification"
+
+#: src/components/waitlist/waitlist-experience.tsx:1729
+#: src/components/waitlist/waitlist-experience.tsx:1740
+msgid "Download"
+msgstr "Download"
+
+#: src/components/waitlist/waitlist-experience.tsx:1710
+msgid "Each verified friend"
+msgstr "Each verified friend"
+
+#: src/components/waitlist/waitlist-experience.tsx:1709
+msgid "Each verified friend (+{verifiedFriends})"
+msgstr "Each verified friend (+{verifiedFriends})"
+
+#: src/components/waitlist/waitlist-experience.tsx:1546
+msgid "Email address"
+msgstr "Email address"
+
+#: src/components/waitlist/waitlist-experience.tsx:135
+msgid "Email send limit exceeded. Try again later."
+msgstr "Email send limit exceeded. Try again later."
+
+#: src/components/waitlist/waitlist-experience.tsx:320
+msgid "Email verified"
+msgstr "Email verified"
+
+#: src/components/waitlist/waitlist-experience.tsx:1592
+msgid "Enter the code sent to <0>{email}</0>."
+msgstr "Enter the code sent to <0>{email}</0>."
+
+#: src/components/waitlist/waitlist-experience.tsx:1543
+msgid "Enter the email you used. We’ll send a six-digit code."
+msgstr "Enter the email you used. We’ll send a six-digit code."
+
+#: src/components/waitlist/waitlist-experience.tsx:1667
+msgid "Enter the SmartX community"
+msgstr "Enter the SmartX community"
+
+#: src/components/consumer-network/network-product-previews.tsx:365
+msgid "Entry"
+msgstr "Entry"
+
+#: src/lib/waitlist/persona.ts:92
+msgid "Every all-in starts with enlightenment and ends with reincarnation."
+msgstr "Every all-in starts with enlightenment and ends with reincarnation."
+
+#: src/lib/waitlist/persona.ts:108
+msgid "Every symptom diagnosed. Every loss professionally explained."
+msgstr "Every symptom diagnosed. Every loss professionally explained."
+
+#: src/components/consumer-network/consumer-home.tsx:25
+msgid "Every track record comes from real positions, real PnL, real history."
+msgstr "Every track record comes from real positions, real PnL, real history."
+
+#: src/components/consumer-network/consumer-home.tsx:238
+msgid "Every trader on SmartX is verified by real trades — and your feed is shaped by how you trade."
+msgstr "Every trader on SmartX is verified by real trades — and your feed is shaped by how you trade."
+
+#: src/lib/waitlist/quiz-i18n.ts:25
+msgid "Exit at invalidation. No debate."
+msgstr "Exit at invalidation. No debate."
+
+#: src/components/waitlist/waitlist-experience.tsx:136
+msgid "Failed to send verification code"
+msgstr "Failed to send verification code"
+
+#: src/components/consumer-network/consumer-home.tsx:402
+msgid "Fiat in · Markets open · Chains invisible"
+msgstr "Fiat in · Markets open · Chains invisible"
+
+#: src/components/waitlist/waitlist-experience.tsx:1397
+#: src/components/waitlist/waitlist-experience.tsx:1402
+msgid "Find my trader type"
+msgstr "Find my trader type"
+
+#: src/components/waitlist/waitlist-experience.tsx:1542
+msgid "Find your result."
+msgstr "Find your result."
+
+#: src/components/waitlist/waitlist-experience.tsx:1155
+msgid "Find yours in six questions."
+msgstr "Find yours in six questions."
+
+#: src/components/waitlist/waitlist-experience.tsx:142
+msgid "Finish the test before unlocking your result."
+msgstr "Finish the test before unlocking your result."
+
+#: src/components/waitlist/waitlist-experience.tsx:1701
+msgid "First result share"
+msgstr "First result share"
+
+#: src/lib/waitlist/quiz-i18n.ts:33
+msgid "Follow immediately. Conviction is contagious."
+msgstr "Follow immediately. Conviction is contagious."
+
+#: src/components/waitlist/waitlist-experience.tsx:1674
+msgid "Follow product updates"
+msgstr "Follow product updates"
+
+#: src/components/waitlist/waitlist-experience.tsx:1674
+msgid "Follow SmartX on X"
+msgstr "Follow SmartX on X"
+
+#: src/components/consumer-network/consumer-home.tsx:235
+msgid "Follow the best. Not the loudest."
+msgstr "Follow the best. Not the loudest."
+
+#: src/components/consumer-network/consumer-home.tsx:205
+msgid "Follow verified traders and trade in one tap."
+msgstr "Follow verified traders and trade in one tap."
+
+#: src/components/consumer-network/network-product-previews.tsx:243
+msgid "For You"
+msgstr "For You"
+
+#: src/components/consumer-network/network-product-previews.tsx:249
+msgid "Friends"
+msgstr "Friends"
+
+#: src/components/blog/blog-i18n.tsx:21
+msgid "From the journal"
+msgstr "From the journal"
+
+#: src/components/consumer-network/consumer-home.tsx:396
+msgid "Fund with fiat. Skip gas and bridging. Trade across markets with one SmartX balance."
+msgstr "Fund with fiat. Skip gas and bridging. Trade across markets with one SmartX balance."
+
+#: src/lib/waitlist/quiz-i18n.ts:23
+msgid "Give it more room before deciding."
+msgstr "Give it more room before deciding."
+
+#: src/components/blog/blog-i18n.tsx:34
+msgid "Guide"
+msgstr "Guide"
+
+#: src/lib/waitlist/persona.ts:144
+msgid "GUT"
+msgstr "GUT"
+
+#: src/components/waitlist/waitlist-experience.tsx:1440
+msgid "Have an invite code?"
+msgstr "Have an invite code?"
+
+#: src/components/consumer-network/consumer-header.tsx:51
+#: src/components/consumer-network/consumer-header.tsx:116
+#: src/components/site/site-header.tsx:48
+#: src/components/site/site-header.tsx:123
+msgid "Home"
+msgstr "Home"
+
+#: src/components/waitlist/waitlist-experience.tsx:1422
+msgid "How do you trade<0/> when it gets <1>real?</1>"
+msgstr "How do you trade<0/> when it gets <1>real?</1>"
+
+#: src/lib/waitlist/quiz-i18n.ts:41
+msgid "Ignore the noise and execute alone."
+msgstr "Ignore the noise and execute alone."
+
+#: src/components/waitlist/waitlist-experience.tsx:1188
+msgid "Image opened in a new tab. Long press to save."
+msgstr "Image opened in a new tab. Long press to save."
+
+#: src/components/waitlist/waitlist-experience.tsx:1187
+#: src/components/waitlist/waitlist-experience.tsx:1267
+msgid "Image saved."
+msgstr "Image saved."
+
+#: src/components/blog/blog-i18n.tsx:20
+msgid "In this dispatch"
+msgstr "In this dispatch"
+
+#: src/components/consumer-network/consumer-home.tsx:45
+msgid "Income"
+msgstr "Income"
+
+#: src/components/waitlist/waitlist-experience.tsx:355
+#: src/components/waitlist/waitlist-experience.tsx:734
+msgid "Instinct"
+msgstr "Instinct"
+
+#: src/components/blog/blog-i18n.tsx:35
+msgid "Intelligence"
+msgstr "Intelligence"
+
+#: src/components/waitlist/waitlist-experience.tsx:1766
+msgid "Invite code"
+msgstr "Invite code"
+
+#: src/components/waitlist/waitlist-experience.tsx:1273
+msgid "Invite Code"
+msgstr "Invite Code"
+
+#: src/components/waitlist/waitlist-experience.tsx:130
+msgid "Invite code not recognized. Check the code and try again."
+msgstr "Invite code not recognized. Check the code and try again."
+
+#: src/components/waitlist/waitlist-experience.tsx:1767
+msgid "Invite link is being prepared"
+msgstr "Invite link is being prepared"
+
+#: src/components/waitlist/waitlist-experience.tsx:1667
+msgid "Join Telegram"
+msgstr "Join Telegram"
+
+#: src/components/waitlist/waitlist-experience.tsx:1657
+msgid "Join the SmartX community and follow product updates before your trader type is revealed."
+msgstr "Join the SmartX community and follow product updates before your trader type is revealed."
+
+#: src/components/blog/article-cta.tsx:32
+#: src/components/consumer-network/consumer-home.tsx:121
+msgid "Join the Waitlist"
+msgstr "Join the Waitlist"
+
+#: src/components/blog/blog-i18n.tsx:19
+msgid "Journal"
+msgstr "Journal"
+
+#: src/components/site/language-switcher.tsx:159
+#: src/components/site/language-switcher.tsx:182
+#: src/components/site/language-switcher.tsx:190
+msgid "Language"
+msgstr "Language"
+
+#: src/components/consumer-network/consumer-header.tsx:99
+#: src/components/site/site-header.tsx:93
+msgid "Launch Alpha"
+msgstr "Launch Alpha"
+
+#: src/lib/waitlist/quiz-i18n.ts:39
+msgid "Listen first, then decide."
+msgstr "Listen first, then decide."
+
+#: src/components/waitlist/waitlist-experience.tsx:1352
+msgid "Loading your session."
+msgstr "Loading your session."
+
+#: src/lib/waitlist/persona.ts:147
+msgid "LONE"
+msgstr "LONE"
+
+#: src/components/waitlist/waitlist-experience.tsx:1193
+msgid "Long press the image and tap Copy image."
+msgstr "Long press the image and tap Copy image."
+
+#: src/components/waitlist/waitlist-experience.tsx:1190
+msgid "Long press the image and tap Copy."
+msgstr "Long press the image and tap Copy."
+
+#: src/components/waitlist/waitlist-experience.tsx:1193
+msgid "Long press the image and tap Download image."
+msgstr "Long press the image and tap Download image."
+
+#: src/components/waitlist/waitlist-experience.tsx:1190
+msgid "Long press the image and tap Save Image."
+msgstr "Long press the image and tap Save Image."
+
+#: src/components/waitlist/waitlist-experience.tsx:1195
+msgid "Long press the image to save or copy."
+msgstr "Long press the image to save or copy."
+
+#: src/components/waitlist/waitlist-experience.tsx:1195
+msgid "Long press the image to save to your album."
+msgstr "Long press the image to save to your album."
+
+#: src/components/consumer-network/consumer-header.tsx:107
+#: src/components/site/site-header.tsx:114
+msgid "Mobile site navigation"
+msgstr "Mobile site navigation"
+
+#: src/lib/waitlist/quiz-i18n.ts:35
+msgid "My close trading group."
+msgstr "My close trading group."
+
+#: src/components/waitlist/waitlist-experience.tsx:1155
+msgid "My SmartX trader type is {shareName}."
+msgstr "My SmartX trader type is {shareName}."
+
+#: src/components/waitlist/waitlist-experience.tsx:361
+msgid "Natural rival"
+msgstr "Natural rival"
+
+#: src/components/blog/blog-i18n.tsx:16
+msgid "Newer"
+msgstr "Newer"
+
+#: src/components/consumer-network/network-product-previews.tsx:246
+msgid "Newest"
+msgstr "Newest"
+
+#: src/components/consumer-network/network-product-previews.tsx:170
+#: src/components/consumer-network/network-product-previews.tsx:221
+msgid "No · Avg entry 61¢"
+msgstr "No · Avg entry 61¢"
+
+#: src/components/waitlist/waitlist-experience.tsx:141
+msgid "No account was found for this email."
+msgstr "No account was found for this email."
+
+#: src/components/consumer-network/consumer-home.tsx:385
+msgid "No barriers for new users"
+msgstr "No barriers for new users"
+
+#: src/components/consumer-network/network-product-previews.tsx:290
+msgid "No change"
+msgstr "No change"
+
+#: src/components/waitlist/waitlist-experience.tsx:1437
+msgid "No invite needed"
+msgstr "No invite needed"
+
+#: src/components/consumer-network/consumer-home.tsx:351
+msgid "No more scrolling through noise. SmartX learns what you trade and shows you the traders and markets that fit"
+msgstr "No more scrolling through noise. SmartX learns what you trade and shows you the traders and markets that fit"
+
+#: src/lib/waitlist/quiz-i18n.ts:37
+msgid "No one. I take profit and keep moving."
+msgstr "No one. I take profit and keep moving."
+
+#: src/components/waitlist/waitlist-experience.tsx:127
+msgid "No saved result is linked to this email. Take the test to create one."
+msgstr "No saved result is linked to this email. Take the test to create one."
+
+#: src/lib/waitlist/quiz-i18n.ts:40
+msgid "Note the feedback but keep my plan."
+msgstr "Note the feedback but keep my plan."
+
+#: src/components/blog/blog-i18n.tsx:14
+msgid "Notes on product, markets, and the systems reshaping how people trade."
+msgstr "Notes on product, markets, and the systems reshaping how people trade."
+
+#: src/components/blog/blog-i18n.tsx:17
+msgid "Older"
+msgstr "Older"
+
+#: src/components/consumer-network/consumer-home.tsx:388
+msgid "One Account.<0/>Every Market."
+msgstr "One Account.<0/>Every Market."
+
+#: src/components/waitlist/waitlist-experience.tsx:1651
+msgid "One last step"
+msgstr "One last step"
+
+#: src/components/consumer-network/consumer-home.tsx:38
+msgid "One tap to trade"
+msgstr "One tap to trade"
+
+#: src/lib/waitlist/quiz-i18n.ts:36
+msgid "One trusted friend, maybe."
+msgstr "One trusted friend, maybe."
+
+#: src/components/waitlist/waitlist-experience.tsx:1669
+#: src/components/waitlist/waitlist-experience.tsx:1676
+msgid "Open"
+msgstr "Open"
+
+#: src/lib/waitlist/quiz-i18n.ts:32
+msgid "Open a small starter because I trust the source."
+msgstr "Open a small starter because I trust the source."
+
+#: src/components/consumer-network/consumer-header.tsx:83
+#: src/components/site/site-header.tsx:98
+msgid "Open navigation"
+msgstr "Open navigation"
+
+#: src/components/consumer-network/network-product-previews.tsx:133
+msgid "Opinion"
+msgstr "Opinion"
+
+#: src/components/consumer-network/network-product-previews.tsx:445
+msgid "Order submitted"
+msgstr "Order submitted"
+
+#: src/lib/waitlist/persona.ts:146
+msgid "PACK"
+msgstr "PACK"
+
+#: src/lib/waitlist/quiz-i18n.ts:21
+msgid "Pass. No setup, no trade."
+msgstr "Pass. No setup, no trade."
+
+#: src/components/consumer-network/consumer-home.tsx:45
+msgid "Performance"
+msgstr "Performance"
+
+#: src/components/waitlist/waitlist-experience.tsx:359
+msgid "Persona chemistry"
+msgstr "Persona chemistry"
+
+#: src/components/consumer-network/consumer-home.tsx:344
+msgid "Personalized for you"
+msgstr "Personalized for you"
+
+#: src/components/consumer-network/consumer-home.tsx:31
+msgid "Picked for you"
+msgstr "Picked for you"
+
+#: src/components/waitlist/waitlist-experience.tsx:128
+msgid "Please enter a valid email address."
+msgstr "Please enter a valid email address."
+
+#: src/components/waitlist/waitlist-experience.tsx:1286
+msgid "Please enter the invitation code."
+msgstr "Please enter the invitation code."
+
+#: src/components/waitlist/waitlist-experience.tsx:134
+msgid "Please wait before requesting a new code."
+msgstr "Please wait before requesting a new code."
+
+#: src/components/consumer-network/network-product-previews.tsx:358
+msgid "Position value"
+msgstr "Position value"
+
+#: src/components/consumer-network/consumer-home.tsx:293
+msgid "Post opinions backed by your real positions. Climb the leaderboard, grow your following, and earn a share of the revenue you create."
+msgstr "Post opinions backed by your real positions. Climb the leaderboard, grow your following, and earn a share of the revenue you create."
+
+#: src/components/waitlist/waitlist-experience.tsx:1235
+#: src/components/waitlist/waitlist-experience.tsx:1740
+msgid "Preparing…"
+msgstr "Preparing…"
+
+#: src/components/waitlist/waitlist-experience.tsx:1718
+msgid "Priority improves your score; rank updates against the live waitlist."
+msgstr "Priority improves your score; rank updates against the live waitlist."
+
+#: src/components/blog/blog-i18n.tsx:36
+#: src/components/consumer-network/consumer-home.tsx:471
+#: src/components/site/site-footer.tsx:67
+msgid "Product"
+msgstr "Product"
+
+#: src/components/waitlist/waitlist-experience.tsx:1492
+msgid "Question"
+msgstr "Question"
+
+#. placeholder {0}: questionIndex + 1
+#. placeholder {1}: questions.length
+#: src/components/waitlist/waitlist-experience.tsx:1497
+msgid "Question {0} of {1}"
+msgstr "Question {0} of {1}"
+
+#: src/components/consumer-network/consumer-home.tsx:45
+msgid "Rank"
+msgstr "Rank"
+
+#: src/components/blog/blog-i18n.tsx:15
+msgid "Read the dispatch"
+msgstr "Read the dispatch"
+
+#: src/components/site/site-header.tsx:160
+msgid "Reading theme"
+msgstr "Reading theme"
+
+#: src/lib/waitlist/quiz-i18n.ts:24
+msgid "Reduce the position according to plan."
+msgstr "Reduce the position according to plan."
+
+#: src/components/waitlist/waitlist-experience.tsx:143
+msgid "Required information is missing. Try again."
+msgstr "Required information is missing. Try again."
+
+#: src/components/waitlist/waitlist-experience.tsx:1641
+msgid "Resend Code"
+msgstr "Resend Code"
+
+#: src/components/waitlist/waitlist-experience.tsx:356
+#: src/components/waitlist/waitlist-experience.tsx:735
+msgid "Resilience"
+msgstr "Resilience"
+
+#: src/app/not-found.tsx:29
+msgid "Return to SmartX"
+msgstr "Return to SmartX"
+
+#: src/components/waitlist/waitlist-experience.tsx:1681
+msgid "Reveal my result"
+msgstr "Reveal my result"
+
+#: src/components/waitlist/waitlist-experience.tsx:1542
+msgid "Save your result."
+msgstr "Save your result."
+
+#: src/lib/waitlist/quiz-i18n.ts:34
+msgid "Screenshot, group chat, X."
+msgstr "Screenshot, group chat, X."
+
+#: src/components/waitlist/waitlist-experience.tsx:1186
+msgid "Selection successful"
+msgstr "Selection successful"
+
+#: src/components/waitlist/waitlist-experience.tsx:1567
+msgid "Send code"
+msgstr "Send code"
+
+#: src/components/waitlist/waitlist-experience.tsx:138
+msgid "Service is busy. Try again in a moment."
+msgstr "Service is busy. Try again in a moment."
+
+#: src/lib/waitlist/quiz-i18n.ts:20
+msgid "Set my entry and wait."
+msgstr "Set my entry and wait."
+
+#: src/components/waitlist/waitlist-experience.tsx:1744
+msgid "Share again"
+msgstr "Share again"
+
+#: src/components/waitlist/waitlist-experience.tsx:1790
+msgid "Share image"
+msgstr "Share image"
+
+#: src/components/waitlist/waitlist-experience.tsx:1755
+msgid "Share one link with every friend you invite."
+msgstr "Share one link with every friend you invite."
+
+#: src/components/waitlist/waitlist-experience.tsx:1701
+msgid "Share recorded"
+msgstr "Share recorded"
+
+#: src/components/waitlist/waitlist-experience.tsx:1744
+msgid "Share result"
+msgstr "Share result"
+
+#: src/components/waitlist/waitlist-experience.tsx:323
+msgid "Sign out"
+msgstr "Sign out"
+
+#: src/components/waitlist/waitlist-experience.tsx:1661
+#: src/components/waitlist/waitlist-experience.tsx:1693
+msgid "Signed in as"
+msgstr "Signed in as"
+
+#: src/components/consumer-network/consumer-header.tsx:45
+#: src/components/site/site-header.tsx:42
+msgid "Site navigation"
+msgstr "Site navigation"
+
+#: src/components/waitlist/waitlist-experience.tsx:1425
+msgid "Six decisions reveal your risk, signal, and social instincts."
+msgstr "Six decisions reveal your risk, signal, and social instincts."
+
+#: src/components/waitlist/waitlist-experience.tsx:1609
+msgid "Six-digit code"
+msgstr "Six-digit code"
+
+#: src/components/consumer-network/network-product-previews.tsx:430
+msgid "Skip"
+msgstr "Skip"
+
+#: src/components/blog/blog-i18n.tsx:18
+msgid "Skip to article"
+msgstr "Skip to article"
+
+#: src/components/blog/blog-i18n.tsx:12
+msgid "Skip to latest stories"
+msgstr "Skip to latest stories"
+
+#: src/components/consumer-network/consumer-home.tsx:502
+msgid "Skip to the SmartX network story"
+msgstr "Skip to the SmartX network story"
+
+#: src/components/waitlist/waitlist-experience.tsx:1328
+msgid "Skip to waitlist"
+msgstr "Skip to waitlist"
+
+#: src/components/blog/article-cta.tsx:20
+msgid "SmartX / Early access"
+msgstr "SmartX / Early access"
+
+#: src/components/consumer-network/consumer-header.tsx:31
+#: src/components/site/site-footer.tsx:22
+#: src/components/site/site-header.tsx:30
+msgid "SmartX home"
+msgstr "SmartX home"
+
+#: src/components/blog/blog-i18n.tsx:13
+msgid "SmartX Journal."
+msgstr "SmartX Journal."
+
+#: src/components/consumer-network/consumer-home.tsx:334
+msgid "SmartX mobile signals feed on a dark trading console"
+msgstr "SmartX mobile signals feed on a dark trading console"
+
+#: src/components/consumer-network/consumer-home.tsx:455
+msgid "SmartX on Telegram"
+msgstr "SmartX on Telegram"
+
+#: src/components/consumer-network/consumer-home.tsx:447
+msgid "SmartX on X"
+msgstr "SmartX on X"
+
+#: src/components/consumer-network/consumer-home.tsx:442
+#: src/components/site/site-footer.tsx:32
+msgid "SmartX social links"
+msgstr "SmartX social links"
+
+#: src/components/consumer-network/consumer-home.tsx:276
+msgid "SmartX Square and People screens showing a verified social feed and trader leaderboard"
+msgstr "SmartX Square and People screens showing a verified social feed and trader leaderboard"
+
+#: src/lib/waitlist/persona.ts:143
+msgid "SNIPER"
+msgstr "SNIPER"
+
+#: src/components/waitlist/waitlist-experience.tsx:129
+msgid "Something went wrong. Please try again."
+msgstr "Something went wrong. Please try again."
+
+#: src/components/consumer-network/network-product-previews.tsx:233
+msgid "Square"
+msgstr "Square"
+
+#: src/lib/waitlist/quiz-i18n.ts:19
+msgid "Start small now and add if it holds."
+msgstr "Start small now and add if it holds."
+
+#: src/components/waitlist/waitlist-experience.tsx:1434
+msgid "Start the test"
+msgstr "Start the test"
+
+#: src/components/waitlist/waitlist-experience.tsx:1308
+msgid "Start with invite"
+msgstr "Start with invite"
+
+#: src/components/waitlist/waitlist-experience.tsx:144
+msgid "That community step could not be recorded. Try again."
+msgstr "That community step could not be recorded. Try again."
+
+#: src/components/waitlist/waitlist-experience.tsx:140
+msgid "That result could not be found."
+msgstr "That result could not be found."
+
+#: src/lib/waitlist/persona.ts:91
+msgid "The All-In Mystic"
+msgstr "The All-In Mystic"
+
+#: src/lib/waitlist/persona.ts:99
+msgid "The Candle Prophet"
+msgstr "The Candle Prophet"
+
+#. placeholder {0}: formatClock(otpExpiresIn)
+#: src/components/waitlist/waitlist-experience.tsx:1633
+msgid "The code expires in {0}."
+msgstr "The code expires in {0}."
+
+#: src/components/waitlist/waitlist-experience.tsx:1633
+msgid "The code has expired. Resend to get a new one."
+msgstr "The code has expired. Resend to get a new one."
+
+#: src/components/blog/article-cta.tsx:23
+#: src/components/consumer-network/consumer-home.tsx:425
+msgid "The Consumer Trading Network is taking shape."
+msgstr "The Consumer Trading Network is taking shape."
+
+#: src/lib/waitlist/persona.ts:103
+msgid "The Dip Ringleader"
+msgstr "The Dip Ringleader"
+
+#: src/lib/waitlist/persona.ts:116
+msgid "The limit order was perfect. Shame you two never met again."
+msgstr "The limit order was perfect. Shame you two never met again."
+
+#: src/lib/waitlist/persona.ts:115
+msgid "The Limit Sniper"
+msgstr "The Limit Sniper"
+
+#: src/lib/waitlist/persona.ts:87
+msgid "The Liquidity Donor"
+msgstr "The Liquidity Donor"
+
+#: src/lib/waitlist/quiz-i18n.ts:28
+msgid "The market's mood and momentum."
+msgstr "The market's mood and momentum."
+
+#: src/components/consumer-network/consumer-home.tsx:347
+msgid "The next opportunity finds you."
+msgstr "The next opportunity finds you."
+
+#: src/lib/waitlist/persona.ts:111
+msgid "The Onchain Paparazzi"
+msgstr "The Onchain Paparazzi"
+
+#: src/app/not-found.tsx:26
+msgid "The page you requested is no longer at this address."
+msgstr "The page you requested is no longer at this address."
+
+#: src/components/waitlist/waitlist-experience.tsx:1463
+msgid "The questions didn’t come through. Check your connection and try again."
+msgstr "The questions didn’t come through. Check your connection and try again."
+
+#: src/lib/waitlist/persona.ts:119
+msgid "The Risk Monk"
+msgstr "The Risk Monk"
+
+#: src/lib/waitlist/persona.ts:95
+msgid "The Send-It Strategist"
+msgstr "The Send-It Strategist"
+
+#: src/components/consumer-network/consumer-home.tsx:200
+msgid "The social trading app for memes, perps, stocks and prediction markets."
+msgstr "The social trading app for memes, perps, stocks and prediction markets."
+
+#: src/components/consumer-network/consumer-home.tsx:286
+msgid "The trader content economy"
+msgstr "The trader content economy"
+
+#: src/components/consumer-network/consumer-home.tsx:32
+msgid "The traders and markets in your feed match what you trade."
+msgstr "The traders and markets in your feed match what you trade."
+
+#: src/lib/waitlist/persona.ts:107
+msgid "The Vibes Doctor"
+msgstr "The Vibes Doctor"
+
+#: src/lib/waitlist/persona.ts:120
+msgid "They study how to double once. You study how to stay in the game."
+msgstr "They study how to double once. You study how to stay in the game."
+
+#: src/app/not-found.tsx:23
+msgid "This market moved."
+msgstr "This market moved."
+
+#: src/components/waitlist/waitlist-experience.tsx:132
+msgid "Those answers didn’t go through. Check all six questions and try again."
+msgstr "Those answers didn’t go through. Check all six questions and try again."
+
+#: src/lib/waitlist/persona.ts:96
+msgid "Three hours of research. Two-word thesis: send it."
+msgstr "Three hours of research. Two-word thesis: send it."
+
+#: src/components/waitlist/waitlist-experience.tsx:137
+#: src/components/waitlist/waitlist-experience.tsx:139
+msgid "Too many requests. Try again later."
+msgstr "Too many requests. Try again later."
+
+#: src/components/consumer-network/consumer-home.tsx:39
+msgid "Trade as smoothly as shopping."
+msgstr "Trade as smoothly as shopping."
+
+#: src/components/consumer-network/consumer-home.tsx:195
+msgid "Trade your edge."
+msgstr "Trade your edge."
+
+#: src/components/waitlist/waitlist-experience.tsx:731
+msgid "Trader type"
+msgstr "Trader type"
+
+#: src/components/consumer-network/consumer-home.tsx:289
+msgid "Turn influence into income"
+msgstr "Turn influence into income"
+
+#: src/components/waitlist/waitlist-experience.tsx:1654
+msgid "Unlock your result"
+msgstr "Unlock your result"
+
+#: src/components/blog/blog-theme-toggle.tsx:37
+msgid "Use dark reading theme"
+msgstr "Use dark reading theme"
+
+#: src/components/blog/blog-theme-toggle.tsx:37
+msgid "Use light reading theme"
+msgstr "Use light reading theme"
+
+#: src/components/waitlist/waitlist-experience.tsx:1586
+msgid "Verification"
+msgstr "Verification"
+
+#: src/components/waitlist/waitlist-experience.tsx:1596
+msgid "Verification code"
+msgstr "Verification code"
+
+#: src/components/waitlist/waitlist-experience.tsx:133
+msgid "Verification code is incorrect or expired"
+msgstr "Verification code is incorrect or expired"
+
+#: src/components/waitlist/waitlist-experience.tsx:1381
+#: src/components/waitlist/waitlist-experience.tsx:1478
+msgid "Verified as"
+msgstr "Verified as"
+
+#: src/components/consumer-network/network-product-previews.tsx:12
+msgid "Verified profile"
+msgstr "Verified profile"
+
+#: src/components/consumer-network/consumer-home.tsx:24
+msgid "Verified, not claimed"
+msgstr "Verified, not claimed"
+
+#: src/lib/waitlist/quiz-i18n.ts:30
+msgid "Verify it with onchain data and market structure."
+msgstr "Verify it with onchain data and market structure."
+
+#: src/components/waitlist/waitlist-experience.tsx:1389
+msgid "View my result"
+msgstr "View my result"
+
+#: src/components/consumer-network/consumer-header.tsx:58
+#: src/components/consumer-network/consumer-header.tsx:124
+#: src/components/consumer-network/consumer-home.tsx:481
+#: src/components/site/site-footer.tsx:77
+#: src/components/site/site-header.tsx:55
+#: src/components/site/site-header.tsx:131
+#: src/components/waitlist/waitlist-experience.tsx:1349
+#: src/components/waitlist/waitlist-experience.tsx:1457
+msgid "Waitlist"
+msgstr "Waitlist"
+
+#: src/components/waitlist/waitlist-experience.tsx:732
+#: src/components/waitlist/waitlist-experience.tsx:1696
+msgid "Waitlist rank"
+msgstr "Waitlist rank"
+
+#: src/lib/waitlist/quiz-i18n.ts:26
+msgid "Wallet flows, data, and a clear invalidation level."
+msgstr "Wallet flows, data, and a clear invalidation level."
+
+#: src/components/waitlist/waitlist-experience.tsx:1571
+msgid "We’ll use this to save your result and send waitlist updates."
+msgstr "We’ll use this to save your result and send waitlist updates."
+
+#: src/components/consumer-network/network-product-previews.tsx:306
+msgid "Yes"
+msgstr "Yes"
+
+#: src/lib/waitlist/persona.ts:100
+msgid "You can chart every line except the one marking enough exposure."
+msgstr "You can chart every line except the one marking enough exposure."
+
+#: src/lib/waitlist/quiz-i18n.ts:13
+msgid "You catch a 10×. Who hears first?"
+msgstr "You catch a 10×. Who hears first?"
+
+#: src/lib/waitlist/persona.ts:112
+msgid "You know everyone’s position except, occasionally, your own."
+msgstr "You know everyone’s position except, occasionally, your own."
+
+#: src/lib/waitlist/persona.ts:104
+msgid "You’re not buying the dip. You’re giving the downtrend a demo."
+msgstr "You’re not buying the dip. You’re giving the downtrend a demo."
+
+#: src/lib/waitlist/persona.ts:88
+msgid "You’re not trading. You’re funding the ecosystem."
+msgstr "You’re not trading. You’re funding the ecosystem."
+
+#: src/components/waitlist/waitlist-experience.tsx:1557
+msgid "you@domain.com"
+msgstr "you@domain.com"
+
+#: src/lib/waitlist/quiz-i18n.ts:14
+msgid "Your group chat strongly disagrees with your trade. What do you do?"
+msgstr "Your group chat strongly disagrees with your trade. What do you do?"
+
+#: src/components/waitlist/waitlist-experience.tsx:1748
+msgid "Your invitation link"
+msgstr "Your invitation link"
+
+#: src/components/waitlist/waitlist-experience.tsx:1752
+msgid "Your invite link"
+msgstr "Your invite link"
+
+#: src/lib/waitlist/quiz-i18n.ts:10
+msgid "Your position moves 20% against you. What happens next?"
+msgstr "Your position moves 20% against you. What happens next?"
+
+#: src/components/waitlist/waitlist-experience.tsx:1541
+msgid "Your result is ready"
+msgstr "Your result is ready"
+
+#: src/components/waitlist/waitlist-experience.tsx:1392
+msgid "Your result is saved as {savedPersonaName}."
+msgstr "Your result is saved as {savedPersonaName}."
+
+#: src/components/waitlist/waitlist-experience.tsx:131
+#: src/components/waitlist/waitlist-experience.tsx:145
+msgid "Your session expired. Sign in again to continue."
+msgstr "Your session expired. Sign in again to continue."
+
+#: src/components/waitlist/waitlist-experience.tsx:426
+msgid "your trader type"
+msgstr "your trader type"
