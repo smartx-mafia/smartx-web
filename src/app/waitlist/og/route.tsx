@@ -162,12 +162,13 @@ export async function GET(request: NextRequest) {
           <div
             style={{
               display: "flex",
-              width: 385,
+              width: locale === "zh-CN" ? 560 : 385,
               justifyContent: "center",
               textAlign: "center",
               color: COLORS.muted,
               fontSize: 16,
               lineHeight: 1.3,
+              whiteSpace: locale === "zh-CN" ? "nowrap" : undefined,
             }}
           >
             {copy.tagline}
