@@ -6,7 +6,7 @@ import type { NextRequest } from "next/server";
 
 import { localeFromParam } from "@/lingui";
 import type { AppLocale } from "@/lingui";
-import { resolveWaitlistAssetUrl } from "@/lib/waitlist/api";
+import { resolveWaitlistAssetUrl, withCacheBuster } from "@/lib/waitlist/api";
 import { loadInviterShareCard } from "@/lib/waitlist/public-share";
 import { shareOgCopy } from "@/lib/waitlist/share-copy";
 
@@ -93,7 +93,8 @@ function loadAssets() {
 function absoluteArtUrl(preferred: string | null | undefined, fallback: string, origin: string) {
   const resolved = resolveWaitlistAssetUrl((preferred || "").trim()) || fallback;
   if (!resolved) return fallback;
-  return resolved.startsWith("/") ? `${origin}${resolved}` : resolved;
+  const absolute = resolved.startsWith("/") ? `${origin}${resolved}` : resolved;
+  return withCacheBuster(absolute);
 }
 
 /* eslint-disable @next/next/no-img-element -- satori 画布内只能用原生 img */
