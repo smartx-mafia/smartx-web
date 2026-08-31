@@ -224,7 +224,6 @@
 
 .primaryButton[aria-busy="true"]:disabled,
 .shareButton[aria-busy="true"]:disabled {
-  cursor: progress;
   background: var(--teal);
   color: var(--consumer-black);
 }
@@ -1163,7 +1162,7 @@
 }
 
 .downloadButton:disabled {
-  cursor: progress;
+  cursor: not-allowed;
   opacity: 0.72;
 }
 
