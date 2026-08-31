@@ -14,7 +14,7 @@ export type InviterShareCard = {
   roast: string;
   poles: readonly string[];
   stats: { conviction: number; instinct: number; resilience: number };
-  /** 优先本地立绘（站内路径）；API 图仅在没有本地映射时使用。 */
+  /** 人格卡片立绘：优先后端 imageUrl。 */
   artSrc: string;
   persona: ReturnType<typeof mapCardToOutcome>["persona"];
 };
@@ -41,7 +41,7 @@ export async function loadInviterShareCard(
       roast: copy.roast,
       poles: outcome.poles,
       stats: outcome.stats,
-      artSrc: localArt || outcome.persona.artSrc,
+      artSrc: outcome.persona.artSrc || localArt,
       persona: outcome.persona,
     };
   } catch {

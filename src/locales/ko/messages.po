@@ -49,24 +49,24 @@ msgid "+500 priority"
 msgstr "+500 우선순위"
 
 #: src/components/consumer-network/consumer-home.tsx:209
-msgid "<0>The social trading app for memes, perps,</0><1>stocks and prediction markets. Follow</1><2>verified traders and trade in one tap.</2>"
-msgstr "<0>예측 시장 중심의 소셜 트레이딩.</0><1>밈, 무기한, 주식도 함께.</1><2>실거래 트레이더를 팔로우하고 원탭으로 카피하세요.</2>"
+msgid "<0>The social trading app for memes, perps,</0><1>stocks and prediction markets. Follow</1><2>verified traders and copy in one tap.</2>"
+msgstr "<0>예측 시장 중심의 소셜 트레이딩.</0><1>밈, 선물, 주식도 함께.</1><2>실거래 트레이더를 팔로우하고 원탭으로 카피하세요.</2>"
 
 #: src/components/consumer-network/network-product-previews.tsx:182
 msgid "3 traders you follow liked this"
 msgstr "팔로우 중인 트레이더 3명이 이 마켓에 좋아요를 눌렀습니다"
 
 #: src/components/consumer-network/network-product-previews.tsx:301
-msgid "30d 68% win · 282 trades"
+msgid "30D 68% win · 282 trades"
 msgstr "30일 승률 68% · 282회 거래"
 
 #: src/components/consumer-network/network-product-previews.tsx:285
-msgid "30d 72% win · 982 trades"
+msgid "30D 72% win · 982 trades"
 msgstr "30일 승률 72% · 982회 거래"
 
 #: src/components/consumer-network/network-product-previews.tsx:84
 #: src/components/consumer-network/network-product-previews.tsx:335
-msgid "30D P&L"
+msgid "30D PnL"
 msgstr "30일 손익"
 
 #: src/app/not-found.tsx:20
@@ -79,8 +79,12 @@ msgstr "404 / 마켓 신호 끊김"
 msgid "5 USDC · {0} at {1}"
 msgstr "5 USDC · {0} @ {1}"
 
+#: src/lib/waitlist/quiz-i18n.ts:27
+msgid "A clean chart and price confirmation."
+msgstr "차트 구조와 가격 확인."
+
 #: src/lib/waitlist/quiz-i18n.ts:9
-msgid "A coin you do not own is up 40%. What do you do?"
+msgid "A coin you don't own is up 40%. What's your move?"
 msgstr "보유하지 않은 코인이 40% 올랐습니다. 어떻게 하시겠습니까?"
 
 #. placeholder {0}: localizedPersonaName(referralOutcome.persona)
@@ -92,8 +96,12 @@ msgstr "친구의 거래 유형은 <0>{0}.</0>"
 msgid "A result was shared with you"
 msgstr "친구가 결과를 공유했습니다"
 
+#: src/lib/waitlist/quiz-i18n.ts:32
+msgid "A small starter. I trust them."
+msgstr "출처를 믿으니 소액으로 시작한다."
+
 #: src/lib/waitlist/quiz-i18n.ts:29
-msgid "A strong thesis that simply feels early."
+msgid "A thesis that just feels early."
 msgstr "아직은 이른 느낌이 드는 강한 논리."
 
 #: src/components/consumer-network/network-product-previews.tsx:165
@@ -102,16 +110,12 @@ msgid "A trader you follow liked this"
 msgstr "팔로우 중인 트레이더가 이 마켓에 좋아요를 눌렀습니다"
 
 #: src/lib/waitlist/quiz-i18n.ts:12
-msgid "A trader you trust posts a high-conviction call. What do you do?"
-msgstr "신뢰하는 트레이더가 확신 높은 콜을 올렸습니다. 어떻게 하시겠습니까?"
+msgid "A trader you trust posts a high-conviction call. Your move?"
+msgstr "신뢰하는 트레이더가 확신 높은 의견을 올렸습니다. 어떻게 하시겠습니까?"
 
 #: src/components/consumer-network/network-product-previews.tsx:199
 msgid "A verified trader liked this"
 msgstr "실거래 트레이더가 이 마켓에 좋아요를 눌렀습니다"
-
-#: src/lib/waitlist/quiz-i18n.ts:22
-msgid "Add immediately. The market is improving my entry."
-msgstr "즉시 추가한다. 시장이 진입가를 더 좋게 만들고 있다."
 
 #: src/components/waitlist/waitlist-experience.tsx:1584
 msgid "Already tested?"
@@ -126,6 +130,10 @@ msgstr "이미 테스트하셨나요? 내 결과 보기"
 #: src/components/site/site-footer.tsx:74
 msgid "App"
 msgstr "앱"
+
+#: src/lib/waitlist/quiz-i18n.ts:38
+msgid "Argue it out, and adjust if they have a point."
+msgstr "그룹과 토론하고, 일리 있으면 조정한다."
 
 #: src/components/blog/article-contents.tsx:67
 msgid "Article contents"
@@ -159,13 +167,9 @@ msgstr "투자"
 msgid "Be early"
 msgstr "먼저 진입하세요"
 
-#: src/lib/waitlist/quiz-i18n.ts:11
-msgid "Before entering a trade, what convinces you most?"
-msgstr "진입 전에 가장 설득력 있는 근거는?"
-
 #: src/components/waitlist/waitlist-experience.tsx:402
 msgid "Best match"
-msgstr "최고의 파트너"
+msgstr "최고의 매칭"
 
 #: src/components/waitlist/waitlist-experience.tsx:1586
 msgid "Bind an email to save your result and join the waitlist."
@@ -184,8 +188,12 @@ msgstr "블로그"
 msgid "Both steps are required to continue."
 msgstr "계속하려면 두 단계를 모두 완료해야 합니다."
 
+#: src/lib/waitlist/quiz-i18n.ts:22
+msgid "Buy more. The market just improved my entry."
+msgstr "즉시 추가한다. 시장이 진입가를 더 좋게 만들고 있다."
+
 #: src/lib/waitlist/quiz-i18n.ts:18
-msgid "Buy now. Momentum rarely waits."
+msgid "Buy now. Momentum doesn't wait."
 msgstr "지금 산다. 모멘텀은 기다리지 않는다."
 
 #: src/components/blog/blog-i18n.tsx:32
@@ -196,13 +204,9 @@ msgstr "캠페인"
 msgid "Change Email"
 msgstr "이메일 변경"
 
-#: src/lib/waitlist/quiz-i18n.ts:27
-msgid "Chart structure and price confirmation."
-msgstr "차트 구조와 가격 확인."
-
-#: src/lib/waitlist/quiz-i18n.ts:31
-msgid "Check the chart before taking a position."
-msgstr "포지션을 잡기 전에 차트를 확인한다."
+#: src/lib/waitlist/quiz-i18n.ts:30
+msgid "Check it against onchain data first."
+msgstr "온체인 데이터와 시장 구조로 검증한다."
 
 #: src/components/waitlist/waitlist-experience.tsx:1632
 msgid "Check your inbox"
@@ -243,14 +247,14 @@ msgstr "계속"
 #: src/components/waitlist/waitlist-experience.tsx:396
 #: src/lib/waitlist/share-copy.ts:39
 msgid "Conviction"
-msgstr "신념"
+msgstr "확신"
 
 #: src/components/waitlist/waitlist-experience.tsx:1813
 msgid "Copied"
 msgstr "복사됨"
 
 #: src/components/waitlist/waitlist-experience.tsx:1212
-msgid "Copied Success!"
+msgid "Copied!"
 msgstr "복사되었습니다"
 
 #: src/components/consumer-network/network-product-previews.tsx:417
@@ -279,13 +283,9 @@ msgstr "테스트를 불러오지 못했습니다."
 msgid "DATA"
 msgstr "데이터"
 
-#: src/lib/waitlist/quiz-i18n.ts:38
-msgid "Debate it with the group and adjust if they have a point."
-msgstr "그룹과 토론하고, 일리 있으면 조정한다."
-
 #: src/lib/waitlist/persona.ts:164
 msgid "DEGEN"
-msgstr "올인"
+msgstr "DEGEN"
 
 #: src/components/consumer-network/network-product-previews.tsx:162
 #: src/components/consumer-network/network-product-previews.tsx:179
@@ -296,7 +296,7 @@ msgstr "데모 프로필"
 
 #: src/components/waitlist/waitlist-experience.tsx:1419
 msgid "Different score, same type—or something else entirely? Six decisions reveal how you trade when it gets real."
-msgstr "같은 유형일까요, 전혀 다를까요? 여섯 번의 결정이 실제 마켓에서 당신이 어떻게 베팅하는지 보여줍니다."
+msgstr "점수는 달라도 같은 유형일까요, 전혀 다를까요? 여섯 번의 결정이 실제 마켓에서 당신이 어떻게 거래하는지 보여줍니다."
 
 #: src/components/consumer-network/consumer-home.tsx:357
 msgid "Discover · Follow · Copy"
@@ -341,7 +341,7 @@ msgstr "사용했던 이메일을 입력하세요. 6자리 코드를 보내드�
 
 #: src/components/waitlist/waitlist-experience.tsx:1706
 msgid "Enter the SmartX community"
-msgstr "SmartX 커뮤니티 입장"
+msgstr "SmartX 커뮤니티 참여"
 
 #: src/components/consumer-network/network-product-previews.tsx:365
 msgid "Entry"
@@ -365,7 +365,7 @@ msgstr "SmartX의 모든 트레이더는 실거래로 검증됩니다. 피드는
 
 #: src/lib/waitlist/quiz-i18n.ts:25
 msgid "Exit at invalidation. No debate."
-msgstr "무효화되면 나간다. 논쟁 없음."
+msgstr "손절선 닿으면 나간다. 논쟁 없음."
 
 #: src/components/waitlist/waitlist-experience.tsx:147
 msgid "Failed to send verification code"
@@ -373,7 +373,7 @@ msgstr "인증 코드를 보내지 못했습니다"
 
 #: src/components/consumer-network/consumer-home.tsx:402
 msgid "Fiat in · Markets open · Chains invisible"
-msgstr "법정화폐 입금 · 마켓 바로 오픈 · 체인은 보이지 않게"
+msgstr "입금 · 마켓 오픈 · 체인은 무관합니다."
 
 #: src/components/waitlist/waitlist-experience.tsx:1440
 #: src/components/waitlist/waitlist-experience.tsx:1445
@@ -390,7 +390,7 @@ msgstr "여섯 문항으로 거래 유형을 찾으세요."
 
 #: src/components/waitlist/waitlist-experience.tsx:153
 msgid "Finish the test before unlocking your result."
-msgstr "결과를 잠금 해제하기 전에 테스트를 완료하세요."
+msgstr "테스트를 먼저 완료해야 결과를 볼 수 있습니다."
 
 #: src/components/waitlist/waitlist-experience.tsx:1740
 msgid "First result share"
@@ -410,10 +410,10 @@ msgstr "X에서 SmartX 팔로우"
 
 #: src/components/consumer-network/consumer-home.tsx:235
 msgid "Follow the best. Not the loudest."
-msgstr "가장 정확한 사람을 팔로우하세요. 목소리 큰 사람이 아니라."
+msgstr "목소리 큰 사람 말고, 가장 정확한 사람을 팔로우하세요."
 
 #: src/components/consumer-network/consumer-home.tsx:205
-msgid "Follow verified traders and trade in one tap."
+msgid "Follow verified traders and copy in one tap."
 msgstr "실거래 트레이더를 팔로우하고 원탭으로 카피하세요."
 
 #: src/components/consumer-network/network-product-previews.tsx:243
@@ -433,7 +433,7 @@ msgid "Fund with fiat. Skip gas and bridging. Trade across markets with one Smar
 msgstr "법정화폐로 입금하세요. 가스비도 브리지도 없이, 하나의 SmartX 잔고로 예측 시장과 다른 마켓을 함께 거래합니다."
 
 #: src/lib/waitlist/quiz-i18n.ts:23
-msgid "Give it more room before deciding."
+msgid "Give it room. Decide later."
 msgstr "결정하기 전에 여유를 더 준다."
 
 #: src/components/blog/blog-i18n.tsx:34
@@ -448,6 +448,10 @@ msgstr "직감"
 msgid "Have an invite code?"
 msgstr "초대 코드가 있나요?"
 
+#: src/lib/waitlist/quiz-i18n.ts:40
+msgid "Hear them out, keep my plan."
+msgstr "피드백은 적어두되 내 계획은 유지한다."
+
 #: src/components/consumer-network/consumer-header.tsx:51
 #: src/components/consumer-network/consumer-header.tsx:116
 #: src/components/site/site-header.tsx:48
@@ -457,7 +461,7 @@ msgstr "홈"
 
 #: src/components/waitlist/waitlist-experience.tsx:1465
 msgid "How do you trade<0/> when it gets <1>real?</1>"
-msgstr "마켓이 진짜가 되면<0/> 당신은 <1>어떻게 베팅하나요?</1>"
+msgstr "진짜 돈이 걸리면 <0/> 당신은 <1>어떻게 거래하나요?</1>"
 
 #: src/lib/waitlist/quiz-i18n.ts:41
 msgid "Ignore the noise and execute alone."
@@ -483,7 +487,7 @@ msgstr "수익"
 #: src/components/waitlist/waitlist-experience.tsx:397
 #: src/lib/waitlist/share-copy.ts:40
 msgid "Instinct"
-msgstr "후각"
+msgstr "감각"
 
 #: src/components/blog/blog-i18n.tsx:35
 msgid "Intelligence"
@@ -570,14 +574,18 @@ msgstr "이미지를 길게 눌러 저장하거나 복사하세요."
 msgid "Long press the image to save to your album."
 msgstr "이미지를 길게 눌러 앨범에 저장하세요."
 
+#: src/lib/waitlist/quiz-i18n.ts:31
+msgid "Look at the chart before I touch it."
+msgstr "포지션을 잡기 전에 차트를 확인한다."
+
 #: src/components/consumer-network/consumer-header.tsx:107
 #: src/components/site/site-header.tsx:114
 msgid "Mobile site navigation"
 msgstr "모바일 사이트 내비게이션"
 
 #: src/lib/waitlist/quiz-i18n.ts:35
-msgid "My close trading group."
-msgstr "가까운 매매 그룹."
+msgid "My inner circle."
+msgstr "나와 가까운 트레이딩 그룹"
 
 #: src/components/waitlist/waitlist-experience.tsx:1179
 #~ msgid "My SmartX trader type is {shareName}."
@@ -621,7 +629,7 @@ msgid "No invite needed"
 msgstr "초대 코드가 필요하지 않습니다"
 
 #: src/components/consumer-network/consumer-home.tsx:351
-msgid "No more scrolling through noise. SmartX learns what you trade and shows you the traders and markets that fit"
+msgid "No more scrolling through noise. SmartX learns what you trade and shows you the traders and markets that fit you."
 msgstr "노이즈를 스크롤하는 건 그만. SmartX가 당신이 자주 하는 마켓을 학습해, 맞는 트레이더와 마켓을 보여줍니다"
 
 #: src/lib/waitlist/quiz-i18n.ts:37
@@ -631,10 +639,6 @@ msgstr "아무도. 익절하고 다음으로 간다."
 #: src/components/waitlist/waitlist-experience.tsx:138
 msgid "No saved result is linked to this email. Take the test to create one."
 msgstr "이 이메일에 저장된 결과가 없습니다. 테스트를 완료하면 생성됩니다."
-
-#: src/lib/waitlist/quiz-i18n.ts:40
-msgid "Note the feedback but keep my plan."
-msgstr "피드백은 적어두되 내 계획은 유지한다."
 
 #: src/components/blog/blog-i18n.tsx:14
 msgid "Notes on product, markets, and the systems reshaping how people trade."
@@ -654,7 +658,7 @@ msgstr "마지막 단계"
 
 #: src/components/consumer-network/consumer-home.tsx:38
 msgid "One tap to trade"
-msgstr "원탭 카피"
+msgstr "원탭 거래"
 
 #: src/lib/waitlist/quiz-i18n.ts:36
 msgid "One trusted friend, maybe."
@@ -664,10 +668,6 @@ msgstr "믿을 만한 친구 한 명, 어쩌면."
 #: src/components/waitlist/waitlist-experience.tsx:1715
 msgid "Open"
 msgstr "열기"
-
-#: src/lib/waitlist/quiz-i18n.ts:32
-msgid "Open a small starter because I trust the source."
-msgstr "출처를 믿으니 소액으로 시작한다."
 
 #: src/components/consumer-network/consumer-header.tsx:83
 #: src/components/site/site-header.tsx:98
@@ -700,11 +700,11 @@ msgstr "유형 궁합"
 
 #: src/components/consumer-network/consumer-home.tsx:344
 msgid "Personalized for you"
-msgstr "자주 하는 마켓 기준으로"
+msgstr "당신에게 맞춰 골랐습니다"
 
 #: src/components/consumer-network/consumer-home.tsx:31
 msgid "Picked for you"
-msgstr "자주 하는 마켓에 맞춰 골라줍니다"
+msgstr "당신을 위한 픽"
 
 #: src/components/waitlist/waitlist-experience.tsx:139
 msgid "Please enter a valid email address."
@@ -733,7 +733,7 @@ msgstr "준비 중…"
 
 #: src/components/waitlist/waitlist-experience.tsx:1757
 msgid "Priority improves your score; rank updates against the live waitlist."
-msgstr "우선순위는 점수를 올리고, 순위는 실시간 웨이트리스트 기준으로 갱신됩니다."
+msgstr "우선순위 점수가 오르면 순위가 올라갑니다. 순위는 실시간 웨이트리스트 기준으로 갱신됩니다."
 
 #: src/components/blog/blog-i18n.tsx:36
 #: src/components/consumer-network/consumer-home.tsx:471
@@ -753,7 +753,7 @@ msgstr "질문 {0} / {1}"
 
 #: src/components/consumer-network/consumer-home.tsx:45
 msgid "Rank"
-msgstr "랭킹"
+msgstr "순위"
 
 #: src/components/blog/blog-i18n.tsx:15
 msgid "Read the dispatch"
@@ -762,10 +762,6 @@ msgstr "글 읽기"
 #: src/components/site/site-header.tsx:160
 msgid "Reading theme"
 msgstr "읽기 테마"
-
-#: src/lib/waitlist/quiz-i18n.ts:24
-msgid "Reduce the position according to plan."
-msgstr "계획대로 포지션을 줄인다."
 
 #: src/components/waitlist/waitlist-experience.tsx:154
 msgid "Required information is missing. Try again."
@@ -783,7 +779,7 @@ msgstr "코드 재전송 ({0})"
 #: src/components/waitlist/waitlist-experience.tsx:398
 #: src/lib/waitlist/share-copy.ts:41
 msgid "Resilience"
-msgstr "복원력"
+msgstr "회복력"
 
 #: src/app/not-found.tsx:29
 msgid "Return to SmartX"
@@ -798,7 +794,7 @@ msgid "Save your result."
 msgstr "결과를 저장하세요."
 
 #: src/lib/waitlist/quiz-i18n.ts:34
-msgid "Screenshot, group chat, X."
+msgid "Screenshot. Group chat. Then X."
 msgstr "스크린샷, 단톡, X."
 
 #: src/components/waitlist/waitlist-experience.tsx:1213
@@ -811,7 +807,7 @@ msgstr "코드 보내기"
 
 #: src/components/waitlist/waitlist-experience.tsx:149
 msgid "Service is busy. Try again in a moment."
-msgstr "서버가 바쁩니다. 잠시 후 다시 시도하세요."
+msgstr "일시적으로 혼잡합니다. 잠시 후 다시 시도하세요."
 
 #: src/lib/waitlist/quiz-i18n.ts:20
 msgid "Set my entry and wait."
@@ -823,7 +819,7 @@ msgstr "다시 공유"
 
 #: src/components/waitlist/waitlist-experience.tsx:1828
 msgid "Share image"
-msgstr "공유 이미지"
+msgstr "이미지 공유"
 
 #: src/components/waitlist/waitlist-experience.tsx:1740
 msgid "Share recorded"
@@ -857,7 +853,7 @@ msgstr "6자리 코드"
 
 #: src/components/consumer-network/network-product-previews.tsx:430
 msgid "Skip"
-msgstr "스킵"
+msgstr "건너뛰기"
 
 #: src/components/blog/blog-i18n.tsx:18
 msgid "Skip to article"
@@ -923,7 +919,7 @@ msgid "Square"
 msgstr "스퀘어"
 
 #: src/lib/waitlist/quiz-i18n.ts:19
-msgid "Start small now and add if it holds."
+msgid "Start small, add if it holds."
 msgstr "지금은 소액으로 시작하고, 버티면 추가한다."
 
 #: src/components/waitlist/waitlist-experience.tsx:1477
@@ -969,7 +965,7 @@ msgstr "저점매수 대장"
 
 #: src/lib/waitlist/persona.ts:117
 msgid "The limit order was perfect. Shame you two never met again."
-msgstr "지정가 주문은 완벽했다. 다만 너희 둘은 다시 만나지 못했지."
+msgstr "지정가 주문은 완벽했습니다. 다만 그 가격은 다시 오지 않았습니다."
 
 #: src/lib/waitlist/persona.ts:116
 msgid "The Limit Sniper"
@@ -1005,12 +1001,12 @@ msgstr "리스크 수도승"
 
 #: src/lib/waitlist/persona.ts:96
 msgid "The Send-It Strategist"
-msgstr "콜 참모"
+msgstr "돌격 참모"
 
 #: src/components/consumer-network/consumer-home.tsx:200
 #: src/lib/waitlist/share-copy.ts:44
 msgid "The social trading app for memes, perps, stocks and prediction markets."
-msgstr "예측 시장 중심의 소셜 트레이딩 앱. 밈, 무기한, 주식도 함께."
+msgstr "밈, 선물, 주식, 예측 시장을 위한 소셜 트레이딩 앱"
 
 #: src/components/consumer-network/consumer-home.tsx:286
 msgid "The trader content economy"
@@ -1047,15 +1043,19 @@ msgstr "요청이 너무 많습니다. 나중에 다시 시도하세요."
 
 #: src/components/consumer-network/consumer-home.tsx:39
 msgid "Trade as smoothly as shopping."
-msgstr "쇼핑하듯 간편하게 베팅하세요."
+msgstr "쇼핑하듯 간편하게 거래하세요."
 
 #: src/components/consumer-network/consumer-home.tsx:195
 msgid "Trade your edge."
-msgstr "당신의 판단으로 거래하세요."
+msgstr "당신의 엣지를 거래하세요."
 
 #: src/components/waitlist/waitlist-experience.tsx:763
 #~ msgid "Trader type"
 #~ msgstr "거래 유형"
+
+#: src/lib/waitlist/quiz-i18n.ts:24
+msgid "Trim it. That was always the plan."
+msgstr "계획대로 포지션을 줄인다."
 
 #: src/components/consumer-network/consumer-home.tsx:289
 msgid "Turn influence into income"
@@ -1092,15 +1092,11 @@ msgstr "인증 계정"
 
 #: src/components/consumer-network/network-product-previews.tsx:12
 msgid "Verified profile"
-msgstr "실거래 검증"
+msgstr "검증된 프로필"
 
 #: src/components/consumer-network/consumer-home.tsx:24
 msgid "Verified, not claimed"
 msgstr "실거래 검증, 자칭이 아님"
-
-#: src/lib/waitlist/quiz-i18n.ts:30
-msgid "Verify it with onchain data and market structure."
-msgstr "온체인 데이터와 시장 구조로 검증한다."
 
 #: src/components/waitlist/waitlist-experience.tsx:1432
 msgid "View my result"
@@ -1122,12 +1118,16 @@ msgid "Waitlist rank"
 msgstr "웨이트리스트 순위"
 
 #: src/lib/waitlist/quiz-i18n.ts:26
-msgid "Wallet flows, data, and a clear invalidation level."
-msgstr "지갑 자금 흐름, 데이터, 그리고 명확한 무효화 레벨."
+msgid "Wallet flows, hard data, a clear invalidation level."
+msgstr "지갑 자금 흐름, 데이터, 그리고 명확한 손절 레벨."
 
 #: src/components/waitlist/waitlist-experience.tsx:1614
 msgid "We’ll use this to save your result and send waitlist updates."
 msgstr "결과 저장과 웨이트리스트 소식 안내에 사용됩니다."
+
+#: src/lib/waitlist/quiz-i18n.ts:11
+msgid "What actually convinces you to enter a trade?"
+msgstr "진입 전에 가장 설득력 있는 근거는?"
 
 #: src/components/consumer-network/network-product-previews.tsx:306
 msgid "Yes"
@@ -1138,8 +1138,8 @@ msgid "You can chart every line except the one marking enough exposure."
 msgstr "모든 선은 그릴 수 있지만, 익스포저의 한계선만은 못 그린다."
 
 #: src/lib/waitlist/quiz-i18n.ts:13
-msgid "You catch a 10×. Who hears first?"
-msgstr "10배를 잡았습니다. 누가 먼저 듣습니까?"
+msgid "You hit a 10x. Who finds out first?"
+msgstr "10배를 잡았습니다. 누가 가장 먼저 소식을 듣게 될까요?"
 
 #: src/lib/waitlist/persona.ts:113
 msgid "You know everyone’s position except, occasionally, your own."
@@ -1151,14 +1151,14 @@ msgstr "저점 매수가 아니라, 하락 추세에 시범을 보여주는 중.
 
 #: src/lib/waitlist/persona.ts:89
 msgid "You’re not trading. You’re funding the ecosystem."
-msgstr "당신은 거래하는 게 아니라 생태계에 자금을 대고 있다."
+msgstr "당신은 거래하는 게 아니라 생태계에 자금을 대고 있습니다."
 
 #: src/components/waitlist/waitlist-experience.tsx:1600
 msgid "you@domain.com"
 msgstr "이메일을 입력하세요"
 
 #: src/lib/waitlist/quiz-i18n.ts:14
-msgid "Your group chat strongly disagrees with your trade. What do you do?"
+msgid "Your group chat hates your trade. Now what?"
 msgstr "단톡이 당신의 거래에 강하게 반대합니다. 어떻게 하시겠습니까?"
 
 #: src/components/waitlist/waitlist-experience.tsx:1787
@@ -1166,12 +1166,12 @@ msgid "Your invitation link"
 msgstr "내 초대 링크"
 
 #: src/components/waitlist/waitlist-experience.tsx:1801
-msgid "Your invite link"
-msgstr "내 초대 링크"
+msgid "Your invite code"
+msgstr "내 초대 코드"
 
 #: src/lib/waitlist/quiz-i18n.ts:10
-msgid "Your position moves 20% against you. What happens next?"
-msgstr "포지션이 20% 불리하게 움직였습니다. 다음은?"
+msgid "Your position is down 20%. What happens next?"
+msgstr "포지션이 20% 가량 반대로 움직였습니다. 다음은?"
 
 #: src/components/waitlist/waitlist-experience.tsx:1584
 msgid "Your result is ready"

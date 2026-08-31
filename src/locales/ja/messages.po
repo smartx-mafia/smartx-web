@@ -49,29 +49,29 @@ msgid "+500 priority"
 msgstr "+500 優先度"
 
 #: src/components/consumer-network/consumer-home.tsx:209
-msgid "<0>The social trading app for memes, perps,</0><1>stocks and prediction markets. Follow</1><2>verified traders and trade in one tap.</2>"
+msgid "<0>The social trading app for memes, perps,</0><1>stocks and prediction markets. Follow</1><2>verified traders and copy in one tap.</2>"
 msgstr "<0>予測市場が中心のソーシャル取引。</0><1>ミーム、無期限、株式にも対応。</1><2>実取引トレーダーをフォローして、ワンタップでコピー。</2>"
 
 #: src/components/consumer-network/network-product-previews.tsx:182
 msgid "3 traders you follow liked this"
-msgstr "フォロー中のトレーダー3人がこのマーケットをいいねしました"
+msgstr "フォロー中のトレーダー3人がこの投稿にいいねしました"
 
 #: src/components/consumer-network/network-product-previews.tsx:301
-msgid "30d 68% win · 282 trades"
+msgid "30D 68% win · 282 trades"
 msgstr "30日 勝率68% · 282回"
 
 #: src/components/consumer-network/network-product-previews.tsx:285
-msgid "30d 72% win · 982 trades"
+msgid "30D 72% win · 982 trades"
 msgstr "30日 勝率72% · 982回"
 
 #: src/components/consumer-network/network-product-previews.tsx:84
 #: src/components/consumer-network/network-product-previews.tsx:335
-msgid "30D P&L"
+msgid "30D PnL"
 msgstr "30日損益"
 
 #: src/app/not-found.tsx:20
 msgid "404 / SIGNAL LOST"
-msgstr "404 / マーケットロスト"
+msgstr "404 / シグナルロスト"
 
 #. placeholder {0}: i18n._(firstSignal.side)
 #. placeholder {1}: firstSignal.current
@@ -79,8 +79,12 @@ msgstr "404 / マーケットロスト"
 msgid "5 USDC · {0} at {1}"
 msgstr "5 USDC · {0} @ {1}"
 
+#: src/lib/waitlist/quiz-i18n.ts:27
+msgid "A clean chart and price confirmation."
+msgstr "きれいなチャートと価格の確認。"
+
 #: src/lib/waitlist/quiz-i18n.ts:9
-msgid "A coin you do not own is up 40%. What do you do?"
+msgid "A coin you don't own is up 40%. What's your move?"
 msgstr "持っていないコインが40%上昇した。どうする？"
 
 #. placeholder {0}: localizedPersonaName(referralOutcome.persona)
@@ -90,11 +94,15 @@ msgstr "友達の取引タイプは<0>{0}。</0>"
 
 #: src/components/waitlist/waitlist-experience.tsx:1408
 msgid "A result was shared with you"
-msgstr "結果がシェアされました"
+msgstr "友達から結果がシェアされました"
+
+#: src/lib/waitlist/quiz-i18n.ts:32
+msgid "A small starter. I trust them."
+msgstr "まず試し玉。信じてるから。"
 
 #: src/lib/waitlist/quiz-i18n.ts:29
-msgid "A strong thesis that simply feels early."
-msgstr "まだ早いと感じる強い仮説。"
+msgid "A thesis that just feels early."
+msgstr "まだ早いと感じるだけの仮説。"
 
 #: src/components/consumer-network/network-product-previews.tsx:165
 #: src/components/consumer-network/network-product-previews.tsx:216
@@ -102,16 +110,12 @@ msgid "A trader you follow liked this"
 msgstr "フォロー中のトレーダーがこのマーケットをいいねしました"
 
 #: src/lib/waitlist/quiz-i18n.ts:12
-msgid "A trader you trust posts a high-conviction call. What do you do?"
-msgstr "信頼するトレーダーが高確信のコールを出した。どうする？"
+msgid "A trader you trust posts a high-conviction call. Your move?"
+msgstr "信頼するトレーダーが自信満々のコールを出した。さあどうする？"
 
 #: src/components/consumer-network/network-product-previews.tsx:199
 msgid "A verified trader liked this"
 msgstr "実取引トレーダーがこのマーケットをいいねしました"
-
-#: src/lib/waitlist/quiz-i18n.ts:22
-msgid "Add immediately. The market is improving my entry."
-msgstr "すぐ足す。市場がエントリーを良くしてくれている。"
 
 #: src/components/waitlist/waitlist-experience.tsx:1584
 msgid "Already tested?"
@@ -126,6 +130,10 @@ msgstr "テスト済み？結果を見る"
 #: src/components/site/site-footer.tsx:74
 msgid "App"
 msgstr "アプリ"
+
+#: src/lib/waitlist/quiz-i18n.ts:38
+msgid "Argue it out, and adjust if they have a point."
+msgstr "言い合ってみて、一理あれば修正する。"
 
 #: src/components/blog/article-contents.tsx:67
 msgid "Article contents"
@@ -157,11 +165,7 @@ msgstr "出資"
 
 #: src/components/consumer-network/consumer-home.tsx:422
 msgid "Be early"
-msgstr "先に入る"
-
-#: src/lib/waitlist/quiz-i18n.ts:11
-msgid "Before entering a trade, what convinces you most?"
-msgstr "エントリー前、いちばん信じるものは？"
+msgstr "いち早く参加"
 
 #: src/components/waitlist/waitlist-experience.tsx:402
 msgid "Best match"
@@ -184,8 +188,12 @@ msgstr "ブログ"
 msgid "Both steps are required to continue."
 msgstr "続行には両方のステップが必要です。"
 
+#: src/lib/waitlist/quiz-i18n.ts:22
+msgid "Buy more. The market just improved my entry."
+msgstr "買い増し。市場がエントリーを安くしてくれた。"
+
 #: src/lib/waitlist/quiz-i18n.ts:18
-msgid "Buy now. Momentum rarely waits."
+msgid "Buy now. Momentum doesn't wait."
 msgstr "今すぐ買う。モメンタムは待ってくれない。"
 
 #: src/components/blog/blog-i18n.tsx:32
@@ -196,13 +204,9 @@ msgstr "キャンペーン"
 msgid "Change Email"
 msgstr "メールアドレスを変更"
 
-#: src/lib/waitlist/quiz-i18n.ts:27
-msgid "Chart structure and price confirmation."
-msgstr "チャート構造と価格の確認。"
-
-#: src/lib/waitlist/quiz-i18n.ts:31
-msgid "Check the chart before taking a position."
-msgstr "ポジションを取る前にチャートを見る。"
+#: src/lib/waitlist/quiz-i18n.ts:30
+msgid "Check it against onchain data first."
+msgstr "まずオンチェーンデータで裏を取る。"
 
 #: src/components/waitlist/waitlist-experience.tsx:1632
 msgid "Check your inbox"
@@ -250,7 +254,7 @@ msgid "Copied"
 msgstr "コピーしました"
 
 #: src/components/waitlist/waitlist-experience.tsx:1212
-msgid "Copied Success!"
+msgid "Copied!"
 msgstr "コピーしました"
 
 #: src/components/consumer-network/network-product-previews.tsx:417
@@ -278,10 +282,6 @@ msgstr "テストを読み込めませんでした。"
 #: src/lib/waitlist/persona.ts:167
 msgid "DATA"
 msgstr "データ"
-
-#: src/lib/waitlist/quiz-i18n.ts:38
-msgid "Debate it with the group and adjust if they have a point."
-msgstr "グループと議論し、筋が通れば修正する。"
 
 #: src/lib/waitlist/persona.ts:164
 msgid "DEGEN"
@@ -361,11 +361,11 @@ msgstr "すべての戦績は、実際のポジション・損益・約定から
 
 #: src/components/consumer-network/consumer-home.tsx:238
 msgid "Every trader on SmartX is verified by real trades — and your feed is shaped by how you trade."
-msgstr "SmartX のトレーダーは全員、実取引で検証済み。フィードはよく見るマーケットに合わせて形づくられます。"
+msgstr "SmartX のトレーダーは全員、実取引で検証済み。フィードはあなたの取引スタイルに合わせて形づくられます。"
 
 #: src/lib/waitlist/quiz-i18n.ts:25
 msgid "Exit at invalidation. No debate."
-msgstr "無効化で撤退。議論なし。"
+msgstr "シナリオが崩れたら即撤退。問答無用。"
 
 #: src/components/waitlist/waitlist-experience.tsx:147
 msgid "Failed to send verification code"
@@ -373,7 +373,7 @@ msgstr "認証コードを送信できませんでした"
 
 #: src/components/consumer-network/consumer-home.tsx:402
 msgid "Fiat in · Markets open · Chains invisible"
-msgstr "法定通貨で入金 · マーケットはそのまま · チェーンは意識せず"
+msgstr "法定通貨で入金 · すべての市場へ · チェーンは意識せず"
 
 #: src/components/waitlist/waitlist-experience.tsx:1440
 #: src/components/waitlist/waitlist-experience.tsx:1445
@@ -410,10 +410,10 @@ msgstr "X で SmartX をフォロー"
 
 #: src/components/consumer-network/consumer-home.tsx:235
 msgid "Follow the best. Not the loudest."
-msgstr "声の大きい人ではなく、いちばん精度の高い人をフォローしよう。"
+msgstr "いちばん上手い人をフォローしよう。声の大きい人ではなく。"
 
 #: src/components/consumer-network/consumer-home.tsx:205
-msgid "Follow verified traders and trade in one tap."
+msgid "Follow verified traders and copy in one tap."
 msgstr "実取引トレーダーをフォローして、ワンタップでコピー。"
 
 #: src/components/consumer-network/network-product-previews.tsx:243
@@ -433,8 +433,8 @@ msgid "Fund with fiat. Skip gas and bridging. Trade across markets with one Smar
 msgstr "法定通貨で入金。ガス代もブリッジも不要。ひとつの SmartX 残高で、予測市場もその他の市場も取引。"
 
 #: src/lib/waitlist/quiz-i18n.ts:23
-msgid "Give it more room before deciding."
-msgstr "判断する前にもう少し余地を見る。"
+msgid "Give it room. Decide later."
+msgstr "もう少し泳がせる。決めるのはそれから。"
 
 #: src/components/blog/blog-i18n.tsx:34
 msgid "Guide"
@@ -448,6 +448,10 @@ msgstr "直感"
 msgid "Have an invite code?"
 msgstr "招待コードをお持ちですか？"
 
+#: src/lib/waitlist/quiz-i18n.ts:40
+msgid "Hear them out, keep my plan."
+msgstr "聞くだけ聞いて、計画は変えない。"
+
 #: src/components/consumer-network/consumer-header.tsx:51
 #: src/components/consumer-network/consumer-header.tsx:116
 #: src/components/site/site-header.tsx:48
@@ -457,7 +461,7 @@ msgstr "ホーム"
 
 #: src/components/waitlist/waitlist-experience.tsx:1465
 msgid "How do you trade<0/> when it gets <1>real?</1>"
-msgstr "マーケットが本番になったとき、<0/>あなたは<1>どう張る？</1>"
+msgstr "本気の勝負になったとき、<0/>あなたは<1>どう張る？</1>"
 
 #: src/lib/waitlist/quiz-i18n.ts:41
 msgid "Ignore the noise and execute alone."
@@ -512,7 +516,7 @@ msgstr "Telegram に参加"
 
 #: src/components/waitlist/waitlist-experience.tsx:1696
 msgid "Join the SmartX community and follow product updates before your trader type is revealed."
-msgstr "取引タイプの公開前に、SmartX コミュニティに参加してプロダクト情報をフォローしてください。"
+msgstr "取引タイプが明かされる前に、SmartX コミュニティに参加してプロダクト情報をフォローしてください。"
 
 #: src/components/blog/article-cta.tsx:32
 #: src/components/consumer-network/consumer-home.tsx:121
@@ -570,14 +574,18 @@ msgstr "画像を長押しして保存またはコピーできます。"
 msgid "Long press the image to save to your album."
 msgstr "画像を長押ししてアルバムに保存できます。"
 
+#: src/lib/waitlist/quiz-i18n.ts:31
+msgid "Look at the chart before I touch it."
+msgstr "触る前に、まずチャートを見る。"
+
 #: src/components/consumer-network/consumer-header.tsx:107
 #: src/components/site/site-header.tsx:114
 msgid "Mobile site navigation"
 msgstr "モバイルサイトナビゲーション"
 
 #: src/lib/waitlist/quiz-i18n.ts:35
-msgid "My close trading group."
-msgstr "近いトレード仲間。"
+msgid "My inner circle."
+msgstr "身内のトレード仲間だけ。"
 
 #: src/components/waitlist/waitlist-experience.tsx:1179
 #~ msgid "My SmartX trader type is {shareName}."
@@ -621,8 +629,8 @@ msgid "No invite needed"
 msgstr "招待コードは不要です"
 
 #: src/components/consumer-network/consumer-home.tsx:351
-msgid "No more scrolling through noise. SmartX learns what you trade and shows you the traders and markets that fit"
-msgstr "ノイズをスクロールするのはもう終わり。SmartX がよく見るマーケットを学習し、合うトレーダーと市場を届けます"
+msgid "No more scrolling through noise. SmartX learns what you trade and shows you the traders and markets that fit you."
+msgstr "ノイズをスクロールするのはもう終わり。SmartX があなたの取引を学習し、合うトレーダーとマーケットを届けます。"
 
 #: src/lib/waitlist/quiz-i18n.ts:37
 msgid "No one. I take profit and keep moving."
@@ -631,10 +639,6 @@ msgstr "誰にも言わない。利確して次へ。"
 #: src/components/waitlist/waitlist-experience.tsx:138
 msgid "No saved result is linked to this email. Take the test to create one."
 msgstr "このメールに保存された結果はありません。テストを受けると作成されます。"
-
-#: src/lib/waitlist/quiz-i18n.ts:40
-msgid "Note the feedback but keep my plan."
-msgstr "意見はメモして、自分の計画は守る。"
 
 #: src/components/blog/blog-i18n.tsx:14
 msgid "Notes on product, markets, and the systems reshaping how people trade."
@@ -664,10 +668,6 @@ msgstr "信頼できる友人ひとり、たぶん。"
 #: src/components/waitlist/waitlist-experience.tsx:1715
 msgid "Open"
 msgstr "開く"
-
-#: src/lib/waitlist/quiz-i18n.ts:32
-msgid "Open a small starter because I trust the source."
-msgstr "ソースを信じているので小さく入る。"
 
 #: src/components/consumer-network/consumer-header.tsx:83
 #: src/components/site/site-header.tsx:98
@@ -700,11 +700,11 @@ msgstr "タイプ相性"
 
 #: src/components/consumer-network/consumer-home.tsx:344
 msgid "Personalized for you"
-msgstr "よく見るマーケットに合わせて"
+msgstr "あなた仕様に。"
 
 #: src/components/consumer-network/consumer-home.tsx:31
 msgid "Picked for you"
-msgstr "あなたのマーケット向け"
+msgstr "あなた向けに厳選。"
 
 #: src/components/waitlist/waitlist-experience.tsx:139
 msgid "Please enter a valid email address."
@@ -733,7 +733,7 @@ msgstr "準備中…"
 
 #: src/components/waitlist/waitlist-experience.tsx:1757
 msgid "Priority improves your score; rank updates against the live waitlist."
-msgstr "優先度はスコアを押し上げ、順位はリアルタイムのウェイトリストに対して更新されます。"
+msgstr "優先度がスコアを押し上げ、順位はウェイトリスト全体の中でリアルタイムに更新されます。"
 
 #: src/components/blog/blog-i18n.tsx:36
 #: src/components/consumer-network/consumer-home.tsx:471
@@ -761,11 +761,7 @@ msgstr "記事を読む"
 
 #: src/components/site/site-header.tsx:160
 msgid "Reading theme"
-msgstr "リーディングテーマ"
-
-#: src/lib/waitlist/quiz-i18n.ts:24
-msgid "Reduce the position according to plan."
-msgstr "計画どおりポジションを減らす。"
+msgstr "表示テーマ"
 
 #: src/components/waitlist/waitlist-experience.tsx:154
 msgid "Required information is missing. Try again."
@@ -798,12 +794,12 @@ msgid "Save your result."
 msgstr "結果を保存しよう。"
 
 #: src/lib/waitlist/quiz-i18n.ts:34
-msgid "Screenshot, group chat, X."
-msgstr "スクショ、グループ、X。"
+msgid "Screenshot. Group chat. Then X."
+msgstr "スクショ。グループ。それからX。"
 
 #: src/components/waitlist/waitlist-experience.tsx:1213
 msgid "Selection successful"
-msgstr "共有しました"
+msgstr "シェアしました"
 
 #: src/components/waitlist/waitlist-experience.tsx:1610
 msgid "Send code"
@@ -923,8 +919,8 @@ msgid "Square"
 msgstr "スクエア"
 
 #: src/lib/waitlist/quiz-i18n.ts:19
-msgid "Start small now and add if it holds."
-msgstr "まずは小さく入り、持ち堪えたら加える。"
+msgid "Start small, add if it holds."
+msgstr "小さく入って、持てば買い増し。"
 
 #: src/components/waitlist/waitlist-experience.tsx:1477
 msgid "Start the test"
@@ -948,7 +944,7 @@ msgstr "オールイン仙人"
 
 #: src/lib/waitlist/persona.ts:100
 msgid "The Candle Prophet"
-msgstr "ローソク足教祖"
+msgstr "ローソク足占い師"
 
 #: src/components/waitlist/waitlist-experience.tsx:1678
 #~ msgid "The code expires in {0}."
@@ -961,7 +957,7 @@ msgstr "ローソク足教祖"
 #: src/components/blog/article-cta.tsx:23
 #: src/components/consumer-network/consumer-home.tsx:425
 msgid "The Consumer Trading Network is taking shape."
-msgstr "個人向けトレーディングネットワークが形になりつつあります。"
+msgstr "The Consumer Trading Network が形になりつつあります。"
 
 #: src/lib/waitlist/persona.ts:104
 msgid "The Dip Ringleader"
@@ -977,7 +973,7 @@ msgstr "指値スナイパー"
 
 #: src/lib/waitlist/persona.ts:88
 msgid "The Liquidity Donor"
-msgstr "流動性ドナー"
+msgstr "散財の神様"
 
 #: src/lib/waitlist/quiz-i18n.ts:28
 msgid "The market's mood and momentum."
@@ -1001,7 +997,7 @@ msgstr "質問を取得できませんでした。接続を確認して再試行
 
 #: src/lib/waitlist/persona.ts:120
 msgid "The Risk Monk"
-msgstr "リスク僧侶"
+msgstr "リスクの修行僧"
 
 #: src/lib/waitlist/persona.ts:96
 msgid "The Send-It Strategist"
@@ -1051,11 +1047,15 @@ msgstr "買い物するように、そのまま張れる。"
 
 #: src/components/consumer-network/consumer-home.tsx:195
 msgid "Trade your edge."
-msgstr "見立てを取引しよう。"
+msgstr "自分のエッジで張ろう。"
 
 #: src/components/waitlist/waitlist-experience.tsx:763
 #~ msgid "Trader type"
 #~ msgstr "取引タイプ"
+
+#: src/lib/waitlist/quiz-i18n.ts:24
+msgid "Trim it. That was always the plan."
+msgstr "減らす。最初からそういう計画だ。"
 
 #: src/components/consumer-network/consumer-home.tsx:289
 msgid "Turn influence into income"
@@ -1098,10 +1098,6 @@ msgstr "実取引で検証"
 msgid "Verified, not claimed"
 msgstr "自称ではなく、実取引で検証"
 
-#: src/lib/waitlist/quiz-i18n.ts:30
-msgid "Verify it with onchain data and market structure."
-msgstr "オンチェーンデータと市場構造で検証する。"
-
 #: src/components/waitlist/waitlist-experience.tsx:1432
 msgid "View my result"
 msgstr "自分の結果を見る"
@@ -1122,12 +1118,16 @@ msgid "Waitlist rank"
 msgstr "ウェイトリスト順位"
 
 #: src/lib/waitlist/quiz-i18n.ts:26
-msgid "Wallet flows, data, and a clear invalidation level."
-msgstr "ウォレット資金流、データ、明確な無効化ライン。"
+msgid "Wallet flows, hard data, a clear invalidation level."
+msgstr "資金フロー、確かなデータ、明確な撤退ライン。"
 
 #: src/components/waitlist/waitlist-experience.tsx:1614
 msgid "We’ll use this to save your result and send waitlist updates."
 msgstr "結果の保存とウェイトリストの最新情報のお知らせに使用します。"
+
+#: src/lib/waitlist/quiz-i18n.ts:11
+msgid "What actually convinces you to enter a trade?"
+msgstr "実際のところ、何があればエントリーする？"
 
 #: src/components/consumer-network/network-product-previews.tsx:306
 msgid "Yes"
@@ -1138,7 +1138,7 @@ msgid "You can chart every line except the one marking enough exposure."
 msgstr "どんなラインも引けるのに、ポジションの引き際だけは引けない。"
 
 #: src/lib/waitlist/quiz-i18n.ts:13
-msgid "You catch a 10×. Who hears first?"
+msgid "You hit a 10x. Who finds out first?"
 msgstr "10倍を掴んだ。誰が最初に知る？"
 
 #: src/lib/waitlist/persona.ts:113
@@ -1158,20 +1158,20 @@ msgid "you@domain.com"
 msgstr "メールアドレスを入力"
 
 #: src/lib/waitlist/quiz-i18n.ts:14
-msgid "Your group chat strongly disagrees with your trade. What do you do?"
-msgstr "グループチャットがあなたのトレードに強く反対している。どうする？"
+msgid "Your group chat hates your trade. Now what?"
+msgstr "グループチャットが総叩き。さあ、どうする？"
 
 #: src/components/waitlist/waitlist-experience.tsx:1787
 msgid "Your invitation link"
 msgstr "あなたの招待リンク"
 
 #: src/components/waitlist/waitlist-experience.tsx:1801
-msgid "Your invite link"
-msgstr "あなたの招待リンク"
+msgid "Your invite code"
+msgstr "あなたの招待コード"
 
 #: src/lib/waitlist/quiz-i18n.ts:10
-msgid "Your position moves 20% against you. What happens next?"
-msgstr "ポジションが20%逆行した。次に何をする？"
+msgid "Your position is down 20%. What happens next?"
+msgstr "ポジションが20％マイナス。次はどうする？"
 
 #: src/components/waitlist/waitlist-experience.tsx:1584
 msgid "Your result is ready"

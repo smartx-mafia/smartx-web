@@ -13,7 +13,7 @@ import {
 
 const title = "SmartX | Trade your edge";
 const description =
-  "The social trading app for memes, perps, stocks and prediction markets. Follow verified traders and trade in one tap.";
+  "The social trading app for memes, perps, stocks and prediction markets. Follow verified traders and copy in one tap.";
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [

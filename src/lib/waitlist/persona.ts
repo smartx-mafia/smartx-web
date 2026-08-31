@@ -20,7 +20,7 @@ import type {
 
 export const PERSONAS: Record<string, Persona> = {
   "DEGEN|GUT|PACK": {
-    name: "The Liquidity Donor", cn: "送钱者", code: "APE", mark: "LQD",
+    name: "The Liquidity Donor", cn: "散财童子", code: "APE", mark: "LQD",
     roast: "You’re not trading. You’re funding the ecosystem.",
     artSrc: "/assets/waitlist/personas/ops-meme-v1/lqd-liquidity-donor.png",
     artAlt: "The Liquidity Donor handing cash to a rising candlestick market",
@@ -38,13 +38,13 @@ export const PERSONAS: Record<string, Persona> = {
     artAlt: "The Send-It Strategist directing followers from a chart-covered strategy table",
   },
   "DEGEN|DATA|LONE": {
-    name: "The Candle Prophet", cn: "K线教主", code: "FOX", mark: "CND",
+    name: "The Candle Prophet", cn: "画线半仙", code: "FOX", mark: "CND",
     roast: "You can chart every line except the one marking enough exposure.",
     artSrc: "/assets/waitlist/personas/ops-meme-v1/cnd-candle-prophet.png",
     artAlt: "The Candle Prophet explaining charts beside an oversized position lever",
   },
   "SNIPER|GUT|PACK": {
-    name: "The Dip Ringleader", cn: "抄底带头大哥", code: "TURTLE", mark: "DIP",
+    name: "The Dip Ringleader", cn: "接刀掌门", code: "TURTLE", mark: "DIP",
     roast: "You’re not buying the dip. You’re giving the downtrend a demo.",
     artSrc: "/assets/waitlist/personas/ops-meme-v1/dip-dip-ringleader.png",
     artAlt: "The Dip Ringleader leading followers down a falling candlestick chart",
@@ -56,19 +56,19 @@ export const PERSONAS: Record<string, Persona> = {
     artAlt: "The Vibes Doctor listening to a candlestick chart with a stethoscope",
   },
   "SNIPER|DATA|PACK": {
-    name: "The Onchain Paparazzi", cn: "链上侦探", code: "WHALE", mark: "CHN",
+    name: "The Onchain Paparazzi", cn: "链上狗仔", code: "WHALE", mark: "CHN",
     roast: "You know everyone’s position except, occasionally, your own.",
     artSrc: "/assets/waitlist/personas/ops-meme-v1/chn-onchain-detective.png",
     artAlt: "The Onchain Paparazzi tracing wallets while ignoring its own losing trade",
   },
   "SNIPER|DATA|LONE": {
-    name: "The Limit Sniper", cn: "潜伏狙击手", code: "CAT", mark: "LMT",
+    name: "The Limit Sniper", cn: "挂单钉子户", code: "CAT", mark: "LMT",
     roast: "The limit order was perfect. Shame you two never met again.",
     artSrc: "/assets/waitlist/personas/ops-meme-v1/lmt-limit-sniper.png",
     artAlt: "The Limit Sniper watching price turn just before reaching an entry line",
   },
   RSK: {
-    name: "The Risk Monk", cn: "风控大师", code: "OWL", mark: "RSK",
+    name: "The Risk Monk", cn: "老阴阳人", code: "OWL", mark: "RSK",
     roast: "They study how to double once. You study how to stay in the game.",
     artSrc: "/assets/waitlist/personas/ops-meme-v1/rsk-risk-monk.png",
     artAlt: "The Risk Monk meditating safely inside a shield during market chaos",

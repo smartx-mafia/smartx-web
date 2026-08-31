@@ -81,7 +81,7 @@ function LeaderboardPreview() {
                 <strong>{trader.pnl}</strong>
               )}
               <small>
-                <Trans>30D P&L</Trans>
+                <Trans>30D PnL</Trans>
               </small>
             </span>
           </article>
@@ -282,7 +282,7 @@ const tradeSignals: readonly SignalCardData[] = [
     id: "fed",
     trader: "North Index",
     avatar: `${PRODUCT_ASSET_ROOT}/avatar-quarterty.png`,
-    traderMeta: msg`30d 72% win · 982 trades`,
+    traderMeta: msg`30D 72% win · 982 trades`,
     traderPnl: "+$220K",
     marketImage: `${PRODUCT_ASSET_ROOT}/market-fed.png`,
     marketTitle: "Fed Decision in September?",
@@ -298,7 +298,7 @@ const tradeSignals: readonly SignalCardData[] = [
     id: "bitcoin",
     trader: "Clear Signal",
     avatar: `${PRODUCT_ASSET_ROOT}/avatar-rowdy.png`,
-    traderMeta: msg`30d 68% win · 282 trades`,
+    traderMeta: msg`30D 68% win · 282 trades`,
     traderPnl: "+$128.4K",
     marketImage: `${PRODUCT_ASSET_ROOT}/market-bitcoin.svg`,
     marketTitle: "Will Bitcoin reach $150K before 2027?",
@@ -332,7 +332,7 @@ function SignalCard({ signal }: { signal: SignalCardData }) {
         <span className={styles.tradeSignalPnl}>
           <strong>{signal.traderPnl}</strong>
           <small>
-            <Trans>30D P&L</Trans>
+            <Trans>30D PnL</Trans>
           </small>
         </span>
       </header>
