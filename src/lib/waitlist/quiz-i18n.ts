@@ -50,11 +50,11 @@ const QUIZ_OPTION_BY_TEXT: Record<string, MessageDescriptor> = Object.fromEntrie
 );
 
 export function localizedQuestionPrompt(question: Pick<QuizQuestion, "questionId" | "prompt">) {
-  const descriptor = QUIZ_PROMPT_BY_TEXT[question.prompt];
+  const descriptor = QUIZ_PROMPT_BY_ID[question.questionId] ?? QUIZ_PROMPT_BY_TEXT[question.prompt];
   return descriptor ? i18n._(descriptor) : question.prompt;
 }
 
 export function localizedOptionLabel(option: Pick<QuizOption, "optionId" | "label">) {
-  const descriptor = QUIZ_OPTION_BY_TEXT[option.label];
+  const descriptor = QUIZ_OPTION_BY_ID[option.optionId] ?? QUIZ_OPTION_BY_TEXT[option.label];
   return descriptor ? i18n._(descriptor) : option.label;
 }
