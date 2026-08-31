@@ -35,6 +35,20 @@ export function resolveWaitlistAssetUrl(url: string) {
   return url;
 }
 
+/** 给资源 URL 加上时间戳，避开 CDN 对同一地址的旧缓存。 */
+export function withCacheBuster(url: string, timestamp = Date.now()) {
+  if (!url || url.startsWith("data:")) return url;
+  const stamp = String(timestamp);
+  const absolute = /^https?:\/\//i.test(url);
+  try {
+    const parsed = absolute ? new URL(url) : new URL(url, "https://smartx.io");
+    parsed.searchParams.set("t", stamp);
+    return absolute ? parsed.toString() : `${parsed.pathname}${parsed.search}${parsed.hash}`;
+  } catch {
+    return `${url}${url.includes("?") ? "&" : "?"}t=${encodeURIComponent(stamp)}`;
+  }
+}
+
 async function waitlistRequest<T>(
   path: string,
   options: {
