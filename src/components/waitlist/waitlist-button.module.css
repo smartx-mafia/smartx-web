@@ -2,10 +2,6 @@
   position: relative;
 }
 
-.host[aria-busy="true"] {
-  cursor: progress;
-}
-
 .icon {
   position: absolute;
   inset: 0;
