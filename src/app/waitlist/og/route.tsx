@@ -7,9 +7,9 @@ import type { NextRequest } from "next/server";
 import { localeFromParam } from "@/lingui";
 import type { AppLocale } from "@/lingui";
 import { SMARTX_DEFAULT_SOCIAL_IMAGE_PATH } from "@/lib/site-metadata";
-import { resolveWaitlistAssetUrl, withCacheBuster } from "@/lib/waitlist/api";
-import { loadInviterShareCard } from "@/lib/waitlist/public-share";
+import { normalizeInviteCode } from "@/lib/waitlist/api";
 import { shareOgCopy } from "@/lib/waitlist/share-copy";
+import { decodeShareResult, sharePersonaImageUrl } from "@/lib/waitlist/share-result";
 
 export const dynamic = "force-dynamic";
 
@@ -91,33 +91,47 @@ function loadAssets() {
   return assetsPromise;
 }
 
-function absoluteArtUrl(preferred: string | null | undefined, fallback: string, origin: string) {
-  const resolved = resolveWaitlistAssetUrl((preferred || "").trim()) || fallback;
-  if (!resolved) return fallback;
-  const absolute = resolved.startsWith("/") ? `${origin}${resolved}` : resolved;
-  return withCacheBuster(absolute);
+function absoluteArtUrl(artSrc: string, origin: string) {
+  if (artSrc.startsWith("/")) return `${origin}${artSrc}`;
+  return artSrc;
+}
+
+async function loadPersonaArt(personaId: string, fallback: string, origin: string) {
+  try {
+    const response = await fetch(sharePersonaImageUrl(personaId), {
+      headers: {
+        Accept: "image/*",
+        "User-Agent": "Mozilla/5.0 (compatible; SmartXWaitlistOG/1.0)",
+      },
+      cache: "force-cache",
+    });
+    if (!response.ok) throw new Error(String(response.status));
+    const type = response.headers.get("content-type") || "image/png";
+    if (!type.startsWith("image/")) throw new Error(type);
+    const buffer = Buffer.from(await response.arrayBuffer());
+    return `data:${type};base64,${buffer.toString("base64")}`;
+  } catch {
+    return absoluteArtUrl(fallback, origin);
+  }
 }
 
 /* eslint-disable @next/next/no-img-element -- satori 画布内只能用原生 img */
 export async function GET(request: NextRequest) {
   const origin = request.nextUrl.origin;
   const locale = localeFromParam(request.nextUrl.searchParams.get("lang"));
-  const card = await loadInviterShareCard(request.nextUrl.searchParams.get("invite"), locale);
-  if (!card) {
+  const parsed = decodeShareResult(request.nextUrl.searchParams.get("result"));
+  if (!parsed) {
     return Response.redirect(new URL(SMARTX_DEFAULT_SOCIAL_IMAGE_PATH, origin), 302);
   }
 
-  const copy = shareOgCopy(card.persona, locale);
+  const invite = normalizeInviteCode(request.nextUrl.searchParams.get("invite") ?? "");
+  const copy = shareOgCopy(parsed.persona, locale);
   const axisLabels = {
     conviction: copy.conviction,
     instinct: copy.instinct,
     resilience: copy.resilience,
   } as const;
-  const artUrl = absoluteArtUrl(
-    request.nextUrl.searchParams.get("image"),
-    card.artSrc,
-    origin,
-  );
+  const artUrl = await loadPersonaArt(parsed.personaId, parsed.persona.artSrc, origin);
   const [assets, cjkFont] = await Promise.all([loadAssets(), loadCjkFont(locale)]);
   const bodyFont = cjkFont ? "Noto Sans" : "IBM Plex Sans";
   const titleFont = cjkFont ? "Noto Sans" : "Playfair Display";
@@ -233,7 +247,7 @@ export async function GET(request: NextRequest) {
           >
             <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
               {AXES.map((axis) => {
-                const value = Math.max(0, Math.min(100, card.stats[axis.key]));
+                const value = Math.max(0, Math.min(100, parsed.stats[axis.key]));
                 return (
                   <div key={axis.key} style={{ display: "flex", flexDirection: "column", gap: 4 }}>
                     <div
@@ -328,7 +342,7 @@ export async function GET(request: NextRequest) {
         >
           <div style={{ display: "flex", gap: 16 }}>
             <span>{copy.inviteCode}:</span>
-            <span>{card.invite.toUpperCase()}</span>
+            <span>{invite.toUpperCase()}</span>
           </div>
           <span>{`${origin}/waitlist`}</span>
         </div>
@@ -354,7 +368,7 @@ export async function GET(request: NextRequest) {
           : []),
       ],
       headers: {
-        "Cache-Control": "no-store, must-revalidate",
+        "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
       },
     },
   );

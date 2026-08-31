@@ -39,6 +39,7 @@ import {
 } from "@/lib/waitlist/share-image";
 import { i18n, toAppLocale } from "@/lingui";
 import { shareTweetText } from "@/lib/waitlist/share-copy";
+import { encodeShareResult } from "@/lib/waitlist/share-result";
 import {
   areCommunityTasksDone,
   decideWaitlistEntry,
@@ -204,10 +205,16 @@ function isExpiredSession(error: unknown) {
   return isUnauthorized(error) || isMissingUserError(error);
 }
 
-function makeInvitationUrl(code?: string, useCurrentOrigin = false) {
+function makeInvitationUrl(
+  code?: string,
+  useCurrentOrigin = false,
+  extras?: { locale?: string; result?: string | null },
+) {
   const base = useCurrentOrigin && typeof window !== "undefined" ? new URL("/waitlist/", window.location.origin).toString() : WAITLIST_URL;
   const url = new URL(base);
-  if (code) url.searchParams.set("invite", code);
+  if (code) url.searchParams.set("invite", normalizeInviteCode(code));
+  url.searchParams.set("lang", toAppLocale(extras?.locale));
+  if (extras?.result) url.searchParams.set("result", extras.result);
   return url.toString();
 }
 
@@ -441,6 +448,12 @@ export function WaitlistExperience() {
   const inviteReady = isValidInviteCode(inviteCode);
   const savedPersona = ownOutcome?.persona ?? PERSONAS_BY_CODE[userInfo?.personaId ?? ""];
   const savedPersonaName = savedPersona ? localizedPersonaName(savedPersona) : t`your trader type`;
+  const shareResultCode = ownOutcome
+    ? encodeShareResult(userInfo?.personaId || ownOutcome.persona.mark, ownOutcome.stats)
+    : null;
+  const ownInvitationUrl = ownInviteCode
+    ? makeInvitationUrl(ownInviteCode, true, { locale, result: shareResultCode })
+    : "";
   const currentQuestion = questions[questionIndex];
   const verifiedEmail = userInfo?.email || sessionEmail || email;
   const friendRewardApplied = verifiedFriends > 0;
@@ -720,12 +733,12 @@ export function WaitlistExperience() {
   }, [stage, userToken]);
 
   useEffect(() => {
-    if (stage !== "result" || !ownInviteCode) return;
+    if (stage !== "result" || !ownInviteCode || !shareResultCode) return;
     let disposed = false;
     let rendered: RenderedResultCard | null = null;
     setPreparedCard(null);
     setExportError(false);
-    fetchResultCard(ownInviteCode, locale, userInfo?.imageUrl)
+    fetchResultCard(ownInviteCode, locale, shareResultCode)
       .then((card) => {
         rendered = card;
         if (disposed) {
@@ -741,7 +754,7 @@ export function WaitlistExperience() {
       disposed = true;
       if (rendered) URL.revokeObjectURL(rendered.href);
     };
-  }, [stage, ownInviteCode, locale, userInfo?.imageUrl]);
+  }, [stage, ownInviteCode, locale, shareResultCode]);
 
   const ensureQuestions = async () => {
     if (questions.length) return questions;
@@ -1039,7 +1052,7 @@ export function WaitlistExperience() {
     if (!ownOutcome || !ownInviteCode) return;
     const shareUrl = new URL("https://twitter.com/intent/tweet");
     shareUrl.searchParams.set("text", shareTweetText(ownOutcome.persona, locale));
-    shareUrl.searchParams.set("url", makeInvitationUrl(ownInviteCode, true));
+    shareUrl.searchParams.set("url", makeInvitationUrl(ownInviteCode, true, { locale, result: shareResultCode }));
     window.open(shareUrl.toString(), "_blank", "noopener,noreferrer");
     if (!userToken || shareCompleted) return;
     try {
@@ -1055,7 +1068,7 @@ export function WaitlistExperience() {
   const copyInvitation = async (code?: string) => {
     if (!code) return;
     try {
-      await navigator.clipboard.writeText(makeInvitationUrl(code, true));
+      await navigator.clipboard.writeText(makeInvitationUrl(code, true, { locale, result: shareResultCode }));
       setInviteLinkCopied(true);
       window.setTimeout(() => setInviteLinkCopied(false), 1400);
     } catch (error) {
@@ -1117,13 +1130,13 @@ export function WaitlistExperience() {
       return;
     }
 
-    if (!ownInviteCode || exporting) {
+    if (!ownInviteCode || !shareResultCode || exporting) {
       notifyNotice(t`Preparing…`);
       return;
     }
 
     setExporting(true);
-    void fetchResultCard(ownInviteCode, locale, userInfo?.imageUrl)
+    void fetchResultCard(ownInviteCode, locale, shareResultCode)
       .then((rendered) => {
         setPreparedCard(rendered);
         setExportError(false);
@@ -1649,8 +1662,8 @@ export function WaitlistExperience() {
                   <div className={styles.primaryInviteCard} data-empty={ownInviteCode ? undefined : "true"}>
                     <div>
                       <span><Trans>Your invite code</Trans></span>
-                      <strong title={ownInviteCode ? makeInvitationUrl(ownInviteCode, true) : undefined}>
-                        {ownInviteCode ? makeInvitationUrl(ownInviteCode, true) : t`Invite link is being prepared`}
+                      <strong title={ownInvitationUrl || undefined}>
+                        {ownInvitationUrl || t`Invite link is being prepared`}
                       </strong>
                     </div>
                     <WaitlistButton
