@@ -213,7 +213,7 @@ function makeInvitationUrl(
   const base = useCurrentOrigin && typeof window !== "undefined" ? new URL("/waitlist/", window.location.origin).toString() : WAITLIST_URL;
   const url = new URL(base);
   if (code) url.searchParams.set("invite", normalizeInviteCode(code));
-  url.searchParams.set("lang", toAppLocale(extras?.locale));
+  if (extras?.locale) url.searchParams.set("lang", toAppLocale(extras.locale));
   if (extras?.result) url.searchParams.set("result", extras.result);
   return url.toString();
 }
@@ -452,7 +452,7 @@ export function WaitlistExperience() {
     ? encodeShareResult(userInfo?.personaId || ownOutcome.persona.mark, ownOutcome.stats)
     : null;
   const ownInvitationUrl = ownInviteCode
-    ? makeInvitationUrl(ownInviteCode, true, { locale, result: shareResultCode })
+    ? makeInvitationUrl(ownInviteCode, true)
     : "";
   const currentQuestion = questions[questionIndex];
   const verifiedEmail = userInfo?.email || sessionEmail || email;
@@ -1068,7 +1068,7 @@ export function WaitlistExperience() {
   const copyInvitation = async (code?: string) => {
     if (!code) return;
     try {
-      await navigator.clipboard.writeText(makeInvitationUrl(code, true, { locale, result: shareResultCode }));
+      await navigator.clipboard.writeText(makeInvitationUrl(code, true));
       setInviteLinkCopied(true);
       window.setTimeout(() => setInviteLinkCopied(false), 1400);
     } catch (error) {
