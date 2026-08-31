@@ -27,20 +27,24 @@ msgstr "{0}人がコピー"
 msgid "{minutes} min read"
 msgstr "{minutes}分で読了"
 
-#: src/components/waitlist/waitlist-experience.tsx:1821
+#: src/lib/waitlist/share-copy.ts:38
+msgid "{name} — SmartX trader type card"
+msgstr "{name} — SmartX 取引タイプカード"
+
+#: src/components/waitlist/waitlist-experience.tsx:1794
 msgid "{verifiedFriends} friends joined via your invite."
 msgstr "{verifiedFriends} 人の友だちが招待リンクから参加しました。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1642
+#: src/components/waitlist/waitlist-experience.tsx:1619
 msgid "← Back"
 msgstr "← 戻る"
 
 #. placeholder {0}: friendPriority.toLocaleString("en-US")
-#: src/components/waitlist/waitlist-experience.tsx:1779
+#: src/components/waitlist/waitlist-experience.tsx:1752
 msgid "+{0} priority"
 msgstr "+{0} 優先度"
 
-#: src/components/waitlist/waitlist-experience.tsx:1769
+#: src/components/waitlist/waitlist-experience.tsx:1742
 msgid "+500 priority"
 msgstr "+500 優先度"
 
@@ -80,11 +84,11 @@ msgid "A coin you do not own is up 40%. What do you do?"
 msgstr "持っていないコインが40%上昇した。どうする？"
 
 #. placeholder {0}: localizedPersonaName(referralOutcome.persona)
-#: src/components/waitlist/waitlist-experience.tsx:1434
+#: src/components/waitlist/waitlist-experience.tsx:1411
 msgid "A friend trades like <0>{0}.</0>"
 msgstr "友達の取引タイプは<0>{0}。</0>"
 
-#: src/components/waitlist/waitlist-experience.tsx:1431
+#: src/components/waitlist/waitlist-experience.tsx:1408
 msgid "A result was shared with you"
 msgstr "結果がシェアされました"
 
@@ -109,12 +113,12 @@ msgstr "実取引トレーダーがこのマーケットをいいねしました
 msgid "Add immediately. The market is improving my entry."
 msgstr "すぐ足す。市場がエントリーを良くしてくれている。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1607
+#: src/components/waitlist/waitlist-experience.tsx:1584
 msgid "Already tested?"
 msgstr "テスト済みですか？"
 
-#: src/components/waitlist/waitlist-experience.tsx:1471
-#: src/components/waitlist/waitlist-experience.tsx:1513
+#: src/components/waitlist/waitlist-experience.tsx:1448
+#: src/components/waitlist/waitlist-experience.tsx:1490
 msgid "Already tested? View my result"
 msgstr "テスト済み？結果を見る"
 
@@ -139,13 +143,17 @@ msgstr "平均エントリー · 時価総額 $1.52B"
 msgid "Avg entry · $228.40"
 msgstr "平均エントリー · $228.40"
 
-#: src/components/waitlist/waitlist-experience.tsx:1555
+#: src/components/waitlist/waitlist-experience.tsx:1532
 msgid "Back"
 msgstr "戻る"
 
-#: src/components/waitlist/waitlist-experience.tsx:1533
+#: src/components/waitlist/waitlist-experience.tsx:1510
 msgid "Back to start"
 msgstr "スタートに戻る"
+
+#: src/lib/waitlist/share-copy.ts:43
+msgid "Backed by"
+msgstr "出資"
 
 #: src/components/consumer-network/consumer-home.tsx:422
 msgid "Be early"
@@ -155,11 +163,11 @@ msgstr "先に入る"
 msgid "Before entering a trade, what convinces you most?"
 msgstr "エントリー前、いちばん信じるものは？"
 
-#: src/components/waitlist/waitlist-experience.tsx:401
+#: src/components/waitlist/waitlist-experience.tsx:402
 msgid "Best match"
 msgstr "ベストマッチ"
 
-#: src/components/waitlist/waitlist-experience.tsx:1609
+#: src/components/waitlist/waitlist-experience.tsx:1586
 msgid "Bind an email to save your result and join the waitlist."
 msgstr "メールアドレスを連携して結果を保存し、ウェイトリストに参加しましょう。"
 
@@ -172,7 +180,7 @@ msgstr "メールアドレスを連携して結果を保存し、ウェイトリ
 msgid "Blog"
 msgstr "ブログ"
 
-#: src/components/waitlist/waitlist-experience.tsx:1750
+#: src/components/waitlist/waitlist-experience.tsx:1723
 msgid "Both steps are required to continue."
 msgstr "続行には両方のステップが必要です。"
 
@@ -184,7 +192,7 @@ msgstr "今すぐ買う。モメンタムは待ってくれない。"
 msgid "Campaign"
 msgstr "キャンペーン"
 
-#: src/components/waitlist/waitlist-experience.tsx:1704
+#: src/components/waitlist/waitlist-experience.tsx:1677
 msgid "Change Email"
 msgstr "メールアドレスを変更"
 
@@ -196,16 +204,16 @@ msgstr "チャート構造と価格の確認。"
 msgid "Check the chart before taking a position."
 msgstr "ポジションを取る前にチャートを見る。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1655
+#: src/components/waitlist/waitlist-experience.tsx:1632
 msgid "Check your inbox"
 msgstr "受信トレイを確認"
 
-#: src/components/waitlist/waitlist-experience.tsx:1421
+#: src/components/waitlist/waitlist-experience.tsx:1398
 msgid "Checking invite, result, and sign-in state."
 msgstr "招待・結果・ログイン状態を確認しています。"
 
 #: src/components/site/app-notice.tsx:56
-#: src/components/waitlist/waitlist-experience.tsx:1857
+#: src/components/waitlist/waitlist-experience.tsx:1830
 msgid "Close"
 msgstr "閉じる"
 
@@ -222,26 +230,26 @@ msgstr "ナビゲーションを閉じる"
 msgid "Community"
 msgstr "コミュニティ"
 
-#: src/components/waitlist/waitlist-experience.tsx:1735
-#: src/components/waitlist/waitlist-experience.tsx:1742
+#: src/components/waitlist/waitlist-experience.tsx:1708
+#: src/components/waitlist/waitlist-experience.tsx:1715
 msgid "Completed"
 msgstr "完了"
 
-#: src/components/waitlist/waitlist-experience.tsx:1633
-#: src/components/waitlist/waitlist-experience.tsx:1695
+#: src/components/waitlist/waitlist-experience.tsx:1610
+#: src/components/waitlist/waitlist-experience.tsx:1671
 msgid "Continue"
 msgstr "続ける"
 
-#: src/components/waitlist/waitlist-experience.tsx:395
-#: src/components/waitlist/waitlist-experience.tsx:765
+#: src/components/waitlist/waitlist-experience.tsx:396
+#: src/lib/waitlist/share-copy.ts:39
 msgid "Conviction"
 msgstr "信念"
 
-#: src/components/waitlist/waitlist-experience.tsx:1840
+#: src/components/waitlist/waitlist-experience.tsx:1813
 msgid "Copied"
 msgstr "コピーしました"
 
-#: src/components/waitlist/waitlist-experience.tsx:1235
+#: src/components/waitlist/waitlist-experience.tsx:1212
 msgid "Copied Success!"
 msgstr "コピーしました"
 
@@ -249,25 +257,25 @@ msgstr "コピーしました"
 msgid "Copy"
 msgstr "コピー"
 
-#: src/components/waitlist/waitlist-experience.tsx:1840
+#: src/components/waitlist/waitlist-experience.tsx:1813
 msgid "Copy link"
 msgstr "リンクをコピー"
 
-#: src/components/waitlist/waitlist-experience.tsx:1228
+#: src/components/waitlist/waitlist-experience.tsx:1205
 msgid "Couldn’t copy the invite link. Try again."
 msgstr "招待リンクをコピーできませんでした。もう一度お試しください。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1274
-#: src/components/waitlist/waitlist-experience.tsx:1298
-#: src/components/waitlist/waitlist-experience.tsx:1802
+#: src/components/waitlist/waitlist-experience.tsx:1251
+#: src/components/waitlist/waitlist-experience.tsx:1275
+#: src/components/waitlist/waitlist-experience.tsx:1775
 msgid "Couldn’t export the image. Try again."
 msgstr "画像を書き出せませんでした。もう一度お試しください。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1526
+#: src/components/waitlist/waitlist-experience.tsx:1503
 msgid "Couldn’t load the test."
 msgstr "テストを読み込めませんでした。"
 
-#: src/lib/waitlist/persona.ts:147
+#: src/lib/waitlist/persona.ts:167
 msgid "DATA"
 msgstr "データ"
 
@@ -275,7 +283,7 @@ msgstr "データ"
 msgid "Debate it with the group and adjust if they have a point."
 msgstr "グループと議論し、筋が通れば修正する。"
 
-#: src/lib/waitlist/persona.ts:144
+#: src/lib/waitlist/persona.ts:164
 msgid "DEGEN"
 msgstr "オールイン"
 
@@ -286,7 +294,7 @@ msgstr "オールイン"
 msgid "Demo profile"
 msgstr "デモプロフィール"
 
-#: src/components/waitlist/waitlist-experience.tsx:1442
+#: src/components/waitlist/waitlist-experience.tsx:1419
 msgid "Different score, same type—or something else entirely? Six decisions reveal how you trade when it gets real."
 msgstr "同じタイプか、まったく別か？6つの決断が、本番のマーケットでどう張るかを明らかにします。"
 
@@ -298,20 +306,20 @@ msgstr "発見 · フォロー · コピー"
 msgid "Dismiss notification"
 msgstr "通知を閉じる"
 
-#: src/components/waitlist/waitlist-experience.tsx:1795
-#: src/components/waitlist/waitlist-experience.tsx:1806
+#: src/components/waitlist/waitlist-experience.tsx:1768
+#: src/components/waitlist/waitlist-experience.tsx:1779
 msgid "Download"
 msgstr "ダウンロード"
 
-#: src/components/waitlist/waitlist-experience.tsx:1776
+#: src/components/waitlist/waitlist-experience.tsx:1749
 msgid "Each verified friend"
 msgstr "認証済みフレンド1人につき"
 
-#: src/components/waitlist/waitlist-experience.tsx:1775
+#: src/components/waitlist/waitlist-experience.tsx:1748
 msgid "Each verified friend (+{verifiedFriends})"
 msgstr "認証済みフレンド1人につき（+{verifiedFriends}）"
 
-#: src/components/waitlist/waitlist-experience.tsx:1612
+#: src/components/waitlist/waitlist-experience.tsx:1589
 msgid "Email address"
 msgstr "メールアドレス"
 
@@ -319,19 +327,19 @@ msgstr "メールアドレス"
 msgid "Email send limit exceeded. Try again later."
 msgstr "メール送信上限に達しました。しばらくしてからお試しください。"
 
-#: src/components/waitlist/waitlist-experience.tsx:338
+#: src/components/waitlist/waitlist-experience.tsx:339
 msgid "Email verified"
 msgstr "メール認証済み"
 
-#: src/components/waitlist/waitlist-experience.tsx:1658
+#: src/components/waitlist/waitlist-experience.tsx:1635
 msgid "Enter the code sent to <0>{email}</0>."
 msgstr "<0>{email}</0> に送信されたコードを入力してください。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1609
+#: src/components/waitlist/waitlist-experience.tsx:1586
 msgid "Enter the email you used. We’ll send a six-digit code."
 msgstr "使用したメールアドレスを入力してください。6桁のコードをお送りします。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1733
+#: src/components/waitlist/waitlist-experience.tsx:1706
 msgid "Enter the SmartX community"
 msgstr "SmartX コミュニティに参加"
 
@@ -339,11 +347,11 @@ msgstr "SmartX コミュニティに参加"
 msgid "Entry"
 msgstr "エントリー価格"
 
-#: src/lib/waitlist/persona.ts:92
+#: src/lib/waitlist/persona.ts:93
 msgid "Every all-in starts with enlightenment and ends with reincarnation."
 msgstr "すべてのオールインは悟りに始まり、輪廻に終わる。"
 
-#: src/lib/waitlist/persona.ts:108
+#: src/lib/waitlist/persona.ts:109
 msgid "Every symptom diagnosed. Every loss professionally explained."
 msgstr "症状はすべて診断済み。損失にはいつもプロの解説付き。"
 
@@ -367,16 +375,16 @@ msgstr "認証コードを送信できませんでした"
 msgid "Fiat in · Markets open · Chains invisible"
 msgstr "法定通貨で入金 · マーケットはそのまま · チェーンは意識せず"
 
-#: src/components/waitlist/waitlist-experience.tsx:1463
-#: src/components/waitlist/waitlist-experience.tsx:1468
+#: src/components/waitlist/waitlist-experience.tsx:1440
+#: src/components/waitlist/waitlist-experience.tsx:1445
 msgid "Find my trader type"
 msgstr "自分の取引タイプを診断"
 
-#: src/components/waitlist/waitlist-experience.tsx:1608
+#: src/components/waitlist/waitlist-experience.tsx:1585
 msgid "Find your result."
 msgstr "結果を探す。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1205
+#: src/lib/waitlist/share-copy.ts:14
 msgid "Find yours in six questions."
 msgstr "6つの質問であなたの取引タイプを見つけよう。"
 
@@ -384,7 +392,7 @@ msgstr "6つの質問であなたの取引タイプを見つけよう。"
 msgid "Finish the test before unlocking your result."
 msgstr "結果を解除する前にテストを完了してください。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1767
+#: src/components/waitlist/waitlist-experience.tsx:1740
 msgid "First result share"
 msgstr "初回の結果シェア"
 
@@ -392,11 +400,11 @@ msgstr "初回の結果シェア"
 msgid "Follow immediately. Conviction is contagious."
 msgstr "すぐ追随する。確信は伝染する。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1740
+#: src/components/waitlist/waitlist-experience.tsx:1713
 msgid "Follow product updates"
 msgstr "プロダクト情報をフォロー"
 
-#: src/components/waitlist/waitlist-experience.tsx:1740
+#: src/components/waitlist/waitlist-experience.tsx:1713
 msgid "Follow SmartX on X"
 msgstr "X で SmartX をフォロー"
 
@@ -432,11 +440,11 @@ msgstr "判断する前にもう少し余地を見る。"
 msgid "Guide"
 msgstr "ガイド"
 
-#: src/lib/waitlist/persona.ts:146
+#: src/lib/waitlist/persona.ts:166
 msgid "GUT"
 msgstr "直感"
 
-#: src/components/waitlist/waitlist-experience.tsx:1506
+#: src/components/waitlist/waitlist-experience.tsx:1483
 msgid "Have an invite code?"
 msgstr "招待コードをお持ちですか？"
 
@@ -447,7 +455,7 @@ msgstr "招待コードをお持ちですか？"
 msgid "Home"
 msgstr "ホーム"
 
-#: src/components/waitlist/waitlist-experience.tsx:1488
+#: src/components/waitlist/waitlist-experience.tsx:1465
 msgid "How do you trade<0/> when it gets <1>real?</1>"
 msgstr "マーケットが本番になったとき、<0/>あなたは<1>どう張る？</1>"
 
@@ -455,12 +463,12 @@ msgstr "マーケットが本番になったとき、<0/>あなたは<1>どう�
 msgid "Ignore the noise and execute alone."
 msgstr "ノイズは無視して一人で執行する。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1238
+#: src/components/waitlist/waitlist-experience.tsx:1215
 msgid "Image opened in a new tab. Long press to save."
 msgstr "新しいタブで開きました。長押しして保存してください。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1237
-#: src/components/waitlist/waitlist-experience.tsx:1317
+#: src/components/waitlist/waitlist-experience.tsx:1214
+#: src/components/waitlist/waitlist-experience.tsx:1294
 msgid "Image saved."
 msgstr "画像を保存しました。"
 
@@ -472,8 +480,8 @@ msgstr "この記事の目次"
 msgid "Income"
 msgstr "収益"
 
-#: src/components/waitlist/waitlist-experience.tsx:396
-#: src/components/waitlist/waitlist-experience.tsx:766
+#: src/components/waitlist/waitlist-experience.tsx:397
+#: src/lib/waitlist/share-copy.ts:40
 msgid "Instinct"
 msgstr "嗅覚"
 
@@ -481,7 +489,8 @@ msgstr "嗅覚"
 msgid "Intelligence"
 msgstr "インテリジェンス"
 
-#: src/components/waitlist/waitlist-experience.tsx:1323
+#: src/components/waitlist/waitlist-experience.tsx:1300
+#: src/lib/waitlist/share-copy.ts:42
 msgid "Invite Code"
 msgstr "招待コード"
 
@@ -489,19 +498,19 @@ msgstr "招待コード"
 msgid "Invite code not recognized. Check the code and try again."
 msgstr "招待コードを認識できません。コードを確認して再試行してください。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1817
+#: src/components/waitlist/waitlist-experience.tsx:1790
 msgid "Invite friends"
 msgstr "友達を招待"
 
-#: src/components/waitlist/waitlist-experience.tsx:1830
+#: src/components/waitlist/waitlist-experience.tsx:1803
 msgid "Invite link is being prepared"
 msgstr "招待リンクを準備しています"
 
-#: src/components/waitlist/waitlist-experience.tsx:1733
+#: src/components/waitlist/waitlist-experience.tsx:1706
 msgid "Join Telegram"
 msgstr "Telegram に参加"
 
-#: src/components/waitlist/waitlist-experience.tsx:1723
+#: src/components/waitlist/waitlist-experience.tsx:1696
 msgid "Join the SmartX community and follow product updates before your trader type is revealed."
 msgstr "取引タイプの公開前に、SmartX コミュニティに参加してプロダクト情報をフォローしてください。"
 
@@ -529,35 +538,35 @@ msgstr "Launch Alpha"
 msgid "Listen first, then decide."
 msgstr "まず聞いて、それから決める。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1418
+#: src/components/waitlist/waitlist-experience.tsx:1395
 msgid "Loading your session."
 msgstr "セッションを読み込んでいます。"
 
-#: src/lib/waitlist/persona.ts:149
+#: src/lib/waitlist/persona.ts:169
 msgid "LONE"
 msgstr "単独"
 
-#: src/components/waitlist/waitlist-experience.tsx:1243
+#: src/components/waitlist/waitlist-experience.tsx:1220
 msgid "Long press the image and tap Copy image."
 msgstr "画像を長押しして「画像をコピー」をタップしてください。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1240
+#: src/components/waitlist/waitlist-experience.tsx:1217
 msgid "Long press the image and tap Copy."
 msgstr "画像を長押しして「コピー」をタップしてください。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1243
+#: src/components/waitlist/waitlist-experience.tsx:1220
 msgid "Long press the image and tap Download image."
 msgstr "画像を長押しして「画像をダウンロード」をタップしてください。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1240
+#: src/components/waitlist/waitlist-experience.tsx:1217
 msgid "Long press the image and tap Save Image."
 msgstr "画像を長押しして「画像を保存」をタップしてください。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1245
+#: src/components/waitlist/waitlist-experience.tsx:1222
 msgid "Long press the image to save or copy."
 msgstr "画像を長押しして保存またはコピーできます。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1245
+#: src/components/waitlist/waitlist-experience.tsx:1222
 msgid "Long press the image to save to your album."
 msgstr "画像を長押ししてアルバムに保存できます。"
 
@@ -570,11 +579,15 @@ msgstr "モバイルサイトナビゲーション"
 msgid "My close trading group."
 msgstr "近いトレード仲間。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1205
-msgid "My SmartX trader type is {shareName}."
-msgstr "私の SmartX 取引タイプは{shareName}でした。"
+#: src/components/waitlist/waitlist-experience.tsx:1179
+#~ msgid "My SmartX trader type is {shareName}."
+#~ msgstr "私の SmartX 取引タイプは{shareName}でした。"
 
-#: src/components/waitlist/waitlist-experience.tsx:402
+#: src/lib/waitlist/share-copy.ts:10
+msgid "My SmartX trader type: “{shareName}.”"
+msgstr "私の SmartX 取引タイプ：「{shareName}。」"
+
+#: src/components/waitlist/waitlist-experience.tsx:403
 msgid "Natural rival"
 msgstr "宿命のライバル"
 
@@ -603,7 +616,7 @@ msgstr "新規ユーザーの壁ゼロ"
 msgid "No change"
 msgstr "No change"
 
-#: src/components/waitlist/waitlist-experience.tsx:1503
+#: src/components/waitlist/waitlist-experience.tsx:1480
 msgid "No invite needed"
 msgstr "招待コードは不要です"
 
@@ -635,7 +648,7 @@ msgstr "過去の記事"
 msgid "One Account.<0/>Every Market."
 msgstr "ひとつのアカウント。<0/>すべての市場。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1717
+#: src/components/waitlist/waitlist-experience.tsx:1690
 msgid "One last step"
 msgstr "最後のステップ"
 
@@ -647,8 +660,8 @@ msgstr "ワンタップでコピー"
 msgid "One trusted friend, maybe."
 msgstr "信頼できる友人ひとり、たぶん。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1735
-#: src/components/waitlist/waitlist-experience.tsx:1742
+#: src/components/waitlist/waitlist-experience.tsx:1708
+#: src/components/waitlist/waitlist-experience.tsx:1715
 msgid "Open"
 msgstr "開く"
 
@@ -669,7 +682,7 @@ msgstr "見立て"
 msgid "Order submitted"
 msgstr "注文完了"
 
-#: src/lib/waitlist/persona.ts:148
+#: src/lib/waitlist/persona.ts:168
 msgid "PACK"
 msgstr "群れ"
 
@@ -681,7 +694,7 @@ msgstr "見送り。セットアップがなければトレードしない。"
 msgid "Performance"
 msgstr "戦績"
 
-#: src/components/waitlist/waitlist-experience.tsx:400
+#: src/components/waitlist/waitlist-experience.tsx:401
 msgid "Persona chemistry"
 msgstr "タイプ相性"
 
@@ -697,7 +710,7 @@ msgstr "あなたのマーケット向け"
 msgid "Please enter a valid email address."
 msgstr "有効なメールアドレスを入力してください。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1336
+#: src/components/waitlist/waitlist-experience.tsx:1313
 msgid "Please enter the invitation code."
 msgstr "招待コードを入力してください。"
 
@@ -713,12 +726,12 @@ msgstr "ポジション価値"
 msgid "Post opinions backed by your real positions. Climb the leaderboard, grow your following, and earn a share of the revenue you create."
 msgstr "実際のポジションに裏打ちされた見立てを投稿。リーダーボードを駆け上がり、フォロワーを増やし、生み出した収益の分配を受け取ろう。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1285
-#: src/components/waitlist/waitlist-experience.tsx:1806
+#: src/components/waitlist/waitlist-experience.tsx:1262
+#: src/components/waitlist/waitlist-experience.tsx:1779
 msgid "Preparing…"
 msgstr "準備中…"
 
-#: src/components/waitlist/waitlist-experience.tsx:1784
+#: src/components/waitlist/waitlist-experience.tsx:1757
 msgid "Priority improves your score; rank updates against the live waitlist."
 msgstr "優先度はスコアを押し上げ、順位はリアルタイムのウェイトリストに対して更新されます。"
 
@@ -728,13 +741,13 @@ msgstr "優先度はスコアを押し上げ、順位はリアルタイムのウ
 msgid "Product"
 msgstr "プロダクト"
 
-#: src/components/waitlist/waitlist-experience.tsx:1558
+#: src/components/waitlist/waitlist-experience.tsx:1535
 msgid "Question"
 msgstr "質問"
 
 #. placeholder {0}: questionIndex + 1
 #. placeholder {1}: questions.length
-#: src/components/waitlist/waitlist-experience.tsx:1563
+#: src/components/waitlist/waitlist-experience.tsx:1540
 msgid "Question {0} of {1}"
 msgstr "質問 {0} / {1}"
 
@@ -758,12 +771,17 @@ msgstr "計画どおりポジションを減らす。"
 msgid "Required information is missing. Try again."
 msgstr "必要な情報が不足しています。もう一度お試しください。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1707
+#: src/components/waitlist/waitlist-experience.tsx:1680
 msgid "Resend Code"
 msgstr "コードを再送"
 
-#: src/components/waitlist/waitlist-experience.tsx:397
-#: src/components/waitlist/waitlist-experience.tsx:767
+#. placeholder {0}: formatClock(otpCooldown)
+#: src/components/waitlist/waitlist-experience.tsx:1680
+msgid "Resend Code ({0})"
+msgstr "コードを再送（{0}）"
+
+#: src/components/waitlist/waitlist-experience.tsx:398
+#: src/lib/waitlist/share-copy.ts:41
 msgid "Resilience"
 msgstr "復元力"
 
@@ -771,11 +789,11 @@ msgstr "復元力"
 msgid "Return to SmartX"
 msgstr "SmartX に戻る"
 
-#: src/components/waitlist/waitlist-experience.tsx:1747
+#: src/components/waitlist/waitlist-experience.tsx:1720
 msgid "Reveal my result"
 msgstr "結果を公開する"
 
-#: src/components/waitlist/waitlist-experience.tsx:1608
+#: src/components/waitlist/waitlist-experience.tsx:1585
 msgid "Save your result."
 msgstr "結果を保存しよう。"
 
@@ -783,11 +801,11 @@ msgstr "結果を保存しよう。"
 msgid "Screenshot, group chat, X."
 msgstr "スクショ、グループ、X。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1236
+#: src/components/waitlist/waitlist-experience.tsx:1213
 msgid "Selection successful"
 msgstr "共有しました"
 
-#: src/components/waitlist/waitlist-experience.tsx:1633
+#: src/components/waitlist/waitlist-experience.tsx:1610
 msgid "Send code"
 msgstr "コードを送信"
 
@@ -799,28 +817,28 @@ msgstr "混雑しています。しばらくしてからお試しください。
 msgid "Set my entry and wait."
 msgstr "エントリーを決めて待つ。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1810
+#: src/components/waitlist/waitlist-experience.tsx:1783
 msgid "Share again"
 msgstr "もう一度シェア"
 
-#: src/components/waitlist/waitlist-experience.tsx:1855
+#: src/components/waitlist/waitlist-experience.tsx:1828
 msgid "Share image"
 msgstr "シェア画像"
 
-#: src/components/waitlist/waitlist-experience.tsx:1767
+#: src/components/waitlist/waitlist-experience.tsx:1740
 msgid "Share recorded"
 msgstr "シェア済み"
 
-#: src/components/waitlist/waitlist-experience.tsx:1810
+#: src/components/waitlist/waitlist-experience.tsx:1783
 msgid "Share result"
 msgstr "結果をシェア"
 
-#: src/components/waitlist/waitlist-experience.tsx:341
+#: src/components/waitlist/waitlist-experience.tsx:342
 msgid "Sign out"
 msgstr "サインアウト"
 
-#: src/components/waitlist/waitlist-experience.tsx:1727
-#: src/components/waitlist/waitlist-experience.tsx:1759
+#: src/components/waitlist/waitlist-experience.tsx:1700
+#: src/components/waitlist/waitlist-experience.tsx:1732
 msgid "Signed in as"
 msgstr "ログイン中"
 
@@ -829,11 +847,11 @@ msgstr "ログイン中"
 msgid "Site navigation"
 msgstr "サイトナビゲーション"
 
-#: src/components/waitlist/waitlist-experience.tsx:1491
+#: src/components/waitlist/waitlist-experience.tsx:1468
 msgid "Six decisions reveal your risk, signal, and social instincts."
 msgstr "6つの決断が、リスクの取り方、マーケット判断、ソーシャルの本能を明らかにします。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1675
+#: src/components/waitlist/waitlist-experience.tsx:1652
 msgid "Six-digit code"
 msgstr "6桁のコード"
 
@@ -853,7 +871,7 @@ msgstr "最新記事へスキップ"
 msgid "Skip to the SmartX network story"
 msgstr "SmartX ネットワークストーリーへスキップ"
 
-#: src/components/waitlist/waitlist-experience.tsx:1378
+#: src/components/waitlist/waitlist-experience.tsx:1355
 msgid "Skip to waitlist"
 msgstr "ウェイトリストへスキップ"
 
@@ -892,7 +910,7 @@ msgstr "SmartX ソーシャルリンク"
 msgid "SmartX Square and People screens showing a verified social feed and trader leaderboard"
 msgstr "認証済みソーシャルフィードとトレーダーリーダーボードを表示する SmartX の Square・People 画面"
 
-#: src/lib/waitlist/persona.ts:145
+#: src/lib/waitlist/persona.ts:165
 msgid "SNIPER"
 msgstr "スナイパー"
 
@@ -908,11 +926,11 @@ msgstr "スクエア"
 msgid "Start small now and add if it holds."
 msgstr "まずは小さく入り、持ち堪えたら加える。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1500
+#: src/components/waitlist/waitlist-experience.tsx:1477
 msgid "Start the test"
 msgstr "テストを始める"
 
-#: src/components/waitlist/waitlist-experience.tsx:1358
+#: src/components/waitlist/waitlist-experience.tsx:1335
 msgid "Start with invite"
 msgstr "招待コードで始める"
 
@@ -924,41 +942,40 @@ msgstr "コミュニティの手順を記録できませんでした。もう一
 msgid "That result could not be found."
 msgstr "その結果は見つかりませんでした。"
 
-#: src/lib/waitlist/persona.ts:91
+#: src/lib/waitlist/persona.ts:92
 msgid "The All-In Mystic"
 msgstr "オールイン仙人"
 
-#: src/lib/waitlist/persona.ts:99
+#: src/lib/waitlist/persona.ts:100
 msgid "The Candle Prophet"
 msgstr "ローソク足教祖"
 
-#. placeholder {0}: formatClock(otpExpiresIn)
-#: src/components/waitlist/waitlist-experience.tsx:1699
-msgid "The code expires in {0}."
-msgstr "コードの有効期限まで {0}。"
+#: src/components/waitlist/waitlist-experience.tsx:1678
+#~ msgid "The code expires in {0}."
+#~ msgstr "コードの有効期限まで {0}。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1699
-msgid "The code has expired. Resend to get a new one."
-msgstr "コードの有効期限が切れました。再送して新しいコードを取得してください。"
+#: src/components/waitlist/waitlist-experience.tsx:1678
+#~ msgid "The code has expired. Resend to get a new one."
+#~ msgstr "コードの有効期限が切れました。再送して新しいコードを取得してください。"
 
 #: src/components/blog/article-cta.tsx:23
 #: src/components/consumer-network/consumer-home.tsx:425
 msgid "The Consumer Trading Network is taking shape."
 msgstr "個人向けトレーディングネットワークが形になりつつあります。"
 
-#: src/lib/waitlist/persona.ts:103
+#: src/lib/waitlist/persona.ts:104
 msgid "The Dip Ringleader"
 msgstr "押し目買い番長"
 
-#: src/lib/waitlist/persona.ts:116
+#: src/lib/waitlist/persona.ts:117
 msgid "The limit order was perfect. Shame you two never met again."
 msgstr "指値は完璧だった。ただ、君たちが再会することはなかった。"
 
-#: src/lib/waitlist/persona.ts:115
+#: src/lib/waitlist/persona.ts:116
 msgid "The Limit Sniper"
 msgstr "指値スナイパー"
 
-#: src/lib/waitlist/persona.ts:87
+#: src/lib/waitlist/persona.ts:88
 msgid "The Liquidity Donor"
 msgstr "流動性ドナー"
 
@@ -970,7 +987,7 @@ msgstr "市場の空気とモメンタム。"
 msgid "The next opportunity finds you."
 msgstr "次のチャンスが、向こうからやってくる。"
 
-#: src/lib/waitlist/persona.ts:111
+#: src/lib/waitlist/persona.ts:112
 msgid "The Onchain Paparazzi"
 msgstr "オンチェーン・パパラッチ"
 
@@ -978,19 +995,20 @@ msgstr "オンチェーン・パパラッチ"
 msgid "The page you requested is no longer at this address."
 msgstr "お探しのページはこのアドレスにはもうありません。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1529
+#: src/components/waitlist/waitlist-experience.tsx:1506
 msgid "The questions didn’t come through. Check your connection and try again."
 msgstr "質問を取得できませんでした。接続を確認して再試行してください。"
 
-#: src/lib/waitlist/persona.ts:119
+#: src/lib/waitlist/persona.ts:120
 msgid "The Risk Monk"
 msgstr "リスク僧侶"
 
-#: src/lib/waitlist/persona.ts:95
+#: src/lib/waitlist/persona.ts:96
 msgid "The Send-It Strategist"
 msgstr "コール軍師"
 
 #: src/components/consumer-network/consumer-home.tsx:200
+#: src/lib/waitlist/share-copy.ts:44
 msgid "The social trading app for memes, perps, stocks and prediction markets."
 msgstr "予測市場が中心のソーシャル取引アプリ。ミーム、無期限、株式にも対応。"
 
@@ -1002,11 +1020,11 @@ msgstr "トレーダーのコンテンツ経済"
 msgid "The traders and markets in your feed match what you trade."
 msgstr "フィードのトレーダーと市場は、よく見るマーケットに合わせて選ばれます。"
 
-#: src/lib/waitlist/persona.ts:107
+#: src/lib/waitlist/persona.ts:108
 msgid "The Vibes Doctor"
 msgstr "空気の名医"
 
-#: src/lib/waitlist/persona.ts:120
+#: src/lib/waitlist/persona.ts:121
 msgid "They study how to double once. You study how to stay in the game."
 msgstr "彼らは一度で倍にする方法を学ぶ。君はゲームに残り続ける方法を学ぶ。"
 
@@ -1018,7 +1036,7 @@ msgstr "このマーケットはもう動いた。"
 msgid "Those answers didn’t go through. Check all six questions and try again."
 msgstr "回答を送信できませんでした。6問すべてを確認して再試行してください。"
 
-#: src/lib/waitlist/persona.ts:96
+#: src/lib/waitlist/persona.ts:97
 msgid "Three hours of research. Two-word thesis: send it."
 msgstr "リサーチ3時間。結論は一言、「行け」。"
 
@@ -1036,14 +1054,14 @@ msgid "Trade your edge."
 msgstr "見立てを取引しよう。"
 
 #: src/components/waitlist/waitlist-experience.tsx:763
-msgid "Trader type"
-msgstr "取引タイプ"
+#~ msgid "Trader type"
+#~ msgstr "取引タイプ"
 
 #: src/components/consumer-network/consumer-home.tsx:289
 msgid "Turn influence into income"
 msgstr "影響力を収益に"
 
-#: src/components/waitlist/waitlist-experience.tsx:1720
+#: src/components/waitlist/waitlist-experience.tsx:1693
 msgid "Unlock your result"
 msgstr "結果をアンロック"
 
@@ -1055,11 +1073,11 @@ msgstr "ダークテーマで読む"
 msgid "Use light reading theme"
 msgstr "ライトテーマで読む"
 
-#: src/components/waitlist/waitlist-experience.tsx:1652
+#: src/components/waitlist/waitlist-experience.tsx:1629
 msgid "Verification"
 msgstr "認証"
 
-#: src/components/waitlist/waitlist-experience.tsx:1662
+#: src/components/waitlist/waitlist-experience.tsx:1639
 msgid "Verification code"
 msgstr "認証コード"
 
@@ -1067,8 +1085,8 @@ msgstr "認証コード"
 msgid "Verification code is incorrect or expired"
 msgstr "認証コードが正しくないか、期限切れです"
 
-#: src/components/waitlist/waitlist-experience.tsx:1447
-#: src/components/waitlist/waitlist-experience.tsx:1544
+#: src/components/waitlist/waitlist-experience.tsx:1424
+#: src/components/waitlist/waitlist-experience.tsx:1521
 msgid "Verified as"
 msgstr "認証済み"
 
@@ -1084,7 +1102,7 @@ msgstr "自称ではなく、実取引で検証"
 msgid "Verify it with onchain data and market structure."
 msgstr "オンチェーンデータと市場構造で検証する。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1455
+#: src/components/waitlist/waitlist-experience.tsx:1432
 msgid "View my result"
 msgstr "自分の結果を見る"
 
@@ -1094,13 +1112,12 @@ msgstr "自分の結果を見る"
 #: src/components/site/site-footer.tsx:77
 #: src/components/site/site-header.tsx:55
 #: src/components/site/site-header.tsx:131
-#: src/components/waitlist/waitlist-experience.tsx:1415
-#: src/components/waitlist/waitlist-experience.tsx:1523
+#: src/components/waitlist/waitlist-experience.tsx:1392
+#: src/components/waitlist/waitlist-experience.tsx:1500
 msgid "Waitlist"
 msgstr "ウェイトリスト"
 
-#: src/components/waitlist/waitlist-experience.tsx:764
-#: src/components/waitlist/waitlist-experience.tsx:1762
+#: src/components/waitlist/waitlist-experience.tsx:1735
 msgid "Waitlist rank"
 msgstr "ウェイトリスト順位"
 
@@ -1108,7 +1125,7 @@ msgstr "ウェイトリスト順位"
 msgid "Wallet flows, data, and a clear invalidation level."
 msgstr "ウォレット資金流、データ、明確な無効化ライン。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1637
+#: src/components/waitlist/waitlist-experience.tsx:1614
 msgid "We’ll use this to save your result and send waitlist updates."
 msgstr "結果の保存とウェイトリストの最新情報のお知らせに使用します。"
 
@@ -1116,7 +1133,7 @@ msgstr "結果の保存とウェイトリストの最新情報のお知らせに
 msgid "Yes"
 msgstr "Yes"
 
-#: src/lib/waitlist/persona.ts:100
+#: src/lib/waitlist/persona.ts:101
 msgid "You can chart every line except the one marking enough exposure."
 msgstr "どんなラインも引けるのに、ポジションの引き際だけは引けない。"
 
@@ -1124,19 +1141,19 @@ msgstr "どんなラインも引けるのに、ポジションの引き際だけ
 msgid "You catch a 10×. Who hears first?"
 msgstr "10倍を掴んだ。誰が最初に知る？"
 
-#: src/lib/waitlist/persona.ts:112
+#: src/lib/waitlist/persona.ts:113
 msgid "You know everyone’s position except, occasionally, your own."
 msgstr "全員のポジションを把握している。たまに自分のだけ抜けるけど。"
 
-#: src/lib/waitlist/persona.ts:104
+#: src/lib/waitlist/persona.ts:105
 msgid "You’re not buying the dip. You’re giving the downtrend a demo."
 msgstr "押し目買いじゃない。下落トレンドにお手本を見せているんだ。"
 
-#: src/lib/waitlist/persona.ts:88
+#: src/lib/waitlist/persona.ts:89
 msgid "You’re not trading. You’re funding the ecosystem."
 msgstr "それはトレードじゃない。エコシステムへの資金提供だ。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1623
+#: src/components/waitlist/waitlist-experience.tsx:1600
 msgid "you@domain.com"
 msgstr "メールアドレスを入力"
 
@@ -1144,11 +1161,11 @@ msgstr "メールアドレスを入力"
 msgid "Your group chat strongly disagrees with your trade. What do you do?"
 msgstr "グループチャットがあなたのトレードに強く反対している。どうする？"
 
-#: src/components/waitlist/waitlist-experience.tsx:1814
+#: src/components/waitlist/waitlist-experience.tsx:1787
 msgid "Your invitation link"
 msgstr "あなたの招待リンク"
 
-#: src/components/waitlist/waitlist-experience.tsx:1828
+#: src/components/waitlist/waitlist-experience.tsx:1801
 msgid "Your invite link"
 msgstr "あなたの招待リンク"
 
@@ -1156,11 +1173,11 @@ msgstr "あなたの招待リンク"
 msgid "Your position moves 20% against you. What happens next?"
 msgstr "ポジションが20%逆行した。次に何をする？"
 
-#: src/components/waitlist/waitlist-experience.tsx:1607
+#: src/components/waitlist/waitlist-experience.tsx:1584
 msgid "Your result is ready"
 msgstr "結果の準備ができました"
 
-#: src/components/waitlist/waitlist-experience.tsx:1458
+#: src/components/waitlist/waitlist-experience.tsx:1435
 msgid "Your result is saved as {savedPersonaName}."
 msgstr "結果は{savedPersonaName}として保存されています。"
 
@@ -1169,6 +1186,6 @@ msgstr "結果は{savedPersonaName}として保存されています。"
 msgid "Your session expired. Sign in again to continue."
 msgstr "セッションの有効期限が切れました。続行するには再度サインインしてください。"
 
-#: src/components/waitlist/waitlist-experience.tsx:468
+#: src/components/waitlist/waitlist-experience.tsx:469
 msgid "your trader type"
 msgstr "あなたの取引タイプ"

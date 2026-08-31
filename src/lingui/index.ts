@@ -7,4 +7,5 @@ export {
   toAppLocale,
   type AppLocale,
 } from "./instance";
+export { i18nForLocale, localeFromParam, localeSearchParam } from "./for-locale";
 export { LinguiProvider } from "./LinguiProvider";

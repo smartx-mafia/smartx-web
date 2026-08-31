@@ -1,7 +1,8 @@
 import { msg } from "@lingui/core/macro";
 import type { MessageDescriptor } from "@lingui/core";
 
-import { i18n } from "@/lingui";
+import { i18n, toAppLocale, type AppLocale } from "@/lingui";
+import { i18nForLocale } from "@/lingui/for-locale";
 
 import { resolveWaitlistAssetUrl } from "./api";
 import type {
@@ -125,19 +126,38 @@ function personaL10n(persona: Pick<Persona, "mark" | "code">) {
   return PERSONA_L10N[persona.mark] ?? PERSONA_L10N[persona.code];
 }
 
-export function localizedPersonaName(persona: Persona): string {
-  if (i18n.locale === "en") return persona.name;
-  if (i18n.locale === "zh-CN" && persona.cn) return persona.cn;
+export function personaCopyForLocale(
+  persona: Pick<Persona, "name" | "cn" | "roast" | "roastZh" | "mark" | "code">,
+  locale: AppLocale,
+) {
+  const catalog = i18nForLocale(locale);
   const entry = personaL10n(persona);
-  return entry ? i18n._(entry.name) : persona.name;
+  const name =
+    locale === "en"
+      ? persona.name
+      : locale === "zh-CN" && persona.cn
+        ? persona.cn
+        : entry
+          ? catalog._(entry.name)
+          : persona.name;
+  if (!persona.roast) return { name, roast: "" };
+  const roast =
+    locale === "en"
+      ? persona.roast
+      : locale === "zh-CN" && persona.roastZh
+        ? persona.roastZh
+        : entry
+          ? catalog._(entry.roast)
+          : persona.roast;
+  return { name, roast };
+}
+
+export function localizedPersonaName(persona: Persona): string {
+  return personaCopyForLocale(persona, toAppLocale(i18n.locale)).name;
 }
 
 export function localizedPersonaRoast(persona: Persona): string {
-  if (i18n.locale === "en") return persona.roast;
-  if (i18n.locale === "zh-CN" && persona.roastZh) return persona.roastZh;
-  if (!persona.roast) return "";
-  const entry = personaL10n(persona);
-  return entry ? i18n._(entry.roast) : persona.roast;
+  return personaCopyForLocale(persona, toAppLocale(i18n.locale)).roast;
 }
 
 const POLE_L10N: Record<Pole, MessageDescriptor> = {
