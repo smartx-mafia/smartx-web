@@ -923,13 +923,7 @@ export function WaitlistExperience() {
   const beginFromReferral = () => startQuiz();
 
   const beginWithoutInvite = async () => {
-    if (normalizeInviteCode(inviteCodeRef.current)) {
-      await startQuiz();
-      return;
-    }
     setGateError("");
-    dropLandingInvite();
-    setInviteCode("");
     try {
       await enterQuiz();
     } catch (error) {
