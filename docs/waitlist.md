@@ -337,62 +337,62 @@ Waitlist 是用户从官网进入 SmartX 的第一段轻量产品体验，不是
 
 ### B.2 Risk posture
 
-#### R1 · A coin you do not own is up 40%. What do you do?
+#### R1 · A coin you don't own is up 40%. What's your move?
 
 | option_id | 选项 | 判型权重 | 信仰 | 嗅觉 | 复原力 |
 | --- | --- | ---: | ---: | ---: | ---: |
-| R1_A | Buy now. Momentum rarely waits. | +2 | +15 | 0 | 0 |
-| R1_B | Start small now and add if it holds. | +1 | +10 | +5 | 0 |
+| R1_A | Buy now. Momentum doesn't wait. | +2 | +15 | 0 | 0 |
+| R1_B | Start small, add if it holds. | +1 | +10 | +5 | 0 |
 | R1_C | Set my entry and wait. | -1 | 0 | +10 | 0 |
 | R1_D | Pass. No setup, no trade. | -2 | 0 | +5 | +10 |
 
-#### R2 · Your position moves 20% against you. What happens next?
+#### R2 · Your position is down 20%. What happens next?
 
 | option_id | 选项 | 判型权重 | 信仰 | 嗅觉 | 复原力 |
 | --- | --- | ---: | ---: | ---: | ---: |
-| R2_A | Add immediately. The market is improving my entry. | +2 | +15 | 0 | 0 |
-| R2_B | Give it more room before deciding. | +1 | +10 | 0 | +5 |
-| R2_C | Reduce the position according to plan. | -1 | 0 | +5 | +10 |
+| R2_A | Buy more. The market just improved my entry. | +2 | +15 | 0 | 0 |
+| R2_B | Give it room. Decide later. | +1 | +10 | 0 | +5 |
+| R2_C | Trim it. That was always the plan. | -1 | 0 | +5 | +10 |
 | R2_D | Exit at invalidation. No debate. | -2 | 0 | 0 | +15 |
 
 ### B.3 Decision basis
 
-#### D1 · Before entering a trade, what convinces you most?
+#### D1 · What actually convinces you to enter a trade?
 
 | option_id | 选项 | 判型权重 | 信仰 | 嗅觉 | 复原力 |
 | --- | --- | ---: | ---: | ---: | ---: |
-| D1_A | Wallet flows, data, and a clear invalidation level. | +2 | 0 | +15 | 0 |
-| D1_B | Chart structure and price confirmation. | +1 | 0 | +10 | +5 |
-| D1_C | The market’s mood and momentum. | -1 | +5 | +5 | 0 |
-| D1_D | A strong thesis that simply feels early. | -2 | +10 | +5 | 0 |
+| D1_A | Wallet flows, hard data, a clear invalidation level. | +2 | 0 | +15 | 0 |
+| D1_B | A clean chart and price confirmation. | +1 | 0 | +10 | +5 |
+| D1_C | The market's mood and momentum. | -1 | +5 | +5 | 0 |
+| D1_D | A thesis that just feels early. | -2 | +10 | +5 | 0 |
 
-#### D2 · A trader you trust posts a high-conviction call. What do you do?
+#### D2 · A trader you trust posts a high-conviction call. Your move?
 
 | option_id | 选项 | 判型权重 | 信仰 | 嗅觉 | 复原力 |
 | --- | --- | ---: | ---: | ---: | ---: |
-| D2_A | Verify it with onchain data and market structure. | +2 | 0 | +15 | 0 |
-| D2_B | Check the chart before taking a position. | +1 | 0 | +10 | +5 |
-| D2_C | Open a small starter because I trust the source. | -1 | +5 | +5 | 0 |
+| D2_A | Check it against onchain data first. | +2 | 0 | +15 | 0 |
+| D2_B | Look at the chart before I touch it. | +1 | 0 | +10 | +5 |
+| D2_C | A small starter. I trust them. | -1 | +5 | +5 | 0 |
 | D2_D | Follow immediately. Conviction is contagious. | -2 | +10 | 0 | 0 |
 
 ### B.4 Trading mode
 
-#### S1 · You catch a 10×. Who hears first?
+#### S1 · You hit a 10x. Who finds out first?
 
 | option_id | 选项 | 判型权重 | 信仰 | 嗅觉 | 复原力 |
 | --- | --- | ---: | ---: | ---: | ---: |
-| S1_A | Screenshot, group chat, X. | +2 | +10 | 0 | 0 |
-| S1_B | My close trading group. | +1 | +5 | 0 | +5 |
+| S1_A | Screenshot. Group chat. Then X. | +2 | +10 | 0 | 0 |
+| S1_B | My inner circle. | +1 | +5 | 0 | +5 |
 | S1_C | One trusted friend, maybe. | -1 | 0 | +5 | +5 |
 | S1_D | No one. I take profit and keep moving. | -2 | 0 | +5 | +10 |
 
-#### S2 · Your group chat strongly disagrees with your trade. What do you do?
+#### S2 · Your group chat hates your trade. Now what?
 
 | option_id | 选项 | 判型权重 | 信仰 | 嗅觉 | 复原力 |
 | --- | --- | ---: | ---: | ---: | ---: |
-| S2_A | Debate it with the group and adjust if they have a point. | +2 | 0 | +5 | +5 |
+| S2_A | Argue it out, and adjust if they have a point. | +2 | 0 | +5 | +5 |
 | S2_B | Listen first, then decide. | +1 | 0 | +10 | +5 |
-| S2_C | Note the feedback but keep my plan. | -1 | +5 | 0 | +10 |
+| S2_C | Hear them out, keep my plan. | -1 | +5 | 0 | +10 |
 | S2_D | Ignore the noise and execute alone. | -2 | +10 | 0 | +5 |
 
 ## 附录 C：人格配置

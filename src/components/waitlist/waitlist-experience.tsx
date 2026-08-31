@@ -80,8 +80,6 @@ import { fetchResultCard, type RenderedResultCard } from "./result-card-export";
 import styles from "./waitlist.module.css";
 
 const WAITLIST_URL = "https://smartx.io/waitlist/";
-const PRIORITY_PER_FRIEND = 500;
-const PRIORITY_FRIEND_CAP = 5000;
 const NO_SAVED_RESULT = "No saved result is linked to this email. Take the test to create one.";
 const INVALID_EMAIL = "Please enter a valid email address.";
 const GENERIC_ERROR = "Something went wrong. Please try again.";
@@ -469,10 +467,6 @@ export function WaitlistExperience() {
   const currentQuestion = questions[questionIndex];
   const verifiedEmail = userInfo?.email || sessionEmail || email;
   const friendRewardApplied = verifiedFriends > 0;
-  const friendPriority = Math.min(
-    PRIORITY_FRIEND_CAP,
-    Math.max(PRIORITY_PER_FRIEND, PRIORITY_PER_FRIEND * verifiedFriends),
-  );
   const clock = nowMs || (otpResendAt ? Date.now() : 0);
   const otpCooldown = otpResendAt ? remainingSeconds(otpResendAt, clock) : 0;
 
@@ -1736,7 +1730,7 @@ export function WaitlistExperience() {
                   <div data-applied={shareCompleted}>
                     <span>{shareCompleted ? t`Share recorded` : t`First result share`}</span>
                     <b>
-                      <Trans>+500 priority</Trans>
+                      <Trans>+10 priority</Trans>
                     </b>
                   </div>
                   <div data-applied={friendRewardApplied}>
@@ -1746,7 +1740,7 @@ export function WaitlistExperience() {
                         : t`Each verified friend`}
                     </span>
                     <b>
-                      <Trans>+{friendPriority.toLocaleString("en-US")} priority</Trans>
+                      <Trans>+5 priority</Trans>
                     </b>
                   </div>
                 </div>
