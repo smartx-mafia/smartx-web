@@ -1193,9 +1193,7 @@ export function WaitlistExperience() {
   const copyInvitation = async (code?: string) => {
     if (!code) return;
     try {
-      const url = makeInvitationUrl(code, true);
-      const text = ownOutcome ? `${shareTweetText(ownOutcome.persona, locale)}\n\n${url}` : url;
-      await navigator.clipboard.writeText(text);
+      await navigator.clipboard.writeText(makeInvitationUrl(code, true));
       setInviteLinkCopied(true);
       window.setTimeout(() => setInviteLinkCopied(false), 1400);
     } catch (error) {

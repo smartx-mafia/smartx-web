@@ -4074,7 +4074,7 @@
 
   .page:is([data-stage="result"], [data-referral="true"]) .personaArt img {
     mix-blend-mode: normal;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
   }
 
@@ -4964,7 +4964,7 @@
   white-space: nowrap;
 }
 
-.page[data-stage="result"] .personaArt {
+.page:is([data-stage="result"], [data-referral="true"]) .personaArt {
   position: relative;
   width: 100%;
   max-width: none;
@@ -4974,7 +4974,7 @@
   background: #121212;
 }
 
-.page[data-stage="result"] .personaArt img {
+.page:is([data-stage="result"], [data-referral="true"]) .personaArt img {
   z-index: 1;
   mix-blend-mode: normal;
   object-fit: cover;
@@ -5367,7 +5367,7 @@
   }
 
   .page[data-stage="result"] .personaArt img {
-    object-fit: contain;
+    object-fit: cover;
   }
 
   .page[data-stage="result"] .posterScores {
