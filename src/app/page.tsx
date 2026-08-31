@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { ConsumerHome } from "@/components/consumer-network/consumer-home";
 import {
   SMARTX_DEFAULT_SOCIAL_IMAGE,
+  SMARTX_DEFAULT_SOCIAL_IMAGE_PATH,
   SMARTX_INDEXABLE_ROBOTS,
   SMARTX_LOGO_URL,
   SMARTX_OPEN_GRAPH_DEFAULTS,
@@ -53,7 +54,7 @@ const structuredData = {
       operatingSystem: "Web",
       inLanguage: "en",
       url: "https://app.smartx.io/",
-      image: "https://smartx.io/opengraph-image.png",
+      image: `https://smartx.io${SMARTX_DEFAULT_SOCIAL_IMAGE_PATH}`,
       description:
         "Follow verified traders and trade memes, perps, stocks, and prediction markets in one tap.",
       offers: {
