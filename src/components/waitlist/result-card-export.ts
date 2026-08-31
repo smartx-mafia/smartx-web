@@ -13,7 +13,7 @@ export async function fetchResultCard(
   locale = "en",
   imageUrl?: string,
 ): Promise<RenderedResultCard> {
-  const query = new URLSearchParams({ invite: inviteCode });
+  const query = new URLSearchParams({ invite: inviteCode, t: String(Date.now()) });
   if (locale && locale !== "en") query.set("lang", locale);
   if (imageUrl) query.set("image", imageUrl);
   const response = await fetch(`/waitlist/og/?${query.toString()}`, { cache: "no-store" });

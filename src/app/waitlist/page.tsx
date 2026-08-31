@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { WaitlistExperience } from "@/components/waitlist/waitlist-experience";
 import { localeFromParam, localeSearchParam } from "@/lingui";
 import { QUIZ_ART_SRCS } from "@/lib/waitlist/persona";
+import { withCacheBuster } from "@/lib/waitlist/api";
 import { loadInviterShareCard, requestOrigin } from "@/lib/waitlist/public-share";
 import { shareOgCopy } from "@/lib/waitlist/share-copy";
 import {
@@ -36,9 +37,15 @@ export async function generateMetadata({
 
   const origin = await requestOrigin();
   const copy = shareOgCopy(card.persona, locale);
+  const pageQuery = new URLSearchParams({ invite: card.invite });
   const langQuery = localeSearchParam(locale);
+  if (langQuery) pageQuery.set("lang", langQuery);
+  const pageUrl = `${origin}/waitlist/?${pageQuery.toString()}`;
+  const ogImageUrl = withCacheBuster(`${origin}/waitlist/og/?${pageQuery.toString()}`);
   const ogImage = {
-    url: `${origin}/waitlist/og/?invite=${card.invite}${langQuery ? `&lang=${encodeURIComponent(langQuery)}` : ""}`,
+    url: ogImageUrl,
+    secureUrl: ogImageUrl,
+    type: "image/png",
     width: 1200,
     height: 630,
     alt: copy.imageAlt,
@@ -48,20 +55,24 @@ export async function generateMetadata({
     ...DEFAULT_METADATA,
     title: copy.title,
     description: copy.description,
+    // 推特按 canonical 再抓一遍；无 invite 的 /waitlist/ 会落到兜底图。
+    // nofollow 也会让爬虫不去拉 og:image。
+    alternates: { canonical: pageUrl },
+    robots: { index: true, follow: true },
     openGraph: {
       ...SMARTX_OPEN_GRAPH_DEFAULTS,
       title: copy.title,
       description: copy.description,
       locale: locale === "zh-CN" ? "zh_CN" : locale === "ja" ? "ja_JP" : locale === "ko" ? "ko_KR" : "en_US",
       type: "website",
-      url: "/waitlist/",
+      url: pageUrl,
       images: [ogImage],
     },
     twitter: {
       ...SMARTX_TWITTER_DEFAULTS,
       title: copy.title,
       description: copy.description,
-      images: [ogImage.url],
+      images: [ogImage],
     },
   };
 }
