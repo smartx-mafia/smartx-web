@@ -37,7 +37,8 @@ import {
   type ShareImageAction,
   type ShareImageActionResult,
 } from "@/lib/waitlist/share-image";
-import { i18n } from "@/lingui";
+import { i18n, toAppLocale } from "@/lingui";
+import { shareTweetText } from "@/lib/waitlist/share-copy";
 import {
   areCommunityTasksDone,
   decideWaitlistEntry,
@@ -89,7 +90,6 @@ const SESSION_EXPIRED = "Authorization error";
 const INVALID_ANSWERS = "invalid answers";
 const INVITES_POLL_MS = 10_000;
 const OTP_RESEND_SECONDS = 60;
-const OTP_EXPIRE_SECONDS = 300;
 const DEFAULT_COMMUNITY = {
   telegram: "https://t.me/SmartX_Community",
   x: "https://x.com/SmartXTerminal",
@@ -225,10 +225,11 @@ function isExpiredSession(error: unknown) {
   return isUnauthorized(error) || isMissingUserError(error);
 }
 
-function makeInvitationUrl(code?: string, useCurrentOrigin = false) {
+function makeInvitationUrl(code?: string, useCurrentOrigin = false, locale = toAppLocale(i18n.locale)) {
   const base = useCurrentOrigin && typeof window !== "undefined" ? new URL("/waitlist/", window.location.origin).toString() : WAITLIST_URL;
   const url = new URL(base);
   if (code) url.searchParams.set("invite", code);
+  if (locale && locale !== "en") url.searchParams.set("lang", locale);
   return url.toString();
 }
 
@@ -406,7 +407,8 @@ function PersonaPoster({
 }
 
 export function WaitlistExperience() {
-  useLingui(); // 订阅语言切换，保证组件内 t 宏文案随 locale 重渲染
+  const { i18n: lingui } = useLingui(); // 订阅语言切换，保证组件内 t 宏文案随 locale 重渲染
+  const locale = toAppLocale(lingui.locale);
   const router = useRouter();
   const pathname = usePathname();
   const shareParams = useSearchParams();
@@ -427,7 +429,6 @@ export function WaitlistExperience() {
   const [otp, setOtp] = useState("");
   const [otpError, setOtpError] = useState("");
   const [otpResendAt, setOtpResendAt] = useState(0);
-  const [otpExpireAt, setOtpExpireAt] = useState(0);
   const [nowMs, setNowMs] = useState(0);
   const [recoveryError, setRecoveryError] = useState("");
   const [telegramOpened, setTelegramOpened] = useState(false);
@@ -473,9 +474,8 @@ export function WaitlistExperience() {
     PRIORITY_FRIEND_CAP,
     Math.max(PRIORITY_PER_FRIEND, PRIORITY_PER_FRIEND * verifiedFriends),
   );
-  const clock = nowMs || (otpExpireAt || otpResendAt ? Date.now() : 0);
+  const clock = nowMs || (otpResendAt ? Date.now() : 0);
   const otpCooldown = otpResendAt ? remainingSeconds(otpResendAt, clock) : 0;
-  const otpExpiresIn = otpExpireAt ? remainingSeconds(otpExpireAt, clock) : 0;
 
   const clearShareUrl = (options?: { hard?: boolean; notice?: string }) => {
     if (typeof window === "undefined") return;
@@ -755,7 +755,7 @@ export function WaitlistExperience() {
     let rendered: RenderedResultCard | null = null;
     setPreparedCard(null);
     setExportError(false);
-    fetchResultCard(ownInviteCode)
+    fetchResultCard(ownInviteCode, locale)
       .then((card) => {
         rendered = card;
         if (disposed) {
@@ -771,7 +771,7 @@ export function WaitlistExperience() {
       disposed = true;
       if (rendered) URL.revokeObjectURL(rendered.href);
     };
-  }, [stage, ownInviteCode]);
+  }, [stage, ownInviteCode, locale]);
 
   const ensureQuestions = async () => {
     if (questions.length) return questions;
@@ -1000,7 +1000,6 @@ export function WaitlistExperience() {
       const now = Date.now();
       setNowMs(now);
       setOtpResendAt(now + OTP_RESEND_SECONDS * 1000);
-      setOtpExpireAt(now + OTP_EXPIRE_SECONDS * 1000);
       setStage("verify");
     } catch (error) {
       setRecoveryError(errorMessage(error));
@@ -1015,7 +1014,6 @@ export function WaitlistExperience() {
       const now = Date.now();
       setNowMs(now);
       setOtpResendAt(now + OTP_RESEND_SECONDS * 1000);
-      setOtpExpireAt(now + OTP_EXPIRE_SECONDS * 1000);
     } catch (error) {
       setOtpError(errorMessage(error));
     }
@@ -1179,10 +1177,8 @@ export function WaitlistExperience() {
   const shareResult = async () => {
     if (!ownOutcome || !ownInviteCode) return;
     const shareUrl = new URL("https://twitter.com/intent/tweet");
-    const shareName = localizedPersonaName(ownOutcome.persona);
-    const shareRoast = localizedPersonaRoast(ownOutcome.persona);
-    shareUrl.searchParams.set("text", `${t`My SmartX trader type is ${shareName}.`}${shareRoast ? `\n\n“${shareRoast}”` : ""}\n\n${t`Find yours in six questions.`}`);
-    shareUrl.searchParams.set("url", makeInvitationUrl(ownInviteCode, true));
+    shareUrl.searchParams.set("text", shareTweetText(ownOutcome.persona, locale));
+    shareUrl.searchParams.set("url", makeInvitationUrl(ownInviteCode, true, locale));
     window.open(shareUrl.toString(), "_blank", "noopener,noreferrer");
     if (!userToken || shareCompleted || demoActive) return;
     try {
@@ -1198,7 +1194,9 @@ export function WaitlistExperience() {
   const copyInvitation = async (code?: string) => {
     if (!code) return;
     try {
-      await navigator.clipboard.writeText(makeInvitationUrl(code, true));
+      const url = makeInvitationUrl(code, true, locale);
+      const text = ownOutcome ? `${shareTweetText(ownOutcome.persona, locale)}\n\n${url}` : url;
+      await navigator.clipboard.writeText(text);
       setInviteLinkCopied(true);
       window.setTimeout(() => setInviteLinkCopied(false), 1400);
     } catch (error) {
@@ -1266,7 +1264,7 @@ export function WaitlistExperience() {
     }
 
     setExporting(true);
-    void fetchResultCard(ownInviteCode)
+    void fetchResultCard(ownInviteCode, locale)
       .then((rendered) => {
         setPreparedCard(rendered);
         setExportError(false);
@@ -1654,7 +1652,6 @@ export function WaitlistExperience() {
                     placeholder={t`Six-digit code`}
                     onChange={(event) => { setOtp(event.target.value.replace(/\D/g, "").slice(0, 6)); setOtpError(""); }}
                     aria-invalid={Boolean(otpError)}
-                    aria-describedby="otp-note"
                     autoFocus
                     required
                   />
@@ -1674,16 +1671,13 @@ export function WaitlistExperience() {
                   <Trans>Continue</Trans>
                 </WaitlistButton>
               </div>
-              <small id="otp-note" className={styles.otpStatus} aria-live="polite">
-                {otpExpiresIn > 0 ? t`The code expires in ${formatClock(otpExpiresIn)}.` : t`The code has expired. Resend to get a new one.`}
-              </small>
               {otpError ? <small className={styles.formError} id="otp-error" role="alert">{localizeWaitlistMessage(otpError)}</small> : null}
               <div className={styles.formMeta}>
                 <WaitlistButton type="button" onClick={() => setStage("email")}>
                   <Trans>Change Email</Trans>
                 </WaitlistButton>
                 <WaitlistButton type="button" disabled={otpCooldown > 0} onAction={resendCode}>
-                  <Trans>Resend Code</Trans>
+                  {otpCooldown > 0 ? t`Resend Code (${formatClock(otpCooldown)})` : t`Resend Code`}
                 </WaitlistButton>
               </div>
             </form>
@@ -1805,8 +1799,8 @@ export function WaitlistExperience() {
                   <div className={styles.primaryInviteCard} data-empty={ownInviteCode ? undefined : "true"}>
                     <div>
                       <span><Trans>Your invite link</Trans></span>
-                      <strong title={ownInviteCode ? makeInvitationUrl(ownInviteCode, true) : undefined}>
-                        {ownInviteCode ? makeInvitationUrl(ownInviteCode, true) : t`Invite link is being prepared`}
+                      <strong title={ownInviteCode ? makeInvitationUrl(ownInviteCode, true, locale) : undefined}>
+                        {ownInviteCode ? makeInvitationUrl(ownInviteCode, true, locale) : t`Invite link is being prepared`}
                       </strong>
                     </div>
                     <WaitlistButton

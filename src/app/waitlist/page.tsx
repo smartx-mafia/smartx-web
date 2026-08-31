@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 
 import { WaitlistExperience } from "@/components/waitlist/waitlist-experience";
+import { localeFromParam, localeSearchParam } from "@/lingui";
 import { QUIZ_ART_SRCS } from "@/lib/waitlist/persona";
 import { loadInviterShareCard, requestOrigin } from "@/lib/waitlist/public-share";
+import { shareOgCopy } from "@/lib/waitlist/share-copy";
 import {
   SMARTX_OPEN_GRAPH_DEFAULTS,
   SMARTX_TWITTER_DEFAULTS,
@@ -28,37 +30,37 @@ export async function generateMetadata({
   const rawInvite = Array.isArray(params.invite) ? params.invite[0] : params.invite;
   if (!rawInvite) return DEFAULT_METADATA;
 
-  const card = await loadInviterShareCard(rawInvite);
+  const locale = localeFromParam(params.lang);
+  const card = await loadInviterShareCard(rawInvite, locale);
   if (!card) return DEFAULT_METADATA;
 
   const origin = await requestOrigin();
-  const title = `${card.name} | SmartX Trader Type`;
-  const description = card.roast
-    ? `“${card.roast}” — Take the six-question test to find your own trader type.`
-    : "A friend invited you to find your trader type in six questions.";
+  const copy = shareOgCopy(card.persona, locale);
+  const langQuery = localeSearchParam(locale);
   const ogImage = {
-    url: `${origin}/waitlist/og/?invite=${card.invite}`,
+    url: `${origin}/waitlist/og/?invite=${card.invite}${langQuery ? `&lang=${encodeURIComponent(langQuery)}` : ""}`,
     width: 1200,
     height: 630,
-    alt: `${card.name} — SmartX trader type card`,
+    alt: copy.imageAlt,
   };
 
   return {
     ...DEFAULT_METADATA,
-    title,
-    description,
+    title: copy.title,
+    description: copy.description,
     openGraph: {
       ...SMARTX_OPEN_GRAPH_DEFAULTS,
-      title,
-      description,
+      title: copy.title,
+      description: copy.description,
+      locale: locale === "zh-CN" ? "zh_CN" : locale === "ja" ? "ja_JP" : locale === "ko" ? "ko_KR" : "en_US",
       type: "website",
       url: "/waitlist/",
       images: [ogImage],
     },
     twitter: {
       ...SMARTX_TWITTER_DEFAULTS,
-      title,
-      description,
+      title: copy.title,
+      description: copy.description,
       images: [ogImage.url],
     },
   };
