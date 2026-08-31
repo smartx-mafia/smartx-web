@@ -202,14 +202,14 @@ function Hero() {
               </Trans>
             </span>
             <span>
-              <Trans>Follow verified traders and trade in one tap.</Trans>
+              <Trans>Follow verified traders and copy in one tap.</Trans>
             </span>
           </p>
           <p className={styles.heroLedeMobile}>
             <Trans>
               <span>The social trading app for memes, perps,</span>
               <span>stocks and prediction markets. Follow</span>
-              <span>verified traders and trade in one tap.</span>
+              <span>verified traders and copy in one tap.</span>
             </Trans>
           </p>
           <WaitlistButton placement="hero" />
@@ -350,7 +350,7 @@ function DiscoverySection() {
         <p>
           <Trans>
             No more scrolling through noise. SmartX learns what you trade and
-            shows you the traders and markets that fit
+            shows you the traders and markets that fit you.
           </Trans>
         </p>
         <p className={styles.storyTrail}>

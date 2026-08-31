@@ -8,9 +8,14 @@ export type RenderedResultCard = {
  * 下载/复制的结果卡直接复用服务端 `/waitlist/og/` 渲染的海报，
  * 与 X 分享链接展示的卡片保持像素一致。
  */
-export async function fetchResultCard(inviteCode: string, locale = "en"): Promise<RenderedResultCard> {
+export async function fetchResultCard(
+  inviteCode: string,
+  locale = "en",
+  imageUrl?: string,
+): Promise<RenderedResultCard> {
   const query = new URLSearchParams({ invite: inviteCode });
   if (locale && locale !== "en") query.set("lang", locale);
+  if (imageUrl) query.set("image", imageUrl);
   const response = await fetch(`/waitlist/og/?${query.toString()}`);
   // 卡片数据不可用时服务端会 302 回退到默认 OG 图，此时视为失败。
   if (!response.ok || response.redirected) {

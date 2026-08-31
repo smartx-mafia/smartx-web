@@ -4957,8 +4957,9 @@
   font-size: min(80px, var(--persona-title-fit, 64px));
   font-weight: 500;
   letter-spacing: 0;
-  line-height: 1;
+  line-height: 1.22;
   overflow: hidden;
+  padding-bottom: 0.12em;
   text-overflow: clip;
   white-space: nowrap;
 }
@@ -5358,7 +5359,7 @@
 
   .page[data-stage="result"] .posterIdentity h2 {
     font-size: min(46px, var(--persona-title-fit, 34px));
-    line-height: 1.06;
+    line-height: 1.22;
   }
 
   .page[data-stage="result"] .personaArt {
