@@ -74,7 +74,6 @@ import {
 } from "@/lib/waitlist/types";
 
 import { WaitlistActionScope, WaitlistButton } from "./waitlist-button";
-import { WaitlistDemoControl, type WaitlistDemoTarget } from "./waitlist-demo-control";
 
 import { fetchResultCard, type RenderedResultCard } from "./result-card-export";
 import styles from "./waitlist.module.css";
@@ -111,24 +110,6 @@ function communityLinksFrom(info: { links?: { telegram?: string; x?: string } } 
     x: resolveCommunityHref(info?.links?.x, DEFAULT_COMMUNITY.x),
   };
 }
-
-const DEMO_OUTCOME: Outcome = {
-  resultId: "demo-result",
-  persona: PERSONAS_BY_CODE.SIG,
-  poles: ["DEGEN", "DATA", "PACK"],
-  stats: { conviction: 86, instinct: 72, resilience: 64 },
-  bestMatch: PERSONAS_BY_CODE.CHN,
-  rival: PERSONAS_BY_CODE.DOC,
-};
-
-const HIDDEN_DEMO_OUTCOME: Outcome = {
-  resultId: "demo-result-rsk",
-  persona: PERSONAS_BY_CODE.RSK,
-  poles: ["SNIPER", "DATA", "LONE"],
-  stats: { conviction: 40, instinct: 38, resilience: 92 },
-  bestMatch: PERSONAS_BY_CODE.CHN,
-  rival: PERSONAS_BY_CODE.LQD,
-};
 
 // 状态与分支逻辑始终使用英文规范文案（与 API 返回值精确比较）；
 // 只在渲染时经此映射表转成当前语言，未知文案原样透出。
@@ -450,16 +431,12 @@ export function WaitlistExperience() {
   const [exporting, setExporting] = useState(false);
   const preparedCardRef = useRef(preparedCard);
   preparedCardRef.current = preparedCard;
-  const [demoActive, setDemoActive] = useState(() => shareParams.get("demo") === "1");
-  const [demoTarget, setDemoTarget] = useState<WaitlistDemoTarget>("gate");
-  const demoRequestIdRef = useRef(0);
 
   useEffect(() => {
     prefetchQuizArtwork();
   }, []);
 
   const loggedIn = Boolean(userToken && userInfo);
-  const demoVisible = shareParams.get("demo") === "1";
   const hasOwnResult = isOwnResultAvailable({ loggedIn, submitted: Boolean(userInfo?.submitted && userInfo.resultId) });
   const inviteReady = isValidInviteCode(inviteCode);
   const savedPersona = ownOutcome?.persona ?? PERSONAS_BY_CODE[userInfo?.personaId ?? ""];
@@ -713,7 +690,7 @@ export function WaitlistExperience() {
   }, [answers, questionIndex, stage]);
 
   useEffect(() => {
-    if (demoActive || stage !== "result" || !userToken) return;
+    if (stage !== "result" || !userToken) return;
     let inFlight = false;
     const pollInvites = async () => {
       if (inFlight || document.hidden) return;
@@ -740,7 +717,7 @@ export function WaitlistExperience() {
       void pollInvites();
     }, INVITES_POLL_MS);
     return () => window.clearInterval(timer);
-  }, [demoActive, stage, userToken]);
+  }, [stage, userToken]);
 
   useEffect(() => {
     if (stage !== "result" || !ownInviteCode) return;
@@ -773,98 +750,6 @@ export function WaitlistExperience() {
     prefetchQuizArtwork(next.map((item) => item.artSrc));
     setQuestions(next);
     return next;
-  };
-
-  const showDemoTarget = async (target: WaitlistDemoTarget) => {
-    const requestId = ++demoRequestIdRef.current;
-    setDemoActive(true);
-    setDemoTarget(target);
-    setGateError("");
-    setQuizWarning("");
-    setRecoveryError("");
-    setOtpError("");
-    setPreparedCard(null);
-    setExportError(false);
-
-    if (target.startsWith("quiz-")) {
-      try {
-        const nextQuestions = await ensureQuestions();
-        if (requestId !== demoRequestIdRef.current) return;
-        const requested = Number(target.slice("quiz-".length)) - 1;
-        setQuestionIndex(Math.min(Math.max(requested, 0), Math.max(nextQuestions.length - 1, 0)));
-        setReferralOutcome(null);
-        setStage("quiz");
-      } catch (error) {
-        if (requestId !== demoRequestIdRef.current) return;
-        setGateError(errorMessage(error));
-        setStage("gate");
-      }
-      return;
-    }
-
-    if (target === "referral") {
-      setReferralOutcome(DEMO_OUTCOME);
-      setInviteCode("smartx01");
-      setStage("gate");
-      return;
-    }
-
-    setReferralOutcome(null);
-    if (target === "gate") {
-      setInviteCode("");
-      setStage("gate");
-      return;
-    }
-    if (target === "email-create" || target === "email-recover") {
-      setAuthIntent(target === "email-recover" ? "recover" : "create");
-      setEmail("");
-      setStage("email");
-      return;
-    }
-    if (target === "verify") {
-      setAuthIntent("create");
-      setEmail("demo@smartx.io");
-      setOtp("");
-      setStage("verify");
-      return;
-    }
-    if (target === "unlock" || target === "unlock-ready") {
-      const completed = target === "unlock-ready";
-      setSessionEmail("demo@smartx.io");
-      setTelegramOpened(completed);
-      setXOpened(completed);
-      setStage("unlock");
-      return;
-    }
-
-    if (target === "result" && userToken) {
-      try {
-        const workspace = await fetchWorkspace(userToken);
-        if (requestId !== demoRequestIdRef.current) return;
-        applyWorkspace(workspace);
-        return;
-      } catch (error) {
-        if (requestId !== demoRequestIdRef.current) return;
-        if (!handleUserApiError(error)) {
-          notifyError(localizeWaitlistMessage(errorMessage(error)));
-        }
-        return;
-      }
-    }
-
-    setSessionEmail("demo@smartx.io");
-    setOwnOutcome(target === "result-hidden" ? HIDDEN_DEMO_OUTCOME : DEMO_OUTCOME);
-    setRank(8017);
-    setShareCompleted(false);
-    setVerifiedFriends(2);
-    setOwnInviteCode("smartx01");
-    setStage("result");
-  };
-
-  const exitDemo = () => {
-    const url = new URL(window.location.href);
-    url.searchParams.delete("demo");
-    window.location.assign(url.toString());
   };
 
   const verifyLandingInvite = async (code: string) => {
@@ -909,10 +794,8 @@ export function WaitlistExperience() {
 
   const startQuiz = async () => {
     try {
-      if (!demoActive) {
-        const allowed = await verifyLandingInvite(inviteCodeRef.current);
-        if (!allowed) return;
-      }
+      const allowed = await verifyLandingInvite(inviteCodeRef.current);
+      if (!allowed) return;
       setGateError("");
       await enterQuiz();
     } catch (error) {
@@ -1130,11 +1013,6 @@ export function WaitlistExperience() {
       fallback,
     );
     window.open(href, "_blank", "noopener,noreferrer");
-    if (demoActive) {
-      if (channel === "telegram") setTelegramOpened(true);
-      else setXOpened(true);
-      return;
-    }
     if (!userToken) return;
     try {
       const result = await waitlistApi.completeCommunity(channel, userToken);
@@ -1149,10 +1027,6 @@ export function WaitlistExperience() {
   };
 
   const revealResult = async () => {
-    if (demoActive) {
-      await showDemoTarget("result");
-      return;
-    }
     if (!userToken) return;
     try {
       applyWorkspace(await fetchWorkspace(userToken));
@@ -1167,7 +1041,7 @@ export function WaitlistExperience() {
     shareUrl.searchParams.set("text", shareTweetText(ownOutcome.persona, locale));
     shareUrl.searchParams.set("url", makeInvitationUrl(ownInviteCode, true));
     window.open(shareUrl.toString(), "_blank", "noopener,noreferrer");
-    if (!userToken || shareCompleted || demoActive) return;
+    if (!userToken || shareCompleted) return;
     try {
       await waitlistApi.shareComplete(userToken);
       const nextRank = await waitlistApi.getRank(userToken);
@@ -1327,15 +1201,6 @@ export function WaitlistExperience() {
   return (
     <WaitlistActionScope>
     <main className={styles.page} data-stage={stage} data-referral={Boolean(referralOutcome)}>
-      {demoVisible ? (
-        <WaitlistDemoControl
-          className={styles.demoControl}
-          value={demoTarget}
-          questionCount={questions.length}
-          onSelect={(target) => { void showDemoTarget(target); }}
-          onExit={exitDemo}
-        />
-      ) : null}
       <a className={styles.skipLink} href="#waitlist-content">
         <Trans>Skip to waitlist</Trans>
       </a>

@@ -119,56 +119,6 @@
   letter-spacing: 0.08em;
 }
 
-.demoControl {
-  position: fixed;
-  z-index: 100;
-  right: 20px;
-  bottom: 20px;
-  width: min(300px, calc(100vw - 40px));
-  border: 1px solid rgb(255 255 255 / 20%);
-  border-radius: 16px;
-  background: rgb(18 18 18 / 94%);
-  box-shadow: 0 16px 48px rgb(0 0 0 / 40%);
-  color: #fff;
-  font-family: var(--font-plex), var(--font-inter);
-  backdrop-filter: blur(16px);
-}
-
-.demoControl summary {
-  padding: 14px 16px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.demoControl > div {
-  display: grid;
-  gap: 10px;
-  padding: 0 16px 16px;
-}
-
-.demoControl label,
-.demoControl small {
-  color: #929292;
-  font-size: 12px;
-}
-
-.demoControl select,
-.demoControl button {
-  width: 100%;
-  min-height: 40px;
-  padding: 0 12px;
-  border: 1px solid rgb(255 255 255 / 18%);
-  border-radius: 10px;
-  background: #202020;
-  color: #fff;
-  font: inherit;
-}
-
-.demoControl button {
-  cursor: pointer;
-}
-
 .stage {
   display: grid;
   box-sizing: border-box;
