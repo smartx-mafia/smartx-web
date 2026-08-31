@@ -16,9 +16,11 @@ export async function fetchResultCard(
   const query = new URLSearchParams({ invite: inviteCode });
   if (locale && locale !== "en") query.set("lang", locale);
   if (imageUrl) query.set("image", imageUrl);
-  const response = await fetch(`/waitlist/og/?${query.toString()}`);
-  // 卡片数据不可用时服务端会 302 回退到默认 OG 图，此时视为失败。
-  if (!response.ok || response.redirected) {
+  const response = await fetch(`/waitlist/og/?${query.toString()}`, { cache: "no-store" });
+  const contentType = response.headers.get("content-type") ?? "";
+  // 卡片数据不可用时服务端会 302 到默认 OG 图；斜杠规范化造成的 redirected 仍可能是有效海报。
+  const fellBackToDefaultOg = response.redirected && /opengraph-image/i.test(response.url);
+  if (!response.ok || fellBackToDefaultOg || !contentType.startsWith("image/")) {
     throw new Error("Result card is not available yet.");
   }
   const blob = await response.blob();

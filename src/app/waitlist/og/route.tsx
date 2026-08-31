@@ -119,8 +119,9 @@ export async function GET(request: NextRequest) {
     origin,
   );
   const [assets, cjkFont] = await Promise.all([loadAssets(), loadCjkFont(locale)]);
-  const bodyFont = cjkFont ? "Noto Sans" : '"IBM Plex Sans"';
-  const titleFont = cjkFont ? "Noto Sans" : '"Playfair Display"';
+  const bodyFont = cjkFont ? "Noto Sans" : "IBM Plex Sans";
+  const titleFont = cjkFont ? "Noto Sans" : "Playfair Display";
+  const cjkLayout = locale !== "en";
 
   return new ImageResponse(
     (
@@ -162,13 +163,13 @@ export async function GET(request: NextRequest) {
           <div
             style={{
               display: "flex",
-              width: locale === "zh-CN" ? 560 : 385,
+              width: cjkLayout ? 560 : 385,
               justifyContent: "center",
               textAlign: "center",
               color: COLORS.muted,
               fontSize: 16,
               lineHeight: 1.3,
-              whiteSpace: locale === "zh-CN" ? "nowrap" : undefined,
+              ...(cjkLayout ? { whiteSpace: "nowrap" as const } : {}),
             }}
           >
             {copy.tagline}
