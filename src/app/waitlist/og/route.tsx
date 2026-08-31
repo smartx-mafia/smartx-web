@@ -6,6 +6,7 @@ import type { NextRequest } from "next/server";
 
 import { localeFromParam } from "@/lingui";
 import type { AppLocale } from "@/lingui";
+import { SMARTX_DEFAULT_SOCIAL_IMAGE_PATH } from "@/lib/site-metadata";
 import { resolveWaitlistAssetUrl, withCacheBuster } from "@/lib/waitlist/api";
 import { loadInviterShareCard } from "@/lib/waitlist/public-share";
 import { shareOgCopy } from "@/lib/waitlist/share-copy";
@@ -103,7 +104,7 @@ export async function GET(request: NextRequest) {
   const locale = localeFromParam(request.nextUrl.searchParams.get("lang"));
   const card = await loadInviterShareCard(request.nextUrl.searchParams.get("invite"), locale);
   if (!card) {
-    return Response.redirect(new URL("/opengraph-image.png", origin), 302);
+    return Response.redirect(new URL(SMARTX_DEFAULT_SOCIAL_IMAGE_PATH, origin), 302);
   }
 
   const copy = shareOgCopy(card.persona, locale);

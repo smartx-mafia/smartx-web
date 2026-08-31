@@ -10,14 +10,14 @@ import { LOCALE_BOOT_SCRIPT } from "@/lingui/boot-script";
 import {
   SMARTX_DEFAULT_SOCIAL_IMAGE,
   SMARTX_OPEN_GRAPH_DEFAULTS,
-  SMARTX_SITE_URL,
   SMARTX_TWITTER_DEFAULTS,
+  smartXMetadataBase,
 } from "@/lib/site-metadata";
 
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SMARTX_SITE_URL),
+  metadataBase: smartXMetadataBase(),
   title: "SmartX | The AI Trading Terminal Built Around You",
   description:
     "SmartX connects live market signals, smart money context, watchlists, and trading in one AI-native terminal.",
