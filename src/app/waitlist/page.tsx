@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 
 import { WaitlistExperience } from "@/components/waitlist/waitlist-experience";
-import { localeFromParam, localeSearchParam } from "@/lingui";
+import { localeFromParam } from "@/lingui";
 import { QUIZ_ART_SRCS } from "@/lib/waitlist/persona";
-import { withCacheBuster } from "@/lib/waitlist/api";
-import { loadInviterShareCard, requestOrigin } from "@/lib/waitlist/public-share";
+import { requestOrigin } from "@/lib/waitlist/public-share";
 import { shareOgCopy } from "@/lib/waitlist/share-copy";
+import { decodeShareResult, waitlistShareQuery } from "@/lib/waitlist/share-result";
 import {
   SMARTX_OPEN_GRAPH_DEFAULTS,
   SMARTX_TWITTER_DEFAULTS,
@@ -24,24 +24,28 @@ type WaitlistPageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
+function firstSearchParam(value: string | string[] | undefined) {
+  return Array.isArray(value) ? value[0] : value;
+}
+
 export async function generateMetadata({
   searchParams,
 }: WaitlistPageProps): Promise<Metadata> {
   const params = await searchParams;
-  const rawInvite = Array.isArray(params.invite) ? params.invite[0] : params.invite;
-  if (!rawInvite) return DEFAULT_METADATA;
+  const rawResult = firstSearchParam(params.result);
+  const parsed = decodeShareResult(rawResult);
+  if (!parsed || !rawResult) return DEFAULT_METADATA;
 
   const locale = localeFromParam(params.lang);
-  const card = await loadInviterShareCard(rawInvite, locale);
-  if (!card) return DEFAULT_METADATA;
-
   const origin = await requestOrigin();
-  const copy = shareOgCopy(card.persona, locale);
-  const pageQuery = new URLSearchParams({ invite: card.invite });
-  const langQuery = localeSearchParam(locale);
-  if (langQuery) pageQuery.set("lang", langQuery);
+  const copy = shareOgCopy(parsed.persona, locale);
+  const pageQuery = waitlistShareQuery({
+    invite: firstSearchParam(params.invite),
+    result: rawResult.trim(),
+    locale,
+  });
   const pageUrl = `${origin}/waitlist/?${pageQuery.toString()}`;
-  const ogImageUrl = withCacheBuster(`${origin}/waitlist/og/?${pageQuery.toString()}`);
+  const ogImageUrl = `${origin}/waitlist/og/?${pageQuery.toString()}`;
   const ogImage = {
     url: ogImageUrl,
     secureUrl: ogImageUrl,
@@ -55,7 +59,7 @@ export async function generateMetadata({
     ...DEFAULT_METADATA,
     title: copy.title,
     description: copy.description,
-    // 推特按 canonical 再抓一遍；无 invite 的 /waitlist/ 会落到兜底图。
+    // 推特按 canonical 再抓一遍；无 result 的 /waitlist/ 会落到兜底图。
     // nofollow 也会让爬虫不去拉 og:image。
     alternates: { canonical: pageUrl },
     robots: { index: true, follow: true },

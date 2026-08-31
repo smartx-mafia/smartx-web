@@ -1,3 +1,5 @@
+import { waitlistShareQuery } from "@/lib/waitlist/share-result";
+
 export type RenderedResultCard = {
   href: string;
   filename: string;
@@ -10,12 +12,11 @@ export type RenderedResultCard = {
  */
 export async function fetchResultCard(
   inviteCode: string,
-  locale = "en",
-  imageUrl?: string,
+  locale: string,
+  result: string,
 ): Promise<RenderedResultCard> {
-  const query = new URLSearchParams({ invite: inviteCode, t: String(Date.now()) });
-  if (locale && locale !== "en") query.set("lang", locale);
-  if (imageUrl) query.set("image", imageUrl);
+  const query = waitlistShareQuery({ invite: inviteCode, locale, result });
+  query.set("t", String(Date.now()));
   const response = await fetch(`/waitlist/og/?${query.toString()}`, { cache: "no-store" });
   const contentType = response.headers.get("content-type") ?? "";
   // 卡片数据不可用时服务端会 302 到默认 OG 图；斜杠规范化造成的 redirected 仍可能是有效海报。

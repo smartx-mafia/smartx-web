@@ -2,54 +2,6 @@ import "server-only";
 
 import { headers } from "next/headers";
 
-import type { AppLocale } from "@/lingui";
-
-import { isValidInviteCode, normalizeInviteCode, waitlistApi } from "./api";
-import { mapCardToOutcome, PERSONAS_BY_CODE, personaCopyForLocale } from "./persona";
-
-/** 分享落地页（?invite=xxx）在服务端渲染 OG 元数据用的归一化卡片。 */
-export type InviterShareCard = {
-  invite: string;
-  name: string;
-  roast: string;
-  poles: readonly string[];
-  stats: { conviction: number; instinct: number; resilience: number };
-  /** 人格卡片立绘：优先后端 imageUrl。 */
-  artSrc: string;
-  persona: ReturnType<typeof mapCardToOutcome>["persona"];
-};
-
-export async function loadInviterShareCard(
-  rawInvite: string | null | undefined,
-  locale: AppLocale = "en",
-): Promise<InviterShareCard | null> {
-  const invite = normalizeInviteCode(rawInvite ?? "");
-  if (!isValidInviteCode(invite)) return null;
-
-  try {
-    const data = await waitlistApi.getPublicResult(invite);
-    if (!data || data.hidden || !data.card) return null;
-    const outcome = mapCardToOutcome(data.card);
-    const copy = personaCopyForLocale(outcome.persona, locale);
-    const localArt =
-      PERSONAS_BY_CODE[outcome.persona.mark]?.artSrc ||
-      PERSONAS_BY_CODE[outcome.persona.code]?.artSrc ||
-      "";
-    return {
-      invite,
-      name: copy.name,
-      roast: copy.roast,
-      poles: outcome.poles,
-      stats: outcome.stats,
-      artSrc: outcome.persona.artSrc || localArt,
-      persona: outcome.persona,
-    };
-  } catch {
-    // 公开结果拉不到时回退默认元数据，分享页本体不受影响。
-    return null;
-  }
-}
-
 /** 当前请求的部署源（preview/生产/本地都指向自身），用于拼 OG 图等绝对地址。 */
 export async function requestOrigin(): Promise<string> {
   const h = await headers();
