@@ -8,14 +8,14 @@ import { messages as zhCnCatalog } from "@/locales/zh-CN/messages";
 
 export const LOCALE_STORAGE_KEY = "smartx.locale";
 
-export const APP_LOCALES = ["en", "zh-CN", "ko", "ja"] as const;
+export const APP_LOCALES = ["en", "zh-CN", "ja", "ko"] as const;
 export type AppLocale = (typeof APP_LOCALES)[number];
 
 export const LOCALE_LABELS: Record<AppLocale, string> = {
   en: "English",
   "zh-CN": "简体中文",
   ko: "한국어",
-  ja: "Japan",
+  ja: "日本語",
 };
 
 export function toAppLocale(value: unknown): AppLocale {

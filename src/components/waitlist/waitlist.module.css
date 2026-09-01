@@ -52,7 +52,6 @@
   content: "";
 }
 
-.page[data-stage="boot"] .ambientBackdrop,
 .page[data-stage="gate"] .ambientBackdrop { opacity: 0.72; }
 .page[data-stage="gate"][data-referral="true"] .ambientBackdrop { opacity: 0.13; }
 
@@ -662,9 +661,79 @@
   text-align: left;
 }
 
+.emailFieldLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .formStage .otpInput {
   letter-spacing: 0.34em;
   text-align: center;
+}
+
+.otpLabelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 20px 10px;
+}
+
+.formStage .otpLabelRow label {
+  margin: 0;
+}
+
+.otpClearButton {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+  text-decoration: underline;
+  text-underline-position: from-font;
+}
+
+.otpClearButton:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+.otpFeedback {
+  min-height: 20px;
+  margin: 10px 20px 0;
+}
+
+.otpFeedback .formError,
+.otpStatus {
+  display: block;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.otpStatus {
+  color: var(--muted);
+}
+
+.otpSubmitButton {
+  width: 100%;
+  margin-top: 16px;
+  transition: opacity 160ms var(--ease-out), background-color 160ms var(--ease-out);
+}
+
+.otpSubmitButton[data-verifying="true"]:disabled {
+  background: var(--teal);
+  color: var(--consumer-black);
+  opacity: 0.56;
 }
 
 .formMeta {
@@ -944,6 +1013,26 @@
   font: 500 19px/1.4 var(--font-display), Georgia, serif;
 }
 
+.personaNarrative {
+  max-width: 680px;
+  margin: 22px 0 0;
+  overflow: visible;
+  border-radius: 16px;
+  background: #121212;
+}
+
+.personaNarrative > blockquote {
+  max-width: none;
+  margin: 0;
+}
+
+.personaDescription {
+  max-width: 680px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font: 400 15px/1.55 var(--font-plex), var(--font-inter);
+}
+
 .cardDownloads {
   margin-top: 22px;
   padding-top: 16px;
@@ -982,6 +1071,7 @@
 .personaPoster[data-preview="true"] { padding: 26px; }
 .personaPoster[data-preview="true"] .posterIdentity h2 { font-size: clamp(40px, 3.5vw, 52px); }
 .personaPoster[data-preview="true"] blockquote { font-size: 16px; }
+.personaPoster[data-preview="true"] .personaDescription { font-size: 14px; }
 
 .resultStage {
   display: grid;
@@ -1590,6 +1680,7 @@
 .shareDialogShare:focus-visible,
 .textButton:focus-visible,
 .testCodeButton:focus-visible,
+.otpClearButton:focus-visible,
 .formMeta button:focus-visible,
 .quizTopline button:focus-visible,
 .optionList > button:focus-visible,
@@ -1630,6 +1721,7 @@
   .shareButton,
   .textButton,
   .testCodeButton,
+  .otpClearButton,
   .formMeta button,
   .quizTopline button,
   .optionList > button,
@@ -1662,6 +1754,7 @@
 
   .textButton:hover,
   .testCodeButton:hover,
+  .otpClearButton:not(:disabled):hover,
   .formMeta button:hover,
   .quizTopline button:hover,
   .cardDownloads a:hover,
@@ -1800,6 +1893,7 @@
   .personaArt,
   .personaPoster[data-preview="true"] .personaArt { height: 210px; }
   .personaPoster blockquote { font-size: 15px; }
+  .personaDescription { font-size: 14px; line-height: 1.5; }
   .posterScores { grid-template-columns: 1fr; gap: 14px; }
   .cardDownloads > div { gap: 12px; }
   .invitationDeck > header { align-items: start; flex-direction: column; }
@@ -1976,40 +2070,6 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .page[data-stage="gate"] .inviteCodeGroup {
-    position: relative;
-    display: grid;
-  }
-
-  .page[data-stage="gate"] .inviteCodeGroup .inlineField {
-    display: contents;
-  }
-
-  .page[data-stage="gate"] .inviteCodeGroup label {
-    position: absolute;
-    z-index: 2;
-    top: 17px;
-    left: 24px;
-    margin: 0;
-    color: var(--muted);
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: 1.35;
-    pointer-events: none;
-    text-transform: none;
-  }
-
-  .page[data-stage="gate"] .inviteCodeGroup input {
-    grid-row: 1;
-    height: 56px;
-    padding: 0 24px 0 11em;
-    border-color: rgb(255 255 255 / 24%);
-    background: #121212;
-    font: 400 16px var(--font-plex), var(--font-inter);
-    text-align: right;
-  }
-
   .page[data-stage="gate"] .gateForm .primaryButton {
     grid-row: auto;
     width: 100%;
@@ -2018,54 +2078,6 @@
     background: var(--teal);
     color: var(--consumer-black);
     font-size: 20px;
-  }
-
-  .page[data-stage="gate"] .gateForm .naturalEntryHint {
-    min-height: 0;
-    margin: 9px 0 0;
-    color: #a0a0a0;
-    font-size: 14px;
-    line-height: 1.35;
-    text-align: center;
-  }
-
-  .page[data-stage="gate"] .inviteChoice {
-    display: grid;
-    align-items: center;
-    grid-template-columns: minmax(24px, 1fr) auto minmax(24px, 1fr);
-    gap: 14px;
-    margin: 24px 0 12px;
-    color: #747474;
-    font-size: 14px;
-    line-height: 1.35;
-  }
-
-  .page[data-stage="gate"] .inviteChoice::before,
-  .page[data-stage="gate"] .inviteChoice::after {
-    height: 1px;
-    background: rgb(255 255 255 / 14%);
-    content: "";
-  }
-
-  .page[data-stage="gate"] .gateForm .inviteEntryButton {
-    margin-top: 12px;
-    border: 1px solid rgb(255 255 255 / 18%);
-    background: #202020;
-    color: #f5f5f5;
-  }
-
-  .page[data-stage="gate"] .inviteCodeGroup > .formError {
-    min-height: 18px;
-    margin: 8px 0 0;
-    font-size: 14px;
-    line-height: 1.35;
-  }
-
-  .page[data-stage="gate"] .gateForm .inviteEntryButton:disabled {
-    cursor: not-allowed;
-    border-color: rgb(255 255 255 / 8%);
-    background: #171717;
-    color: #595959;
   }
 
   .page[data-stage="gate"] .gateFormMeta {
@@ -2082,13 +2094,6 @@
     font-size: 14px;
     text-decoration: underline;
     text-underline-position: from-font;
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    .page[data-stage="gate"] .gateForm .inviteEntryButton:not(:disabled):hover {
-      background: #2b2b2b;
-      color: #fff;
-    }
   }
 
   @media (max-width: 1180px) {
@@ -2172,9 +2177,12 @@
     text-align: left;
   }
 
-  .page[data-stage="verify"] .formStage form > label {
+  .page[data-stage="verify"] .otpLabelRow {
     grid-row: 1;
     margin: 0 0 8px;
+  }
+
+  .page[data-stage="verify"] .otpLabelRow label {
     color: var(--muted);
     font-size: 16px;
     font-weight: 400;
@@ -2207,10 +2215,10 @@
 
   .page[data-stage="verify"] .formMeta {
     display: flex;
-    grid-row: 3;
+    grid-row: 5;
     align-items: center;
     justify-content: space-between;
-    margin: 16px 0 0;
+    margin: 8px 0 0;
   }
 
   .page[data-stage="verify"] .formMeta button {
@@ -2226,21 +2234,21 @@
     opacity: 1;
   }
 
-  .page[data-stage="verify"] .formStage .primaryButton {
-    grid-row: 4;
-    width: 100%;
-    min-height: 56px;
-    margin-top: 24px;
-    padding: 0 24px;
-    font-size: 20px;
+  .page[data-stage="verify"] .otpFeedback {
+    grid-row: 3;
+    min-height: 20px;
+    margin: 10px 0 0;
   }
 
-  .page[data-stage="verify"] .formStage form > .formError {
-    position: absolute;
-    top: calc(100% + 12px);
-    left: 0;
-    margin: 0;
+  .page[data-stage="verify"] .otpFeedback small {
     font-size: 14px;
+  }
+
+  .page[data-stage="verify"] .otpSubmitButton {
+    grid-row: 4;
+    min-height: 56px;
+    margin-top: 16px;
+    font-size: 20px;
   }
 }
 
@@ -2363,29 +2371,14 @@
     display: contents;
   }
 
-  .page[data-stage="email"] .formStage form > label {
-    position: absolute;
-    z-index: 2;
-    top: 17px;
-    left: 24px;
-    margin: 0;
-    color: var(--muted);
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: normal;
-    pointer-events: none;
-    text-transform: none;
-  }
-
   .page[data-stage="email"] .formStage input {
     grid-row: 1;
     height: 56px;
-    padding: 0 24px 0 11em;
+    padding: 0 24px;
     border-color: rgb(255 255 255 / 24%);
     background: #121212;
     font: 400 16px var(--font-plex), var(--font-inter);
-    text-align: right;
+    text-align: left;
   }
 
   .page[data-stage="email"] .formStage input:focus {
@@ -2883,6 +2876,14 @@
     background: url("/assets/waitlist/quote.svg") center / contain no-repeat;
     transform: rotate(180deg);
     content: "";
+  }
+
+  .page:is([data-stage="result"], [data-referral="true"]) .personaDescription {
+    max-width: none;
+    margin: 16px 0 0;
+    color: #a0a0a0;
+    font-size: 16px;
+    line-height: 1.55;
   }
 
   .page:is([data-stage="result"], [data-referral="true"]) .chemistryBlock {
@@ -3468,32 +3469,6 @@
     text-align: left;
   }
 
-  .page[data-stage="gate"] .inviteCodeGroup {
-    position: relative;
-    display: grid;
-  }
-
-  .page[data-stage="gate"] .inviteCodeGroup .inlineField {
-    display: contents;
-  }
-
-  .page[data-stage="gate"] .inviteCodeGroup label,
-  .page[data-stage="email"] .formStage form > label {
-    position: static;
-    z-index: auto;
-    top: auto;
-    left: auto;
-    margin: 0 0 10px;
-    color: #747474;
-    font-size: 15px;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: 1.35;
-    pointer-events: auto;
-    text-transform: none;
-  }
-
-  .page[data-stage="gate"] .inviteCodeGroup input,
   .page[data-stage="email"] .formStage input {
     grid-row: auto;
     height: 54px;
@@ -3502,15 +3477,6 @@
     background: #121212;
     font: 400 15px var(--font-plex), var(--font-inter);
     text-align: left;
-  }
-
-  .page[data-stage="gate"] .gateForm .naturalEntryHint {
-    min-height: 0;
-    margin: 8px 0 0;
-    color: #a0a0a0;
-    font-size: 13px;
-    line-height: 1.35;
-    text-align: center;
   }
 
   .page[data-stage="gate"] .gateForm .primaryButton,
@@ -3522,43 +3488,6 @@
     margin-top: 20px;
     padding: 0 20px;
     font-size: 18px;
-  }
-
-  .page[data-stage="gate"] .inviteChoice {
-    display: grid;
-    align-items: center;
-    grid-template-columns: minmax(20px, 1fr) auto minmax(20px, 1fr);
-    gap: 12px;
-    margin: 22px 0 12px;
-    color: #747474;
-    font-size: 13px;
-    line-height: 1.35;
-  }
-
-  .page[data-stage="gate"] .inviteChoice::before,
-  .page[data-stage="gate"] .inviteChoice::after {
-    height: 1px;
-    background: rgb(255 255 255 / 14%);
-    content: "";
-  }
-
-  .page[data-stage="gate"] .gateForm .inviteEntryButton {
-    margin-top: 12px;
-    border: 1px solid rgb(255 255 255 / 18%);
-    background: #202020;
-    color: #f5f5f5;
-  }
-
-  .page[data-stage="gate"] .gateForm .inviteEntryButton:disabled {
-    border-color: rgb(255 255 255 / 8%);
-    background: #171717;
-    color: #595959;
-  }
-
-  .page[data-stage="gate"] .inviteCodeGroup > .formError {
-    min-height: 0;
-    margin: 8px 0 0;
-    font-size: 13px;
   }
 
   .page[data-stage="gate"] .gateFormMeta {
@@ -3608,6 +3537,10 @@
     overflow-wrap: anywhere;
   }
 
+  .page[data-stage="email"] .formStage h1 {
+    margin-top: 0;
+  }
+
   .page:is([data-stage="email"], [data-stage="verify"]) .formStage > p,
   .page[data-stage="unlock"] .unlockStage > p {
     width: 100%;
@@ -3646,8 +3579,11 @@
     font-size: 13px;
   }
 
-  .page[data-stage="verify"] .formStage form > label {
+  .page[data-stage="verify"] .otpLabelRow {
     margin: 0 0 10px;
+  }
+
+  .page[data-stage="verify"] .otpLabelRow label {
     color: #747474;
     font-size: 15px;
     font-weight: 400;
@@ -3688,7 +3624,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 14px 0 0;
+    margin: 8px 0 0;
   }
 
   .page[data-stage="verify"] .formMeta button {
@@ -3699,8 +3635,12 @@
     text-underline-position: from-font;
   }
 
-  .page[data-stage="verify"] .formStage form > .formError {
+  .page[data-stage="verify"] .otpFeedback {
+    min-height: 18px;
     margin: 10px 0 0;
+  }
+
+  .page[data-stage="verify"] .otpFeedback small {
     font-size: 13px;
   }
 
@@ -5018,6 +4958,27 @@
   content: "";
 }
 
+.page[data-stage="result"] .personaNarrative {
+  max-width: none;
+  margin-top: 32px;
+}
+
+.page[data-stage="result"] .personaNarrative > blockquote {
+  margin: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.page[data-stage="result"] .personaNarrative > .personaDescription {
+  max-width: none;
+  margin: 0 24px;
+  padding: 18px 0 22px;
+  border-top: 1px solid rgb(255 255 255 / 9%);
+  color: #a0a0a0;
+  font-size: clamp(14px, 0.84vw, 16px);
+  line-height: 1.55;
+}
+
 .page[data-stage="result"] .chemistryBlock {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -5334,9 +5295,19 @@
   }
 
   .page[data-stage="result"] .personaPoster blockquote {
-    margin-top: 24px;
     padding: 18px;
     font-size: 17px;
+  }
+
+  .page[data-stage="result"] .personaNarrative {
+    margin-top: 24px;
+  }
+
+  .page[data-stage="result"] .personaNarrative > .personaDescription {
+    margin: 0 18px;
+    padding: 16px 0 18px;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .page[data-stage="result"] .chemistryBlock {

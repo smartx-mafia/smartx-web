@@ -28,6 +28,12 @@ export type ShareResultPayload = {
 const WAITLIST_STATIC_BASE = "https://static.smartx.io/waitlist";
 const RESULT_PATTERN = /^([a-z]{3})(\d{6})$/i;
 
+/**
+ * 分享页和海报的缓存版本。变更海报视觉或文案结构时递增，确保 X 等平台
+ * 抓取的是新预览；旧分享链接仍可继续解析。
+ */
+export const WAITLIST_SHARE_CARD_VERSION = "2";
+
 function encodeStat(value: number): string {
   const n = Math.max(0, Math.min(99, Math.round(Number.isFinite(value) ? value : 0)));
   return String(n).padStart(2, "0");
@@ -85,7 +91,7 @@ export function decodeShareResult(raw: string | null | undefined): ShareResultPa
   };
 }
 
-/** 分享页与 OG 图共用的查询串：invite + lang（含 en）+ result。 */
+/** 分享页与 OG 图共用的查询串：invite + lang（含 en）+ result + 版本。 */
 export function waitlistShareQuery(input: {
   invite?: string | null;
   result: string;
@@ -96,5 +102,6 @@ export function waitlistShareQuery(input: {
   if (invite) query.set("invite", invite);
   query.set("lang", toAppLocale(input.locale));
   query.set("result", input.result);
+  query.set("v", WAITLIST_SHARE_CARD_VERSION);
   return query;
 }

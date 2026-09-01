@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useLayoutEffect, useMemo, useState, type ReactNode } from "react";
 import { LinguiContext } from "@lingui/react";
 
 import { type AppLocale, i18n, LOCALE_STORAGE_KEY, toAppLocale } from "./instance";
@@ -29,18 +29,32 @@ export function LinguiProvider({ children }: { children: ReactNode }) {
   const [locale, setLocale] = useState<AppLocale>("en");
   const [ready, setReady] = useState(false);
 
-  useLayoutEffect(() => {
-    const stored = readStoredLocale();
-    if (i18n.locale !== stored) i18n.activate(stored);
-    syncDocumentLocale(stored);
-    setLocale(stored);
-    setReady(true);
+  // 等首轮 hydration 完成后再激活浏览器保存的语言，避免 Suspense 子树
+  // 在服务端英文与客户端本地语言之间产生文本不一致。
+  useEffect(() => {
+    let unsubscribe: (() => void) | undefined;
+    let secondFrame = 0;
+    const firstFrame = window.requestAnimationFrame(() => {
+      secondFrame = window.requestAnimationFrame(() => {
+        const stored = readStoredLocale();
+        if (i18n.locale !== stored) i18n.activate(stored);
+        syncDocumentLocale(stored);
+        setLocale(stored);
+        setReady(true);
 
-    return i18n.on("change", () => {
-      const next = toAppLocale(i18n.locale);
-      syncDocumentLocale(next);
-      setLocale(next);
+        unsubscribe = i18n.on("change", () => {
+          const next = toAppLocale(i18n.locale);
+          syncDocumentLocale(next);
+          setLocale(next);
+        });
+      });
     });
+
+    return () => {
+      window.cancelAnimationFrame(firstFrame);
+      if (secondFrame) window.cancelAnimationFrame(secondFrame);
+      unsubscribe?.();
+    };
   }, []);
 
   useLayoutEffect(() => {
