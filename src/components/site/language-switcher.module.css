@@ -127,6 +127,13 @@
   outline-offset: 2px;
 }
 
+/* 与 header 汉堡菜单同一断点：顶栏按钮让位给下拉里的语言选项 */
+@media (max-width: 980px) {
+  .root {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .trigger {
     transition: none;
