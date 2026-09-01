@@ -1,3 +1,5 @@
+import { i18n, toAppLocale } from "@/lingui";
+
 import { getUserToken } from "./session";
 import {
   type CommunityChannel,
@@ -196,10 +198,13 @@ export const waitlistApi = {
     });
   },
 
-  sendEmailCode(email: string) {
+  sendEmailCode(email: string, lang?: string) {
     return waitlistRequest<true>("/quiz/send_email_code", {
       method: "POST",
-      body: { email: email.trim().toLowerCase() },
+      body: {
+        email: email.trim().toLowerCase(),
+        lang: toAppLocale(lang ?? i18n.locale),
+      },
     });
   },
 
