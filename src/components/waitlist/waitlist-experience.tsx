@@ -11,9 +11,10 @@ import type { MessageDescriptor } from "@lingui/core";
 
 import { ConsumerHeader } from "@/components/consumer-network/consumer-header";
 import { notifyError, notifyNotice } from "@/components/site/app-notice";
-import { isInviteAccepted, inviteCheckMessage, isValidEmail, isValidInviteCode, normalizeEmail, normalizeInviteCode, sanitizeInviteCodeInput, waitlistApi } from "@/lib/waitlist/api";
+import { isInviteAccepted, inviteCheckMessage, isValidEmail, isValidInviteCode, normalizeEmail, normalizeInviteCode, waitlistApi } from "@/lib/waitlist/api";
 import {
   hydrateQuestions,
+  localizedPersonaDescription,
   localizedPersonaName,
   localizedPersonaRoast,
   localizedPole,
@@ -39,7 +40,7 @@ import {
 } from "@/lib/waitlist/share-image";
 import { i18n, toAppLocale } from "@/lingui";
 import { shareTweetText } from "@/lib/waitlist/share-copy";
-import { encodeShareResult } from "@/lib/waitlist/share-result";
+import { encodeShareResult, WAITLIST_SHARE_CARD_VERSION } from "@/lib/waitlist/share-result";
 import {
   areCommunityTasksDone,
   decideWaitlistEntry,
@@ -214,7 +215,10 @@ function makeInvitationUrl(
   const url = new URL(base);
   if (code) url.searchParams.set("invite", normalizeInviteCode(code));
   if (extras?.locale) url.searchParams.set("lang", toAppLocale(extras.locale));
-  if (extras?.result) url.searchParams.set("result", extras.result);
+  if (extras?.result) {
+    url.searchParams.set("result", extras.result);
+    url.searchParams.set("v", WAITLIST_SHARE_CARD_VERSION);
+  }
   return url.toString();
 }
 
@@ -366,6 +370,7 @@ function PersonaPoster({
 }) {
   useLingui();
   const personaName = localizedPersonaName(outcome.persona);
+  const personaDescription = localizedPersonaDescription(outcome.persona);
   const titleStyle = { "--persona-title-fit": personaTitleFit(personaName) } as CSSProperties;
 
   return (
@@ -382,7 +387,12 @@ function PersonaPoster({
         <ScoreAxis label={t`Instinct`} score={outcome.stats.instinct} />
         <ScoreAxis label={t`Resilience`} score={outcome.stats.resilience} />
       </div>
-      {outcome.persona.roast ? <blockquote>{localizedPersonaRoast(outcome.persona)}</blockquote> : null}
+      {outcome.persona.roast || personaDescription ? (
+        <div className={styles.personaNarrative}>
+          {outcome.persona.roast ? <blockquote>{localizedPersonaRoast(outcome.persona)}</blockquote> : null}
+          {personaDescription ? <p className={styles.personaDescription}>{personaDescription}</p> : null}
+        </div>
+      ) : null}
       <section className={styles.chemistryBlock} aria-label={t`Persona chemistry`}>
         <div><span><Trans>Best match</Trans></span><strong>{localizedPersonaName(outcome.bestMatch)}</strong></div>
         <div><span><Trans>Natural rival</Trans></span><strong>{localizedPersonaName(outcome.rival)}</strong></div>
@@ -413,8 +423,12 @@ export function WaitlistExperience() {
   const [sessionEmail, setSessionEmail] = useState("");
   const [otp, setOtp] = useState("");
   const [otpError, setOtpError] = useState("");
+  const [otpSubmitting, setOtpSubmitting] = useState(false);
   const [otpResendAt, setOtpResendAt] = useState(0);
   const [nowMs, setNowMs] = useState(0);
+  const otpInputRef = useRef<HTMLInputElement>(null);
+  const otpSubmitInFlightRef = useRef(false);
+  const lastSubmittedOtpRef = useRef("");
   const [recoveryError, setRecoveryError] = useState("");
   const [telegramOpened, setTelegramOpened] = useState(false);
   const [xOpened, setXOpened] = useState(false);
@@ -445,7 +459,6 @@ export function WaitlistExperience() {
 
   const loggedIn = Boolean(userToken && userInfo);
   const hasOwnResult = isOwnResultAvailable({ loggedIn, submitted: Boolean(userInfo?.submitted && userInfo.resultId) });
-  const inviteReady = isValidInviteCode(inviteCode);
   const savedPersona = ownOutcome?.persona ?? PERSONAS_BY_CODE[userInfo?.personaId ?? ""];
   const savedPersonaName = savedPersona ? localizedPersonaName(savedPersona) : t`your trader type`;
   const shareResultCode = ownOutcome
@@ -519,6 +532,10 @@ export function WaitlistExperience() {
     setSessionEmail("");
     setEmail("");
     setOtp("");
+    setOtpError("");
+    setOtpSubmitting(false);
+    otpSubmitInFlightRef.current = false;
+    lastSubmittedOtpRef.current = "";
     setTelegramOpened(false);
     setXOpened(false);
     if (!options?.keepDraft) {
@@ -567,7 +584,7 @@ export function WaitlistExperience() {
       const pendingNotice = takeWaitlistNotice();
       if (pendingNotice) setGateError(pendingNotice);
 
-    const params = new URLSearchParams(window.location.search);
+      const params = new URLSearchParams(window.location.search);
       const urlInviteRaw = (params.get("invite") ?? "").trim();
       const urlInvite = normalizeInviteCode(urlInviteRaw);
       const shareEntry = Boolean(urlInviteRaw);
@@ -610,7 +627,7 @@ export function WaitlistExperience() {
       } else if (storedUserToken) {
         if (isExpiredSession(infoResult.reason)) {
           clearUserToken();
-      } else {
+        } else {
           setGateError(errorMessage(infoResult.reason));
           setStage("gate");
           return;
@@ -832,6 +849,9 @@ export function WaitlistExperience() {
     setEmail("");
     setOtp("");
     setOtpError("");
+    setOtpSubmitting(false);
+    otpSubmitInFlightRef.current = false;
+    lastSubmittedOtpRef.current = "";
     setRecoveryError("");
     setStage("email");
   };
@@ -874,12 +894,13 @@ export function WaitlistExperience() {
           setOtpError("");
           setRecoveryError("");
           setAuthIntent("recover");
-          setStage("email");
-          return;
         }
       }
       await waitlistApi.sendEmailCode(nextEmail);
       setOtp("");
+      setOtpSubmitting(false);
+      otpSubmitInFlightRef.current = false;
+      lastSubmittedOtpRef.current = "";
       const now = Date.now();
       setNowMs(now);
       setOtpResendAt(now + OTP_RESEND_SECONDS * 1000);
@@ -893,7 +914,11 @@ export function WaitlistExperience() {
     if (otpCooldown > 0) return;
     try {
       await waitlistApi.sendEmailCode(email);
+      setOtp("");
       setOtpError("");
+      setOtpSubmitting(false);
+      otpSubmitInFlightRef.current = false;
+      lastSubmittedOtpRef.current = "";
       const now = Date.now();
       setNowMs(now);
       setOtpResendAt(now + OTP_RESEND_SECONDS * 1000);
@@ -957,11 +982,14 @@ export function WaitlistExperience() {
     return isValidInviteCode(stored) ? stored : "";
   };
 
-  const submitOtp = async () => {
+  const submitOtp = async (code: string) => {
+    if (code.length !== 6 || otpSubmitInFlightRef.current) return;
+    otpSubmitInFlightRef.current = true;
+    setOtpSubmitting(true);
     setOtpError("");
     const loginInvite = resolveLoginInvite();
     try {
-      const login = await waitlistApi.login(email, otp, loginInvite || undefined);
+      const login = await waitlistApi.login(email, code, loginInvite || undefined);
       await enterAfterLogin(login.token, login.isNewUser, login.resultId);
     } catch (error) {
       if (handleUserApiError(error)) return;
@@ -969,17 +997,45 @@ export function WaitlistExperience() {
         try {
           dropLandingInvite();
           setInviteCode("");
-          const login = await waitlistApi.login(email, otp);
+          const login = await waitlistApi.login(email, code);
           await enterAfterLogin(login.token, login.isNewUser, login.resultId);
           return;
         } catch (retryError) {
           if (handleUserApiError(retryError)) return;
           setOtpError(errorMessage(retryError));
+          window.requestAnimationFrame(() => otpInputRef.current?.focus());
           return;
         }
       }
       setOtpError(errorMessage(error));
+      window.requestAnimationFrame(() => otpInputRef.current?.focus());
+    } finally {
+      otpSubmitInFlightRef.current = false;
+      setOtpSubmitting(false);
     }
+  };
+
+  const updateOtpValue = (value: string) => {
+    const next = value.replace(/\D/g, "").slice(0, 6);
+    setOtp(next);
+    setOtpError("");
+    if (next.length < 6) lastSubmittedOtpRef.current = "";
+    if (next.length === 6 && lastSubmittedOtpRef.current !== next) {
+      lastSubmittedOtpRef.current = next;
+      void submitOtp(next);
+    }
+  };
+
+  const clearOtpEntry = () => {
+    lastSubmittedOtpRef.current = "";
+    setOtp("");
+    setOtpError("");
+    window.requestAnimationFrame(() => otpInputRef.current?.focus());
+  };
+
+  const changeEmail = () => {
+    clearOtpEntry();
+    setStage("email");
   };
 
   const finishQuiz = async () => {
@@ -1166,51 +1222,6 @@ export function WaitlistExperience() {
     notifyNotice(t`Image saved.`);
   };
 
-  const inviteForm = (
-    <>
-      <label htmlFor="invite-code">
-        <Trans>Invite Code</Trans>
-      </label>
-      <div className={styles.inlineField}>
-        <input
-          id="invite-code"
-          type="text"
-          inputMode="text"
-          autoComplete="off"
-          autoCapitalize="none"
-          autoCorrect="off"
-          spellCheck={false}
-          maxLength={8}
-          pattern="[a-z0-9]{8}"
-          placeholder={t`Please enter the invitation code.`}
-          value={inviteCode}
-          onChange={(event) => {
-            const next = sanitizeInviteCodeInput(event.target.value);
-            setInviteCode(next);
-            setGateError("");
-            const storedInvite = getLandingInvite();
-            if (isValidInviteCode(next)) {
-              persistLandingInvite(next);
-            } else if (storedInvite && storedInvite !== next) {
-              dropLandingInvite();
-            }
-          }}
-          aria-invalid={Boolean(gateError)}
-          aria-describedby={gateError ? "invite-error" : undefined}
-        />
-        <WaitlistButton
-          className={`${styles.primaryButton} ${styles.inviteEntryButton}`}
-          type="submit"
-          disabled={!inviteReady}
-          onAction={() => startQuiz()}
-        >
-          <Trans>Start with invite</Trans>
-        </WaitlistButton>
-      </div>
-      {gateError ? <small className={styles.formError} id="invite-error" role="alert">{localizeWaitlistMessage(gateError)}</small> : null}
-    </>
-  );
-
   return (
     <WaitlistActionScope>
     <main className={styles.page} data-stage={stage} data-referral={Boolean(referralOutcome)}>
@@ -1218,10 +1229,10 @@ export function WaitlistExperience() {
         <Trans>Skip to waitlist</Trans>
       </a>
       <div className={styles.ambientBackdrop} aria-hidden="true">
-        {stage === "gate" && !referralOutcome ? (
+        {stage === "boot" ? null : stage === "gate" && !referralOutcome ? (
           <div className={styles.gateBackdrop}>
             <Image src="/assets/waitlist/waitlist-intro.png" alt="" fill sizes="70vw" priority />
-      </div>
+          </div>
         ) : stage === "email" || stage === "verify" ? (
           <div className={styles.flowBackdrop}>
             <Image
@@ -1242,9 +1253,7 @@ export function WaitlistExperience() {
               priority
             />
           </div>
-        ) : (
-          <Image src="/assets/consumer-network/hero-product.png" alt="" fill sizes="100vw" priority />
-        )}
+        ) : null}
       </div>
       <ConsumerHeader active="waitlist" placement="page" />
 
@@ -1333,21 +1342,12 @@ export function WaitlistExperience() {
             </div>
             <form className={styles.gateForm} onSubmit={(event) => event.preventDefault()}>
               <WaitlistButton
-                className={`${styles.primaryButton} ${styles.naturalEntryButton}`}
+                className={styles.primaryButton}
                 type="button"
                 onAction={beginWithoutInvite}
               >
                 <Trans>Start the test</Trans>
               </WaitlistButton>
-              <small className={styles.naturalEntryHint}>
-                <Trans>No invite needed</Trans>
-              </small>
-              <div className={styles.inviteChoice}>
-                <span><Trans>Have an invite code?</Trans></span>
-              </div>
-              <div className={styles.inviteCodeGroup}>
-                {inviteForm}
-              </div>
               <div className={styles.gateFormMeta}>
                 <WaitlistButton className={styles.textButton} onClick={beginResultRecovery}>
                   <Trans>Already tested? View my result</Trans>
@@ -1444,11 +1444,14 @@ export function WaitlistExperience() {
 
         {stage === "email" && (
           <div className={styles.formStage}>
-            <span className={styles.eyebrow}>{authIntent === "recover" ? t`Already tested?` : t`Your result is ready`}</span>
             <h1>{authIntent === "recover" ? t`Find your result.` : t`Save your result.`}</h1>
-            <p>{authIntent === "recover" ? t`Enter the email you used. We’ll send a six-digit code.` : t`Bind an email to save your result and join the waitlist.`}</p>
+            <p>
+              {authIntent === "recover"
+                ? t`Enter the email you used for the test.`
+                : t`Return to your result anytime and stay updated on SmartX.`}
+            </p>
             <form onSubmit={(event) => event.preventDefault()}>
-              <label htmlFor="waitlist-email">
+              <label className={styles.emailFieldLabel} htmlFor="waitlist-email">
                 <Trans>Email address</Trans>
               </label>
               <div className={styles.inlineField}>
@@ -1460,7 +1463,7 @@ export function WaitlistExperience() {
                   autoCapitalize="none"
                   autoCorrect="off"
                   spellCheck={false}
-                  placeholder={t`you@domain.com`}
+                  placeholder={t`Email address`}
                   value={email}
                   onChange={(event) => {
                     setEmail(event.target.value);
@@ -1470,12 +1473,9 @@ export function WaitlistExperience() {
                   required
                 />
                 <WaitlistButton className={styles.primaryButton} type="submit" onAction={submitEmail}>
-                  {authIntent === "recover" ? t`Send code` : t`Continue`}
+                  <Trans>Send code</Trans>
                 </WaitlistButton>
               </div>
-              <small className={styles.formHint}>
-                <Trans>We’ll use this to save your result and send waitlist updates.</Trans>
-              </small>
               {recoveryError ? <small className={styles.formError} role="alert">{localizeWaitlistMessage(recoveryError)}</small> : null}
               {authIntent === "recover" && (
                 <WaitlistButton className={styles.recoveryBack} onClick={() => { setRecoveryError(""); setStage("gate"); }}>
@@ -1498,12 +1498,23 @@ export function WaitlistExperience() {
               <Trans>Enter the code sent to <b>{email}</b>.</Trans>
             </p>
             <form onSubmit={(event) => event.preventDefault()}>
-              <label htmlFor="waitlist-otp">
-                <Trans>Verification code</Trans>
-              </label>
+              <div className={styles.otpLabelRow}>
+                <label htmlFor="waitlist-otp">
+                  <Trans>Verification code</Trans>
+                </label>
+                <WaitlistButton
+                  className={styles.otpClearButton}
+                  type="button"
+                  disabled={otpSubmitting || (!otp && !otpError)}
+                  onClick={clearOtpEntry}
+                >
+                  <Trans>Clear</Trans>
+                </WaitlistButton>
+              </div>
               <div className={styles.inlineField}>
-                <div className={styles.otpField}>
+                <div className={styles.otpField} aria-busy={otpSubmitting || undefined}>
                   <input
+                    ref={otpInputRef}
                     className={styles.otpInput}
                     id="waitlist-otp"
                     type="text"
@@ -1513,8 +1524,16 @@ export function WaitlistExperience() {
                     maxLength={6}
                     value={otp}
                     placeholder={t`Six-digit code`}
-                    onChange={(event) => { setOtp(event.target.value.replace(/\D/g, "").slice(0, 6)); setOtpError(""); }}
+                    onChange={(event) => updateOtpValue(event.target.value)}
+                    onPaste={(event) => {
+                      const pasted = event.clipboardData.getData("text").replace(/\D/g, "");
+                      if (!pasted) return;
+                      event.preventDefault();
+                      updateOtpValue(pasted);
+                    }}
+                    disabled={otpSubmitting}
                     aria-invalid={Boolean(otpError)}
+                    aria-describedby={otpError ? "otp-error" : otpSubmitting ? "otp-status" : undefined}
                     autoFocus
                     required
                   />
@@ -1528,18 +1547,30 @@ export function WaitlistExperience() {
                         {otp[index] || ""}
                       </span>
                     ))}
-              </div>
+                  </div>
                 </div>
-                <WaitlistButton className={styles.primaryButton} type="submit" onAction={submitOtp}>
-                  <Trans>Continue</Trans>
-                </WaitlistButton>
               </div>
-              {otpError ? <small className={styles.formError} id="otp-error" role="alert">{localizeWaitlistMessage(otpError)}</small> : null}
+              <div className={styles.otpFeedback} aria-live="polite">
+                {otpSubmitting ? (
+                  <small className={styles.otpStatus} id="otp-status" role="status"><Trans>Checking code…</Trans></small>
+                ) : otpError ? (
+                  <small className={styles.formError} id="otp-error" role="alert">{localizeWaitlistMessage(otpError)}</small>
+                ) : null}
+              </div>
+              <WaitlistButton
+                className={`${styles.primaryButton} ${styles.otpSubmitButton}`}
+                type="button"
+                data-verifying={otpSubmitting ? "true" : undefined}
+                disabled={otp.length !== 6 || otpSubmitting}
+                onClick={() => { void submitOtp(otp); }}
+              >
+                {otpSubmitting ? <Trans>Checking code…</Trans> : <Trans>Continue</Trans>}
+              </WaitlistButton>
               <div className={styles.formMeta}>
-                <WaitlistButton type="button" onClick={() => setStage("email")}>
+                <WaitlistButton type="button" disabled={otpSubmitting} onClick={changeEmail}>
                   <Trans>Change Email</Trans>
                 </WaitlistButton>
-                <WaitlistButton type="button" disabled={otpCooldown > 0} onAction={resendCode}>
+                <WaitlistButton type="button" disabled={otpSubmitting || otpCooldown > 0} onAction={resendCode}>
                   {otpCooldown > 0 ? t`Resend Code (${formatClock(otpCooldown)})` : t`Resend Code`}
                 </WaitlistButton>
               </div>
@@ -1566,7 +1597,7 @@ export function WaitlistExperience() {
             <div className={styles.unlockTasks}>
               <WaitlistButton type="button" aria-pressed={telegramOpened} data-complete={telegramOpened} onAction={() => openCommunity("telegram")}>
                 <Image src="/assets/waitlist/telegram.svg" alt="" width={32} height={32} aria-hidden="true" />
-                <span><b><Trans>Join Telegram</Trans></b><small><Trans>Enter the SmartX community</Trans></small></span>
+                <span><b><Trans>Join SmartX on Telegram</Trans></b><small><Trans>Enter the SmartX community</Trans></small></span>
                 <strong>
                   {telegramOpened ? t`Completed` : <><Trans>Open</Trans><Image src="/assets/waitlist/arrow-right.svg" alt="" width={24} height={24} aria-hidden="true" /></>}
                 </strong>
@@ -1583,7 +1614,7 @@ export function WaitlistExperience() {
               <Trans>Reveal my result</Trans>
             </WaitlistButton>
             <small>
-              <Trans>Both steps are required to continue.</Trans>
+              <Trans>Both are required to continue.</Trans>
             </small>
           </div>
         )}
@@ -1595,14 +1626,14 @@ export function WaitlistExperience() {
               <AccountSession email={verifiedEmail} label={t`Signed in as`} onSignOut={signOutWaitlist} />
               <div className={styles.rankBlock} data-boosted={shareCompleted}>
                 <span>
-                  <Trans>Waitlist rank</Trans>
+                  <Trans>Current rank</Trans>
                 </span>
                 <strong key={rank ?? "pending"}>#{(rank ?? 0).toLocaleString("en-US")}</strong>
                 <div className={styles.rankRewards}>
                   <div data-applied={shareCompleted}>
-                    <span>{shareCompleted ? t`Share recorded` : t`First result share`}</span>
+                    <span>{shareCompleted ? t`Share recorded` : t`First-time share`}</span>
                     <b>
-                      <Trans>+10 priority</Trans>
+                      <Trans>+10 Boost</Trans>
                     </b>
                   </div>
                   <div data-applied={friendRewardApplied}>
@@ -1612,12 +1643,12 @@ export function WaitlistExperience() {
                         : t`Each verified friend`}
                     </span>
                     <b>
-                      <Trans>+5 priority</Trans>
+                      <Trans>+5 Boost</Trans>
                     </b>
                   </div>
                 </div>
                 <small>
-                  <Trans>Priority improves your score; rank updates against the live waitlist.</Trans>
+                  <Trans>Boost improves your position. Final rank is confirmed after all Boost is counted.</Trans>
                 </small>
                 <div className={styles.resultActions}>
                   {preparedCard ? (
@@ -1643,7 +1674,7 @@ export function WaitlistExperience() {
                     </button>
                   )}
                   <WaitlistButton className={styles.shareButton} disabled={!ownInviteCode} onAction={shareResult}>
-                    {shareCompleted ? t`Share again` : t`Share result`}
+                    <Trans>Share result</Trans>
                   </WaitlistButton>
                 </div>
               </div>

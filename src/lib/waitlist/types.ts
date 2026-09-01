@@ -11,6 +11,8 @@ export type Persona = {
   mark: string;
   roast: string;
   roastZh?: string;
+  description: string;
+  descriptionZh?: string;
   artSrc: string;
   artAlt: string;
 };
