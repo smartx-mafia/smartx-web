@@ -1283,7 +1283,7 @@ export function WaitlistExperience() {
               <Trans>Waitlist</Trans>
             </span>
             <h1>
-              <Trans>Loading your session.</Trans>
+              <Trans>Loading your session...</Trans>
             </h1>
             <p>
               <Trans>Checking invite, result, and sign-in state.</Trans>
@@ -1460,7 +1460,7 @@ export function WaitlistExperience() {
 
         {stage === "email" && (
           <div className={styles.formStage}>
-            <h1>{authIntent === "recover" ? t`Find your result.` : t`Save your result.`}</h1>
+            <h1>{authIntent === "recover" ? t`Find your result.` : t`Save your result`}</h1>
             <p>
               {authIntent === "recover"
                 ? t`Enter the email you used for the test.`

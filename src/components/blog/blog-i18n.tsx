@@ -10,7 +10,7 @@ import type { BlogCategory } from "@/content/blog-types";
 // 才能随语言切换实时更新。文章正文保持英文原文。
 const UI_TEXT = {
   skipToLatest: msg`Skip to latest stories`,
-  journalTitle: msg`SmartX Journal.`,
+  journalTitle: msg`SmartX Journal`,
   mastheadIntro: msg`Notes on product, markets, and the systems reshaping how people trade.`,
   readDispatch: msg`Read the dispatch`,
   newer: msg`Newer`,

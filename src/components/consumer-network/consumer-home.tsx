@@ -190,7 +190,7 @@ function Hero() {
 
       <div className={styles.heroCopy}>
         <h1 id="consumer-hero-title">
-          <Trans>Trade your edge.</Trans>
+          <Trans>Trade your edge</Trans>
         </h1>
         <div className={styles.heroSubcopy}>
           <p className={styles.heroLedeDesktop}>
@@ -342,7 +342,7 @@ function DiscoverySection() {
             <Trans>Personalized for you</Trans>
           </span>
           <h2 id="discovery-title">
-            <Trans>The next opportunity finds you.</Trans>
+            <Trans>The next opportunity finds you</Trans>
           </h2>
         </div>
         <p>
@@ -384,9 +384,9 @@ function AccountSection() {
           </span>
           <h2 id="account-title">
             <Trans>
-              One Account.
+              One Account
               <br />
-              Every Market.
+              Every Market
             </Trans>
           </h2>
         </div>
