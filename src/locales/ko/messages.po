@@ -554,7 +554,7 @@ msgid "Listen first, then decide."
 msgstr "먼저 듣고, 그다음 결정한다."
 
 #: src/components/waitlist/waitlist-experience.tsx:1286
-msgid "Loading your session."
+msgid "Loading your session..."
 msgstr "세션을 불러오는 중입니다."
 
 #: src/lib/waitlist/persona.ts:221
@@ -656,7 +656,7 @@ msgid "Older"
 msgstr "지난 글"
 
 #: src/components/consumer-network/consumer-home.tsx:386
-msgid "One Account.<0/>Every Market."
+msgid "One Account<0/>Every Market"
 msgstr "하나의 계정.<0/>모든 마켓."
 
 #: src/lib/waitlist/quiz-i18n.ts:36
@@ -797,8 +797,8 @@ msgid "Reveal my result"
 msgstr "내 결과 공개"
 
 #: src/components/waitlist/waitlist-experience.tsx:1463
-msgid "Save your result."
-msgstr "결과를 저장하세요."
+msgid "Save your result"
+msgstr "결과를 저장하세요"
 
 #: src/components/waitlist/waitlist-experience.tsx:1160
 msgid "Selection successful"
@@ -885,8 +885,8 @@ msgid "SmartX home"
 msgstr "SmartX 홈"
 
 #: src/components/blog/blog-i18n.tsx:13
-msgid "SmartX Journal."
-msgstr "SmartX 저널."
+msgid "SmartX Journal"
+msgstr "martX 저널"
 
 #: src/components/consumer-network/consumer-home.tsx:332
 msgid "SmartX mobile signals feed on a dark trading console"
@@ -971,8 +971,8 @@ msgid "The market feels hot and the momentum is there."
 msgstr "시장이 뜨겁고 모멘텀도 살아 있다."
 
 #: src/components/consumer-network/consumer-home.tsx:345
-msgid "The next opportunity finds you."
-msgstr "다음 기회가 당신을 찾아옵니다."
+msgid "The next opportunity finds you"
+msgstr "다음 기회가 당신을 찾아옵니다"
 
 #: src/lib/waitlist/persona.ts:145
 msgid "The Onchain Paparazzi"
@@ -1037,8 +1037,8 @@ msgid "Trade as smoothly as shopping."
 msgstr "쇼핑하듯 간편하게 거래하세요."
 
 #: src/components/consumer-network/consumer-home.tsx:193
-msgid "Trade your edge."
-msgstr "당신의 엣지를 거래하세요."
+msgid "Trade your edge"
+msgstr "당신의 엣지를 거래하세요"
 
 #: src/components/consumer-network/consumer-home.tsx:287
 msgid "Turn influence into income"

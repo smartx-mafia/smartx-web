@@ -554,8 +554,8 @@ msgid "Listen first, then decide."
 msgstr "Listen first, then decide."
 
 #: src/components/waitlist/waitlist-experience.tsx:1286
-msgid "Loading your session."
-msgstr "Loading your session."
+msgid "Loading your session..."
+msgstr "Loading your session..."
 
 #: src/lib/waitlist/persona.ts:221
 msgid "LONE"
@@ -656,8 +656,12 @@ msgid "Older"
 msgstr "Older"
 
 #: src/components/consumer-network/consumer-home.tsx:386
-msgid "One Account.<0/>Every Market."
-msgstr "One Account.<0/>Every Market."
+#~ msgid "One Account.<0/>Every Market."
+#~ msgstr "One Account<0/>Every Market"
+
+#: src/components/consumer-network/consumer-home.tsx:386
+msgid "One Account<0/>Every Market"
+msgstr "One Account<0/>Every Market"
 
 #: src/lib/waitlist/quiz-i18n.ts:36
 msgid "One friend I really trust."
@@ -797,8 +801,12 @@ msgid "Reveal my result"
 msgstr "Reveal my result"
 
 #: src/components/waitlist/waitlist-experience.tsx:1463
-msgid "Save your result."
-msgstr "Save your result."
+msgid "Save your result"
+msgstr "Save your result"
+
+#: src/components/waitlist/waitlist-experience.tsx:1463
+#~ msgid "Save your result."
+#~ msgstr "Save your result."
 
 #: src/components/waitlist/waitlist-experience.tsx:1160
 msgid "Selection successful"
@@ -885,8 +893,12 @@ msgid "SmartX home"
 msgstr "SmartX home"
 
 #: src/components/blog/blog-i18n.tsx:13
-msgid "SmartX Journal."
-msgstr "SmartX Journal."
+msgid "SmartX Journal"
+msgstr "SmartX Journal"
+
+#: src/components/blog/blog-i18n.tsx:13
+#~ msgid "SmartX Journal."
+#~ msgstr "SmartX Journal."
 
 #: src/components/consumer-network/consumer-home.tsx:332
 msgid "SmartX mobile signals feed on a dark trading console"
@@ -971,8 +983,12 @@ msgid "The market feels hot and the momentum is there."
 msgstr "The market feels hot and the momentum is there."
 
 #: src/components/consumer-network/consumer-home.tsx:345
-msgid "The next opportunity finds you."
-msgstr "The next opportunity finds you."
+msgid "The next opportunity finds you"
+msgstr "The next opportunity finds you"
+
+#: src/components/consumer-network/consumer-home.tsx:345
+#~ msgid "The next opportunity finds you."
+#~ msgstr "The next opportunity finds you."
 
 #: src/lib/waitlist/persona.ts:145
 msgid "The Onchain Paparazzi"
@@ -1037,8 +1053,12 @@ msgid "Trade as smoothly as shopping."
 msgstr "Trade as smoothly as shopping."
 
 #: src/components/consumer-network/consumer-home.tsx:193
-msgid "Trade your edge."
-msgstr "Trade your edge."
+msgid "Trade your edge"
+msgstr "Trade your edge"
+
+#: src/components/consumer-network/consumer-home.tsx:193
+#~ msgid "Trade your edge."
+#~ msgstr "Trade your edge."
 
 #: src/components/consumer-network/consumer-home.tsx:287
 msgid "Turn influence into income"

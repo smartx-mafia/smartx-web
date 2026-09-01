@@ -394,7 +394,7 @@ msgstr "你是什么交易人格？测完六道题，马上知道。"
 
 #: src/components/waitlist/waitlist-experience.tsx:1463
 msgid "Find your result."
-msgstr "找回你的结果。"
+msgstr "查看你的结果"
 
 #: src/components/waitlist/waitlist-experience.tsx:134
 msgid "Finish the test before unlocking your result."
@@ -499,7 +499,7 @@ msgstr "嗅觉"
 
 #: src/components/blog/blog-i18n.tsx:35
 msgid "Intelligence"
-msgstr "情报"
+msgstr "洞察"
 
 #: src/lib/waitlist/share-copy.ts:45
 msgid "Invite Code"
@@ -554,8 +554,8 @@ msgid "Listen first, then decide."
 msgstr "先听听看，再决定。"
 
 #: src/components/waitlist/waitlist-experience.tsx:1286
-msgid "Loading your session."
-msgstr "正在加载你的会话。"
+msgid "Loading your session..."
+msgstr "正在读取你的信息..."
 
 #: src/lib/waitlist/persona.ts:221
 msgid "LONE"
@@ -649,15 +649,15 @@ msgstr "谁也不说。止盈，接着做。"
 
 #: src/components/blog/blog-i18n.tsx:14
 msgid "Notes on product, markets, and the systems reshaping how people trade."
-msgstr "关于产品、市场，以及正在重塑交易方式的系统。"
+msgstr "写产品、写市场，也写正在重塑交易方式的系统。"
 
 #: src/components/blog/blog-i18n.tsx:17
 msgid "Older"
 msgstr "较早"
 
 #: src/components/consumer-network/consumer-home.tsx:386
-msgid "One Account.<0/>Every Market."
-msgstr "一个账户。<0/>所有市场。"
+msgid "One Account<0/>Every Market"
+msgstr "一个账户<0/>所有市场"
 
 #: src/lib/waitlist/quiz-i18n.ts:36
 msgid "One friend I really trust."
@@ -683,7 +683,7 @@ msgstr "打开导航"
 
 #: src/components/consumer-network/network-product-previews.tsx:133
 msgid "Opinion"
-msgstr "看法"
+msgstr "观点"
 
 #: src/components/consumer-network/network-product-previews.tsx:445
 msgid "Order submitted"
@@ -723,7 +723,7 @@ msgstr "仓位价值"
 
 #: src/components/consumer-network/consumer-home.tsx:291
 msgid "Post opinions backed by your real positions. Climb the leaderboard, grow your following, and earn a share of the revenue you create."
-msgstr "用真实仓位给看法背书。上榜、涨粉，并分走你创造的收益。"
+msgstr "用真实仓位给观点背书。上榜、涨粉，并分走你创造的收益。"
 
 #: src/components/waitlist/waitlist-experience.tsx:1209
 #: src/components/waitlist/waitlist-experience.tsx:1689
@@ -797,8 +797,8 @@ msgid "Reveal my result"
 msgstr "揭晓我的结果"
 
 #: src/components/waitlist/waitlist-experience.tsx:1463
-msgid "Save your result."
-msgstr "保存你的结果。"
+msgid "Save your result"
+msgstr "保存你的结果"
 
 #: src/components/waitlist/waitlist-experience.tsx:1160
 msgid "Selection successful"
@@ -885,8 +885,8 @@ msgid "SmartX home"
 msgstr "SmartX 首页"
 
 #: src/components/blog/blog-i18n.tsx:13
-msgid "SmartX Journal."
-msgstr "SmartX 日志。"
+msgid "SmartX Journal"
+msgstr "SmartX 日志"
 
 #: src/components/consumer-network/consumer-home.tsx:332
 msgid "SmartX mobile signals feed on a dark trading console"
@@ -971,8 +971,8 @@ msgid "The market feels hot and the momentum is there."
 msgstr "市场情绪火热，感觉势头来了。"
 
 #: src/components/consumer-network/consumer-home.tsx:345
-msgid "The next opportunity finds you."
-msgstr "下一个机会会来找你。"
+msgid "The next opportunity finds you"
+msgstr "下一个机会会来找你"
 
 #: src/lib/waitlist/persona.ts:145
 msgid "The Onchain Paparazzi"
@@ -1037,8 +1037,8 @@ msgid "Trade as smoothly as shopping."
 msgstr "下单像购物一样顺畅。"
 
 #: src/components/consumer-network/consumer-home.tsx:193
-msgid "Trade your edge."
-msgstr "用你的优势交易。"
+msgid "Trade your edge"
+msgstr "用你的优势交易"
 
 #: src/components/consumer-network/consumer-home.tsx:287
 msgid "Turn influence into income"

@@ -554,7 +554,7 @@ msgid "Listen first, then decide."
 msgstr "まず聞いて、それから決める。"
 
 #: src/components/waitlist/waitlist-experience.tsx:1286
-msgid "Loading your session."
+msgid "Loading your session..."
 msgstr "セッションを読み込んでいます。"
 
 #: src/lib/waitlist/persona.ts:221
@@ -656,8 +656,12 @@ msgid "Older"
 msgstr "過去の記事"
 
 #: src/components/consumer-network/consumer-home.tsx:386
-msgid "One Account.<0/>Every Market."
-msgstr "ひとつのアカウント。<0/>すべての市場。"
+#~ msgid "One Account.<0/>Every Market."
+#~ msgstr "ひとつのアカウント。<0/>すべての市場。"
+
+#: src/components/consumer-network/consumer-home.tsx:386
+msgid "One Account<0/>Every Market"
+msgstr "本当に信頼している友人一人"
 
 #: src/lib/waitlist/quiz-i18n.ts:36
 msgid "One friend I really trust."
@@ -797,8 +801,8 @@ msgid "Reveal my result"
 msgstr "結果を公開する"
 
 #: src/components/waitlist/waitlist-experience.tsx:1463
-msgid "Save your result."
-msgstr "結果を保存しよう。"
+msgid "Save your result"
+msgstr "結果を保存しよう"
 
 #: src/components/waitlist/waitlist-experience.tsx:1160
 msgid "Selection successful"
@@ -885,8 +889,8 @@ msgid "SmartX home"
 msgstr "SmartX ホーム"
 
 #: src/components/blog/blog-i18n.tsx:13
-msgid "SmartX Journal."
-msgstr "SmartX ジャーナル。"
+msgid "SmartX Journal"
+msgstr "SmartX ジャーナル"
 
 #: src/components/consumer-network/consumer-home.tsx:332
 msgid "SmartX mobile signals feed on a dark trading console"
@@ -971,8 +975,8 @@ msgid "The market feels hot and the momentum is there."
 msgstr "相場が熱く、モメンタムも来ている。"
 
 #: src/components/consumer-network/consumer-home.tsx:345
-msgid "The next opportunity finds you."
-msgstr "次のチャンスが、向こうからやってくる。"
+msgid "The next opportunity finds you"
+msgstr "次のチャンスが、向こうからやってくる"
 
 #: src/lib/waitlist/persona.ts:145
 msgid "The Onchain Paparazzi"
@@ -1037,8 +1041,8 @@ msgid "Trade as smoothly as shopping."
 msgstr "買い物するように、そのまま張れる。"
 
 #: src/components/consumer-network/consumer-home.tsx:193
-msgid "Trade your edge."
-msgstr "自分のエッジで張ろう。"
+msgid "Trade your edge"
+msgstr "分のエッジで張ろう"
 
 #: src/components/consumer-network/consumer-home.tsx:287
 msgid "Turn influence into income"
