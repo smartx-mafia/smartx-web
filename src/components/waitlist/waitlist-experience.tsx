@@ -440,6 +440,7 @@ export function WaitlistExperience() {
   answersRef.current = answers;
   const inviteCodeRef = useRef(inviteCode);
   inviteCodeRef.current = inviteCode;
+  const validatedLandingInviteRef = useRef("");
   const [quizWarning, setQuizWarning] = useState("");
   const [inviteLinkCopied, setInviteLinkCopied] = useState(false);
   const [shareCompleted, setShareCompleted] = useState(false);
@@ -517,6 +518,7 @@ export function WaitlistExperience() {
   };
 
   const dropLandingInvite = () => {
+    validatedLandingInviteRef.current = "";
     clearLandingInvite();
   };
 
@@ -656,6 +658,7 @@ export function WaitlistExperience() {
         dropLandingInvite();
         setGateError(inviteCheckMessage(inviteView, INVITE_UNRECOGNIZED));
       } else if (isInviteAccepted(inviteView) && invite) {
+        validatedLandingInviteRef.current = normalizeInviteCode(invite);
         persistLandingInvite(invite);
       }
 
@@ -789,9 +792,14 @@ export function WaitlistExperience() {
       setGateError(INVITE_UNRECOGNIZED);
       return false;
     }
+    if (validatedLandingInviteRef.current === next) {
+      setGateError("");
+      return true;
+    }
     try {
       const view = await waitlistApi.checkInvite(next);
       if (isInviteAccepted(view)) {
+        validatedLandingInviteRef.current = next;
         persistLandingInvite(next);
         setGateError("");
         return true;
@@ -932,12 +940,22 @@ export function WaitlistExperience() {
     setUserTokenState(token);
 
     if (isNewUser) {
+      const activeQuestions = await ensureQuestions();
+      const localAnswers = buildQuizAnswers(activeQuestions, answersRef.current);
+      const hasCompleteAnswers =
+        activeQuestions.length > 0 && Object.keys(localAnswers).length === activeQuestions.length;
+
+      if (!hasCompleteAnswers) {
+        setQuizWarning("");
+        setStage("quiz");
+        return;
+      }
+
       try {
-        await waitlistApi.submitQuiz(buildQuizAnswers(questions, answersRef.current), token);
+        await waitlistApi.submitQuiz(localAnswers, token);
       } catch (error) {
         if (handleUserApiError(error)) return;
         setQuizWarning(errorMessage(error));
-        await ensureQuestions();
         setStage("quiz");
         return;
       }
@@ -1057,6 +1075,7 @@ export function WaitlistExperience() {
 
   const answerQuestion = async (optionId: string) => {
     if (!currentQuestion) return;
+    setQuizWarning("");
     const nextAnswers = { ...answers, [currentQuestion.questionId]: optionId };
     answersRef.current = nextAnswers;
     setAnswers(nextAnswers);
@@ -1280,52 +1299,49 @@ export function WaitlistExperience() {
                 <Trans>A result was shared with you</Trans>
               </span>
               <h1>
-                <Trans>
-                  A friend trades like{" "}
-                  <span className={styles.referralPersona}>
-                    {localizedPersonaName(referralOutcome.persona)}.
-                  </span>
-                </Trans>
+                <Trans>Do you trade like they do?</Trans>
               </h1>
               <p>
                 <Trans>Different score, same type—or something else entirely? Six decisions reveal how you trade when it gets real.</Trans>
               </p>
-              {loggedIn && (
-                <AccountSession
-                  email={verifiedEmail}
-                  label={t`Verified as`}
-                  place="copy"
-                  onSignOut={signOutWaitlist}
-                />
-              )}
-              {hasOwnResult ? (
-                <div className={styles.referralReturn}>
-                  <WaitlistButton className={styles.primaryButton} onAction={viewSavedResult}>
-                    <Trans>View my result</Trans>
-                  </WaitlistButton>
-                  <small>
-                    <Trans>Your result is saved as {savedPersonaName}.</Trans>
-                  </small>
-            </div>
-              ) : loggedIn ? (
-                <WaitlistButton className={styles.primaryButton} onAction={beginFromReferral}>
-                  <Trans>Find my trader type</Trans>
-                </WaitlistButton>
-              ) : (
-                <>
+              <div className={styles.referralActions}>
+                {hasOwnResult ? (
+                  <div className={styles.referralReturn}>
+                    <small>
+                      <Trans>Your result is saved as {savedPersonaName}.</Trans>
+                    </small>
+                    <WaitlistButton className={styles.primaryButton} onAction={viewSavedResult}>
+                      <Trans>View my result</Trans>
+                    </WaitlistButton>
+                  </div>
+                ) : loggedIn ? (
                   <WaitlistButton className={styles.primaryButton} onAction={beginFromReferral}>
                     <Trans>Find my trader type</Trans>
                   </WaitlistButton>
-                  <WaitlistButton className={styles.textButton} onClick={beginResultRecovery}>
-                    <Trans>Already tested? View my result</Trans>
-                  </WaitlistButton>
-                  {gateError && (
-                    <div className={styles.referralError} role="alert">
-                      <small>{localizeWaitlistMessage(gateError)}</small>
-                    </div>
-                  )}
-                </>
-              )}
+                ) : (
+                  <>
+                    <WaitlistButton className={styles.primaryButton} onAction={beginFromReferral}>
+                      <Trans>Find my trader type</Trans>
+                    </WaitlistButton>
+                    <WaitlistButton className={styles.textButton} onClick={beginResultRecovery}>
+                      <Trans>Already tested? View my result</Trans>
+                    </WaitlistButton>
+                    {gateError && (
+                      <div className={styles.referralError} role="alert">
+                        <small>{localizeWaitlistMessage(gateError)}</small>
+                      </div>
+                    )}
+                  </>
+                )}
+                {loggedIn && (
+                  <AccountSession
+                    email={verifiedEmail}
+                    label={t`Verified as`}
+                    place="copy"
+                    onSignOut={signOutWaitlist}
+                  />
+                )}
+              </div>
             </aside>
           </div>
         )}
@@ -1692,7 +1708,6 @@ export function WaitlistExperience() {
                 <div className={styles.inviteFields}>
                   <div className={styles.primaryInviteCard} data-empty={ownInviteCode ? undefined : "true"}>
                     <div>
-                      <span><Trans>Your invite code</Trans></span>
                       <strong title={ownInvitationUrl || undefined}>
                         {ownInvitationUrl || t`Invite link is being prepared`}
                       </strong>
@@ -1704,7 +1719,7 @@ export function WaitlistExperience() {
                       onClick={() => { void copyInvitation(ownInviteCode); }}
                     >
                       <Image src="/assets/waitlist/copy.svg" alt="" width={20} height={20} aria-hidden="true" />
-                      {inviteLinkCopied ? t`Copied` : t`Copy link`}
+                      {inviteLinkCopied ? t`Copied` : t`Copy`}
                     </WaitlistButton>
                   </div>
                 </div>

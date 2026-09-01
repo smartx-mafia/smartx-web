@@ -31,15 +31,15 @@ msgstr "{minutes}분 분량"
 msgid "{name} — SmartX trader type card"
 msgstr "{name} — SmartX 거래 유형 카드"
 
-#: src/components/waitlist/waitlist-experience.tsx:1688
+#: src/components/waitlist/waitlist-experience.tsx:1685
 msgid "{verifiedFriends} friends joined via your invite."
 msgstr "{verifiedFriends}명의 친구가 내 초대로 합류했습니다."
 
-#: src/components/waitlist/waitlist-experience.tsx:1482
+#: src/components/waitlist/waitlist-experience.tsx:1479
 msgid "← Back"
 msgstr "← 뒤로"
 
-#: src/components/waitlist/waitlist-experience.tsx:1636
+#: src/components/waitlist/waitlist-experience.tsx:1633
 msgid "+10 Boost"
 msgstr "+10 Boost"
 
@@ -47,7 +47,7 @@ msgstr "+10 Boost"
 #~ msgid "+10 priority"
 #~ msgstr "+10 우선순위"
 
-#: src/components/waitlist/waitlist-experience.tsx:1646
+#: src/components/waitlist/waitlist-experience.tsx:1643
 msgid "+5 Boost"
 msgstr "+5 Boost"
 
@@ -98,10 +98,9 @@ msgstr "보유하지 않은 코인이 40% 올랐습니다. 어떻게 하시겠�
 #~ msgid "A coin you don't own is up 40%. What's your move?"
 #~ msgstr "보유하지 않은 코인이 40% 올랐습니다. 어떻게 하시겠습니까?"
 
-#. placeholder {0}: localizedPersonaName(referralOutcome.persona)
 #: src/components/waitlist/waitlist-experience.tsx:1283
-msgid "A friend trades like <0>{0}.</0>"
-msgstr "친구의 거래 유형은 <0>{0}.</0>"
+#~ msgid "A friend trades like <0>{0}.</0>"
+#~ msgstr "친구의 거래 유형은 <0>{0}.</0>"
 
 #: src/components/waitlist/waitlist-experience.tsx:1280
 msgid "A result was shared with you"
@@ -136,8 +135,8 @@ msgstr "실거래 트레이더가 이 마켓에 좋아요를 눌렀습니다"
 #~ msgid "Already tested?"
 #~ msgstr "이미 테스트하셨나요?"
 
-#: src/components/waitlist/waitlist-experience.tsx:1320
-#: src/components/waitlist/waitlist-experience.tsx:1353
+#: src/components/waitlist/waitlist-experience.tsx:1308
+#: src/components/waitlist/waitlist-experience.tsx:1350
 msgid "Already tested? View my result"
 msgstr "이미 테스트하셨나요? 내 결과 보기"
 
@@ -166,11 +165,11 @@ msgstr "평균 진입가 · 시총 $1.52B"
 msgid "Avg entry · $228.40"
 msgstr "평균 진입가 · $228.40"
 
-#: src/components/waitlist/waitlist-experience.tsx:1395
+#: src/components/waitlist/waitlist-experience.tsx:1392
 msgid "Back"
 msgstr "뒤로"
 
-#: src/components/waitlist/waitlist-experience.tsx:1373
+#: src/components/waitlist/waitlist-experience.tsx:1370
 msgid "Back to start"
 msgstr "처음으로 돌아가기"
 
@@ -199,7 +198,7 @@ msgstr "최고의 매칭"
 msgid "Blog"
 msgstr "블로그"
 
-#: src/components/waitlist/waitlist-experience.tsx:1651
+#: src/components/waitlist/waitlist-experience.tsx:1648
 msgid "Boost improves your position. Final rank is confirmed after all Boost is counted."
 msgstr "Boost로 순위를 높일 수 있습니다. 모든 Boost 집계 후 최종 순위가 확정됩니다."
 
@@ -207,7 +206,7 @@ msgstr "Boost로 순위를 높일 수 있습니다. 모든 Boost 집계 후 최�
 #~ msgid "Boost improves your score; rank updates against the live waitlist."
 #~ msgstr "Boost로 점수가 올라가며, 순위는 실시간 대기자 명단에 따라 갱신됩니다."
 
-#: src/components/waitlist/waitlist-experience.tsx:1617
+#: src/components/waitlist/waitlist-experience.tsx:1614
 msgid "Both are required to continue."
 msgstr "계속하려면 두 가지 모두 필요합니다."
 
@@ -235,7 +234,7 @@ msgstr "더 산다. 가격이 낮을수록 평단도 좋아진다."
 msgid "Campaign"
 msgstr "캠페인"
 
-#: src/components/waitlist/waitlist-experience.tsx:1571
+#: src/components/waitlist/waitlist-experience.tsx:1568
 msgid "Change Email"
 msgstr "이메일 변경"
 
@@ -247,12 +246,12 @@ msgstr "차트, 자금 흐름, 스마트 머니 지갑까지 온체인에서 전
 msgid "Check it against onchain data first."
 msgstr "온체인 데이터와 시장 구조로 검증한다."
 
-#: src/components/waitlist/waitlist-experience.tsx:1495
+#: src/components/waitlist/waitlist-experience.tsx:1492
 msgid "Check your inbox"
 msgstr "메일함을 확인하세요"
 
-#: src/components/waitlist/waitlist-experience.tsx:1555
-#: src/components/waitlist/waitlist-experience.tsx:1567
+#: src/components/waitlist/waitlist-experience.tsx:1552
+#: src/components/waitlist/waitlist-experience.tsx:1564
 msgid "Checking code…"
 msgstr "인증 코드 확인 중…"
 
@@ -260,12 +259,12 @@ msgstr "인증 코드 확인 중…"
 msgid "Checking invite, result, and sign-in state."
 msgstr "초대, 결과, 로그인 상태를 확인하는 중입니다."
 
-#: src/components/waitlist/waitlist-experience.tsx:1511
+#: src/components/waitlist/waitlist-experience.tsx:1508
 msgid "Clear"
 msgstr "지우기"
 
 #: src/components/site/app-notice.tsx:56
-#: src/components/waitlist/waitlist-experience.tsx:1724
+#: src/components/waitlist/waitlist-experience.tsx:1720
 msgid "Close"
 msgstr "닫기"
 
@@ -286,12 +285,12 @@ msgstr "내비게이션 닫기"
 msgid "Community"
 msgstr "커뮤니티"
 
-#: src/components/waitlist/waitlist-experience.tsx:1602
-#: src/components/waitlist/waitlist-experience.tsx:1609
+#: src/components/waitlist/waitlist-experience.tsx:1599
+#: src/components/waitlist/waitlist-experience.tsx:1606
 msgid "Completed"
 msgstr "완료"
 
-#: src/components/waitlist/waitlist-experience.tsx:1567
+#: src/components/waitlist/waitlist-experience.tsx:1564
 msgid "Continue"
 msgstr "계속"
 
@@ -300,7 +299,7 @@ msgstr "계속"
 msgid "Conviction"
 msgstr "확신"
 
-#: src/components/waitlist/waitlist-experience.tsx:1707
+#: src/components/waitlist/waitlist-experience.tsx:1703
 msgid "Copied"
 msgstr "복사됨"
 
@@ -309,12 +308,13 @@ msgid "Copied!"
 msgstr "복사되었습니다"
 
 #: src/components/consumer-network/network-product-previews.tsx:417
+#: src/components/waitlist/waitlist-experience.tsx:1703
 msgid "Copy"
 msgstr "카피"
 
-#: src/components/waitlist/waitlist-experience.tsx:1707
-msgid "Copy link"
-msgstr "링크 복사"
+#: src/components/waitlist/waitlist-experience.tsx:1704
+#~ msgid "Copy link"
+#~ msgstr "링크 복사"
 
 #: src/components/waitlist/waitlist-experience.tsx:1133
 msgid "Couldn’t copy the invite link. Try again."
@@ -322,15 +322,15 @@ msgstr "초대 링크를 복사하지 못했습니다. 다시 시도해 주세�
 
 #: src/components/waitlist/waitlist-experience.tsx:1179
 #: src/components/waitlist/waitlist-experience.tsx:1203
-#: src/components/waitlist/waitlist-experience.tsx:1669
+#: src/components/waitlist/waitlist-experience.tsx:1666
 msgid "Couldn’t export the image. Try again."
 msgstr "이미지를 내보내지 못했습니다. 다시 시도해 주세요."
 
-#: src/components/waitlist/waitlist-experience.tsx:1366
+#: src/components/waitlist/waitlist-experience.tsx:1363
 msgid "Couldn’t load the test."
 msgstr "테스트를 불러오지 못했습니다."
 
-#: src/components/waitlist/waitlist-experience.tsx:1629
+#: src/components/waitlist/waitlist-experience.tsx:1626
 msgid "Current rank"
 msgstr "현재 순위"
 
@@ -357,7 +357,7 @@ msgstr "DEGEN"
 msgid "Demo profile"
 msgstr "데모 프로필"
 
-#: src/components/waitlist/waitlist-experience.tsx:1291
+#: src/components/waitlist/waitlist-experience.tsx:1286
 msgid "Different score, same type—or something else entirely? Six decisions reveal how you trade when it gets real."
 msgstr "점수는 달라도 같은 유형일까요, 전혀 다를까요? 여섯 번의 결정이 실제 마켓에서 당신이 어떻게 거래하는지 보여줍니다."
 
@@ -369,21 +369,25 @@ msgstr "발견 · 팔로우 · 카피"
 msgid "Dismiss notification"
 msgstr "알림 닫기"
 
-#: src/components/waitlist/waitlist-experience.tsx:1662
-#: src/components/waitlist/waitlist-experience.tsx:1673
+#: src/components/waitlist/waitlist-experience.tsx:1283
+msgid "Do you trade like they do?"
+msgstr "나도 같은 방식으로 거래할까요?"
+
+#: src/components/waitlist/waitlist-experience.tsx:1659
+#: src/components/waitlist/waitlist-experience.tsx:1670
 msgid "Download"
 msgstr "다운로드"
 
-#: src/components/waitlist/waitlist-experience.tsx:1643
+#: src/components/waitlist/waitlist-experience.tsx:1640
 msgid "Each verified friend"
 msgstr "인증 완료 친구 1명당"
 
-#: src/components/waitlist/waitlist-experience.tsx:1642
+#: src/components/waitlist/waitlist-experience.tsx:1639
 msgid "Each verified friend (+{verifiedFriends})"
 msgstr "인증 완료 친구 1명당 (+{verifiedFriends})"
 
-#: src/components/waitlist/waitlist-experience.tsx:1455
-#: src/components/waitlist/waitlist-experience.tsx:1466
+#: src/components/waitlist/waitlist-experience.tsx:1452
+#: src/components/waitlist/waitlist-experience.tsx:1463
 msgid "Email address"
 msgstr "이메일 주소"
 
@@ -395,11 +399,11 @@ msgstr "이메일 발송 한도를 초과했습니다. 나중에 다시 시도�
 msgid "Email verified"
 msgstr "이메일 인증됨"
 
-#: src/components/waitlist/waitlist-experience.tsx:1498
+#: src/components/waitlist/waitlist-experience.tsx:1495
 msgid "Enter the code sent to <0>{email}</0>."
 msgstr "<0>{email}</0>(으)로 보낸 코드를 입력하세요."
 
-#: src/components/waitlist/waitlist-experience.tsx:1450
+#: src/components/waitlist/waitlist-experience.tsx:1447
 msgid "Enter the email you used for the test."
 msgstr "테스트에 사용한 이메일을 입력하세요."
 
@@ -407,7 +411,7 @@ msgstr "테스트에 사용한 이메일을 입력하세요."
 #~ msgid "Enter the email you used. We’ll send a six-digit code."
 #~ msgstr "사용했던 이메일을 입력하세요. 6자리 코드를 보내드립니다."
 
-#: src/components/waitlist/waitlist-experience.tsx:1600
+#: src/components/waitlist/waitlist-experience.tsx:1597
 msgid "Enter the SmartX community"
 msgstr "SmartX 커뮤니티 참여"
 
@@ -447,8 +451,8 @@ msgstr "인증 코드를 보내지 못했습니다"
 msgid "Fiat in · Markets open · Chains invisible"
 msgstr "입금 · 마켓 오픈 · 체인은 무관합니다."
 
-#: src/components/waitlist/waitlist-experience.tsx:1312
-#: src/components/waitlist/waitlist-experience.tsx:1317
+#: src/components/waitlist/waitlist-experience.tsx:1300
+#: src/components/waitlist/waitlist-experience.tsx:1305
 msgid "Find my trader type"
 msgstr "내 거래 유형 보기"
 
@@ -456,7 +460,7 @@ msgstr "내 거래 유형 보기"
 msgid "Find out your trader type in 6 questions."
 msgstr "6개의 질문으로 나의 트레이더 유형을 알아보세요."
 
-#: src/components/waitlist/waitlist-experience.tsx:1447
+#: src/components/waitlist/waitlist-experience.tsx:1444
 msgid "Find your result."
 msgstr "결과 찾기."
 
@@ -472,7 +476,7 @@ msgstr "테스트를 먼저 완료해야 결과를 볼 수 있습니다."
 #~ msgid "First result share"
 #~ msgstr "첫 결과 공유"
 
-#: src/components/waitlist/waitlist-experience.tsx:1634
+#: src/components/waitlist/waitlist-experience.tsx:1631
 msgid "First-time share"
 msgstr "첫 공유"
 
@@ -484,11 +488,11 @@ msgstr "첫 공유"
 msgid "Follow immediately. Good calls don't wait."
 msgstr "바로 따라간다. 좋은 콜은 기다려주지 않는다."
 
-#: src/components/waitlist/waitlist-experience.tsx:1607
+#: src/components/waitlist/waitlist-experience.tsx:1604
 msgid "Follow product updates"
 msgstr "제품 소식 팔로우"
 
-#: src/components/waitlist/waitlist-experience.tsx:1607
+#: src/components/waitlist/waitlist-experience.tsx:1604
 msgid "Follow SmartX on X"
 msgstr "X에서 SmartX 팔로우"
 
@@ -551,7 +555,11 @@ msgstr "그대로 들고 어떻게 되는지 본다."
 msgid "Home"
 msgstr "홈"
 
-#: src/components/waitlist/waitlist-experience.tsx:1337
+#: src/components/waitlist/waitlist-experience.tsx:1283
+#~ msgid "How do you compare?"
+#~ msgstr "당신은 얼마나 비슷할까요?"
+
+#: src/components/waitlist/waitlist-experience.tsx:1334
 msgid "How do you trade<0/> when it gets <1>real?</1>"
 msgstr "진짜 돈이 걸리면 <0/> 당신은 <1>어떻게 거래하나요?</1>"
 
@@ -601,15 +609,15 @@ msgstr "초대 코드"
 msgid "Invite code not recognized. Check the code and try again."
 msgstr "초대 코드를 인식할 수 없습니다. 코드를 확인하고 다시 시도해 주세요."
 
-#: src/components/waitlist/waitlist-experience.tsx:1684
+#: src/components/waitlist/waitlist-experience.tsx:1681
 msgid "Invite friends"
 msgstr "친구 초대"
 
-#: src/components/waitlist/waitlist-experience.tsx:1697
+#: src/components/waitlist/waitlist-experience.tsx:1693
 msgid "Invite link is being prepared"
 msgstr "초대 링크를 준비하고 있습니다"
 
-#: src/components/waitlist/waitlist-experience.tsx:1600
+#: src/components/waitlist/waitlist-experience.tsx:1597
 msgid "Join SmartX on Telegram"
 msgstr "SmartX 텔레그램 참여"
 
@@ -617,7 +625,7 @@ msgstr "SmartX 텔레그램 참여"
 #~ msgid "Join Telegram"
 #~ msgstr "텔레그램 참여"
 
-#: src/components/waitlist/waitlist-experience.tsx:1590
+#: src/components/waitlist/waitlist-experience.tsx:1587
 msgid "Join the SmartX community and follow product updates before your trader type is revealed."
 msgstr "거래 유형이 공개되기 전에 SmartX 커뮤니티에 참여하고 제품 소식을 팔로우하세요."
 
@@ -775,7 +783,7 @@ msgstr "하나의 계정.<0/>모든 마켓."
 msgid "One friend I really trust."
 msgstr "정말 믿는 친구 한 명."
 
-#: src/components/waitlist/waitlist-experience.tsx:1584
+#: src/components/waitlist/waitlist-experience.tsx:1581
 msgid "One last step"
 msgstr "마지막 단계"
 
@@ -787,8 +795,8 @@ msgstr "원탭 거래"
 #~ msgid "One trusted friend, maybe."
 #~ msgstr "믿을 만한 친구 한 명, 어쩌면."
 
-#: src/components/waitlist/waitlist-experience.tsx:1602
-#: src/components/waitlist/waitlist-experience.tsx:1609
+#: src/components/waitlist/waitlist-experience.tsx:1599
+#: src/components/waitlist/waitlist-experience.tsx:1606
 msgid "Open"
 msgstr "열기"
 
@@ -850,7 +858,7 @@ msgid "Post opinions backed by your real positions. Climb the leaderboard, grow 
 msgstr "실제 포지션이 뒷받침하는 의견을 올리세요. 리더보드에 오르고, 팔로워를 늘리고, 당신이 만든 수익을 나눠 가지세요."
 
 #: src/components/waitlist/waitlist-experience.tsx:1190
-#: src/components/waitlist/waitlist-experience.tsx:1673
+#: src/components/waitlist/waitlist-experience.tsx:1670
 msgid "Preparing…"
 msgstr "준비 중…"
 
@@ -872,13 +880,13 @@ msgstr "순전히 감이다. 설명은 못 해도 내 촉을 믿는다."
 msgid "Put in a small amount."
 msgstr "소액만 넣는다."
 
-#: src/components/waitlist/waitlist-experience.tsx:1398
+#: src/components/waitlist/waitlist-experience.tsx:1395
 msgid "Question"
 msgstr "질문"
 
 #. placeholder {0}: questionIndex + 1
 #. placeholder {1}: questions.length
-#: src/components/waitlist/waitlist-experience.tsx:1403
+#: src/components/waitlist/waitlist-experience.tsx:1400
 msgid "Question {0} of {1}"
 msgstr "질문 {0} / {1}"
 
@@ -898,12 +906,12 @@ msgstr "읽기 테마"
 msgid "Required information is missing. Try again."
 msgstr "필수 정보가 없습니다. 다시 시도하세요."
 
-#: src/components/waitlist/waitlist-experience.tsx:1574
+#: src/components/waitlist/waitlist-experience.tsx:1571
 msgid "Resend Code"
 msgstr "코드 재전송"
 
 #. placeholder {0}: formatClock(otpCooldown)
-#: src/components/waitlist/waitlist-experience.tsx:1574
+#: src/components/waitlist/waitlist-experience.tsx:1571
 msgid "Resend Code ({0})"
 msgstr "코드 재전송 ({0})"
 
@@ -916,15 +924,15 @@ msgstr "회복력"
 msgid "Return to SmartX"
 msgstr "SmartX로 돌아가기"
 
-#: src/components/waitlist/waitlist-experience.tsx:1451
+#: src/components/waitlist/waitlist-experience.tsx:1448
 msgid "Return to your result anytime and stay updated on SmartX."
 msgstr "언제든 결과를 다시 확인하고 SmartX의 최신 소식을 받아보세요."
 
-#: src/components/waitlist/waitlist-experience.tsx:1614
+#: src/components/waitlist/waitlist-experience.tsx:1611
 msgid "Reveal my result"
 msgstr "내 결과 공개"
 
-#: src/components/waitlist/waitlist-experience.tsx:1447
+#: src/components/waitlist/waitlist-experience.tsx:1444
 msgid "Save your result."
 msgstr "결과를 저장하세요."
 
@@ -940,7 +948,7 @@ msgstr "공유되었습니다"
 msgid "Sell a bit to reduce the risk."
 msgstr "일부 매도해 리스크를 줄인다."
 
-#: src/components/waitlist/waitlist-experience.tsx:1476
+#: src/components/waitlist/waitlist-experience.tsx:1473
 msgid "Send code"
 msgstr "코드 보내기"
 
@@ -956,15 +964,15 @@ msgstr "일시적으로 혼잡합니다. 잠시 후 다시 시도하세요."
 #~ msgid "Share again"
 #~ msgstr "다시 공유"
 
-#: src/components/waitlist/waitlist-experience.tsx:1722
+#: src/components/waitlist/waitlist-experience.tsx:1718
 msgid "Share image"
 msgstr "이미지 공유"
 
-#: src/components/waitlist/waitlist-experience.tsx:1634
+#: src/components/waitlist/waitlist-experience.tsx:1631
 msgid "Share recorded"
 msgstr "공유 기록됨"
 
-#: src/components/waitlist/waitlist-experience.tsx:1677
+#: src/components/waitlist/waitlist-experience.tsx:1674
 msgid "Share result"
 msgstr "결과 공유"
 
@@ -972,8 +980,8 @@ msgstr "결과 공유"
 msgid "Sign out"
 msgstr "로그아웃"
 
-#: src/components/waitlist/waitlist-experience.tsx:1594
-#: src/components/waitlist/waitlist-experience.tsx:1626
+#: src/components/waitlist/waitlist-experience.tsx:1591
+#: src/components/waitlist/waitlist-experience.tsx:1623
 msgid "Signed in as"
 msgstr "로그인 계정"
 
@@ -982,11 +990,11 @@ msgstr "로그인 계정"
 msgid "Site navigation"
 msgstr "사이트 내비게이션"
 
-#: src/components/waitlist/waitlist-experience.tsx:1340
+#: src/components/waitlist/waitlist-experience.tsx:1337
 msgid "Six decisions reveal your risk, signal, and social instincts."
 msgstr "여섯 번의 결정이 리스크 성향, 마켓 판단, 소셜 본능을 보여줍니다."
 
-#: src/components/waitlist/waitlist-experience.tsx:1526
+#: src/components/waitlist/waitlist-experience.tsx:1523
 msgid "Six-digit code"
 msgstr "6자리 코드"
 
@@ -1065,7 +1073,7 @@ msgstr "스퀘어"
 #~ msgid "Start small, add if it holds."
 #~ msgstr "지금은 소액으로 시작하고, 버티면 추가한다."
 
-#: src/components/waitlist/waitlist-experience.tsx:1349
+#: src/components/waitlist/waitlist-experience.tsx:1346
 msgid "Start the test"
 msgstr "테스트 시작하기"
 
@@ -1142,7 +1150,7 @@ msgstr "온체인 파파라치"
 msgid "The page you requested is no longer at this address."
 msgstr "요청하신 페이지는 더 이상 이 주소에 없습니다."
 
-#: src/components/waitlist/waitlist-experience.tsx:1369
+#: src/components/waitlist/waitlist-experience.tsx:1366
 msgid "The questions didn’t come through. Check your connection and try again."
 msgstr "질문을 불러오지 못했습니다. 연결 상태를 확인하고 다시 시도해 주세요."
 
@@ -1212,7 +1220,7 @@ msgstr "당신의 엣지를 거래하세요."
 msgid "Turn influence into income"
 msgstr "영향력을 수익으로"
 
-#: src/components/waitlist/waitlist-experience.tsx:1587
+#: src/components/waitlist/waitlist-experience.tsx:1584
 msgid "Unlock your result"
 msgstr "결과 잠금 해제"
 
@@ -1224,11 +1232,11 @@ msgstr "다크 읽기 테마 사용"
 msgid "Use light reading theme"
 msgstr "라이트 읽기 테마 사용"
 
-#: src/components/waitlist/waitlist-experience.tsx:1492
+#: src/components/waitlist/waitlist-experience.tsx:1489
 msgid "Verification"
 msgstr "인증"
 
-#: src/components/waitlist/waitlist-experience.tsx:1503
+#: src/components/waitlist/waitlist-experience.tsx:1500
 msgid "Verification code"
 msgstr "인증 코드"
 
@@ -1236,8 +1244,8 @@ msgstr "인증 코드"
 msgid "Verification code is incorrect or expired"
 msgstr "인증 코드가 올바르지 않거나 만료되었습니다"
 
-#: src/components/waitlist/waitlist-experience.tsx:1296
-#: src/components/waitlist/waitlist-experience.tsx:1384
+#: src/components/waitlist/waitlist-experience.tsx:1320
+#: src/components/waitlist/waitlist-experience.tsx:1381
 msgid "Verified as"
 msgstr "인증 계정"
 
@@ -1249,7 +1257,7 @@ msgstr "검증된 프로필"
 msgid "Verified, not claimed"
 msgstr "실거래 검증, 자칭이 아님"
 
-#: src/components/waitlist/waitlist-experience.tsx:1304
+#: src/components/waitlist/waitlist-experience.tsx:1295
 msgid "View my result"
 msgstr "내 결과 보기"
 
@@ -1264,7 +1272,7 @@ msgstr "원하는 가격까지 기다렸다가 들어간다."
 #: src/components/site/site-header.tsx:55
 #: src/components/site/site-header.tsx:131
 #: src/components/waitlist/waitlist-experience.tsx:1264
-#: src/components/waitlist/waitlist-experience.tsx:1363
+#: src/components/waitlist/waitlist-experience.tsx:1360
 msgid "Waitlist"
 msgstr "웨이트리스트"
 
@@ -1352,13 +1360,13 @@ msgstr "차트의 선은 지하철 노선도보다 많습니다. 잡음보다 �
 msgid "Your group chat hates your trade. What do you do?"
 msgstr "단톡방 모두가 그 트레이드를 욕합니다. 어떻게 하시겠어요?"
 
-#: src/components/waitlist/waitlist-experience.tsx:1681
+#: src/components/waitlist/waitlist-experience.tsx:1678
 msgid "Your invitation link"
 msgstr "내 초대 링크"
 
-#: src/components/waitlist/waitlist-experience.tsx:1695
-msgid "Your invite code"
-msgstr "내 초대 코드"
+#: src/components/waitlist/waitlist-experience.tsx:1692
+#~ msgid "Your invite code"
+#~ msgstr "내 초대 코드"
 
 #: src/lib/waitlist/quiz-i18n.ts:10
 #~ msgid "Your position is down 20%. What happens next?"
@@ -1368,7 +1376,7 @@ msgstr "내 초대 코드"
 #~ msgid "Your result is ready"
 #~ msgstr "결과가 준비되었습니다"
 
-#: src/components/waitlist/waitlist-experience.tsx:1307
+#: src/components/waitlist/waitlist-experience.tsx:1292
 msgid "Your result is saved as {savedPersonaName}."
 msgstr "결과가 {savedPersonaName}(으)로 저장되어 있습니다."
 
