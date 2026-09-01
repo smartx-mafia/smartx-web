@@ -904,7 +904,7 @@ export function WaitlistExperience() {
           setAuthIntent("recover");
         }
       }
-      await waitlistApi.sendEmailCode(nextEmail);
+      await waitlistApi.sendEmailCode(nextEmail, locale);
       setOtp("");
       setOtpSubmitting(false);
       otpSubmitInFlightRef.current = false;
@@ -921,7 +921,7 @@ export function WaitlistExperience() {
   const resendCode = async () => {
     if (otpCooldown > 0) return;
     try {
-      await waitlistApi.sendEmailCode(email);
+      await waitlistApi.sendEmailCode(email, locale);
       setOtp("");
       setOtpError("");
       setOtpSubmitting(false);
@@ -1719,7 +1719,7 @@ export function WaitlistExperience() {
                       onClick={() => { void copyInvitation(ownInviteCode); }}
                     >
                       <Image src="/assets/waitlist/copy.svg" alt="" width={20} height={20} aria-hidden="true" />
-                      {inviteLinkCopied ? t`Copied` : t`Copy`}
+                      {inviteLinkCopied ? t`Copied` : t({ message: "Copy", context: "invite-link" })}
                     </WaitlistButton>
                   </div>
                 </div>
