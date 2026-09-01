@@ -188,8 +188,6 @@ function Hero() {
       </div>
       <div className={styles.heroShade} aria-hidden="true" />
 
-      <ConsumerHeader />
-
       <div className={styles.heroCopy}>
         <h1 id="consumer-hero-title">
           <Trans>Trade your edge.</Trans>
@@ -501,6 +499,7 @@ export function ConsumerHome() {
       <a className={styles.skipLink} href="#network">
         <Trans>Skip to the SmartX network story</Trans>
       </a>
+      <ConsumerHeader />
       <Hero />
       <NetworkSection />
       <PerformanceSection />

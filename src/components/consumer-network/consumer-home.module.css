@@ -116,6 +116,15 @@
   z-index: 20;
 }
 
+.header[data-placement="overlay"] {
+  position: fixed;
+  z-index: 40;
+  background: rgb(1 1 1 / 94%);
+  border-bottom-color: rgb(255 255 255 / 12%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
 .headerBrand {
   display: inline-flex;
   min-width: 0;
