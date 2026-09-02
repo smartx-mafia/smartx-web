@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appID": "DT6WK3W53J.io.smartx.app",
+        "paths": ["/x/callback*"]
+      }
+    ]
+  }
+}

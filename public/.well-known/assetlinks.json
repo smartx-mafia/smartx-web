@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.smartx.app",
+      "sha256_cert_fingerprints": [
+        "96:1B:7A:82:D7:CE:BD:31:6C:62:10:76:1B:45:48:CF:C9:47:DB:EC:87:62:C0:27:33:EE:61:C8:BD:2B:49:B0"
+      ]
+    }
+  }
+]

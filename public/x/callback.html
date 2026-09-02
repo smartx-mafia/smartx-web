@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartX</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background: #010101;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Helvetica Neue", Arial, sans-serif;
+      padding: 24px;
+      text-align: center;
+    }
+    .logo {
+      width: 56px;
+      height: 56px;
+    }
+    .msg {
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 12px 40px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #010101;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .hint {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.45);
+      max-width: 320px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <svg class="logo" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93Zm-1.29 19.5h2.04L6.49 3.24H4.3l13.31 17.41Z"/>
+  </svg>
+  <div class="msg" id="msg"></div>
+  <a class="btn" id="btn" href="#"></a>
+  <div class="hint" id="hint"></div>
+
+  <script>
+    (function () {
+      var zh = (navigator.language || "").toLowerCase().indexOf("zh") === 0;
+      var params = new URLSearchParams(window.location.search);
+      var denied = params.get("error") === "access_denied";
+
+      // 参数原样带回 App
+      var deepLink = "smartx://x/callback" + window.location.search;
+
+      var msgEl = document.getElementById("msg");
+      var btnEl = document.getElementById("btn");
+      var hintEl = document.getElementById("hint");
+
+      if (denied) {
+        msgEl.textContent = zh ? "已取消授权" : "Authorization cancelled";
+      } else if (params.get("error")) {
+        msgEl.textContent = zh ? "授权失败" : "Authorization failed";
+      } else {
+        msgEl.textContent = zh ? "授权成功，正在返回 SmartX…" : "Authorized. Returning to SmartX…";
+      }
+      btnEl.textContent = zh ? "返回 SmartX" : "Back to SmartX";
+      btnEl.href = deepLink;
+      hintEl.textContent = zh
+        ? "如果没有自动跳转，请点击上方按钮。未安装 SmartX 请先在应用商店下载。"
+        : "If nothing happens, tap the button above. SmartX must be installed.";
+
+      // 自动尝试跳回 App(iOS 会弹一次系统确认)
+      window.location.href = deepLink;
+    })();
+  </script>
+</body>
+</html>
