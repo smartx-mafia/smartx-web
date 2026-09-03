@@ -76,7 +76,6 @@ import {
 } from "@/lib/waitlist/types";
 
 import { WaitlistActionScope, WaitlistButton } from "./waitlist-button";
-
 import { fetchResultCard, type RenderedResultCard } from "./result-card-export";
 import styles from "./waitlist.module.css";
 
@@ -462,8 +461,9 @@ export function WaitlistExperience() {
   const hasOwnResult = isOwnResultAvailable({ loggedIn, submitted: Boolean(userInfo?.submitted && userInfo.resultId) });
   const savedPersona = ownOutcome?.persona ?? PERSONAS_BY_CODE[userInfo?.personaId ?? ""];
   const savedPersonaName = savedPersona ? localizedPersonaName(savedPersona) : t`your trader type`;
+  const sharePersonaId = userInfo?.personaId || ownOutcome?.persona.mark;
   const shareResultCode = ownOutcome
-    ? encodeShareResult(userInfo?.personaId || ownOutcome.persona.mark, ownOutcome.stats)
+    ? encodeShareResult(sharePersonaId, ownOutcome.stats)
     : null;
   const ownInvitationUrl = ownInviteCode
     ? makeInvitationUrl(ownInviteCode, true)
@@ -1637,7 +1637,8 @@ export function WaitlistExperience() {
 
         {stage === "result" && ownOutcome && (
           <div className={styles.resultStage}>
-            <PersonaPoster outcome={ownOutcome} />
+            <PersonaPoster key={ownOutcome.persona.mark} outcome={ownOutcome} />
+            {loggedIn ? (
             <aside className={styles.resultPanel}>
               <AccountSession email={verifiedEmail} label={t`Signed in as`} onSignOut={signOutWaitlist} />
               <div className={styles.rankBlock} data-boosted={shareCompleted}>
@@ -1725,6 +1726,7 @@ export function WaitlistExperience() {
                 </div>
               </section>
             </aside>
+            ) : null}
           </div>
         )}
       </section>

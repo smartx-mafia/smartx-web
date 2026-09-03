@@ -31,19 +31,19 @@ msgstr "{minutes} min read"
 msgid "{name} — SmartX trader type card"
 msgstr "{name} — SmartX trader type card"
 
-#: src/components/waitlist/waitlist-experience.tsx:1704
+#: src/components/waitlist/waitlist-experience.tsx:1718
 msgid "{verifiedFriends} friends joined via your invite."
 msgstr "{verifiedFriends} friends joined via your invite."
 
-#: src/components/waitlist/waitlist-experience.tsx:1498
+#: src/components/waitlist/waitlist-experience.tsx:1511
 msgid "← Back"
 msgstr "← Back"
 
-#: src/components/waitlist/waitlist-experience.tsx:1652
+#: src/components/waitlist/waitlist-experience.tsx:1666
 msgid "+10 Boost"
 msgstr "+10 Boost"
 
-#: src/components/waitlist/waitlist-experience.tsx:1662
+#: src/components/waitlist/waitlist-experience.tsx:1676
 msgid "+5 Boost"
 msgstr "+5 Boost"
 
@@ -82,7 +82,7 @@ msgstr "5 USDC · {0} at {1}"
 msgid "A coin you don't hold is up 40%. What do you do?"
 msgstr "A coin you don't hold is up 40%. What do you do?"
 
-#: src/components/waitlist/waitlist-experience.tsx:1299
+#: src/components/waitlist/waitlist-experience.tsx:1312
 msgid "A result was shared with you"
 msgstr "A result was shared with you"
 
@@ -99,8 +99,8 @@ msgstr "A trader you trust posts a high-conviction call. What do you do?"
 msgid "A verified trader liked this"
 msgstr "A verified trader liked this"
 
-#: src/components/waitlist/waitlist-experience.tsx:1327
-#: src/components/waitlist/waitlist-experience.tsx:1369
+#: src/components/waitlist/waitlist-experience.tsx:1340
+#: src/components/waitlist/waitlist-experience.tsx:1382
 msgid "Already tested? View my result"
 msgstr "Already tested? View my result"
 
@@ -125,11 +125,11 @@ msgstr "Avg entry · $1.52B MC"
 msgid "Avg entry · $228.40"
 msgstr "Avg entry · $228.40"
 
-#: src/components/waitlist/waitlist-experience.tsx:1411
+#: src/components/waitlist/waitlist-experience.tsx:1424
 msgid "Back"
 msgstr "Back"
 
-#: src/components/waitlist/waitlist-experience.tsx:1389
+#: src/components/waitlist/waitlist-experience.tsx:1402
 msgid "Back to start"
 msgstr "Back to start"
 
@@ -141,7 +141,7 @@ msgstr "Backed by"
 msgid "Be early"
 msgstr "Be early"
 
-#: src/components/waitlist/waitlist-experience.tsx:397
+#: src/components/waitlist/waitlist-experience.tsx:399
 msgid "Best match"
 msgstr "Best match"
 
@@ -154,11 +154,11 @@ msgstr "Best match"
 msgid "Blog"
 msgstr "Blog"
 
-#: src/components/waitlist/waitlist-experience.tsx:1667
+#: src/components/waitlist/waitlist-experience.tsx:1681
 msgid "Boost improves your position. Final rank is confirmed after all Boost is counted."
 msgstr "Boost improves your position. Final rank is confirmed after all Boost is counted."
 
-#: src/components/waitlist/waitlist-experience.tsx:1633
+#: src/components/waitlist/waitlist-experience.tsx:1646
 msgid "Both are required to continue."
 msgstr "Both are required to continue."
 
@@ -174,11 +174,11 @@ msgstr "Buy more. Lower price, better average."
 msgid "Campaign"
 msgstr "Campaign"
 
-#: src/components/waitlist/waitlist-experience.tsx:1587
+#: src/components/waitlist/waitlist-experience.tsx:1600
 msgid "Change Email"
 msgstr "Change Email"
 
-#: src/lib/waitlist/persona.ts:147
+#: src/lib/waitlist/persona.ts:143
 msgid "Charts, flows, smart-money wallets—you track it all onchain. Your own entries stay careful; everyone else’s bags and suspicious transfers become public gossip."
 msgstr "Charts, flows, smart-money wallets—you track it all onchain. Your own entries stay careful; everyone else’s bags and suspicious transfers become public gossip."
 
@@ -186,25 +186,25 @@ msgstr "Charts, flows, smart-money wallets—you track it all onchain. Your own 
 msgid "Check it against onchain data first."
 msgstr "Check it against onchain data first."
 
-#: src/components/waitlist/waitlist-experience.tsx:1511
+#: src/components/waitlist/waitlist-experience.tsx:1524
 msgid "Check your inbox"
 msgstr "Check your inbox"
 
-#: src/components/waitlist/waitlist-experience.tsx:1571
-#: src/components/waitlist/waitlist-experience.tsx:1583
+#: src/components/waitlist/waitlist-experience.tsx:1584
+#: src/components/waitlist/waitlist-experience.tsx:1596
 msgid "Checking code…"
 msgstr "Checking code…"
 
-#: src/components/waitlist/waitlist-experience.tsx:1289
+#: src/components/waitlist/waitlist-experience.tsx:1302
 msgid "Checking invite, result, and sign-in state."
 msgstr "Checking invite, result, and sign-in state."
 
-#: src/components/waitlist/waitlist-experience.tsx:1527
+#: src/components/waitlist/waitlist-experience.tsx:1540
 msgid "Clear"
 msgstr "Clear"
 
 #: src/components/site/app-notice.tsx:56
-#: src/components/waitlist/waitlist-experience.tsx:1739
+#: src/components/waitlist/waitlist-experience.tsx:1761
 msgid "Close"
 msgstr "Close"
 
@@ -225,25 +225,25 @@ msgstr "Close navigation"
 msgid "Community"
 msgstr "Community"
 
-#: src/components/waitlist/waitlist-experience.tsx:1618
-#: src/components/waitlist/waitlist-experience.tsx:1625
+#: src/components/waitlist/waitlist-experience.tsx:1631
+#: src/components/waitlist/waitlist-experience.tsx:1638
 msgid "Completed"
 msgstr "Completed"
 
-#: src/components/waitlist/waitlist-experience.tsx:1583
+#: src/components/waitlist/waitlist-experience.tsx:1596
 msgid "Continue"
 msgstr "Continue"
 
-#: src/components/waitlist/waitlist-experience.tsx:386
+#: src/components/waitlist/waitlist-experience.tsx:388
 #: src/lib/waitlist/share-copy.ts:41
 msgid "Conviction"
 msgstr "Conviction"
 
-#: src/components/waitlist/waitlist-experience.tsx:1722
+#: src/components/waitlist/waitlist-experience.tsx:1736
 msgid "Copied"
 msgstr "Copied"
 
-#: src/components/waitlist/waitlist-experience.tsx:1159
+#: src/components/waitlist/waitlist-experience.tsx:1172
 msgid "Copied!"
 msgstr "Copied!"
 
@@ -251,26 +251,26 @@ msgstr "Copied!"
 msgid "Copy"
 msgstr "Copy"
 
-#: src/components/waitlist/waitlist-experience.tsx:1722
+#: src/components/waitlist/waitlist-experience.tsx:1736
 msgctxt "invite-link"
 msgid "Copy"
 msgstr "Copy"
 
-#: src/components/waitlist/waitlist-experience.tsx:1152
+#: src/components/waitlist/waitlist-experience.tsx:1165
 msgid "Couldn’t copy the invite link. Try again."
 msgstr "Couldn’t copy the invite link. Try again."
 
-#: src/components/waitlist/waitlist-experience.tsx:1198
-#: src/components/waitlist/waitlist-experience.tsx:1222
-#: src/components/waitlist/waitlist-experience.tsx:1685
+#: src/components/waitlist/waitlist-experience.tsx:1211
+#: src/components/waitlist/waitlist-experience.tsx:1235
+#: src/components/waitlist/waitlist-experience.tsx:1699
 msgid "Couldn’t export the image. Try again."
 msgstr "Couldn’t export the image. Try again."
 
-#: src/components/waitlist/waitlist-experience.tsx:1382
+#: src/components/waitlist/waitlist-experience.tsx:1395
 msgid "Couldn’t load the test."
 msgstr "Couldn’t load the test."
 
-#: src/components/waitlist/waitlist-experience.tsx:1645
+#: src/components/waitlist/waitlist-experience.tsx:1659
 msgid "Current rank"
 msgstr "Current rank"
 
@@ -278,7 +278,7 @@ msgstr "Current rank"
 msgid "Cut it. This trade isn't working."
 msgstr "Cut it. This trade isn't working."
 
-#: src/lib/waitlist/persona.ts:219
+#: src/lib/waitlist/persona.ts:215
 msgid "DATA"
 msgstr "DATA"
 
@@ -286,7 +286,7 @@ msgstr "DATA"
 msgid "Debate it. I'll prove I'm right."
 msgstr "Debate it. I'll prove I'm right."
 
-#: src/lib/waitlist/persona.ts:216
+#: src/lib/waitlist/persona.ts:212
 msgid "DEGEN"
 msgstr "DEGEN"
 
@@ -297,9 +297,13 @@ msgstr "DEGEN"
 msgid "Demo profile"
 msgstr "Demo profile"
 
-#: src/components/waitlist/waitlist-experience.tsx:1305
+#: src/components/waitlist/waitlist-experience.tsx:1318
 msgid "Different score, same type—or something else entirely? Six decisions reveal how you trade when it gets real."
 msgstr "Different score, same type—or something else entirely? Six decisions reveal how you trade when it gets real."
+
+#: src/lib/waitlist/persona.ts:218
+msgid "DISCIPLINE"
+msgstr "DISCIPLINE"
 
 #: src/components/consumer-network/consumer-home.tsx:355
 msgid "Discover · Follow · Copy"
@@ -309,45 +313,45 @@ msgstr "Discover · Follow · Copy"
 msgid "Dismiss notification"
 msgstr "Dismiss notification"
 
-#: src/components/waitlist/waitlist-experience.tsx:1302
+#: src/components/waitlist/waitlist-experience.tsx:1315
 msgid "Do you trade like they do?"
 msgstr "Do you trade like they do?"
 
-#: src/components/waitlist/waitlist-experience.tsx:1678
-#: src/components/waitlist/waitlist-experience.tsx:1689
+#: src/components/waitlist/waitlist-experience.tsx:1692
+#: src/components/waitlist/waitlist-experience.tsx:1703
 msgid "Download"
 msgstr "Download"
 
-#: src/components/waitlist/waitlist-experience.tsx:1659
+#: src/components/waitlist/waitlist-experience.tsx:1673
 msgid "Each verified friend"
 msgstr "Each verified friend"
 
-#: src/components/waitlist/waitlist-experience.tsx:1658
+#: src/components/waitlist/waitlist-experience.tsx:1672
 msgid "Each verified friend (+{verifiedFriends})"
 msgstr "Each verified friend (+{verifiedFriends})"
 
-#: src/components/waitlist/waitlist-experience.tsx:1471
-#: src/components/waitlist/waitlist-experience.tsx:1482
+#: src/components/waitlist/waitlist-experience.tsx:1484
+#: src/components/waitlist/waitlist-experience.tsx:1495
 msgid "Email address"
 msgstr "Email address"
 
-#: src/components/waitlist/waitlist-experience.tsx:127
+#: src/components/waitlist/waitlist-experience.tsx:129
 msgid "Email send limit exceeded. Try again later."
 msgstr "Email send limit exceeded. Try again later."
 
-#: src/components/waitlist/waitlist-experience.tsx:328
+#: src/components/waitlist/waitlist-experience.tsx:330
 msgid "Email verified"
 msgstr "Email verified"
 
-#: src/components/waitlist/waitlist-experience.tsx:1514
+#: src/components/waitlist/waitlist-experience.tsx:1527
 msgid "Enter the code sent to <0>{email}</0>."
 msgstr "Enter the code sent to <0>{email}</0>."
 
-#: src/components/waitlist/waitlist-experience.tsx:1466
+#: src/components/waitlist/waitlist-experience.tsx:1479
 msgid "Enter the email you used for the test."
 msgstr "Enter the email you used for the test."
 
-#: src/components/waitlist/waitlist-experience.tsx:1616
+#: src/components/waitlist/waitlist-experience.tsx:1629
 msgid "Enter the SmartX community"
 msgstr "Enter the SmartX community"
 
@@ -355,11 +359,11 @@ msgstr "Enter the SmartX community"
 msgid "Entry"
 msgstr "Entry"
 
-#: src/lib/waitlist/persona.ts:121
+#: src/lib/waitlist/persona.ts:117
 msgid "Every all-in starts with enlightenment and ends with reincarnation."
 msgstr "Every all-in starts with enlightenment and ends with reincarnation."
 
-#: src/lib/waitlist/persona.ts:141
+#: src/lib/waitlist/persona.ts:137
 msgid "Every symptom diagnosed. Every loss professionally explained."
 msgstr "Every symptom diagnosed. Every loss professionally explained."
 
@@ -375,7 +379,7 @@ msgstr "Every trader on SmartX is verified by real trades — and your feed is s
 msgid "Everyone. I post it everywhere."
 msgstr "Everyone. I post it everywhere."
 
-#: src/components/waitlist/waitlist-experience.tsx:128
+#: src/components/waitlist/waitlist-experience.tsx:130
 msgid "Failed to send verification code"
 msgstr "Failed to send verification code"
 
@@ -383,8 +387,8 @@ msgstr "Failed to send verification code"
 msgid "Fiat in · Markets open · Chains invisible"
 msgstr "Fiat in · Markets open · Chains invisible"
 
-#: src/components/waitlist/waitlist-experience.tsx:1319
-#: src/components/waitlist/waitlist-experience.tsx:1324
+#: src/components/waitlist/waitlist-experience.tsx:1332
+#: src/components/waitlist/waitlist-experience.tsx:1337
 msgid "Find my trader type"
 msgstr "Find my trader type"
 
@@ -392,15 +396,15 @@ msgstr "Find my trader type"
 msgid "Find out your trader type in 6 questions."
 msgstr "Find out your trader type in 6 questions."
 
-#: src/components/waitlist/waitlist-experience.tsx:1463
+#: src/components/waitlist/waitlist-experience.tsx:1476
 msgid "Find your result."
 msgstr "Find your result."
 
-#: src/components/waitlist/waitlist-experience.tsx:134
+#: src/components/waitlist/waitlist-experience.tsx:136
 msgid "Finish the test before unlocking your result."
 msgstr "Finish the test before unlocking your result."
 
-#: src/components/waitlist/waitlist-experience.tsx:1650
+#: src/components/waitlist/waitlist-experience.tsx:1664
 msgid "First-time share"
 msgstr "First-time share"
 
@@ -408,11 +412,11 @@ msgstr "First-time share"
 msgid "Follow immediately. Good calls don't wait."
 msgstr "Follow immediately. Good calls don't wait."
 
-#: src/components/waitlist/waitlist-experience.tsx:1623
+#: src/components/waitlist/waitlist-experience.tsx:1636
 msgid "Follow product updates"
 msgstr "Follow product updates"
 
-#: src/components/waitlist/waitlist-experience.tsx:1623
+#: src/components/waitlist/waitlist-experience.tsx:1636
 msgid "Follow SmartX on X"
 msgstr "Follow SmartX on X"
 
@@ -440,7 +444,7 @@ msgstr "From the journal"
 msgid "Fund with fiat. Skip gas and bridging. Trade across markets with one SmartX balance."
 msgstr "Fund with fiat. Skip gas and bridging. Trade across markets with one SmartX balance."
 
-#: src/lib/waitlist/persona.ts:117
+#: src/lib/waitlist/persona.ts:113
 msgid "Green candle, loud timeline, instant entry—and the group chat comes with you. Whenever the market needs exit liquidity, your wallet volunteers."
 msgstr "Green candle, loud timeline, instant entry—and the group chat comes with you. Whenever the market needs exit liquidity, your wallet volunteers."
 
@@ -448,7 +452,7 @@ msgstr "Green candle, loud timeline, instant entry—and the group chat comes wi
 msgid "Guide"
 msgstr "Guide"
 
-#: src/lib/waitlist/persona.ts:218
+#: src/lib/waitlist/persona.ts:214
 msgid "GUT"
 msgstr "GUT"
 
@@ -463,7 +467,7 @@ msgstr "Hold and see how it plays out."
 msgid "Home"
 msgstr "Home"
 
-#: src/components/waitlist/waitlist-experience.tsx:1353
+#: src/components/waitlist/waitlist-experience.tsx:1366
 msgid "How do you trade<0/> when it gets <1>real?</1>"
 msgstr "How do you trade<0/> when it gets <1>real?</1>"
 
@@ -475,12 +479,12 @@ msgstr "I've done my research — the data and fundamentals back it up."
 msgid "Ignore the noise and do it alone."
 msgstr "Ignore the noise and do it alone."
 
-#: src/components/waitlist/waitlist-experience.tsx:1162
+#: src/components/waitlist/waitlist-experience.tsx:1175
 msgid "Image opened in a new tab. Long press to save."
 msgstr "Image opened in a new tab. Long press to save."
 
-#: src/components/waitlist/waitlist-experience.tsx:1161
-#: src/components/waitlist/waitlist-experience.tsx:1241
+#: src/components/waitlist/waitlist-experience.tsx:1174
+#: src/components/waitlist/waitlist-experience.tsx:1254
 msgid "Image saved."
 msgstr "Image saved."
 
@@ -492,7 +496,7 @@ msgstr "In this dispatch"
 msgid "Income"
 msgstr "Income"
 
-#: src/components/waitlist/waitlist-experience.tsx:387
+#: src/components/waitlist/waitlist-experience.tsx:389
 #: src/lib/waitlist/share-copy.ts:42
 msgid "Instinct"
 msgstr "Instinct"
@@ -505,23 +509,23 @@ msgstr "Intelligence"
 msgid "Invite Code"
 msgstr "Invite Code"
 
-#: src/components/waitlist/waitlist-experience.tsx:122
+#: src/components/waitlist/waitlist-experience.tsx:124
 msgid "Invite code not recognized. Check the code and try again."
 msgstr "Invite code not recognized. Check the code and try again."
 
-#: src/components/waitlist/waitlist-experience.tsx:1700
+#: src/components/waitlist/waitlist-experience.tsx:1714
 msgid "Invite friends"
 msgstr "Invite friends"
 
-#: src/components/waitlist/waitlist-experience.tsx:1712
+#: src/components/waitlist/waitlist-experience.tsx:1726
 msgid "Invite link is being prepared"
 msgstr "Invite link is being prepared"
 
-#: src/components/waitlist/waitlist-experience.tsx:1616
+#: src/components/waitlist/waitlist-experience.tsx:1629
 msgid "Join SmartX on Telegram"
 msgstr "Join SmartX on Telegram"
 
-#: src/components/waitlist/waitlist-experience.tsx:1606
+#: src/components/waitlist/waitlist-experience.tsx:1619
 msgid "Join the SmartX community and follow product updates before your trader type is revealed."
 msgstr "Join the SmartX community and follow product updates before your trader type is revealed."
 
@@ -553,35 +557,35 @@ msgstr "Launch Alpha"
 msgid "Listen first, then decide."
 msgstr "Listen first, then decide."
 
-#: src/components/waitlist/waitlist-experience.tsx:1286
+#: src/components/waitlist/waitlist-experience.tsx:1299
 msgid "Loading your session..."
 msgstr "Loading your session..."
 
-#: src/lib/waitlist/persona.ts:221
+#: src/lib/waitlist/persona.ts:217
 msgid "LONE"
 msgstr "LONE"
 
-#: src/components/waitlist/waitlist-experience.tsx:1167
+#: src/components/waitlist/waitlist-experience.tsx:1180
 msgid "Long press the image and tap Copy image."
 msgstr "Long press the image and tap Copy image."
 
-#: src/components/waitlist/waitlist-experience.tsx:1164
+#: src/components/waitlist/waitlist-experience.tsx:1177
 msgid "Long press the image and tap Copy."
 msgstr "Long press the image and tap Copy."
 
-#: src/components/waitlist/waitlist-experience.tsx:1167
+#: src/components/waitlist/waitlist-experience.tsx:1180
 msgid "Long press the image and tap Download image."
 msgstr "Long press the image and tap Download image."
 
-#: src/components/waitlist/waitlist-experience.tsx:1164
+#: src/components/waitlist/waitlist-experience.tsx:1177
 msgid "Long press the image and tap Save Image."
 msgstr "Long press the image and tap Save Image."
 
-#: src/components/waitlist/waitlist-experience.tsx:1169
+#: src/components/waitlist/waitlist-experience.tsx:1182
 msgid "Long press the image to save or copy."
 msgstr "Long press the image to save or copy."
 
-#: src/components/waitlist/waitlist-experience.tsx:1169
+#: src/components/waitlist/waitlist-experience.tsx:1182
 msgid "Long press the image to save to your album."
 msgstr "Long press the image to save to your album."
 
@@ -602,7 +606,7 @@ msgstr "My close trading group."
 msgid "My SmartX trader type: “{shareName}.”"
 msgstr "My SmartX trader type: “{shareName}.”"
 
-#: src/components/waitlist/waitlist-experience.tsx:398
+#: src/components/waitlist/waitlist-experience.tsx:400
 msgid "Natural rival"
 msgstr "Natural rival"
 
@@ -619,7 +623,7 @@ msgstr "Newest"
 msgid "No · Avg entry 61¢"
 msgstr "No · Avg entry 61¢"
 
-#: src/components/waitlist/waitlist-experience.tsx:133
+#: src/components/waitlist/waitlist-experience.tsx:135
 msgid "No account was found for this email."
 msgstr "No account was found for this email."
 
@@ -631,7 +635,7 @@ msgstr "No barriers for new users"
 msgid "No change"
 msgstr "No change"
 
-#: src/lib/waitlist/persona.ts:122
+#: src/lib/waitlist/persona.ts:118
 msgid "No data, no consensus, no problem. You trade the vibe, call it conviction, and reach enlightenment one block before reincarnation."
 msgstr "No data, no consensus, no problem. You trade the vibe, call it conviction, and reach enlightenment one block before reincarnation."
 
@@ -639,7 +643,7 @@ msgstr "No data, no consensus, no problem. You trade the vibe, call it convictio
 msgid "No more scrolling through noise. SmartX learns what you trade and shows you the traders and markets that fit you."
 msgstr "No more scrolling through noise. SmartX learns what you trade and shows you the traders and markets that fit you."
 
-#: src/components/waitlist/waitlist-experience.tsx:119
+#: src/components/waitlist/waitlist-experience.tsx:121
 msgid "No saved result is linked to this email. Take the test to create one."
 msgstr "No saved result is linked to this email. Take the test to create one."
 
@@ -656,10 +660,6 @@ msgid "Older"
 msgstr "Older"
 
 #: src/components/consumer-network/consumer-home.tsx:386
-#~ msgid "One Account.<0/>Every Market."
-#~ msgstr "One Account<0/>Every Market"
-
-#: src/components/consumer-network/consumer-home.tsx:386
 msgid "One Account<0/>Every Market"
 msgstr "One Account<0/>Every Market"
 
@@ -667,7 +667,7 @@ msgstr "One Account<0/>Every Market"
 msgid "One friend I really trust."
 msgstr "One friend I really trust."
 
-#: src/components/waitlist/waitlist-experience.tsx:1600
+#: src/components/waitlist/waitlist-experience.tsx:1613
 msgid "One last step"
 msgstr "One last step"
 
@@ -675,8 +675,8 @@ msgstr "One last step"
 msgid "One tap to trade"
 msgstr "One tap to trade"
 
-#: src/components/waitlist/waitlist-experience.tsx:1618
-#: src/components/waitlist/waitlist-experience.tsx:1625
+#: src/components/waitlist/waitlist-experience.tsx:1631
+#: src/components/waitlist/waitlist-experience.tsx:1638
 msgid "Open"
 msgstr "Open"
 
@@ -693,15 +693,19 @@ msgstr "Opinion"
 msgid "Order submitted"
 msgstr "Order submitted"
 
-#: src/lib/waitlist/persona.ts:220
+#: src/lib/waitlist/persona.ts:216
 msgid "PACK"
 msgstr "PACK"
+
+#: src/lib/waitlist/persona.ts:142
+msgid "Paparazzi for the whole chain. Blind spot: your pocket."
+msgstr "Paparazzi for the whole chain. Blind spot: your pocket."
 
 #: src/components/consumer-network/consumer-home.tsx:45
 msgid "Performance"
 msgstr "Performance"
 
-#: src/components/waitlist/waitlist-experience.tsx:396
+#: src/components/waitlist/waitlist-experience.tsx:398
 msgid "Persona chemistry"
 msgstr "Persona chemistry"
 
@@ -713,11 +717,11 @@ msgstr "Personalized for you"
 msgid "Picked for you"
 msgstr "Picked for you"
 
-#: src/components/waitlist/waitlist-experience.tsx:120
+#: src/components/waitlist/waitlist-experience.tsx:122
 msgid "Please enter a valid email address."
 msgstr "Please enter a valid email address."
 
-#: src/components/waitlist/waitlist-experience.tsx:126
+#: src/components/waitlist/waitlist-experience.tsx:128
 msgid "Please wait before requesting a new code."
 msgstr "Please wait before requesting a new code."
 
@@ -729,8 +733,8 @@ msgstr "Position value"
 msgid "Post opinions backed by your real positions. Climb the leaderboard, grow your following, and earn a share of the revenue you create."
 msgstr "Post opinions backed by your real positions. Climb the leaderboard, grow your following, and earn a share of the revenue you create."
 
-#: src/components/waitlist/waitlist-experience.tsx:1209
-#: src/components/waitlist/waitlist-experience.tsx:1689
+#: src/components/waitlist/waitlist-experience.tsx:1222
+#: src/components/waitlist/waitlist-experience.tsx:1703
 msgid "Preparing…"
 msgstr "Preparing…"
 
@@ -748,13 +752,13 @@ msgstr "Pure gut feeling. I can't explain it, but I trust it."
 msgid "Put in a small amount."
 msgstr "Put in a small amount."
 
-#: src/components/waitlist/waitlist-experience.tsx:1414
+#: src/components/waitlist/waitlist-experience.tsx:1427
 msgid "Question"
 msgstr "Question"
 
 #. placeholder {0}: questionIndex + 1
 #. placeholder {1}: questions.length
-#: src/components/waitlist/waitlist-experience.tsx:1419
+#: src/components/waitlist/waitlist-experience.tsx:1432
 msgid "Question {0} of {1}"
 msgstr "Question {0} of {1}"
 
@@ -770,45 +774,45 @@ msgstr "Read the dispatch"
 msgid "Reading theme"
 msgstr "Reading theme"
 
-#: src/components/waitlist/waitlist-experience.tsx:135
+#: src/components/waitlist/waitlist-experience.tsx:137
 msgid "Required information is missing. Try again."
 msgstr "Required information is missing. Try again."
 
-#: src/components/waitlist/waitlist-experience.tsx:1590
+#: src/components/waitlist/waitlist-experience.tsx:1603
 msgid "Resend Code"
 msgstr "Resend Code"
 
 #. placeholder {0}: formatClock(otpCooldown)
-#: src/components/waitlist/waitlist-experience.tsx:1590
+#: src/components/waitlist/waitlist-experience.tsx:1603
 msgid "Resend Code ({0})"
 msgstr "Resend Code ({0})"
 
-#: src/components/waitlist/waitlist-experience.tsx:388
+#: src/components/waitlist/waitlist-experience.tsx:390
 #: src/lib/waitlist/share-copy.ts:43
 msgid "Resilience"
 msgstr "Resilience"
+
+#: src/lib/waitlist/persona.ts:219
+msgid "RESTRAINT"
+msgstr "RESTRAINT"
 
 #: src/app/not-found.tsx:29
 msgid "Return to SmartX"
 msgstr "Return to SmartX"
 
-#: src/components/waitlist/waitlist-experience.tsx:1467
+#: src/components/waitlist/waitlist-experience.tsx:1480
 msgid "Return to your result anytime and stay updated on SmartX."
 msgstr "Return to your result anytime and stay updated on SmartX."
 
-#: src/components/waitlist/waitlist-experience.tsx:1630
+#: src/components/waitlist/waitlist-experience.tsx:1643
 msgid "Reveal my result"
 msgstr "Reveal my result"
 
-#: src/components/waitlist/waitlist-experience.tsx:1463
+#: src/components/waitlist/waitlist-experience.tsx:1476
 msgid "Save your result"
 msgstr "Save your result"
 
-#: src/components/waitlist/waitlist-experience.tsx:1463
-#~ msgid "Save your result."
-#~ msgstr "Save your result."
-
-#: src/components/waitlist/waitlist-experience.tsx:1160
+#: src/components/waitlist/waitlist-experience.tsx:1173
 msgid "Selection successful"
 msgstr "Selection successful"
 
@@ -816,32 +820,32 @@ msgstr "Selection successful"
 msgid "Sell a bit to reduce the risk."
 msgstr "Sell a bit to reduce the risk."
 
-#: src/components/waitlist/waitlist-experience.tsx:1492
+#: src/components/waitlist/waitlist-experience.tsx:1505
 msgid "Send code"
 msgstr "Send code"
 
-#: src/components/waitlist/waitlist-experience.tsx:130
+#: src/components/waitlist/waitlist-experience.tsx:132
 msgid "Service is busy. Try again in a moment."
 msgstr "Service is busy. Try again in a moment."
 
-#: src/components/waitlist/waitlist-experience.tsx:1737
+#: src/components/waitlist/waitlist-experience.tsx:1759
 msgid "Share image"
 msgstr "Share image"
 
-#: src/components/waitlist/waitlist-experience.tsx:1650
+#: src/components/waitlist/waitlist-experience.tsx:1664
 msgid "Share recorded"
 msgstr "Share recorded"
 
-#: src/components/waitlist/waitlist-experience.tsx:1693
+#: src/components/waitlist/waitlist-experience.tsx:1707
 msgid "Share result"
 msgstr "Share result"
 
-#: src/components/waitlist/waitlist-experience.tsx:331
+#: src/components/waitlist/waitlist-experience.tsx:333
 msgid "Sign out"
 msgstr "Sign out"
 
-#: src/components/waitlist/waitlist-experience.tsx:1610
-#: src/components/waitlist/waitlist-experience.tsx:1642
+#: src/components/waitlist/waitlist-experience.tsx:1623
+#: src/components/waitlist/waitlist-experience.tsx:1656
 msgid "Signed in as"
 msgstr "Signed in as"
 
@@ -850,11 +854,11 @@ msgstr "Signed in as"
 msgid "Site navigation"
 msgstr "Site navigation"
 
-#: src/components/waitlist/waitlist-experience.tsx:1356
+#: src/components/waitlist/waitlist-experience.tsx:1369
 msgid "Six decisions reveal your risk, signal, and social instincts."
 msgstr "Six decisions reveal your risk, signal, and social instincts."
 
-#: src/components/waitlist/waitlist-experience.tsx:1542
+#: src/components/waitlist/waitlist-experience.tsx:1555
 msgid "Six-digit code"
 msgstr "Six-digit code"
 
@@ -878,7 +882,7 @@ msgstr "Skip to latest stories"
 msgid "Skip to the SmartX network story"
 msgstr "Skip to the SmartX network story"
 
-#: src/components/waitlist/waitlist-experience.tsx:1248
+#: src/components/waitlist/waitlist-experience.tsx:1261
 msgid "Skip to waitlist"
 msgstr "Skip to waitlist"
 
@@ -895,10 +899,6 @@ msgstr "SmartX home"
 #: src/components/blog/blog-i18n.tsx:13
 msgid "SmartX Journal"
 msgstr "SmartX Journal"
-
-#: src/components/blog/blog-i18n.tsx:13
-#~ msgid "SmartX Journal."
-#~ msgstr "SmartX Journal."
 
 #: src/components/consumer-network/consumer-home.tsx:332
 msgid "SmartX mobile signals feed on a dark trading console"
@@ -921,11 +921,11 @@ msgstr "SmartX social links"
 msgid "SmartX Square and People screens showing a verified social feed and trader leaderboard"
 msgstr "SmartX Square and People screens showing a verified social feed and trader leaderboard"
 
-#: src/lib/waitlist/persona.ts:217
+#: src/lib/waitlist/persona.ts:213
 msgid "SNIPER"
 msgstr "SNIPER"
 
-#: src/components/waitlist/waitlist-experience.tsx:121
+#: src/components/waitlist/waitlist-experience.tsx:123
 msgid "Something went wrong. Please try again."
 msgstr "Something went wrong. Please try again."
 
@@ -933,23 +933,27 @@ msgstr "Something went wrong. Please try again."
 msgid "Square"
 msgstr "Square"
 
-#: src/components/waitlist/waitlist-experience.tsx:1365
+#: src/components/waitlist/waitlist-experience.tsx:1378
 msgid "Start the test"
 msgstr "Start the test"
 
-#: src/components/waitlist/waitlist-experience.tsx:136
+#: src/components/waitlist/waitlist-experience.tsx:138
 msgid "That community step could not be recorded. Try again."
 msgstr "That community step could not be recorded. Try again."
 
-#: src/components/waitlist/waitlist-experience.tsx:132
+#: src/components/waitlist/waitlist-experience.tsx:134
 msgid "That result could not be found."
 msgstr "That result could not be found."
 
-#: src/lib/waitlist/persona.ts:120
+#: src/lib/waitlist/persona.ts:116
 msgid "The All-In Mystic"
 msgstr "The All-In Mystic"
 
-#: src/lib/waitlist/persona.ts:130
+#: src/lib/waitlist/persona.ts:121
+msgid "The Alpha Caller"
+msgstr "The Alpha Caller"
+
+#: src/lib/waitlist/persona.ts:126
 msgid "The Candle Prophet"
 msgstr "The Candle Prophet"
 
@@ -962,19 +966,23 @@ msgstr "The chart setup is clear and price action confirms it."
 msgid "The Consumer Trading Network is taking shape."
 msgstr "The Consumer Trading Network is taking shape."
 
-#: src/lib/waitlist/persona.ts:135
+#: src/lib/waitlist/persona.ts:131
 msgid "The Dip Ringleader"
 msgstr "The Dip Ringleader"
 
 #: src/lib/waitlist/persona.ts:151
-msgid "The limit order was perfect. Shame you two never met again."
-msgstr "The limit order was perfect. Shame you two never met again."
+#~ msgid "The limit order was perfect. Shame you two never met again."
+#~ msgstr "The limit order was perfect. Shame you two never met again."
 
-#: src/lib/waitlist/persona.ts:150
+#: src/lib/waitlist/persona.ts:147
+msgid "The limit order was perfect. Shame you two never met."
+msgstr "The limit order was perfect. Shame you two never met."
+
+#: src/lib/waitlist/persona.ts:146
 msgid "The Limit Sniper"
 msgstr "The Limit Sniper"
 
-#: src/lib/waitlist/persona.ts:115
+#: src/lib/waitlist/persona.ts:111
 msgid "The Liquidity Donor"
 msgstr "The Liquidity Donor"
 
@@ -986,11 +994,7 @@ msgstr "The market feels hot and the momentum is there."
 msgid "The next opportunity finds you"
 msgstr "The next opportunity finds you"
 
-#: src/components/consumer-network/consumer-home.tsx:345
-#~ msgid "The next opportunity finds you."
-#~ msgstr "The next opportunity finds you."
-
-#: src/lib/waitlist/persona.ts:145
+#: src/lib/waitlist/persona.ts:141
 msgid "The Onchain Paparazzi"
 msgstr "The Onchain Paparazzi"
 
@@ -998,17 +1002,13 @@ msgstr "The Onchain Paparazzi"
 msgid "The page you requested is no longer at this address."
 msgstr "The page you requested is no longer at this address."
 
-#: src/components/waitlist/waitlist-experience.tsx:1385
+#: src/components/waitlist/waitlist-experience.tsx:1398
 msgid "The questions didn’t come through. Check your connection and try again."
 msgstr "The questions didn’t come through. Check your connection and try again."
 
-#: src/lib/waitlist/persona.ts:155
+#: src/lib/waitlist/persona.ts:151
 msgid "The Risk Monk"
 msgstr "The Risk Monk"
-
-#: src/lib/waitlist/persona.ts:125
-msgid "The Send-It Strategist"
-msgstr "The Send-It Strategist"
 
 #: src/components/consumer-network/consumer-home.tsx:198
 #: src/lib/waitlist/share-copy.ts:50
@@ -1023,11 +1023,11 @@ msgstr "The trader content economy"
 msgid "The traders and markets in your feed match what you trade."
 msgstr "The traders and markets in your feed match what you trade."
 
-#: src/lib/waitlist/persona.ts:140
+#: src/lib/waitlist/persona.ts:136
 msgid "The Vibes Doctor"
 msgstr "The Vibes Doctor"
 
-#: src/lib/waitlist/persona.ts:156
+#: src/lib/waitlist/persona.ts:152
 msgid "They study how to double once. You study how to stay in the game."
 msgstr "They study how to double once. You study how to stay in the game."
 
@@ -1035,16 +1035,16 @@ msgstr "They study how to double once. You study how to stay in the game."
 msgid "This market moved."
 msgstr "This market moved."
 
-#: src/components/waitlist/waitlist-experience.tsx:124
+#: src/components/waitlist/waitlist-experience.tsx:126
 msgid "Those answers didn’t go through. Check all six questions and try again."
 msgstr "Those answers didn’t go through. Check all six questions and try again."
 
-#: src/lib/waitlist/persona.ts:126
+#: src/lib/waitlist/persona.ts:122
 msgid "Three hours of research. Two-word thesis: send it."
 msgstr "Three hours of research. Two-word thesis: send it."
 
-#: src/components/waitlist/waitlist-experience.tsx:129
 #: src/components/waitlist/waitlist-experience.tsx:131
+#: src/components/waitlist/waitlist-experience.tsx:133
 msgid "Too many requests. Try again later."
 msgstr "Too many requests. Try again later."
 
@@ -1056,15 +1056,11 @@ msgstr "Trade as smoothly as shopping."
 msgid "Trade your edge"
 msgstr "Trade your edge"
 
-#: src/components/consumer-network/consumer-home.tsx:193
-#~ msgid "Trade your edge."
-#~ msgstr "Trade your edge."
-
 #: src/components/consumer-network/consumer-home.tsx:287
 msgid "Turn influence into income"
 msgstr "Turn influence into income"
 
-#: src/components/waitlist/waitlist-experience.tsx:1603
+#: src/components/waitlist/waitlist-experience.tsx:1616
 msgid "Unlock your result"
 msgstr "Unlock your result"
 
@@ -1076,20 +1072,20 @@ msgstr "Use dark reading theme"
 msgid "Use light reading theme"
 msgstr "Use light reading theme"
 
-#: src/components/waitlist/waitlist-experience.tsx:1508
+#: src/components/waitlist/waitlist-experience.tsx:1521
 msgid "Verification"
 msgstr "Verification"
 
-#: src/components/waitlist/waitlist-experience.tsx:1519
+#: src/components/waitlist/waitlist-experience.tsx:1532
 msgid "Verification code"
 msgstr "Verification code"
 
-#: src/components/waitlist/waitlist-experience.tsx:125
+#: src/components/waitlist/waitlist-experience.tsx:127
 msgid "Verification code is incorrect or expired"
 msgstr "Verification code is incorrect or expired"
 
-#: src/components/waitlist/waitlist-experience.tsx:1339
-#: src/components/waitlist/waitlist-experience.tsx:1400
+#: src/components/waitlist/waitlist-experience.tsx:1352
+#: src/components/waitlist/waitlist-experience.tsx:1413
 msgid "Verified as"
 msgstr "Verified as"
 
@@ -1101,7 +1097,7 @@ msgstr "Verified profile"
 msgid "Verified, not claimed"
 msgstr "Verified, not claimed"
 
-#: src/components/waitlist/waitlist-experience.tsx:1314
+#: src/components/waitlist/waitlist-experience.tsx:1327
 msgid "View my result"
 msgstr "View my result"
 
@@ -1115,8 +1111,8 @@ msgstr "Wait for the right price, then get in."
 #: src/components/site/site-footer.tsx:77
 #: src/components/site/site-header.tsx:55
 #: src/components/site/site-header.tsx:131
-#: src/components/waitlist/waitlist-experience.tsx:1283
-#: src/components/waitlist/waitlist-experience.tsx:1379
+#: src/components/waitlist/waitlist-experience.tsx:1296
+#: src/components/waitlist/waitlist-experience.tsx:1392
 msgid "Waitlist"
 msgstr "Waitlist"
 
@@ -1124,7 +1120,7 @@ msgstr "Waitlist"
 msgid "What actually convinces you to enter a trade?"
 msgstr "What actually convinces you to enter a trade?"
 
-#: src/lib/waitlist/persona.ts:157
+#: src/lib/waitlist/persona.ts:153
 msgid "While everyone hunts the next 10x, you check size, invalidation, and tomorrow’s bankroll. You plan to stay seated when the next cycle starts."
 msgstr "While everyone hunts the next 10x, you check size, invalidation, and tomorrow’s bankroll. You plan to stay seated when the next cycle starts."
 
@@ -1132,15 +1128,15 @@ msgstr "While everyone hunts the next 10x, you check size, invalidation, and tom
 msgid "Yes"
 msgstr "Yes"
 
-#: src/lib/waitlist/persona.ts:131
+#: src/lib/waitlist/persona.ts:127
 msgid "You can chart every line except the one marking enough exposure."
 msgstr "You can chart every line except the one marking enough exposure."
 
-#: src/lib/waitlist/persona.ts:127
+#: src/lib/waitlist/persona.ts:123
 msgid "You check charts, trace wallets, and read the thread—then reduce the thesis to: send it. Good alpha hits the group chat before candle close."
 msgstr "You check charts, trace wallets, and read the thread—then reduce the thesis to: send it. Good alpha hits the group chat before candle close."
 
-#: src/lib/waitlist/persona.ts:142
+#: src/lib/waitlist/persona.ts:138
 msgid "You diagnose the market from one look at the tape. Indicators are lab results; the final call is vibes, and every loss gets a clean post-mortem."
 msgstr "You diagnose the market from one look at the tape. Indicators are lab results; the final call is vibes, and every loss gets a clean post-mortem."
 
@@ -1149,26 +1145,30 @@ msgid "You just made 10× on a trade. Who finds out first?"
 msgstr "You just made 10× on a trade. Who finds out first?"
 
 #: src/lib/waitlist/persona.ts:146
-msgid "You know everyone’s position except, occasionally, your own."
-msgstr "You know everyone’s position except, occasionally, your own."
+#~ msgid "You know everyone’s position except, occasionally, your own."
+#~ msgstr "You know everyone’s position except, occasionally, your own."
 
-#: src/lib/waitlist/persona.ts:152
+#: src/lib/waitlist/persona.ts:148
 msgid "You place the perfect bid one tick below destiny and wait. Missing the trade is acceptable; paying market is not."
 msgstr "You place the perfect bid one tick below destiny and wait. Missing the trade is acceptable; paying market is not."
 
-#: src/lib/waitlist/persona.ts:137
+#: src/lib/waitlist/persona.ts:133
 msgid "You wait for red candles and call it opportunity. The first bid is instinct; the next three are “better entries,” with the group chat following."
 msgstr "You wait for red candles and call it opportunity. The first bid is instinct; the next three are “better entries,” with the group chat following."
 
-#: src/lib/waitlist/persona.ts:136
-msgid "You’re not buying the dip. You’re giving the downtrend a demo."
-msgstr "You’re not buying the dip. You’re giving the downtrend a demo."
+#: src/lib/waitlist/persona.ts:132
+msgid "You’ll catch every knife. You’ll never finish the bottom."
+msgstr "You’ll catch every knife. You’ll never finish the bottom."
 
-#: src/lib/waitlist/persona.ts:116
+#: src/lib/waitlist/persona.ts:136
+#~ msgid "You’re not buying the dip. You’re giving the downtrend a demo."
+#~ msgstr "You’re not buying the dip. You’re giving the downtrend a demo."
+
+#: src/lib/waitlist/persona.ts:112
 msgid "You’re not trading. You’re funding the ecosystem."
 msgstr "You’re not trading. You’re funding the ecosystem."
 
-#: src/lib/waitlist/persona.ts:132
+#: src/lib/waitlist/persona.ts:128
 msgid "Your chart has more lines than a subway map. You trust structure over chatter—until leverage turns position sizing into a creative discipline."
 msgstr "Your chart has more lines than a subway map. You trust structure over chatter—until leverage turns position sizing into a creative discipline."
 
@@ -1176,16 +1176,16 @@ msgstr "Your chart has more lines than a subway map. You trust structure over ch
 msgid "Your group chat hates your trade. What do you do?"
 msgstr "Your group chat hates your trade. What do you do?"
 
-#: src/components/waitlist/waitlist-experience.tsx:1697
+#: src/components/waitlist/waitlist-experience.tsx:1711
 msgid "Your invitation link"
 msgstr "Your invitation link"
 
-#: src/components/waitlist/waitlist-experience.tsx:1311
+#: src/components/waitlist/waitlist-experience.tsx:1324
 msgid "Your result is saved as {savedPersonaName}."
 msgstr "Your result is saved as {savedPersonaName}."
 
-#: src/components/waitlist/waitlist-experience.tsx:123
-#: src/components/waitlist/waitlist-experience.tsx:137
+#: src/components/waitlist/waitlist-experience.tsx:125
+#: src/components/waitlist/waitlist-experience.tsx:139
 msgid "Your session expired. Sign in again to continue."
 msgstr "Your session expired. Sign in again to continue."
 
@@ -1193,7 +1193,7 @@ msgstr "Your session expired. Sign in again to continue."
 msgid "Your trade is down 20% from where you bought in. What do you do?"
 msgstr "Your trade is down 20% from where you bought in. What do you do?"
 
-#: src/components/waitlist/waitlist-experience.tsx:464
+#: src/components/waitlist/waitlist-experience.tsx:467
 #: src/lib/waitlist/share-copy.ts:44
 msgid "your trader type"
 msgstr "your trader type"
