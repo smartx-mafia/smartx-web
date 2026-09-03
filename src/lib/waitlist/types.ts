@@ -1,6 +1,6 @@
 export type WaitlistStage = "boot" | "gate" | "quiz" | "email" | "verify" | "unlock" | "result";
 export type AuthIntent = "create" | "recover";
-export type Pole = "DEGEN" | "SNIPER" | "GUT" | "DATA" | "PACK" | "LONE";
+export type Pole = "DEGEN" | "SNIPER" | "GUT" | "DATA" | "PACK" | "LONE" | "DISCIPLINE" | "RESTRAINT";
 export type Stat = "conviction" | "instinct" | "resilience";
 export type CommunityChannel = "telegram" | "x";
 

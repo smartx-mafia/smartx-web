@@ -31,19 +31,19 @@ msgstr "阅读约 {minutes} 分钟"
 msgid "{name} — SmartX trader type card"
 msgstr "{name} — SmartX 交易人格卡"
 
-#: src/components/waitlist/waitlist-experience.tsx:1704
+#: src/components/waitlist/waitlist-experience.tsx:1718
 msgid "{verifiedFriends} friends joined via your invite."
 msgstr "{verifiedFriends} 位好友已通过你的邀请加入。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1498
+#: src/components/waitlist/waitlist-experience.tsx:1511
 msgid "← Back"
 msgstr "← 返回"
 
-#: src/components/waitlist/waitlist-experience.tsx:1652
+#: src/components/waitlist/waitlist-experience.tsx:1666
 msgid "+10 Boost"
 msgstr "+10 Boost"
 
-#: src/components/waitlist/waitlist-experience.tsx:1662
+#: src/components/waitlist/waitlist-experience.tsx:1676
 msgid "+5 Boost"
 msgstr "+5 Boost"
 
@@ -82,7 +82,7 @@ msgstr "5 USDC · {0} @ {1}"
 msgid "A coin you don't hold is up 40%. What do you do?"
 msgstr "你没持有的币涨了 40%，你会怎么做？"
 
-#: src/components/waitlist/waitlist-experience.tsx:1299
+#: src/components/waitlist/waitlist-experience.tsx:1312
 msgid "A result was shared with you"
 msgstr "有人向你分享了测试结果"
 
@@ -99,8 +99,8 @@ msgstr "你信任的交易员发了条很有把握的喊单，你怎么做？"
 msgid "A verified trader liked this"
 msgstr "一位实盘交易员赞了这个盘口"
 
-#: src/components/waitlist/waitlist-experience.tsx:1327
-#: src/components/waitlist/waitlist-experience.tsx:1369
+#: src/components/waitlist/waitlist-experience.tsx:1340
+#: src/components/waitlist/waitlist-experience.tsx:1382
 msgid "Already tested? View my result"
 msgstr "已经测过了？查看我的结果"
 
@@ -125,11 +125,11 @@ msgstr "平均成本 · 市值 $1.52B"
 msgid "Avg entry · $228.40"
 msgstr "平均成本 · $228.40"
 
-#: src/components/waitlist/waitlist-experience.tsx:1411
+#: src/components/waitlist/waitlist-experience.tsx:1424
 msgid "Back"
 msgstr "返回"
 
-#: src/components/waitlist/waitlist-experience.tsx:1389
+#: src/components/waitlist/waitlist-experience.tsx:1402
 msgid "Back to start"
 msgstr "返回开头"
 
@@ -141,7 +141,7 @@ msgstr "投资方"
 msgid "Be early"
 msgstr "抢先入场"
 
-#: src/components/waitlist/waitlist-experience.tsx:397
+#: src/components/waitlist/waitlist-experience.tsx:399
 msgid "Best match"
 msgstr "最佳搭档"
 
@@ -154,11 +154,11 @@ msgstr "最佳搭档"
 msgid "Blog"
 msgstr "博客"
 
-#: src/components/waitlist/waitlist-experience.tsx:1667
+#: src/components/waitlist/waitlist-experience.tsx:1681
 msgid "Boost improves your position. Final rank is confirmed after all Boost is counted."
 msgstr "Boost 可提升当前排位；所有 Boost 统计完成后确认最终名次。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1633
+#: src/components/waitlist/waitlist-experience.tsx:1646
 msgid "Both are required to continue."
 msgstr "两项都完成后才能继续。"
 
@@ -174,37 +174,37 @@ msgstr "加仓，摊低成本。"
 msgid "Campaign"
 msgstr "活动"
 
-#: src/components/waitlist/waitlist-experience.tsx:1587
+#: src/components/waitlist/waitlist-experience.tsx:1600
 msgid "Change Email"
 msgstr "更换邮箱"
 
-#: src/lib/waitlist/persona.ts:147
+#: src/lib/waitlist/persona.ts:143
 msgid "Charts, flows, smart-money wallets—you track it all onchain. Your own entries stay careful; everyone else’s bags and suspicious transfers become public gossip."
-msgstr "图表、数据、聪明钱包，一个都不放过。自己下单很谨慎，但别人最近在买什么、卖什么、谁动了仓位，你往往门儿清。"
+msgstr "图表、资金流、聪明钱钱包，链上全都追。自己进场很谨慎；别人的套牢和异常转账，你倒是第一时间给爆出来。"
 
 #: src/lib/waitlist/quiz-i18n.ts:30
 msgid "Check it against onchain data first."
 msgstr "先拿链上数据核对一下。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1511
+#: src/components/waitlist/waitlist-experience.tsx:1524
 msgid "Check your inbox"
 msgstr "查收邮件"
 
-#: src/components/waitlist/waitlist-experience.tsx:1571
-#: src/components/waitlist/waitlist-experience.tsx:1583
+#: src/components/waitlist/waitlist-experience.tsx:1584
+#: src/components/waitlist/waitlist-experience.tsx:1596
 msgid "Checking code…"
 msgstr "正在验证…"
 
-#: src/components/waitlist/waitlist-experience.tsx:1289
+#: src/components/waitlist/waitlist-experience.tsx:1302
 msgid "Checking invite, result, and sign-in state."
 msgstr "正在检查邀请、结果与登录状态。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1527
+#: src/components/waitlist/waitlist-experience.tsx:1540
 msgid "Clear"
 msgstr "清空"
 
 #: src/components/site/app-notice.tsx:56
-#: src/components/waitlist/waitlist-experience.tsx:1739
+#: src/components/waitlist/waitlist-experience.tsx:1761
 msgid "Close"
 msgstr "关闭"
 
@@ -225,25 +225,25 @@ msgstr "关闭导航"
 msgid "Community"
 msgstr "社区"
 
-#: src/components/waitlist/waitlist-experience.tsx:1618
-#: src/components/waitlist/waitlist-experience.tsx:1625
+#: src/components/waitlist/waitlist-experience.tsx:1631
+#: src/components/waitlist/waitlist-experience.tsx:1638
 msgid "Completed"
 msgstr "已完成"
 
-#: src/components/waitlist/waitlist-experience.tsx:1583
+#: src/components/waitlist/waitlist-experience.tsx:1596
 msgid "Continue"
 msgstr "继续"
 
-#: src/components/waitlist/waitlist-experience.tsx:386
+#: src/components/waitlist/waitlist-experience.tsx:388
 #: src/lib/waitlist/share-copy.ts:41
 msgid "Conviction"
 msgstr "信仰"
 
-#: src/components/waitlist/waitlist-experience.tsx:1722
+#: src/components/waitlist/waitlist-experience.tsx:1736
 msgid "Copied"
 msgstr "已复制"
 
-#: src/components/waitlist/waitlist-experience.tsx:1159
+#: src/components/waitlist/waitlist-experience.tsx:1172
 msgid "Copied!"
 msgstr "复制成功"
 
@@ -251,26 +251,26 @@ msgstr "复制成功"
 msgid "Copy"
 msgstr "跟买"
 
-#: src/components/waitlist/waitlist-experience.tsx:1722
+#: src/components/waitlist/waitlist-experience.tsx:1736
 msgctxt "invite-link"
 msgid "Copy"
 msgstr "复制"
 
-#: src/components/waitlist/waitlist-experience.tsx:1152
+#: src/components/waitlist/waitlist-experience.tsx:1165
 msgid "Couldn’t copy the invite link. Try again."
 msgstr "邀请链接复制失败，请重试。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1198
-#: src/components/waitlist/waitlist-experience.tsx:1222
-#: src/components/waitlist/waitlist-experience.tsx:1685
+#: src/components/waitlist/waitlist-experience.tsx:1211
+#: src/components/waitlist/waitlist-experience.tsx:1235
+#: src/components/waitlist/waitlist-experience.tsx:1699
 msgid "Couldn’t export the image. Try again."
 msgstr "图片导出失败，请重试。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1382
+#: src/components/waitlist/waitlist-experience.tsx:1395
 msgid "Couldn’t load the test."
 msgstr "测试加载失败。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1645
+#: src/components/waitlist/waitlist-experience.tsx:1659
 msgid "Current rank"
 msgstr "当前排位"
 
@@ -278,7 +278,7 @@ msgstr "当前排位"
 msgid "Cut it. This trade isn't working."
 msgstr "止损出场，这笔不对。"
 
-#: src/lib/waitlist/persona.ts:219
+#: src/lib/waitlist/persona.ts:215
 msgid "DATA"
 msgstr "数据派"
 
@@ -286,9 +286,9 @@ msgstr "数据派"
 msgid "Debate it. I'll prove I'm right."
 msgstr "跟他们争辩，证明自己是对的。"
 
-#: src/lib/waitlist/persona.ts:216
+#: src/lib/waitlist/persona.ts:212
 msgid "DEGEN"
-msgstr "梭哈"
+msgstr "梭哈党"
 
 #: src/components/consumer-network/network-product-previews.tsx:162
 #: src/components/consumer-network/network-product-previews.tsx:179
@@ -297,9 +297,13 @@ msgstr "梭哈"
 msgid "Demo profile"
 msgstr "演示账号"
 
-#: src/components/waitlist/waitlist-experience.tsx:1305
+#: src/components/waitlist/waitlist-experience.tsx:1318
 msgid "Different score, same type—or something else entirely? Six decisions reveal how you trade when it gets real."
 msgstr "不同的评分可能代表同一种交易人格，也可能完全不同。六个选项，揭示您在真实市场环境下的交易风格。"
+
+#: src/lib/waitlist/persona.ts:218
+msgid "DISCIPLINE"
+msgstr "纪律型"
 
 #: src/components/consumer-network/consumer-home.tsx:355
 msgid "Discover · Follow · Copy"
@@ -309,45 +313,45 @@ msgstr "发现 · 关注 · 跟买"
 msgid "Dismiss notification"
 msgstr "关闭通知"
 
-#: src/components/waitlist/waitlist-experience.tsx:1302
+#: src/components/waitlist/waitlist-experience.tsx:1315
 msgid "Do you trade like they do?"
 msgstr "你和 TA 的交易风格一样吗？"
 
-#: src/components/waitlist/waitlist-experience.tsx:1678
-#: src/components/waitlist/waitlist-experience.tsx:1689
+#: src/components/waitlist/waitlist-experience.tsx:1692
+#: src/components/waitlist/waitlist-experience.tsx:1703
 msgid "Download"
 msgstr "下载"
 
-#: src/components/waitlist/waitlist-experience.tsx:1659
+#: src/components/waitlist/waitlist-experience.tsx:1673
 msgid "Each verified friend"
 msgstr "每位完成预约的好友"
 
-#: src/components/waitlist/waitlist-experience.tsx:1658
+#: src/components/waitlist/waitlist-experience.tsx:1672
 msgid "Each verified friend (+{verifiedFriends})"
 msgstr "每位完成预约的好友（+{verifiedFriends}）"
 
-#: src/components/waitlist/waitlist-experience.tsx:1471
-#: src/components/waitlist/waitlist-experience.tsx:1482
+#: src/components/waitlist/waitlist-experience.tsx:1484
+#: src/components/waitlist/waitlist-experience.tsx:1495
 msgid "Email address"
 msgstr "邮箱地址"
 
-#: src/components/waitlist/waitlist-experience.tsx:127
+#: src/components/waitlist/waitlist-experience.tsx:129
 msgid "Email send limit exceeded. Try again later."
 msgstr "发信次数已达上限，请稍后再试。"
 
-#: src/components/waitlist/waitlist-experience.tsx:328
+#: src/components/waitlist/waitlist-experience.tsx:330
 msgid "Email verified"
 msgstr "邮箱已验证"
 
-#: src/components/waitlist/waitlist-experience.tsx:1514
+#: src/components/waitlist/waitlist-experience.tsx:1527
 msgid "Enter the code sent to <0>{email}</0>."
 msgstr "输入发送至 <0>{email}</0> 的验证码。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1466
+#: src/components/waitlist/waitlist-experience.tsx:1479
 msgid "Enter the email you used for the test."
 msgstr "输入测试时使用的邮箱。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1616
+#: src/components/waitlist/waitlist-experience.tsx:1629
 msgid "Enter the SmartX community"
 msgstr "加入 SmartX 社区"
 
@@ -355,11 +359,11 @@ msgstr "加入 SmartX 社区"
 msgid "Entry"
 msgstr "入场价"
 
-#: src/lib/waitlist/persona.ts:121
+#: src/lib/waitlist/persona.ts:117
 msgid "Every all-in starts with enlightenment and ends with reincarnation."
 msgstr "每次梭哈都始于顿悟，终于轮回。"
 
-#: src/lib/waitlist/persona.ts:141
+#: src/lib/waitlist/persona.ts:137
 msgid "Every symptom diagnosed. Every loss professionally explained."
 msgstr "每个症状都能诊断，每笔亏损都有专业解释。"
 
@@ -375,7 +379,7 @@ msgstr "SmartX 上每位交易员都经实盘成交验证——信息流按你�
 msgid "Everyone. I post it everywhere."
 msgstr "所有人，我会到处发。"
 
-#: src/components/waitlist/waitlist-experience.tsx:128
+#: src/components/waitlist/waitlist-experience.tsx:130
 msgid "Failed to send verification code"
 msgstr "验证码发送失败"
 
@@ -383,8 +387,8 @@ msgstr "验证码发送失败"
 msgid "Fiat in · Markets open · Chains invisible"
 msgstr "法币入金 · 盘口即开 · 链上无感"
 
-#: src/components/waitlist/waitlist-experience.tsx:1319
-#: src/components/waitlist/waitlist-experience.tsx:1324
+#: src/components/waitlist/waitlist-experience.tsx:1332
+#: src/components/waitlist/waitlist-experience.tsx:1337
 msgid "Find my trader type"
 msgstr "测我的交易人格"
 
@@ -392,15 +396,15 @@ msgstr "测我的交易人格"
 msgid "Find out your trader type in 6 questions."
 msgstr "你是什么交易人格？测完六道题，马上知道。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1463
+#: src/components/waitlist/waitlist-experience.tsx:1476
 msgid "Find your result."
 msgstr "查看你的结果"
 
-#: src/components/waitlist/waitlist-experience.tsx:134
+#: src/components/waitlist/waitlist-experience.tsx:136
 msgid "Finish the test before unlocking your result."
 msgstr "请先完成测试，再解锁结果。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1650
+#: src/components/waitlist/waitlist-experience.tsx:1664
 msgid "First-time share"
 msgstr "首次分享"
 
@@ -408,11 +412,11 @@ msgstr "首次分享"
 msgid "Follow immediately. Good calls don't wait."
 msgstr "直接跟上，好机会不等人。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1623
+#: src/components/waitlist/waitlist-experience.tsx:1636
 msgid "Follow product updates"
 msgstr "关注产品动态"
 
-#: src/components/waitlist/waitlist-experience.tsx:1623
+#: src/components/waitlist/waitlist-experience.tsx:1636
 msgid "Follow SmartX on X"
 msgstr "在 X 上关注 SmartX"
 
@@ -440,7 +444,7 @@ msgstr "更多文章"
 msgid "Fund with fiat. Skip gas and bridging. Trade across markets with one SmartX balance."
 msgstr "法币入金，不用 Gas 也不用跨链。一个 SmartX 余额，预测市场和其他市场一起下单。"
 
-#: src/lib/waitlist/persona.ts:117
+#: src/lib/waitlist/persona.ts:113
 msgid "Green candle, loud timeline, instant entry—and the group chat comes with you. Whenever the market needs exit liquidity, your wallet volunteers."
 msgstr "行情一热就上，气氛一到就冲，还喜欢拉着朋友一起。市场哪里缺流动性，哪里就容易出现你。"
 
@@ -448,9 +452,9 @@ msgstr "行情一热就上，气氛一到就冲，还喜欢拉着朋友一起。
 msgid "Guide"
 msgstr "指南"
 
-#: src/lib/waitlist/persona.ts:218
+#: src/lib/waitlist/persona.ts:214
 msgid "GUT"
-msgstr "直觉"
+msgstr "直觉派"
 
 #: src/lib/waitlist/quiz-i18n.ts:23
 msgid "Hold and see how it plays out."
@@ -463,7 +467,7 @@ msgstr "继续持有，看看后面怎样。"
 msgid "Home"
 msgstr "首页"
 
-#: src/components/waitlist/waitlist-experience.tsx:1353
+#: src/components/waitlist/waitlist-experience.tsx:1366
 msgid "How do you trade<0/> when it gets <1>real?</1>"
 msgstr "真金白银上场时，<0/>你会怎么<1>交易？</1>"
 
@@ -475,12 +479,12 @@ msgstr "我做了功课，数据和基本面都支持。"
 msgid "Ignore the noise and do it alone."
 msgstr "当没听见，自己交易自己的。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1162
+#: src/components/waitlist/waitlist-experience.tsx:1175
 msgid "Image opened in a new tab. Long press to save."
 msgstr "已在新标签页打开，长按即可保存。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1161
-#: src/components/waitlist/waitlist-experience.tsx:1241
+#: src/components/waitlist/waitlist-experience.tsx:1174
+#: src/components/waitlist/waitlist-experience.tsx:1254
 msgid "Image saved."
 msgstr "图片已保存。"
 
@@ -492,7 +496,7 @@ msgstr "本文目录"
 msgid "Income"
 msgstr "收益"
 
-#: src/components/waitlist/waitlist-experience.tsx:387
+#: src/components/waitlist/waitlist-experience.tsx:389
 #: src/lib/waitlist/share-copy.ts:42
 msgid "Instinct"
 msgstr "嗅觉"
@@ -505,23 +509,23 @@ msgstr "洞察"
 msgid "Invite Code"
 msgstr "邀请码"
 
-#: src/components/waitlist/waitlist-experience.tsx:122
+#: src/components/waitlist/waitlist-experience.tsx:124
 msgid "Invite code not recognized. Check the code and try again."
 msgstr "邀请码无法识别，请检查后重试。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1700
+#: src/components/waitlist/waitlist-experience.tsx:1714
 msgid "Invite friends"
 msgstr "邀请好友"
 
-#: src/components/waitlist/waitlist-experience.tsx:1712
+#: src/components/waitlist/waitlist-experience.tsx:1726
 msgid "Invite link is being prepared"
 msgstr "正在生成邀请链接"
 
-#: src/components/waitlist/waitlist-experience.tsx:1616
+#: src/components/waitlist/waitlist-experience.tsx:1629
 msgid "Join SmartX on Telegram"
 msgstr "加入 SmartX 社群"
 
-#: src/components/waitlist/waitlist-experience.tsx:1606
+#: src/components/waitlist/waitlist-experience.tsx:1619
 msgid "Join the SmartX community and follow product updates before your trader type is revealed."
 msgstr "先加入 SmartX 社区并关注产品动态，随后揭晓你的交易人格。"
 
@@ -553,35 +557,35 @@ msgstr "启动 Alpha"
 msgid "Listen first, then decide."
 msgstr "先听听看，再决定。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1286
+#: src/components/waitlist/waitlist-experience.tsx:1299
 msgid "Loading your session..."
 msgstr "正在读取你的信息..."
 
-#: src/lib/waitlist/persona.ts:221
+#: src/lib/waitlist/persona.ts:217
 msgid "LONE"
-msgstr "独行"
+msgstr "独行型"
 
-#: src/components/waitlist/waitlist-experience.tsx:1167
+#: src/components/waitlist/waitlist-experience.tsx:1180
 msgid "Long press the image and tap Copy image."
 msgstr "长按图片，然后点「复制图片」。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1164
+#: src/components/waitlist/waitlist-experience.tsx:1177
 msgid "Long press the image and tap Copy."
 msgstr "长按图片，然后点「拷贝」。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1167
+#: src/components/waitlist/waitlist-experience.tsx:1180
 msgid "Long press the image and tap Download image."
 msgstr "长按图片，然后点「下载图片」。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1164
+#: src/components/waitlist/waitlist-experience.tsx:1177
 msgid "Long press the image and tap Save Image."
 msgstr "长按图片，然后点「存储图像」。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1169
+#: src/components/waitlist/waitlist-experience.tsx:1182
 msgid "Long press the image to save or copy."
 msgstr "长按图片即可保存或复制。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1169
+#: src/components/waitlist/waitlist-experience.tsx:1182
 msgid "Long press the image to save to your album."
 msgstr "长按图片即可保存到相册。"
 
@@ -602,7 +606,7 @@ msgstr "我的核心交易群。"
 msgid "My SmartX trader type: “{shareName}.”"
 msgstr "我的 SmartX 交易人格是{shareName}。"
 
-#: src/components/waitlist/waitlist-experience.tsx:398
+#: src/components/waitlist/waitlist-experience.tsx:400
 msgid "Natural rival"
 msgstr "天生对手"
 
@@ -619,7 +623,7 @@ msgstr "最新消息"
 msgid "No · Avg entry 61¢"
 msgstr "No · 平均成本 61¢"
 
-#: src/components/waitlist/waitlist-experience.tsx:133
+#: src/components/waitlist/waitlist-experience.tsx:135
 msgid "No account was found for this email."
 msgstr "该邮箱尚未注册账号。"
 
@@ -631,15 +635,15 @@ msgstr "新用户零门槛"
 msgid "No change"
 msgstr "不变"
 
-#: src/lib/waitlist/persona.ts:122
+#: src/lib/waitlist/persona.ts:118
 msgid "No data, no consensus, no problem. You trade the vibe, call it conviction, and reach enlightenment one block before reincarnation."
-msgstr "不看别人，也不需要大家确认。别人下单靠数据，你下单靠“我感觉”，每次梭之前你都觉得自己悟了。"
+msgstr "不看数据，也不等人点头。别人下单靠表，你下单靠「我悟了」。每次梭哈前都觉得自己开了天眼，下一秒就开始轮回。"
 
 #: src/components/consumer-network/consumer-home.tsx:349
 msgid "No more scrolling through noise. SmartX learns what you trade and shows you the traders and markets that fit you."
 msgstr "别再刷无效信息。SmartX 学习你的交易方式，把对口的交易员和市场推给你。"
 
-#: src/components/waitlist/waitlist-experience.tsx:119
+#: src/components/waitlist/waitlist-experience.tsx:121
 msgid "No saved result is linked to this email. Take the test to create one."
 msgstr "该邮箱没有已保存的结果。完成测试即可创建。"
 
@@ -663,7 +667,7 @@ msgstr "一个账户<0/>所有市场"
 msgid "One friend I really trust."
 msgstr "一个我最信任的朋友。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1600
+#: src/components/waitlist/waitlist-experience.tsx:1613
 msgid "One last step"
 msgstr "最后一步"
 
@@ -671,8 +675,8 @@ msgstr "最后一步"
 msgid "One tap to trade"
 msgstr "一键跟买"
 
-#: src/components/waitlist/waitlist-experience.tsx:1618
-#: src/components/waitlist/waitlist-experience.tsx:1625
+#: src/components/waitlist/waitlist-experience.tsx:1631
+#: src/components/waitlist/waitlist-experience.tsx:1638
 msgid "Open"
 msgstr "打开"
 
@@ -689,15 +693,19 @@ msgstr "观点"
 msgid "Order submitted"
 msgstr "已下单"
 
-#: src/lib/waitlist/persona.ts:220
+#: src/lib/waitlist/persona.ts:216
 msgid "PACK"
-msgstr "抱团"
+msgstr "抱团型"
+
+#: src/lib/waitlist/persona.ts:142
+msgid "Paparazzi for the whole chain. Blind spot: your pocket."
+msgstr "整条链你都在监控跟拍，除了自己的钱包。"
 
 #: src/components/consumer-network/consumer-home.tsx:45
 msgid "Performance"
 msgstr "战绩"
 
-#: src/components/waitlist/waitlist-experience.tsx:396
+#: src/components/waitlist/waitlist-experience.tsx:398
 msgid "Persona chemistry"
 msgstr "人格化学反应"
 
@@ -709,11 +717,11 @@ msgstr "为你定制"
 msgid "Picked for you"
 msgstr "为你精选"
 
-#: src/components/waitlist/waitlist-experience.tsx:120
+#: src/components/waitlist/waitlist-experience.tsx:122
 msgid "Please enter a valid email address."
 msgstr "请输入有效的邮箱地址。"
 
-#: src/components/waitlist/waitlist-experience.tsx:126
+#: src/components/waitlist/waitlist-experience.tsx:128
 msgid "Please wait before requesting a new code."
 msgstr "请稍后再请求新的验证码。"
 
@@ -725,8 +733,8 @@ msgstr "仓位价值"
 msgid "Post opinions backed by your real positions. Climb the leaderboard, grow your following, and earn a share of the revenue you create."
 msgstr "用真实仓位给观点背书。上榜、涨粉，并分走你创造的收益。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1209
-#: src/components/waitlist/waitlist-experience.tsx:1689
+#: src/components/waitlist/waitlist-experience.tsx:1222
+#: src/components/waitlist/waitlist-experience.tsx:1703
 msgid "Preparing…"
 msgstr "生成中…"
 
@@ -744,13 +752,13 @@ msgstr "纯直觉。说不清楚，但我信自己的感觉。"
 msgid "Put in a small amount."
 msgstr "先买一点点。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1414
+#: src/components/waitlist/waitlist-experience.tsx:1427
 msgid "Question"
 msgstr "题目"
 
 #. placeholder {0}: questionIndex + 1
 #. placeholder {1}: questions.length
-#: src/components/waitlist/waitlist-experience.tsx:1419
+#: src/components/waitlist/waitlist-experience.tsx:1432
 msgid "Question {0} of {1}"
 msgstr "第 {0} 题 / 共 {1} 题"
 
@@ -766,41 +774,45 @@ msgstr "阅读全文"
 msgid "Reading theme"
 msgstr "阅读主题"
 
-#: src/components/waitlist/waitlist-experience.tsx:135
+#: src/components/waitlist/waitlist-experience.tsx:137
 msgid "Required information is missing. Try again."
 msgstr "缺少必要信息，请重试。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1590
+#: src/components/waitlist/waitlist-experience.tsx:1603
 msgid "Resend Code"
 msgstr "重新发送"
 
 #. placeholder {0}: formatClock(otpCooldown)
-#: src/components/waitlist/waitlist-experience.tsx:1590
+#: src/components/waitlist/waitlist-experience.tsx:1603
 msgid "Resend Code ({0})"
 msgstr "重新发送（{0}）"
 
-#: src/components/waitlist/waitlist-experience.tsx:388
+#: src/components/waitlist/waitlist-experience.tsx:390
 #: src/lib/waitlist/share-copy.ts:43
 msgid "Resilience"
 msgstr "韧性"
+
+#: src/lib/waitlist/persona.ts:219
+msgid "RESTRAINT"
+msgstr "克制型"
 
 #: src/app/not-found.tsx:29
 msgid "Return to SmartX"
 msgstr "返回 SmartX"
 
-#: src/components/waitlist/waitlist-experience.tsx:1467
+#: src/components/waitlist/waitlist-experience.tsx:1480
 msgid "Return to your result anytime and stay updated on SmartX."
 msgstr "随时回来查看结果，并及时了解 SmartX 的最新动态。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1630
+#: src/components/waitlist/waitlist-experience.tsx:1643
 msgid "Reveal my result"
 msgstr "揭晓我的结果"
 
-#: src/components/waitlist/waitlist-experience.tsx:1463
+#: src/components/waitlist/waitlist-experience.tsx:1476
 msgid "Save your result"
 msgstr "保存你的结果"
 
-#: src/components/waitlist/waitlist-experience.tsx:1160
+#: src/components/waitlist/waitlist-experience.tsx:1173
 msgid "Selection successful"
 msgstr "已完成分享"
 
@@ -808,32 +820,32 @@ msgstr "已完成分享"
 msgid "Sell a bit to reduce the risk."
 msgstr "先减点仓，降低风险。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1492
+#: src/components/waitlist/waitlist-experience.tsx:1505
 msgid "Send code"
 msgstr "发送验证码"
 
-#: src/components/waitlist/waitlist-experience.tsx:130
+#: src/components/waitlist/waitlist-experience.tsx:132
 msgid "Service is busy. Try again in a moment."
 msgstr "服务繁忙，请稍后再试。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1737
+#: src/components/waitlist/waitlist-experience.tsx:1759
 msgid "Share image"
 msgstr "分享图片"
 
-#: src/components/waitlist/waitlist-experience.tsx:1650
+#: src/components/waitlist/waitlist-experience.tsx:1664
 msgid "Share recorded"
 msgstr "分享已计入"
 
-#: src/components/waitlist/waitlist-experience.tsx:1693
+#: src/components/waitlist/waitlist-experience.tsx:1707
 msgid "Share result"
 msgstr "分享结果"
 
-#: src/components/waitlist/waitlist-experience.tsx:331
+#: src/components/waitlist/waitlist-experience.tsx:333
 msgid "Sign out"
 msgstr "退出登录"
 
-#: src/components/waitlist/waitlist-experience.tsx:1610
-#: src/components/waitlist/waitlist-experience.tsx:1642
+#: src/components/waitlist/waitlist-experience.tsx:1623
+#: src/components/waitlist/waitlist-experience.tsx:1656
 msgid "Signed in as"
 msgstr "当前登录"
 
@@ -842,11 +854,11 @@ msgstr "当前登录"
 msgid "Site navigation"
 msgstr "站点导航"
 
-#: src/components/waitlist/waitlist-experience.tsx:1356
+#: src/components/waitlist/waitlist-experience.tsx:1369
 msgid "Six decisions reveal your risk, signal, and social instincts."
 msgstr "六个决定，看清你的风险偏好、盘口判断和社交本能。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1542
+#: src/components/waitlist/waitlist-experience.tsx:1555
 msgid "Six-digit code"
 msgstr "6 位验证码"
 
@@ -870,7 +882,7 @@ msgstr "跳到最新文章"
 msgid "Skip to the SmartX network story"
 msgstr "跳到 SmartX 网络故事"
 
-#: src/components/waitlist/waitlist-experience.tsx:1248
+#: src/components/waitlist/waitlist-experience.tsx:1261
 msgid "Skip to waitlist"
 msgstr "跳到预约页面"
 
@@ -909,11 +921,11 @@ msgstr "SmartX 社交链接"
 msgid "SmartX Square and People screens showing a verified social feed and trader leaderboard"
 msgstr "SmartX 广场与交易员页面，展示实盘验证的社交信息流与交易员排行榜"
 
-#: src/lib/waitlist/persona.ts:217
+#: src/lib/waitlist/persona.ts:213
 msgid "SNIPER"
-msgstr "狙击"
+msgstr "狙击党"
 
-#: src/components/waitlist/waitlist-experience.tsx:121
+#: src/components/waitlist/waitlist-experience.tsx:123
 msgid "Something went wrong. Please try again."
 msgstr "出了点问题，请重试。"
 
@@ -921,25 +933,29 @@ msgstr "出了点问题，请重试。"
 msgid "Square"
 msgstr "广场"
 
-#: src/components/waitlist/waitlist-experience.tsx:1365
+#: src/components/waitlist/waitlist-experience.tsx:1378
 msgid "Start the test"
 msgstr "开始测试"
 
-#: src/components/waitlist/waitlist-experience.tsx:136
+#: src/components/waitlist/waitlist-experience.tsx:138
 msgid "That community step could not be recorded. Try again."
 msgstr "社区步骤未能记录，请重试。"
 
-#: src/components/waitlist/waitlist-experience.tsx:132
+#: src/components/waitlist/waitlist-experience.tsx:134
 msgid "That result could not be found."
 msgstr "找不到该结果。"
 
-#: src/lib/waitlist/persona.ts:120
+#: src/lib/waitlist/persona.ts:116
 msgid "The All-In Mystic"
 msgstr "梭哈仙人"
 
-#: src/lib/waitlist/persona.ts:130
+#: src/lib/waitlist/persona.ts:121
+msgid "The Alpha Caller"
+msgstr "喊单军师"
+
+#: src/lib/waitlist/persona.ts:126
 msgid "The Candle Prophet"
-msgstr "画线半仙"
+msgstr "K线半仙"
 
 #: src/lib/waitlist/quiz-i18n.ts:27
 msgid "The chart setup is clear and price action confirms it."
@@ -950,19 +966,23 @@ msgstr "盘面形态出来了，价格也配合。"
 msgid "The Consumer Trading Network is taking shape."
 msgstr "面向个人的交易网络正在成形。"
 
-#: src/lib/waitlist/persona.ts:135
+#: src/lib/waitlist/persona.ts:131
 msgid "The Dip Ringleader"
-msgstr "接刀掌门"
+msgstr "抄底团长"
 
 #: src/lib/waitlist/persona.ts:151
-msgid "The limit order was perfect. Shame you two never met again."
-msgstr "那张限价单无懈可击，可惜你们再也没有相遇。"
+#~ msgid "The limit order was perfect. Shame you two never met again."
+#~ msgstr "那张限价单无懈可击，可惜你们再也没有相遇。"
 
-#: src/lib/waitlist/persona.ts:150
+#: src/lib/waitlist/persona.ts:147
+msgid "The limit order was perfect. Shame you two never met."
+msgstr "那张限价单无可挑剔，可惜从未成交。"
+
+#: src/lib/waitlist/persona.ts:146
 msgid "The Limit Sniper"
 msgstr "挂单钉子户"
 
-#: src/lib/waitlist/persona.ts:115
+#: src/lib/waitlist/persona.ts:111
 msgid "The Liquidity Donor"
 msgstr "散财童子"
 
@@ -974,7 +994,7 @@ msgstr "市场情绪火热，感觉势头来了。"
 msgid "The next opportunity finds you"
 msgstr "下一个机会会来找你"
 
-#: src/lib/waitlist/persona.ts:145
+#: src/lib/waitlist/persona.ts:141
 msgid "The Onchain Paparazzi"
 msgstr "链上狗仔"
 
@@ -982,17 +1002,13 @@ msgstr "链上狗仔"
 msgid "The page you requested is no longer at this address."
 msgstr "你访问的页面已不存在。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1385
+#: src/components/waitlist/waitlist-experience.tsx:1398
 msgid "The questions didn’t come through. Check your connection and try again."
 msgstr "题目没有加载出来。请检查网络后重试。"
 
-#: src/lib/waitlist/persona.ts:155
+#: src/lib/waitlist/persona.ts:151
 msgid "The Risk Monk"
 msgstr "风控大师"
-
-#: src/lib/waitlist/persona.ts:125
-msgid "The Send-It Strategist"
-msgstr "喊单军师"
 
 #: src/components/consumer-network/consumer-home.tsx:198
 #: src/lib/waitlist/share-copy.ts:50
@@ -1007,11 +1023,11 @@ msgstr "交易员的内容经济"
 msgid "The traders and markets in your feed match what you trade."
 msgstr "信息流里的交易员和市场，匹配你常做的盘口。"
 
-#: src/lib/waitlist/persona.ts:140
+#: src/lib/waitlist/persona.ts:136
 msgid "The Vibes Doctor"
 msgstr "行情老中医"
 
-#: src/lib/waitlist/persona.ts:156
+#: src/lib/waitlist/persona.ts:152
 msgid "They study how to double once. You study how to stay in the game."
 msgstr "别人研究怎么翻倍一次，你研究怎么一直留在牌桌上。"
 
@@ -1019,16 +1035,16 @@ msgstr "别人研究怎么翻倍一次，你研究怎么一直留在牌桌上。
 msgid "This market moved."
 msgstr "这个盘口已不在。"
 
-#: src/components/waitlist/waitlist-experience.tsx:124
+#: src/components/waitlist/waitlist-experience.tsx:126
 msgid "Those answers didn’t go through. Check all six questions and try again."
 msgstr "答案未提交成功。请确认六道题都已作答后再试。"
 
-#: src/lib/waitlist/persona.ts:126
+#: src/lib/waitlist/persona.ts:122
 msgid "Three hours of research. Two-word thesis: send it."
 msgstr "研究三小时，结论两个字：冲了。"
 
-#: src/components/waitlist/waitlist-experience.tsx:129
 #: src/components/waitlist/waitlist-experience.tsx:131
+#: src/components/waitlist/waitlist-experience.tsx:133
 msgid "Too many requests. Try again later."
 msgstr "请求过于频繁，请稍后再试。"
 
@@ -1044,7 +1060,7 @@ msgstr "用你的优势交易"
 msgid "Turn influence into income"
 msgstr "把影响力变成收入"
 
-#: src/components/waitlist/waitlist-experience.tsx:1603
+#: src/components/waitlist/waitlist-experience.tsx:1616
 msgid "Unlock your result"
 msgstr "解锁你的结果"
 
@@ -1056,20 +1072,20 @@ msgstr "切换到深色阅读主题"
 msgid "Use light reading theme"
 msgstr "切换到浅色阅读主题"
 
-#: src/components/waitlist/waitlist-experience.tsx:1508
+#: src/components/waitlist/waitlist-experience.tsx:1521
 msgid "Verification"
 msgstr "邮箱验证"
 
-#: src/components/waitlist/waitlist-experience.tsx:1519
+#: src/components/waitlist/waitlist-experience.tsx:1532
 msgid "Verification code"
 msgstr "验证码"
 
-#: src/components/waitlist/waitlist-experience.tsx:125
+#: src/components/waitlist/waitlist-experience.tsx:127
 msgid "Verification code is incorrect or expired"
 msgstr "验证码错误或已过期"
 
-#: src/components/waitlist/waitlist-experience.tsx:1339
-#: src/components/waitlist/waitlist-experience.tsx:1400
+#: src/components/waitlist/waitlist-experience.tsx:1352
+#: src/components/waitlist/waitlist-experience.tsx:1413
 msgid "Verified as"
 msgstr "已验证"
 
@@ -1081,7 +1097,7 @@ msgstr "已验证"
 msgid "Verified, not claimed"
 msgstr "实盘验证，不是自封"
 
-#: src/components/waitlist/waitlist-experience.tsx:1314
+#: src/components/waitlist/waitlist-experience.tsx:1327
 msgid "View my result"
 msgstr "查看我的结果"
 
@@ -1095,8 +1111,8 @@ msgstr "等一个好价格再进。"
 #: src/components/site/site-footer.tsx:77
 #: src/components/site/site-header.tsx:55
 #: src/components/site/site-header.tsx:131
-#: src/components/waitlist/waitlist-experience.tsx:1283
-#: src/components/waitlist/waitlist-experience.tsx:1379
+#: src/components/waitlist/waitlist-experience.tsx:1296
+#: src/components/waitlist/waitlist-experience.tsx:1392
 msgid "Waitlist"
 msgstr "预约"
 
@@ -1104,68 +1120,72 @@ msgstr "预约"
 msgid "What actually convinces you to enter a trade?"
 msgstr "什么让你决定进场？"
 
-#: src/lib/waitlist/persona.ts:157
+#: src/lib/waitlist/persona.ts:153
 msgid "While everyone hunts the next 10x, you check size, invalidation, and tomorrow’s bankroll. You plan to stay seated when the next cycle starts."
-msgstr "你更相信纪律和风控。下单前看数据、控仓位，比起一次赚多少，你更在意长期留在市场里。"
+msgstr "别人在找下一个 10 倍，你在看仓位、失效条件和明天还能不能开盘。你的计划是：下一轮开始时，你还坐在桌上。"
 
 #: src/components/consumer-network/network-product-previews.tsx:306
 msgid "Yes"
 msgstr "Yes"
 
-#: src/lib/waitlist/persona.ts:131
+#: src/lib/waitlist/persona.ts:127
 msgid "You can chart every line except the one marking enough exposure."
 msgstr "你能画出每一根线，唯独画不出仓位该收手的那根。"
 
-#: src/lib/waitlist/persona.ts:127
+#: src/lib/waitlist/persona.ts:123
 msgid "You check charts, trace wallets, and read the thread—then reduce the thesis to: send it. Good alpha hits the group chat before candle close."
-msgstr "图也看了，数据也查了，钱包也研究了。分析过程像军师，最终结论通常只有两个字：开冲。好机会你不能一个人上，必须叫上大家。"
+msgstr "图也看了，钱包也查了，帖也读了。分析像军师，结论只有两个字：冲了。好机会你不能一个人上，必须叫上大家。"
 
-#: src/lib/waitlist/persona.ts:142
+#: src/lib/waitlist/persona.ts:138
 msgid "You diagnose the market from one look at the tape. Indicators are lab results; the final call is vibes, and every loss gets a clean post-mortem."
-msgstr "你不太跟风，更信自己的经验。行情强不强、该不该等，看几眼心里就有数。指标只是参考，最后还是靠盘感。"
+msgstr "行情看一眼就能号脉。指标是化验单，下结论靠手感，亏了也能写出一份完整病历。"
 
 #: src/lib/waitlist/quiz-i18n.ts:13
 msgid "You just made 10× on a trade. Who finds out first?"
 msgstr "你抓到一波 10 倍，谁会第一个知道？"
 
 #: src/lib/waitlist/persona.ts:146
-msgid "You know everyone’s position except, occasionally, your own."
-msgstr "所有人的持仓你都一清二楚，偶尔除了你自己的。"
+#~ msgid "You know everyone’s position except, occasionally, your own."
+#~ msgstr "所有人的持仓你都一清二楚，偶尔除了你自己的。"
 
-#: src/lib/waitlist/persona.ts:152
+#: src/lib/waitlist/persona.ts:148
 msgid "You place the perfect bid one tick below destiny and wait. Missing the trade is acceptable; paying market is not."
 msgstr "你相信好交易从来不是追出来的。价格不到位，宁愿错过也不出手，一张限价单能从熊市挂到牛市。"
 
-#: src/lib/waitlist/persona.ts:137
+#: src/lib/waitlist/persona.ts:133
 msgid "You wait for red candles and call it opportunity. The first bid is instinct; the next three are “better entries,” with the group chat following."
-msgstr "你不爱追涨，更喜欢等回调。别人还在观望，你已经开始琢磨是不是到底了。判断底部多少有点靠感觉，一旦觉得机会来了，就会果断出手，还不忘叫上朋友一起抄。"
+msgstr "你专等绿盘变红，并管它叫机会。第一笔靠感觉，后面三笔叫「更好的入场」，还不忘喊群友一起抄。"
+
+#: src/lib/waitlist/persona.ts:132
+msgid "You’ll catch every knife. You’ll never finish the bottom."
+msgstr "没有你接不住的刀，只有永远抄不完的底。"
 
 #: src/lib/waitlist/persona.ts:136
-msgid "You’re not buying the dip. You’re giving the downtrend a demo."
-msgstr "你不是在抄底，是在给下跌趋势做演示。"
+#~ msgid "You’re not buying the dip. You’re giving the downtrend a demo."
+#~ msgstr "你不是在抄底，是在给下跌趋势做演示。"
 
-#: src/lib/waitlist/persona.ts:116
+#: src/lib/waitlist/persona.ts:112
 msgid "You’re not trading. You’re funding the ecosystem."
 msgstr "你不是在交易，你是在资助整个生态。"
 
-#: src/lib/waitlist/persona.ts:132
+#: src/lib/waitlist/persona.ts:128
 msgid "Your chart has more lines than a subway map. You trust structure over chatter—until leverage turns position sizing into a creative discipline."
-msgstr "你信数据、信图表、不太信群友。支撑阻力、趋势结构全有一套，唯一偶尔脱离技术分析体系的是自己的仓位大小。"
+msgstr "图上的线比地铁图还密。你信结构，不信群聊。支撑、阻力、趋势都有体系，唯独仓位大小一加杠杆就靠即兴。"
 
 #: src/lib/waitlist/quiz-i18n.ts:14
 msgid "Your group chat hates your trade. What do you do?"
 msgstr "群里都喷你这笔单，你怎么办？"
 
-#: src/components/waitlist/waitlist-experience.tsx:1697
+#: src/components/waitlist/waitlist-experience.tsx:1711
 msgid "Your invitation link"
 msgstr "你的邀请链接"
 
-#: src/components/waitlist/waitlist-experience.tsx:1311
+#: src/components/waitlist/waitlist-experience.tsx:1324
 msgid "Your result is saved as {savedPersonaName}."
 msgstr "你的结果已保存为{savedPersonaName}。"
 
-#: src/components/waitlist/waitlist-experience.tsx:123
-#: src/components/waitlist/waitlist-experience.tsx:137
+#: src/components/waitlist/waitlist-experience.tsx:125
+#: src/components/waitlist/waitlist-experience.tsx:139
 msgid "Your session expired. Sign in again to continue."
 msgstr "登录已过期，请重新验证邮箱后继续。"
 
@@ -1173,7 +1193,7 @@ msgstr "登录已过期，请重新验证邮箱后继续。"
 msgid "Your trade is down 20% from where you bought in. What do you do?"
 msgstr "你的仓位从买入价跌了 20%，你会怎么做？"
 
-#: src/components/waitlist/waitlist-experience.tsx:464
+#: src/components/waitlist/waitlist-experience.tsx:467
 #: src/lib/waitlist/share-copy.ts:44
 msgid "your trader type"
 msgstr "你的交易人格"
