@@ -6,8 +6,22 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  transpilePackages: [
+    "@privy-io/react-auth",
+    "@privy-io/js-sdk-core",
+    "@solana/kit",
+    "@solana/web3.js",
+    "@solana-program/system",
+    "@solana-program/token",
+  ],
+  serverExternalPackages: ["pino-pretty", "lokijs", "encoding"],
   experimental: {
     swcPlugins: [["@lingui/swc-plugin", {}]],
+  },
+  webpack: (config) => {
+    const extras = ["pino-pretty", "lokijs", "encoding"];
+    if (Array.isArray(config.externals)) config.externals.push(...extras);
+    return config;
   },
 };
 

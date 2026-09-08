@@ -30,9 +30,11 @@ function LanguageIcon() {
 type LanguageSwitcherProps = {
   /** menu：按钮 + 浮层（桌面 header）；inline：一排选项（移动端导航内） */
   variant?: "menu" | "inline";
+  /** 无汉堡菜单的独立页：窄屏也保留顶栏语言按钮 */
+  alwaysVisible?: boolean;
 };
 
-export function LanguageSwitcher({ variant = "menu" }: LanguageSwitcherProps) {
+export function LanguageSwitcher({ variant = "menu", alwaysVisible = false }: LanguageSwitcherProps) {
   const { i18n } = useLingui();
   const locale = toAppLocale(i18n.locale);
   const [open, setOpen] = useState(false);
@@ -76,7 +78,11 @@ export function LanguageSwitcher({ variant = "menu" }: LanguageSwitcherProps) {
   }
 
   return (
-    <div className={styles.root} ref={rootRef}>
+    <div
+      className={styles.root}
+      ref={rootRef}
+      data-always-visible={alwaysVisible ? "true" : undefined}
+    >
       <button
         type="button"
         className={styles.trigger}
