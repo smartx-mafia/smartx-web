@@ -7,6 +7,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: ["/export-key/", "/export-key"],
     },
     sitemap: "https://smartx.io/sitemap.xml",
     host: "https://smartx.io",
