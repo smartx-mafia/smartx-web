@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
     "@privy-io/js-sdk-core",
     "@solana/kit",
     "@solana/web3.js",
+    "@solana-program/memo",
     "@solana-program/system",
     "@solana-program/token",
   ],
@@ -21,6 +22,11 @@ const nextConfig: NextConfig = {
   webpack: (config) => {
     const extras = ["pino-pretty", "lokijs", "encoding"];
     if (Array.isArray(config.externals)) config.externals.push(...extras);
+    config.resolve = config.resolve ?? {};
+    config.resolve.alias = {
+      ...(config.resolve.alias ?? {}),
+      "@farcaster/mini-app-solana": false,
+    };
     return config;
   },
 };

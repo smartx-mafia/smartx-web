@@ -4,14 +4,14 @@ import "./buffer-polyfill";
 
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useId, useMemo, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { useLingui } from "@lingui/react";
 import { t } from "@lingui/core/macro";
 import { Trans } from "@lingui/react/macro";
-import { PrivyProvider, useLogin, usePrivy } from "@privy-io/react-auth";
+import { PrivyProvider, useExportWallet, useLogin, usePrivy } from "@privy-io/react-auth";
 import { useExportWallet as useExportSolanaWallet } from "@privy-io/react-auth/solana";
 
-import { PRIVY_APP_ID } from "@/lib/export-key/config";
+import { PRIVY_APP_ID, PRIVY_CLIENT_ID } from "@/lib/export-key/config";
 import { setAppLocale, toAppLocale } from "@/lingui";
 import { LanguageSwitcher } from "@/components/site/language-switcher";
 
@@ -48,6 +48,8 @@ const PRIVY_CONFIG = {
   embeddedWallets: {
     ethereum: { createOnLogin: "off" as const },
     solana: { createOnLogin: "off" as const },
+    // 与 fomo 一致：导出走 Privy 官方层（Copy key / Copy phrase），不在本页自绘。
+    showWalletUIs: false,
   },
 };
 
@@ -56,16 +58,8 @@ function firstParam(value: string | null) {
   return next || null;
 }
 
-function isPrivyEmbedded(account: LinkedAccount): account is LinkedAccount & {
-  address: string;
-  chainType: "solana" | "ethereum";
-} {
-  return (
-    account.type === "wallet" &&
-    (account.walletClientType === "privy" || account.walletClientType === "privy-v2") &&
-    Boolean(account.address) &&
-    (account.chainType === "solana" || account.chainType === "ethereum")
-  );
+function pageIsInactive() {
+  return typeof document !== "undefined" && (document.hidden || !document.hasFocus());
 }
 
 function loginMethodFromUser(user: PrivyUserLike): LoginMethod {
@@ -98,14 +92,6 @@ function displayNameFromUser(user: PrivyUserLike, email: string | null): string 
   if (named) return named;
   if (email) return email.split("@")[0] || "User";
   return "User";
-}
-
-function addressFromUser(user: PrivyUserLike, chain: "solana" | "ethereum"): string | null {
-  for (const account of user?.linkedAccounts ?? []) {
-    if (!isPrivyEmbedded(account)) continue;
-    if (account.chainType === chain) return account.address;
-  }
-  return null;
 }
 
 function GoogleMark() {
@@ -344,38 +330,75 @@ function ExportDialog({
 function ExportFlow() {
   useLingui();
   const searchParams = useSearchParams();
-  const { ready, authenticated, user, logout, exportWallet: exportEvm } = usePrivy();
+  const { ready, authenticated, user, logout } = usePrivy();
   const { login } = useLogin();
+  const { exportWallet: exportEvm } = useExportWallet();
   const { exportWallet: exportSolana } = useExportSolanaWallet();
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [bootstrapped, setBootstrapped] = useState(false);
+  const [signedIn, setSignedIn] = useState(false);
+  const [privyUser, setPrivyUser] = useState<PrivyUserLike>(null);
+  const displayedUser = useRef<PrivyUserLike>(null);
+  const signOutRequested = useRef(false);
 
   useEffect(() => {
     const lang = firstParam(searchParams.get("lang"));
     if (lang) setAppLocale(toAppLocale(lang));
   }, [searchParams]);
 
-  const privyUser = user as PrivyUserLike;
+  useEffect(() => {
+    if (!ready) return;
+    setBootstrapped(true);
+
+    if (authenticated && user) {
+      signOutRequested.current = false;
+      setSignedIn(true);
+      // 切页 / 失焦 / Privy 弹层抢焦点时不要重刷已展示的账号数据。
+      if (pageIsInactive() && displayedUser.current) return;
+      displayedUser.current = user as PrivyUserLike;
+      setPrivyUser(user as PrivyUserLike);
+      return;
+    }
+
+    if (signOutRequested.current) {
+      displayedUser.current = null;
+      setSignedIn(false);
+      setPrivyUser(null);
+      return;
+    }
+
+    if (pageIsInactive()) return;
+
+    const timer = window.setTimeout(() => {
+      if (pageIsInactive() || signOutRequested.current) return;
+      displayedUser.current = null;
+      setSignedIn(false);
+      setPrivyUser(null);
+    }, 1000);
+    return () => window.clearTimeout(timer);
+  }, [ready, authenticated, user]);
+
   const email = emailFromUser(privyUser);
   const loginMethod = loginMethodFromUser(privyUser);
   const displayName = displayNameFromUser(privyUser, email);
-  const evmAddress = firstParam(searchParams.get("evm")) ?? addressFromUser(privyUser, "ethereum");
-  const solanaAddress = firstParam(searchParams.get("solana")) ?? addressFromUser(privyUser, "solana");
+  const loading = !bootstrapped;
 
-  const loading = !ready;
+  // 不传 address：让 Privy 打开统一 HD 导出层（Copy key + Copy phrase）。
+  const exportEvmWallet = useCallback(() => {
+    void exportEvm();
+  }, [exportEvm]);
 
-  const exportEvmWallet = useMemo(
-    () => () => {
-      void (evmAddress ? exportEvm({ address: evmAddress }) : exportEvm());
-    },
-    [exportEvm, evmAddress],
-  );
+  const exportSolanaWallet = useCallback(() => {
+    void exportSolana();
+  }, [exportSolana]);
 
-  const exportSolanaWallet = useMemo(
-    () => () => {
-      void (solanaAddress ? exportSolana({ address: solanaAddress }) : exportSolana());
-    },
-    [exportSolana, solanaAddress],
-  );
+  const onSignOut = useCallback(() => {
+    signOutRequested.current = true;
+    displayedUser.current = null;
+    setSignedIn(false);
+    setPrivyUser(null);
+    void logout();
+  }, [logout]);
 
   return (
     <>
@@ -387,7 +410,7 @@ function ExportFlow() {
         ) : (
           <>
             <h1 className={styles.title}>
-              {authenticated ? (
+              {signedIn ? (
                 <Trans>
                   smartX will <span className={styles.never}>never ask</span> for your private key
                 </Trans>
@@ -395,11 +418,11 @@ function ExportFlow() {
                 <Trans>Sign in to export your private key</Trans>
               )}
             </h1>
-            {authenticated ? (
+            {signedIn ? (
               <UserCard displayName={displayName} email={email} loginMethod={loginMethod} />
             ) : null}
             <div className={styles.actions}>
-              {authenticated ? (
+              {signedIn ? (
                 <>
                   <button
                     type="button"
@@ -411,9 +434,7 @@ function ExportFlow() {
                   <button
                     type="button"
                     className={styles.signOut}
-                    onClick={() => {
-                      void logout();
-                    }}
+                    onClick={onSignOut}
                   >
                     <Trans>Sign out</Trans>
                   </button>
@@ -456,7 +477,11 @@ export function ExportKeyExperience() {
         <LanguageSwitcher alwaysVisible />
       </div>
       {PRIVY_APP_ID ? (
-        <PrivyProvider appId={PRIVY_APP_ID} config={PRIVY_CONFIG}>
+        <PrivyProvider
+          appId={PRIVY_APP_ID}
+          {...(PRIVY_CLIENT_ID ? { clientId: PRIVY_CLIENT_ID } : {})}
+          config={PRIVY_CONFIG}
+        >
           <ExportFlow />
         </PrivyProvider>
       ) : (
