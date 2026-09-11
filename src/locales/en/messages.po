@@ -203,6 +203,8 @@ msgstr "Checking invite, result, and sign-in state."
 msgid "Clear"
 msgstr "Clear"
 
+#: src/components/export-key/export-key-experience.tsx:316
+#: src/components/export-key/export-key-experience.tsx:328
 #: src/components/site/app-notice.tsx:56
 #: src/components/waitlist/waitlist-experience.tsx:1741
 msgid "Close"
@@ -230,6 +232,7 @@ msgstr "Community"
 msgid "Completed"
 msgstr "Completed"
 
+#: src/components/export-key/export-key-experience.tsx:272
 #: src/components/waitlist/waitlist-experience.tsx:1583
 msgid "Continue"
 msgstr "Continue"
@@ -380,21 +383,38 @@ msgid "Everyone. I post it everywhere."
 msgstr "Everyone. I post it everywhere."
 
 #: src/components/export-key/export-key-experience.tsx:196
-msgid "Export EVM (Base)"
-msgstr "Export EVM (Base)"
+#~ msgid "Export EVM (Base)"
+#~ msgstr "Export EVM (Base)"
+
+#: src/components/export-key/export-key-experience.tsx:339
+msgid "Export EVM wallet"
+msgstr "Export EVM wallet"
 
 #: src/components/export-key/export-key-experience.tsx:119
-msgid "Export failed"
-msgstr "Export failed"
+#~ msgid "Export failed"
+#~ msgstr "Export failed"
+
+#: src/components/export-key/export-key-experience.tsx:424
+msgid "Export key"
+msgstr "Export key"
+
+#: src/components/export-key/export-key-experience.tsx:336
+#: src/components/export-key/export-key-experience.tsx:348
+msgid "Export keys"
+msgstr "Export keys"
 
 #: src/components/export-key/export-key-experience.tsx:152
 #: src/components/export-key/export-key-experience.tsx:168
-msgid "Export private key"
-msgstr "Export private key"
+#~ msgid "Export private key"
+#~ msgstr "Export private key"
 
 #: src/components/export-key/export-key-experience.tsx:195
-msgid "Export Solana"
-msgstr "Export Solana"
+#~ msgid "Export Solana"
+#~ msgstr "Export Solana"
+
+#: src/components/export-key/export-key-experience.tsx:342
+msgid "Export Solana wallet"
+msgstr "Export Solana wallet"
 
 #: src/components/waitlist/waitlist-experience.tsx:127
 msgid "Failed to send verification code"
@@ -488,6 +508,14 @@ msgstr "Home"
 msgid "How do you trade<0/> when it gets <1>real?</1>"
 msgstr "How do you trade<0/> when it gets <1>real?</1>"
 
+#: src/components/export-key/export-key-experience.tsx:257
+msgid "I acknowledge the risks"
+msgstr "I acknowledge the risks"
+
+#: src/components/export-key/export-key-experience.tsx:260
+msgid "I understand that sharing my private key could result in a permanent loss of funds."
+msgstr "I understand that sharing my private key could result in a permanent loss of funds."
+
 #: src/lib/waitlist/quiz-i18n.ts:26
 msgid "I've done my research — the data and fundamentals back it up."
 msgstr "I've done my research — the data and fundamentals back it up."
@@ -559,9 +587,9 @@ msgstr "Journal"
 msgid "Jump in. I'll miss it if I don't."
 msgstr "Jump in. I'll miss it if I don't."
 
-#: src/components/site/language-switcher.tsx:61
-#: src/components/site/language-switcher.tsx:83
-#: src/components/site/language-switcher.tsx:92
+#: src/components/site/language-switcher.tsx:63
+#: src/components/site/language-switcher.tsx:89
+#: src/components/site/language-switcher.tsx:98
 msgid "Language"
 msgstr "Language"
 
@@ -579,12 +607,16 @@ msgid "Loading your session..."
 msgstr "Loading your session..."
 
 #: src/components/export-key/export-key-experience.tsx:143
-msgid "Loading…"
-msgstr "Loading…"
+#~ msgid "Loading…"
+#~ msgstr "Loading…"
 
 #: src/components/export-key/export-key-experience.tsx:159
-msgid "Log in"
-msgstr "Log in"
+#~ msgid "Log in"
+#~ msgstr "Log in"
+
+#: src/components/export-key/export-key-experience.tsx:438
+msgid "Login"
+msgstr "Login"
 
 #: src/lib/waitlist/persona.ts:217
 msgid "LONE"
@@ -618,7 +650,7 @@ msgstr "Long press the image to save to your album."
 msgid "Look at the chart before I touch it."
 msgstr "Look at the chart before I touch it."
 
-#: src/components/export-key/export-key-experience.tsx:224
+#: src/components/export-key/export-key-experience.tsx:471
 msgid "Missing Privy app configuration."
 msgstr "Missing Privy app configuration."
 
@@ -640,8 +672,8 @@ msgid "Natural rival"
 msgstr "Natural rival"
 
 #: src/components/export-key/export-key-experience.tsx:170
-msgid "Never share your private key with anyone. Anyone with it can take your funds."
-msgstr "Never share your private key with anyone. Anyone with it can take your funds."
+#~ msgid "Never share your private key with anyone. Anyone with it can take your funds."
+#~ msgstr "Never share your private key with anyone. Anyone with it can take your funds."
 
 #: src/components/blog/blog-i18n.tsx:16
 msgid "Newer"
@@ -673,8 +705,8 @@ msgid "No data, no consensus, no problem. You trade the vibe, call it conviction
 msgstr "No data, no consensus, no problem. You trade the vibe, call it conviction, and reach enlightenment one block before reincarnation."
 
 #: src/components/export-key/export-key-experience.tsx:202
-msgid "No embedded wallet found on this account."
-msgstr "No embedded wallet found on this account."
+#~ msgid "No embedded wallet found on this account."
+#~ msgstr "No embedded wallet found on this account."
 
 #: src/components/consumer-network/consumer-home.tsx:349
 msgid "No more scrolling through noise. SmartX learns what you trade and shows you the traders and markets that fit you."
@@ -723,8 +755,8 @@ msgid "Open navigation"
 msgstr "Open navigation"
 
 #: src/components/export-key/export-key-experience.tsx:193
-msgid "Opening Privy…"
-msgstr "Opening Privy…"
+#~ msgid "Opening Privy…"
+#~ msgstr "Opening Privy…"
 
 #: src/components/consumer-network/network-product-previews.tsx:133
 msgid "Opinion"
@@ -807,6 +839,10 @@ msgstr "Question {0} of {1}"
 msgid "Rank"
 msgstr "Rank"
 
+#: src/components/export-key/export-key-experience.tsx:221
+msgid "Read carefully before exporting keys"
+msgstr "Read carefully before exporting keys"
+
 #: src/components/blog/blog-i18n.tsx:15
 msgid "Read the dispatch"
 msgstr "Read the dispatch"
@@ -881,10 +917,15 @@ msgstr "Share recorded"
 msgid "Share result"
 msgstr "Share result"
 
-#: src/components/export-key/export-key-experience.tsx:154
-msgid "Sign in with the same SmartX account. Your private key is assembled in this browser and never sent to our servers."
-msgstr "Sign in with the same SmartX account. Your private key is assembled in this browser and never sent to our servers."
+#: src/components/export-key/export-key-experience.tsx:410
+msgid "Sign in to export your private key"
+msgstr "Sign in to export your private key"
 
+#: src/components/export-key/export-key-experience.tsx:154
+#~ msgid "Sign in with the same SmartX account. Your private key is assembled in this browser and never sent to our servers."
+#~ msgstr "Sign in with the same SmartX account. Your private key is assembled in this browser and never sent to our servers."
+
+#: src/components/export-key/export-key-experience.tsx:433
 #: src/components/waitlist/waitlist-experience.tsx:330
 msgid "Sign out"
 msgstr "Sign out"
@@ -935,6 +976,10 @@ msgstr "Skip to waitlist"
 msgid "SmartX / Early access"
 msgstr "SmartX / Early access"
 
+#: src/components/export-key/export-key-experience.tsx:235
+msgid "smartX does not support tracking your activity on other platforms. Your trades and portfolio may become inaccurate and you may be removed from the leaderboard."
+msgstr "smartX does not support tracking your activity on other platforms. Your trades and portfolio may become inaccurate and you may be removed from the leaderboard."
+
 #: src/components/consumer-network/consumer-header.tsx:31
 #: src/components/site/site-footer.tsx:22
 #: src/components/site/site-header.tsx:30
@@ -966,6 +1011,10 @@ msgstr "SmartX social links"
 msgid "SmartX Square and People screens showing a verified social feed and trader leaderboard"
 msgstr "SmartX Square and People screens showing a verified social feed and trader leaderboard"
 
+#: src/components/export-key/export-key-experience.tsx:406
+msgid "smartX will <0>never ask</0> for your private key"
+msgstr "smartX will <0>never ask</0> for your private key"
+
 #: src/lib/waitlist/persona.ts:213
 msgid "SNIPER"
 msgstr "SNIPER"
@@ -983,8 +1032,8 @@ msgid "Start the test"
 msgstr "Start the test"
 
 #: src/components/export-key/export-key-experience.tsx:173
-msgid "Tap a wallet to open the Privy export sheet."
-msgstr "Tap a wallet to open the Privy export sheet."
+#~ msgid "Tap a wallet to open the Privy export sheet."
+#~ msgstr "Tap a wallet to open the Privy export sheet."
 
 #: src/components/waitlist/waitlist-experience.tsx:135
 msgid "That community step could not be recorded. Try again."
@@ -1059,6 +1108,10 @@ msgstr "The questions didn’t come through. Check your connection and try again
 msgid "The Risk Monk"
 msgstr "The Risk Monk"
 
+#: src/components/export-key/export-key-experience.tsx:232
+msgid "The smartX team will never ask you for your private key."
+msgstr "The smartX team will never ask you for your private key."
+
 #: src/components/consumer-network/consumer-home.tsx:198
 #: src/lib/waitlist/share-copy.ts:50
 msgid "The social trading app for memes, perps, stocks and prediction markets."
@@ -1114,8 +1167,8 @@ msgid "Unlock your result"
 msgstr "Unlock your result"
 
 #: src/components/export-key/export-key-experience.tsx:212
-msgid "Use a different account"
-msgstr "Use a different account"
+#~ msgid "Use a different account"
+#~ msgstr "Use a different account"
 
 #: src/components/blog/blog-theme-toggle.tsx:37
 msgid "Use dark reading theme"
@@ -1232,6 +1285,10 @@ msgstr "Your group chat hates your trade. What do you do?"
 #: src/components/waitlist/waitlist-experience.tsx:1698
 msgid "Your invitation link"
 msgstr "Your invitation link"
+
+#: src/components/export-key/export-key-experience.tsx:227
+msgid "Your private key is an unchangeable password for your account. If someone gets access, they can steal all of your funds."
+msgstr "Your private key is an unchangeable password for your account. If someone gets access, they can steal all of your funds."
 
 #: src/components/waitlist/waitlist-experience.tsx:1311
 msgid "Your result is saved as {savedPersonaName}."
