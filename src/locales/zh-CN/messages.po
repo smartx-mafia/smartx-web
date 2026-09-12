@@ -203,6 +203,8 @@ msgstr "正在检查邀请、结果与登录状态。"
 msgid "Clear"
 msgstr "清空"
 
+#: src/components/export-key/export-key-experience.tsx:316
+#: src/components/export-key/export-key-experience.tsx:328
 #: src/components/site/app-notice.tsx:56
 #: src/components/waitlist/waitlist-experience.tsx:1741
 msgid "Close"
@@ -230,6 +232,7 @@ msgstr "社区"
 msgid "Completed"
 msgstr "已完成"
 
+#: src/components/export-key/export-key-experience.tsx:272
 #: src/components/waitlist/waitlist-experience.tsx:1583
 msgid "Continue"
 msgstr "继续"
@@ -380,21 +383,38 @@ msgid "Everyone. I post it everywhere."
 msgstr "所有人，我会到处发。"
 
 #: src/components/export-key/export-key-experience.tsx:196
-msgid "Export EVM (Base)"
-msgstr "导出 EVM (Base)"
+#~ msgid "Export EVM (Base)"
+#~ msgstr "导出 EVM (Base)"
+
+#: src/components/export-key/export-key-experience.tsx:339
+msgid "Export EVM wallet"
+msgstr "导出 EVM 钱包"
 
 #: src/components/export-key/export-key-experience.tsx:119
-msgid "Export failed"
-msgstr "导出失败"
+#~ msgid "Export failed"
+#~ msgstr "导出失败"
+
+#: src/components/export-key/export-key-experience.tsx:424
+msgid "Export key"
+msgstr "导出密钥"
+
+#: src/components/export-key/export-key-experience.tsx:336
+#: src/components/export-key/export-key-experience.tsx:348
+msgid "Export keys"
+msgstr "导出密钥"
 
 #: src/components/export-key/export-key-experience.tsx:152
 #: src/components/export-key/export-key-experience.tsx:168
-msgid "Export private key"
-msgstr "导出私钥"
+#~ msgid "Export private key"
+#~ msgstr "导出私钥"
 
 #: src/components/export-key/export-key-experience.tsx:195
-msgid "Export Solana"
-msgstr "导出 Solana"
+#~ msgid "Export Solana"
+#~ msgstr "导出 Solana"
+
+#: src/components/export-key/export-key-experience.tsx:342
+msgid "Export Solana wallet"
+msgstr "导出 Solana 钱包"
 
 #: src/components/waitlist/waitlist-experience.tsx:127
 msgid "Failed to send verification code"
@@ -488,6 +508,14 @@ msgstr "首页"
 msgid "How do you trade<0/> when it gets <1>real?</1>"
 msgstr "真金白银上场时，<0/>你会怎么<1>交易？</1>"
 
+#: src/components/export-key/export-key-experience.tsx:257
+msgid "I acknowledge the risks"
+msgstr "我已知晓风险"
+
+#: src/components/export-key/export-key-experience.tsx:260
+msgid "I understand that sharing my private key could result in a permanent loss of funds."
+msgstr "我理解泄露私钥可能导致资金永久损失。"
+
 #: src/lib/waitlist/quiz-i18n.ts:26
 msgid "I've done my research — the data and fundamentals back it up."
 msgstr "我做了功课，数据和基本面都支持。"
@@ -559,9 +587,9 @@ msgstr "日志"
 msgid "Jump in. I'll miss it if I don't."
 msgstr "直接买，不然就错过了。"
 
-#: src/components/site/language-switcher.tsx:61
-#: src/components/site/language-switcher.tsx:83
-#: src/components/site/language-switcher.tsx:92
+#: src/components/site/language-switcher.tsx:63
+#: src/components/site/language-switcher.tsx:89
+#: src/components/site/language-switcher.tsx:98
 msgid "Language"
 msgstr "语言"
 
@@ -579,11 +607,15 @@ msgid "Loading your session..."
 msgstr "正在读取你的信息..."
 
 #: src/components/export-key/export-key-experience.tsx:143
-msgid "Loading…"
-msgstr "加载中…"
+#~ msgid "Loading…"
+#~ msgstr "加载中…"
 
 #: src/components/export-key/export-key-experience.tsx:159
-msgid "Log in"
+#~ msgid "Log in"
+#~ msgstr "登录"
+
+#: src/components/export-key/export-key-experience.tsx:438
+msgid "Login"
 msgstr "登录"
 
 #: src/lib/waitlist/persona.ts:217
@@ -618,7 +650,7 @@ msgstr "长按图片即可保存到相册。"
 msgid "Look at the chart before I touch it."
 msgstr "先看看盘面再开仓。"
 
-#: src/components/export-key/export-key-experience.tsx:224
+#: src/components/export-key/export-key-experience.tsx:471
 msgid "Missing Privy app configuration."
 msgstr "未配置 Privy App ID。"
 
@@ -640,8 +672,8 @@ msgid "Natural rival"
 msgstr "天生对手"
 
 #: src/components/export-key/export-key-experience.tsx:170
-msgid "Never share your private key with anyone. Anyone with it can take your funds."
-msgstr "不要把私钥发给任何人。拿到私钥就能转走你的资产。"
+#~ msgid "Never share your private key with anyone. Anyone with it can take your funds."
+#~ msgstr "不要把私钥发给任何人。拿到私钥就能转走你的资产。"
 
 #: src/components/blog/blog-i18n.tsx:16
 msgid "Newer"
@@ -673,8 +705,8 @@ msgid "No data, no consensus, no problem. You trade the vibe, call it conviction
 msgstr "不看数据，也不等人点头。别人下单靠表，你下单靠「我悟了」。每次梭哈前都觉得自己开了天眼，下一秒就开始轮回。"
 
 #: src/components/export-key/export-key-experience.tsx:202
-msgid "No embedded wallet found on this account."
-msgstr "这个账号下没有可导出的钱包。"
+#~ msgid "No embedded wallet found on this account."
+#~ msgstr "这个账号下没有可导出的钱包。"
 
 #: src/components/consumer-network/consumer-home.tsx:349
 msgid "No more scrolling through noise. SmartX learns what you trade and shows you the traders and markets that fit you."
@@ -723,8 +755,8 @@ msgid "Open navigation"
 msgstr "打开导航"
 
 #: src/components/export-key/export-key-experience.tsx:193
-msgid "Opening Privy…"
-msgstr "正在打开 Privy…"
+#~ msgid "Opening Privy…"
+#~ msgstr "正在打开 Privy…"
 
 #: src/components/consumer-network/network-product-previews.tsx:133
 msgid "Opinion"
@@ -807,6 +839,10 @@ msgstr "第 {0} 题 / 共 {1} 题"
 msgid "Rank"
 msgstr "排名"
 
+#: src/components/export-key/export-key-experience.tsx:221
+msgid "Read carefully before exporting keys"
+msgstr "导出密钥前请仔细阅读"
+
 #: src/components/blog/blog-i18n.tsx:15
 msgid "Read the dispatch"
 msgstr "阅读全文"
@@ -881,10 +917,15 @@ msgstr "分享已计入"
 msgid "Share result"
 msgstr "分享结果"
 
-#: src/components/export-key/export-key-experience.tsx:154
-msgid "Sign in with the same SmartX account. Your private key is assembled in this browser and never sent to our servers."
-msgstr "请用 App 里同一个账号登录。私钥只在本页本地组装，不会经过我们的服务器。"
+#: src/components/export-key/export-key-experience.tsx:410
+msgid "Sign in to export your private key"
+msgstr "登录后导出私钥"
 
+#: src/components/export-key/export-key-experience.tsx:154
+#~ msgid "Sign in with the same SmartX account. Your private key is assembled in this browser and never sent to our servers."
+#~ msgstr "请用 App 里同一个账号登录。私钥只在本页本地组装，不会经过我们的服务器。"
+
+#: src/components/export-key/export-key-experience.tsx:433
 #: src/components/waitlist/waitlist-experience.tsx:330
 msgid "Sign out"
 msgstr "退出登录"
@@ -935,6 +976,10 @@ msgstr "跳到预约页面"
 msgid "SmartX / Early access"
 msgstr "SmartX / 抢先体验"
 
+#: src/components/export-key/export-key-experience.tsx:235
+msgid "smartX does not support tracking your activity on other platforms. Your trades and portfolio may become inaccurate and you may be removed from the leaderboard."
+msgstr "smartX 不会追踪你在其他平台上的活动。你的交易和持仓可能变得不准确，你也可能被移出排行榜。"
+
 #: src/components/consumer-network/consumer-header.tsx:31
 #: src/components/site/site-footer.tsx:22
 #: src/components/site/site-header.tsx:30
@@ -966,6 +1011,10 @@ msgstr "SmartX 社交链接"
 msgid "SmartX Square and People screens showing a verified social feed and trader leaderboard"
 msgstr "SmartX 广场与交易员页面，展示实盘验证的社交信息流与交易员排行榜"
 
+#: src/components/export-key/export-key-experience.tsx:406
+msgid "smartX will <0>never ask</0> for your private key"
+msgstr "smartX <0>永远不会</0>向你索要私钥"
+
 #: src/lib/waitlist/persona.ts:213
 msgid "SNIPER"
 msgstr "狙击党"
@@ -983,8 +1032,8 @@ msgid "Start the test"
 msgstr "开始测试"
 
 #: src/components/export-key/export-key-experience.tsx:173
-msgid "Tap a wallet to open the Privy export sheet."
-msgstr "点对应地址，才会弹出 Privy 导出层。"
+#~ msgid "Tap a wallet to open the Privy export sheet."
+#~ msgstr "点对应地址，才会弹出 Privy 导出层。"
 
 #: src/components/waitlist/waitlist-experience.tsx:135
 msgid "That community step could not be recorded. Try again."
@@ -1059,6 +1108,10 @@ msgstr "题目没有加载出来。请检查网络后重试。"
 msgid "The Risk Monk"
 msgstr "风控大师"
 
+#: src/components/export-key/export-key-experience.tsx:232
+msgid "The smartX team will never ask you for your private key."
+msgstr "smartX 团队永远不会向你索要私钥。"
+
 #: src/components/consumer-network/consumer-home.tsx:198
 #: src/lib/waitlist/share-copy.ts:50
 msgid "The social trading app for memes, perps, stocks and prediction markets."
@@ -1114,8 +1167,8 @@ msgid "Unlock your result"
 msgstr "解锁你的结果"
 
 #: src/components/export-key/export-key-experience.tsx:212
-msgid "Use a different account"
-msgstr "换一个账号"
+#~ msgid "Use a different account"
+#~ msgstr "换一个账号"
 
 #: src/components/blog/blog-theme-toggle.tsx:37
 msgid "Use dark reading theme"
@@ -1232,6 +1285,10 @@ msgstr "群里都喷你这笔单，你怎么办？"
 #: src/components/waitlist/waitlist-experience.tsx:1698
 msgid "Your invitation link"
 msgstr "你的邀请链接"
+
+#: src/components/export-key/export-key-experience.tsx:227
+msgid "Your private key is an unchangeable password for your account. If someone gets access, they can steal all of your funds."
+msgstr "私钥相当于账户的不可更改密码。一旦被他人获取，他们就能转走你的全部资金。"
 
 #: src/components/waitlist/waitlist-experience.tsx:1311
 msgid "Your result is saved as {savedPersonaName}."

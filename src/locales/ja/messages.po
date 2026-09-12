@@ -203,6 +203,8 @@ msgstr "招待・結果・ログイン状態を確認しています。"
 msgid "Clear"
 msgstr "クリア"
 
+#: src/components/export-key/export-key-experience.tsx:316
+#: src/components/export-key/export-key-experience.tsx:328
 #: src/components/site/app-notice.tsx:56
 #: src/components/waitlist/waitlist-experience.tsx:1741
 msgid "Close"
@@ -230,6 +232,7 @@ msgstr "コミュニティ"
 msgid "Completed"
 msgstr "完了"
 
+#: src/components/export-key/export-key-experience.tsx:272
 #: src/components/waitlist/waitlist-experience.tsx:1583
 msgid "Continue"
 msgstr "続ける"
@@ -380,21 +383,38 @@ msgid "Everyone. I post it everywhere."
 msgstr "全員。あちこちに投稿する。"
 
 #: src/components/export-key/export-key-experience.tsx:196
-msgid "Export EVM (Base)"
-msgstr "EVM (Base) を書き出す"
+#~ msgid "Export EVM (Base)"
+#~ msgstr "EVM (Base) を書き出す"
+
+#: src/components/export-key/export-key-experience.tsx:339
+msgid "Export EVM wallet"
+msgstr "EVMウォレットを書き出す"
 
 #: src/components/export-key/export-key-experience.tsx:119
-msgid "Export failed"
-msgstr "書き出しに失敗しました"
+#~ msgid "Export failed"
+#~ msgstr "書き出しに失敗しました"
+
+#: src/components/export-key/export-key-experience.tsx:424
+msgid "Export key"
+msgstr "鍵を書き出す"
+
+#: src/components/export-key/export-key-experience.tsx:336
+#: src/components/export-key/export-key-experience.tsx:348
+msgid "Export keys"
+msgstr "鍵を書き出す"
 
 #: src/components/export-key/export-key-experience.tsx:152
 #: src/components/export-key/export-key-experience.tsx:168
-msgid "Export private key"
-msgstr "秘密鍵を書き出す"
+#~ msgid "Export private key"
+#~ msgstr "秘密鍵を書き出す"
 
 #: src/components/export-key/export-key-experience.tsx:195
-msgid "Export Solana"
-msgstr "Solana を書き出す"
+#~ msgid "Export Solana"
+#~ msgstr "Solana を書き出す"
+
+#: src/components/export-key/export-key-experience.tsx:342
+msgid "Export Solana wallet"
+msgstr "Solanaウォレットを書き出す"
 
 #: src/components/waitlist/waitlist-experience.tsx:127
 msgid "Failed to send verification code"
@@ -488,6 +508,14 @@ msgstr "ホーム"
 msgid "How do you trade<0/> when it gets <1>real?</1>"
 msgstr "本気の勝負になったとき、<0/>あなたは<1>どう張る？</1>"
 
+#: src/components/export-key/export-key-experience.tsx:257
+msgid "I acknowledge the risks"
+msgstr "リスクを理解しました"
+
+#: src/components/export-key/export-key-experience.tsx:260
+msgid "I understand that sharing my private key could result in a permanent loss of funds."
+msgstr "秘密鍵を共有すると、資金を永久に失う可能性があることを理解しています。"
+
 #: src/lib/waitlist/quiz-i18n.ts:26
 msgid "I've done my research — the data and fundamentals back it up."
 msgstr "自分で調べた。データとファンダメンタルズが裏付けている。"
@@ -559,9 +587,9 @@ msgstr "ジャーナル"
 msgid "Jump in. I'll miss it if I don't."
 msgstr "飛び乗る。今入らなきゃ乗り遅れる。"
 
-#: src/components/site/language-switcher.tsx:61
-#: src/components/site/language-switcher.tsx:83
-#: src/components/site/language-switcher.tsx:92
+#: src/components/site/language-switcher.tsx:63
+#: src/components/site/language-switcher.tsx:89
+#: src/components/site/language-switcher.tsx:98
 msgid "Language"
 msgstr "言語"
 
@@ -579,11 +607,15 @@ msgid "Loading your session..."
 msgstr "セッションを読み込んでいます。"
 
 #: src/components/export-key/export-key-experience.tsx:143
-msgid "Loading…"
-msgstr "読み込み中…"
+#~ msgid "Loading…"
+#~ msgstr "読み込み中…"
 
 #: src/components/export-key/export-key-experience.tsx:159
-msgid "Log in"
+#~ msgid "Log in"
+#~ msgstr "ログイン"
+
+#: src/components/export-key/export-key-experience.tsx:438
+msgid "Login"
 msgstr "ログイン"
 
 #: src/lib/waitlist/persona.ts:217
@@ -618,7 +650,7 @@ msgstr "画像を長押ししてアルバムに保存できます。"
 msgid "Look at the chart before I touch it."
 msgstr "触る前に、まずチャートを見る。"
 
-#: src/components/export-key/export-key-experience.tsx:224
+#: src/components/export-key/export-key-experience.tsx:471
 msgid "Missing Privy app configuration."
 msgstr "Privy の App ID が設定されていません。"
 
@@ -640,8 +672,8 @@ msgid "Natural rival"
 msgstr "宿命のライバル"
 
 #: src/components/export-key/export-key-experience.tsx:170
-msgid "Never share your private key with anyone. Anyone with it can take your funds."
-msgstr "秘密鍵は誰にも共有しないでください。入手した相手は資産を動かせます。"
+#~ msgid "Never share your private key with anyone. Anyone with it can take your funds."
+#~ msgstr "秘密鍵は誰にも共有しないでください。入手した相手は資産を動かせます。"
 
 #: src/components/blog/blog-i18n.tsx:16
 msgid "Newer"
@@ -673,8 +705,8 @@ msgid "No data, no consensus, no problem. You trade the vibe, call it conviction
 msgstr "データも総意もいらない。ノリを確信と呼んでベットする。輪廻するちょうど1ブロック前に、毎回悟りを開く。"
 
 #: src/components/export-key/export-key-experience.tsx:202
-msgid "No embedded wallet found on this account."
-msgstr "このアカウントには書き出せるウォレットがありません。"
+#~ msgid "No embedded wallet found on this account."
+#~ msgstr "このアカウントには書き出せるウォレットがありません。"
 
 #: src/components/consumer-network/consumer-home.tsx:349
 msgid "No more scrolling through noise. SmartX learns what you trade and shows you the traders and markets that fit you."
@@ -723,8 +755,8 @@ msgid "Open navigation"
 msgstr "ナビゲーションを開く"
 
 #: src/components/export-key/export-key-experience.tsx:193
-msgid "Opening Privy…"
-msgstr "Privy を開いています…"
+#~ msgid "Opening Privy…"
+#~ msgstr "Privy を開いています…"
 
 #: src/components/consumer-network/network-product-previews.tsx:133
 msgid "Opinion"
@@ -807,6 +839,10 @@ msgstr "質問 {0} / {1}"
 msgid "Rank"
 msgstr "ランク"
 
+#: src/components/export-key/export-key-experience.tsx:221
+msgid "Read carefully before exporting keys"
+msgstr "鍵を書き出す前に必ずお読みください"
+
 #: src/components/blog/blog-i18n.tsx:15
 msgid "Read the dispatch"
 msgstr "記事を読む"
@@ -881,10 +917,15 @@ msgstr "シェア済み"
 msgid "Share result"
 msgstr "結果をシェア"
 
-#: src/components/export-key/export-key-experience.tsx:154
-msgid "Sign in with the same SmartX account. Your private key is assembled in this browser and never sent to our servers."
-msgstr "SmartX アプリと同じアカウントでログインしてください。秘密鍵はこのブラウザ内だけで組み立てられ、サーバーには送られません。"
+#: src/components/export-key/export-key-experience.tsx:410
+msgid "Sign in to export your private key"
+msgstr "ログインして秘密鍵を書き出す"
 
+#: src/components/export-key/export-key-experience.tsx:154
+#~ msgid "Sign in with the same SmartX account. Your private key is assembled in this browser and never sent to our servers."
+#~ msgstr "SmartX アプリと同じアカウントでログインしてください。秘密鍵はこのブラウザ内だけで組み立てられ、サーバーには送られません。"
+
+#: src/components/export-key/export-key-experience.tsx:433
 #: src/components/waitlist/waitlist-experience.tsx:330
 msgid "Sign out"
 msgstr "サインアウト"
@@ -935,6 +976,10 @@ msgstr "ウェイトリストへスキップ"
 msgid "SmartX / Early access"
 msgstr "SmartX / 先行アクセス"
 
+#: src/components/export-key/export-key-experience.tsx:235
+msgid "smartX does not support tracking your activity on other platforms. Your trades and portfolio may become inaccurate and you may be removed from the leaderboard."
+msgstr "smartX は他のプラットフォームでのアクティビティ追跡に対応していません。取引やポートフォリオが不正確になり、リーダーボードから外される場合があります。"
+
 #: src/components/consumer-network/consumer-header.tsx:31
 #: src/components/site/site-footer.tsx:22
 #: src/components/site/site-header.tsx:30
@@ -966,6 +1011,10 @@ msgstr "SmartX ソーシャルリンク"
 msgid "SmartX Square and People screens showing a verified social feed and trader leaderboard"
 msgstr "認証済みソーシャルフィードとトレーダーリーダーボードを表示する SmartX の Square・People 画面"
 
+#: src/components/export-key/export-key-experience.tsx:406
+msgid "smartX will <0>never ask</0> for your private key"
+msgstr "smartX が秘密鍵を尋ねることは<0>決してありません</0>"
+
 #: src/lib/waitlist/persona.ts:213
 msgid "SNIPER"
 msgstr "スナイパー派"
@@ -983,8 +1032,8 @@ msgid "Start the test"
 msgstr "テストを始める"
 
 #: src/components/export-key/export-key-experience.tsx:173
-msgid "Tap a wallet to open the Privy export sheet."
-msgstr "ウォレットをタップすると Privy の書き出し画面が開きます。"
+#~ msgid "Tap a wallet to open the Privy export sheet."
+#~ msgstr "ウォレットをタップすると Privy の書き出し画面が開きます。"
 
 #: src/components/waitlist/waitlist-experience.tsx:135
 msgid "That community step could not be recorded. Try again."
@@ -1059,6 +1108,10 @@ msgstr "質問を取得できませんでした。接続を確認して再試行
 msgid "The Risk Monk"
 msgstr "リスクの修行僧"
 
+#: src/components/export-key/export-key-experience.tsx:232
+msgid "The smartX team will never ask you for your private key."
+msgstr "smartX チームが秘密鍵を尋ねることはありません。"
+
 #: src/components/consumer-network/consumer-home.tsx:198
 #: src/lib/waitlist/share-copy.ts:50
 msgid "The social trading app for memes, perps, stocks and prediction markets."
@@ -1114,8 +1167,8 @@ msgid "Unlock your result"
 msgstr "結果をアンロック"
 
 #: src/components/export-key/export-key-experience.tsx:212
-msgid "Use a different account"
-msgstr "別のアカウントを使う"
+#~ msgid "Use a different account"
+#~ msgstr "別のアカウントを使う"
 
 #: src/components/blog/blog-theme-toggle.tsx:37
 msgid "Use dark reading theme"
@@ -1232,6 +1285,10 @@ msgstr "グループチャットで、そのトレードをボロクソに言わ
 #: src/components/waitlist/waitlist-experience.tsx:1698
 msgid "Your invitation link"
 msgstr "あなたの招待リンク"
+
+#: src/components/export-key/export-key-experience.tsx:227
+msgid "Your private key is an unchangeable password for your account. If someone gets access, they can steal all of your funds."
+msgstr "秘密鍵はアカウントの変更できないパスワードです。他人に渡ると、資金をすべて盗まれる可能性があります。"
 
 #: src/components/waitlist/waitlist-experience.tsx:1311
 msgid "Your result is saved as {savedPersonaName}."

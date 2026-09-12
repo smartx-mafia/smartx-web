@@ -203,6 +203,8 @@ msgstr "초대, 결과, 로그인 상태를 확인하는 중입니다."
 msgid "Clear"
 msgstr "지우기"
 
+#: src/components/export-key/export-key-experience.tsx:316
+#: src/components/export-key/export-key-experience.tsx:328
 #: src/components/site/app-notice.tsx:56
 #: src/components/waitlist/waitlist-experience.tsx:1741
 msgid "Close"
@@ -230,6 +232,7 @@ msgstr "커뮤니티"
 msgid "Completed"
 msgstr "완료"
 
+#: src/components/export-key/export-key-experience.tsx:272
 #: src/components/waitlist/waitlist-experience.tsx:1583
 msgid "Continue"
 msgstr "계속"
@@ -380,21 +383,38 @@ msgid "Everyone. I post it everywhere."
 msgstr "모두. 여기저기 올린다."
 
 #: src/components/export-key/export-key-experience.tsx:196
-msgid "Export EVM (Base)"
-msgstr "EVM (Base) 내보내기"
+#~ msgid "Export EVM (Base)"
+#~ msgstr "EVM (Base) 내보내기"
+
+#: src/components/export-key/export-key-experience.tsx:339
+msgid "Export EVM wallet"
+msgstr "EVM 지갑 내보내기"
 
 #: src/components/export-key/export-key-experience.tsx:119
-msgid "Export failed"
-msgstr "내보내기에 실패했습니다"
+#~ msgid "Export failed"
+#~ msgstr "내보내기에 실패했습니다"
+
+#: src/components/export-key/export-key-experience.tsx:424
+msgid "Export key"
+msgstr "키 내보내기"
+
+#: src/components/export-key/export-key-experience.tsx:336
+#: src/components/export-key/export-key-experience.tsx:348
+msgid "Export keys"
+msgstr "키 내보내기"
 
 #: src/components/export-key/export-key-experience.tsx:152
 #: src/components/export-key/export-key-experience.tsx:168
-msgid "Export private key"
-msgstr "개인키 내보내기"
+#~ msgid "Export private key"
+#~ msgstr "개인키 내보내기"
 
 #: src/components/export-key/export-key-experience.tsx:195
-msgid "Export Solana"
-msgstr "Solana 내보내기"
+#~ msgid "Export Solana"
+#~ msgstr "Solana 내보내기"
+
+#: src/components/export-key/export-key-experience.tsx:342
+msgid "Export Solana wallet"
+msgstr "Solana 지갑 내보내기"
 
 #: src/components/waitlist/waitlist-experience.tsx:127
 msgid "Failed to send verification code"
@@ -488,6 +508,14 @@ msgstr "홈"
 msgid "How do you trade<0/> when it gets <1>real?</1>"
 msgstr "진짜 돈이 걸리면 <0/> 당신은 <1>어떻게 거래하나요?</1>"
 
+#: src/components/export-key/export-key-experience.tsx:257
+msgid "I acknowledge the risks"
+msgstr "위험을 확인했습니다"
+
+#: src/components/export-key/export-key-experience.tsx:260
+msgid "I understand that sharing my private key could result in a permanent loss of funds."
+msgstr "개인키를 공유하면 자금을 영구적으로 잃을 수 있음을 이해합니다."
+
 #: src/lib/waitlist/quiz-i18n.ts:26
 msgid "I've done my research — the data and fundamentals back it up."
 msgstr "직접 리서치했다. 데이터와 펀더멘털이 뒷받침한다."
@@ -559,9 +587,9 @@ msgstr "저널"
 msgid "Jump in. I'll miss it if I don't."
 msgstr "바로 탄다. 지금 안 사면 놓친다."
 
-#: src/components/site/language-switcher.tsx:61
-#: src/components/site/language-switcher.tsx:83
-#: src/components/site/language-switcher.tsx:92
+#: src/components/site/language-switcher.tsx:63
+#: src/components/site/language-switcher.tsx:89
+#: src/components/site/language-switcher.tsx:98
 msgid "Language"
 msgstr "언어"
 
@@ -579,11 +607,15 @@ msgid "Loading your session..."
 msgstr "세션을 불러오는 중입니다."
 
 #: src/components/export-key/export-key-experience.tsx:143
-msgid "Loading…"
-msgstr "불러오는 중…"
+#~ msgid "Loading…"
+#~ msgstr "불러오는 중…"
 
 #: src/components/export-key/export-key-experience.tsx:159
-msgid "Log in"
+#~ msgid "Log in"
+#~ msgstr "로그인"
+
+#: src/components/export-key/export-key-experience.tsx:438
+msgid "Login"
 msgstr "로그인"
 
 #: src/lib/waitlist/persona.ts:217
@@ -618,7 +650,7 @@ msgstr "이미지를 길게 눌러 앨범에 저장하세요."
 msgid "Look at the chart before I touch it."
 msgstr "포지션을 잡기 전에 차트를 확인한다."
 
-#: src/components/export-key/export-key-experience.tsx:224
+#: src/components/export-key/export-key-experience.tsx:471
 msgid "Missing Privy app configuration."
 msgstr "Privy 앱 설정이 없습니다."
 
@@ -640,8 +672,8 @@ msgid "Natural rival"
 msgstr "타고난 라이벌"
 
 #: src/components/export-key/export-key-experience.tsx:170
-msgid "Never share your private key with anyone. Anyone with it can take your funds."
-msgstr "개인키를 누구에게도 공유하지 마세요. 키를 가진 사람은 자산을 옮길 수 있습니다."
+#~ msgid "Never share your private key with anyone. Anyone with it can take your funds."
+#~ msgstr "개인키를 누구에게도 공유하지 마세요. 키를 가진 사람은 자산을 옮길 수 있습니다."
 
 #: src/components/blog/blog-i18n.tsx:16
 msgid "Newer"
@@ -673,8 +705,8 @@ msgid "No data, no consensus, no problem. You trade the vibe, call it conviction
 msgstr "데이터도, 합의도 필요 없습니다. 감을 확신이라 부르며 베팅하죠. 환생하기 딱 한 블록 전에 늘 깨달음을 얻습니다."
 
 #: src/components/export-key/export-key-experience.tsx:202
-msgid "No embedded wallet found on this account."
-msgstr "이 계정에서 내보낼 수 있는 임베디드 지갑이 없습니다."
+#~ msgid "No embedded wallet found on this account."
+#~ msgstr "이 계정에서 내보낼 수 있는 임베디드 지갑이 없습니다."
 
 #: src/components/consumer-network/consumer-home.tsx:349
 msgid "No more scrolling through noise. SmartX learns what you trade and shows you the traders and markets that fit you."
@@ -723,8 +755,8 @@ msgid "Open navigation"
 msgstr "내비게이션 열기"
 
 #: src/components/export-key/export-key-experience.tsx:193
-msgid "Opening Privy…"
-msgstr "Privy를 여는 중…"
+#~ msgid "Opening Privy…"
+#~ msgstr "Privy를 여는 중…"
 
 #: src/components/consumer-network/network-product-previews.tsx:133
 msgid "Opinion"
@@ -807,6 +839,10 @@ msgstr "질문 {0} / {1}"
 msgid "Rank"
 msgstr "순위"
 
+#: src/components/export-key/export-key-experience.tsx:221
+msgid "Read carefully before exporting keys"
+msgstr "키를 내보내기 전에 주의 깊게 읽으세요"
+
 #: src/components/blog/blog-i18n.tsx:15
 msgid "Read the dispatch"
 msgstr "글 읽기"
@@ -881,10 +917,15 @@ msgstr "공유 기록됨"
 msgid "Share result"
 msgstr "결과 공유"
 
-#: src/components/export-key/export-key-experience.tsx:154
-msgid "Sign in with the same SmartX account. Your private key is assembled in this browser and never sent to our servers."
-msgstr "SmartX 앱과 같은 계정으로 로그인하세요. 개인키는 이 브라우저에서만 조립되며 서버로 전송되지 않습니다."
+#: src/components/export-key/export-key-experience.tsx:410
+msgid "Sign in to export your private key"
+msgstr "로그인하여 개인키 내보내기"
 
+#: src/components/export-key/export-key-experience.tsx:154
+#~ msgid "Sign in with the same SmartX account. Your private key is assembled in this browser and never sent to our servers."
+#~ msgstr "SmartX 앱과 같은 계정으로 로그인하세요. 개인키는 이 브라우저에서만 조립되며 서버로 전송되지 않습니다."
+
+#: src/components/export-key/export-key-experience.tsx:433
 #: src/components/waitlist/waitlist-experience.tsx:330
 msgid "Sign out"
 msgstr "로그아웃"
@@ -935,6 +976,10 @@ msgstr "웨이트리스트로 건너뛰기"
 msgid "SmartX / Early access"
 msgstr "SmartX / 얼리 액세스"
 
+#: src/components/export-key/export-key-experience.tsx:235
+msgid "smartX does not support tracking your activity on other platforms. Your trades and portfolio may become inaccurate and you may be removed from the leaderboard."
+msgstr "smartX는 다른 플랫폼에서의 활동을 추적하지 않습니다. 거래와 포트폴리오가 부정확해질 수 있으며 리더보드에서 제외될 수 있습니다."
+
 #: src/components/consumer-network/consumer-header.tsx:31
 #: src/components/site/site-footer.tsx:22
 #: src/components/site/site-header.tsx:30
@@ -966,6 +1011,10 @@ msgstr "SmartX 소셜 링크"
 msgid "SmartX Square and People screens showing a verified social feed and trader leaderboard"
 msgstr "검증된 소셜 피드와 트레이더 리더보드를 보여주는 SmartX 스퀘어·피플 화면"
 
+#: src/components/export-key/export-key-experience.tsx:406
+msgid "smartX will <0>never ask</0> for your private key"
+msgstr "smartX는 개인키를 <0>절대 요구하지 않습니다</0>"
+
 #: src/lib/waitlist/persona.ts:213
 msgid "SNIPER"
 msgstr "스나이퍼파"
@@ -983,8 +1032,8 @@ msgid "Start the test"
 msgstr "테스트 시작하기"
 
 #: src/components/export-key/export-key-experience.tsx:173
-msgid "Tap a wallet to open the Privy export sheet."
-msgstr "지갑을 누르면 Privy 내보내기 창이 열립니다."
+#~ msgid "Tap a wallet to open the Privy export sheet."
+#~ msgstr "지갑을 누르면 Privy 내보내기 창이 열립니다."
 
 #: src/components/waitlist/waitlist-experience.tsx:135
 msgid "That community step could not be recorded. Try again."
@@ -1059,6 +1108,10 @@ msgstr "질문을 불러오지 못했습니다. 연결 상태를 확인하고 �
 msgid "The Risk Monk"
 msgstr "리스크 수도승"
 
+#: src/components/export-key/export-key-experience.tsx:232
+msgid "The smartX team will never ask you for your private key."
+msgstr "smartX 팀은 개인키를 절대 요구하지 않습니다."
+
 #: src/components/consumer-network/consumer-home.tsx:198
 #: src/lib/waitlist/share-copy.ts:50
 msgid "The social trading app for memes, perps, stocks and prediction markets."
@@ -1114,8 +1167,8 @@ msgid "Unlock your result"
 msgstr "결과 잠금 해제"
 
 #: src/components/export-key/export-key-experience.tsx:212
-msgid "Use a different account"
-msgstr "다른 계정 사용"
+#~ msgid "Use a different account"
+#~ msgstr "다른 계정 사용"
 
 #: src/components/blog/blog-theme-toggle.tsx:37
 msgid "Use dark reading theme"
@@ -1232,6 +1285,10 @@ msgstr "단톡방 모두가 그 트레이드를 욕합니다. 어떻게 하시�
 #: src/components/waitlist/waitlist-experience.tsx:1698
 msgid "Your invitation link"
 msgstr "내 초대 링크"
+
+#: src/components/export-key/export-key-experience.tsx:227
+msgid "Your private key is an unchangeable password for your account. If someone gets access, they can steal all of your funds."
+msgstr "개인키는 계정의 변경할 수 없는 비밀번호입니다. 다른 사람이 얻으면 자금을 모두 훔칠 수 있습니다."
 
 #: src/components/waitlist/waitlist-experience.tsx:1311
 msgid "Your result is saved as {savedPersonaName}."
