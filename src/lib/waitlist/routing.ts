@@ -11,27 +11,7 @@ export type WaitlistRoute = {
 };
 
 /**
- * Direct + logged in with a result → own unlock/result.
- * Friend + logged in with a result → stay on the shared result first.
- * Local quiz draft (refresh mid-test) → resume quiz.
- * Logged in without a submitted result → resume quiz.
- * Friend + logged out → referral gate.
- * Direct + logged out → start gate (invite optional).
- */
-/** Telegram / X flags are API `1`/`0`. Result is only shown after both are done. */
-export function areCommunityTasksDone(flags?: {
-  telegramCompleted?: number;
-  xCompleted?: number;
-} | null) {
-  return flags?.telegramCompleted === 1 && flags?.xCompleted === 1;
-}
-
-export function isCommunityChannelDone(...flags: Array<number | undefined>) {
-  return flags.some((flag) => flag === 1);
-}
-
-/**
- * Direct + logged in with a result → own unlock/result.
+ * Direct + logged in with a result → own result (community actions are optional).
  * Friend + logged in with a result → stay on the shared result first.
  * Local quiz draft (refresh mid-test) → resume quiz.
  * Logged in without a submitted result → resume quiz.
@@ -42,12 +22,12 @@ export function decideWaitlistEntry(input: {
   hasFriendCard: boolean;
   loggedIn: boolean;
   submitted: boolean;
-  unlocked: boolean;
+  unlocked?: boolean;
   hasQuizProgress?: boolean;
 }): WaitlistRoute {
   if (input.loggedIn && input.submitted) {
     if (input.hasFriendCard) return { stage: "gate", entry: "friend" };
-    return { stage: input.unlocked ? "result" : "unlock", entry: "direct" };
+    return { stage: "result", entry: "direct" };
   }
 
   if (input.hasQuizProgress || (input.loggedIn && !input.submitted)) {

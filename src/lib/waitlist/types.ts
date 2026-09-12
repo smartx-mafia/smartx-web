@@ -1,4 +1,6 @@
-export type WaitlistStage = "boot" | "gate" | "quiz" | "email" | "verify" | "unlock" | "result";
+import type { ShareVerification } from "./share-verification";
+
+export type WaitlistStage = "boot" | "gate" | "quiz" | "email" | "verify" | "result-pending" | "result";
 export type AuthIntent = "create" | "recover";
 export type Pole = "DEGEN" | "SNIPER" | "GUT" | "DATA" | "PACK" | "LONE" | "DISCIPLINE" | "RESTRAINT";
 export type Stat = "conviction" | "instinct" | "resilience";
@@ -133,8 +135,10 @@ export type MyResultLocked = {
 
 export type MyResultUnlocked = ResultCard & {
   submitted: true;
-  locked: false;
-  rank: number;
+  locked?: boolean;
+  rank?: number | null;
+  shareVerification?: ShareVerification;
+  verifiedInviteCount?: number;
   totalUsers: number;
   shareCompleted: number;
   inviteNum: number;
@@ -216,5 +220,6 @@ export function isMissingUserError(error: unknown): error is WaitlistApiError {
 }
 
 export function isUnlockedResult(result: MyResult): result is MyResultUnlocked {
-  return result.submitted && !result.locked;
+  // This guards personality data, not leaderboard eligibility or legacy community flags.
+  return Boolean(result?.submitted && "resultId" in result && result.resultId && result.personaId);
 }

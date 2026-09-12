@@ -1,86 +1,56 @@
-# Waitlist flow
+# Waitlist flow · 2026-09-09
 
-This document describes the current waitlist journey and distinguishes explicit user actions from automatic product behavior.
-
-## Legend
-
-- **User**: the person must click, type, choose, or return to continue.
-- **System**: the product performs the step automatically after a user action or when the page opens.
-- **External**: Telegram, X, email, or the native share surface is opened outside SmartX.
-
-## End-to-end flow
+Current confirmed flow. Integration details and backend dependencies are in [the share verification handoff](./waitlist-share-verification.md).
 
 ```mermaid
 flowchart TD
-  A["System · Open /waitlist and restore session"] --> B{"System · Saved result found?"}
-  B -- "Yes, unlocked" --> R["System · Show saved result and live rank"]
-  B -- "Yes, still locked" --> U["System · Show unlock tasks"]
-  B -- "No" --> C{"User · Choose an entry"}
-
-  C -- "Start the test" --> Q["User · Answer six questions"]
-  C -- "Already tested? View my result" --> E["User · Enter email and continue"]
-  C -- "Open a friend's invite link" --> F["System · Load the friend's result"]
-  F --> C2{"User · Choose what to do"}
-  C2 -- "Find my trader type" --> Q
-  C2 -- "View my saved result" --> E
-
-  Q --> QD["System · Save quiz progress locally"]
-  QD --> E
-  E --> ER{"System · Is this an existing email?"}
-  ER -- "New or existing" --> ES["System · Send the six-digit code and open verification"]
-  ES --> O["User · Enter or paste six digits"]
-  O --> OA["System · Automatically verify when digit 6 is entered"]
-  O --> OM["User · Press Continue to verify or retry manually"]
-  OA --> OV{"System · Code accepted?"}
-  OM --> OV
-  OV -- "No" --> OE["System · Show the error; keep Clear, resend, change email, and Continue available"]
-  OE --> O
-  OV -- "Yes" --> L{"System · Saved result already exists?"}
-  L -- "Yes" --> LS{"System · Community tasks complete?"}
-  L -- "No, completed quiz is available" --> QS["System · Submit answers and create the result"]
-  L -- "No result and no complete quiz" --> Q
-  QS --> U
-  LS -- "Yes" --> R
-  LS -- "No" --> U
-
-  U --> T["User · Open and join SmartX on Telegram"]
-  U --> X["User · Open and follow SmartX on X"]
-  T --> TC["System · Record the Telegram step after the click"]
-  X --> XC["System · Record the X step after the click"]
-  TC --> UU{"System · Both steps recorded?"}
-  XC --> UU
-  UU -- "No" --> U
-  UU -- "Yes" --> RA["System · Fetch the workspace and open the result"]
-  UU -- "Automatic fetch fails" --> RR["User · Reveal my result as a manual fallback"]
-  RA --> R
-  RR --> R
-
-  R --> S["User · Share result or download the result card"]
-  S --> SB["System · Record first share and apply +10 Boost"]
-  R --> I["User · Copy invite link and invite friends"]
-  I --> IF["External · Friend completes a verified waitlist journey"]
-  IF --> IB["System · Apply +5 Boost per verified friend and refresh rank"]
-  SB --> R
-  IB --> R
+  A[Open Waitlist and restore session] --> B{Saved result?}
+  B -- Yes, direct entry --> R[Show full personality result]
+  B -- Friend entry --> F[Show friend's result and view-my-result / test actions]
+  B -- No --> Q[Answer six API-provided questions]
+  F -- Take test --> Q
+  F -- View my result --> E[Email sign-in when needed]
+  Q --> E
+  E --> O[Verify six-digit email code]
+  O --> S[Save or retrieve the personality result]
+  S --> R
+  R --> G{Share verified by server?}
+  G -- No --> L[Rank locked; not on eligible leaderboard]
+  G -- Yes --> V[Show server rank and connected X account]
+  L --> X[Open X intent with own invite link]
+  X --> P[User publishes publicly and pastes post URL]
+  L -- Already shared --> P
+  P --> C[Frontend validates official post URL format]
+  C --> API[Server checks post, X uniqueness and own invite link]
+  API -- Pending --> W[Show pending; resume on return or refresh]
+  API -- Rejected --> T[Explain reason and allow retry]
+  T --> P
+  W --> API
+  API -- Verified --> V
+  API -- Verified --> I[Server counts one valid invite for inviter, if any]
+  R --> D[Download personality card or copy own invite link]
+  R --> OPT[Optional: open Telegram or follow SmartX on X]
 ```
 
-## Steps that require the user to advance
+## Entry and authentication
 
-1. Choose **Start the test** or **Already tested? View my result**.
-2. Answer all six questions.
-3. Enter an email and press **Continue** or **Send code**.
-4. Enter or paste the six-digit code. Automatic verification is the primary path; **Continue** remains the manual trigger and retry path.
-5. If needed, use **Clear**, **Resend code**, or **Change email**.
-6. Open Telegram and X and complete the two community actions externally.
-7. If the automatic transition after the second community task fails, press **Reveal my result** as a manual fallback.
-8. Optionally share or download the result, or copy the invite link.
+- Direct entry does not require an invitation. Valid friend links prefill the inviter relationship.
+- Logged-in visitors to a friend's link still see the friend's public persona first and retain a way to view their own result.
+- Quiz drafts, OTP auto-submit at six digits, manual retry, resend, changing email, result recovery and sign-out remain available.
+- Once the email is verified and a result exists, neither community flags nor share status block the personality result.
+- In normal mode, an older backend withholding personality data produces an unavailable/retry state. The explicitly authorized local-only prototype bridge (2026-09-10) may mark missing legacy community tasks complete on the test backend, then fetch the real card. It never fabricates results or verifies a share; see the handoff for the guarded opt-in.
 
-## Steps the system performs automatically
+## Sharing and eligibility
 
-1. Restore the saved session, quiz draft, invite, and result when the page opens.
-2. Fetch the current questions and decide the correct entry stage.
-3. Recognize an existing email, send the verification code, and move directly to verification.
-4. Submit verification automatically when the sixth digit is entered, while preserving the manual **Continue** fallback.
-5. Create or retrieve the result after sign-in and route to unlock or result.
-6. After the second community task is recorded, fetch the workspace and open the result automatically.
-7. Record first-share Boost, verified-friend Boost, and refresh live rank.
+- Opening intent is only starting a share. It never awards Boost, binds X or unlocks a rank.
+- The return-link dialog can be reopened without reposting. It supports invalid URL, submitting, pending, rejection and verified states.
+- Only server-confirmed verification counts. Legacy `shareCompleted` is not proof of verification.
+- Unverified users are excluded from the eligible leaderboard by the backend, not merely hidden by frontend styling.
+- A verified post binds the actual author's stable X user ID for this activity; no OAuth or X-based login is introduced.
+- Ranking and verified invitation counts are server values. No local score or invitation increments.
+- If B joined via A, B posts **B's** invite link; after B verifies, the server credits A once.
+- Telegram / follow-X actions are optional outbound links. Clicking them is not presented as verified membership or following.
+
+## Backend readiness
+
+The post-verification endpoint and response are awaiting backend confirmation. See the handoff before setting `NEXT_PUBLIC_WAITLIST_SHARE_VERIFY_PATH`. The default frontend does not call an invented endpoint or the old share-completion endpoint.

@@ -14,9 +14,11 @@ export async function fetchResultCard(
   inviteCode: string,
   locale: string,
   result: string,
+  format: "x" | "story" = "x",
 ): Promise<RenderedResultCard> {
   const query = waitlistShareQuery({ invite: inviteCode, locale, result });
   query.set("t", String(Date.now()));
+  if (format === "story") query.set("format", "story");
   const response = await fetch(`/waitlist/og/?${query.toString()}`, { cache: "no-store" });
   const contentType = response.headers.get("content-type") ?? "";
   // 卡片数据不可用时服务端会 302 到默认 OG 图；斜杠规范化造成的 redirected 仍可能是有效海报。
@@ -27,7 +29,7 @@ export async function fetchResultCard(
   const blob = await response.blob();
   return {
     href: URL.createObjectURL(blob),
-    filename: `smartx-${inviteCode.toLowerCase()}-1200x630`,
+    filename: `smartx-${inviteCode.toLowerCase()}-${format === "story" ? "1080x1920" : "1200x630"}`,
     blob,
   };
 }

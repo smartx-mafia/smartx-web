@@ -1,6 +1,8 @@
 import { i18n, toAppLocale } from "@/lingui";
 
 import { getUserToken } from "./session";
+import { canUsePrototypeCommunityBridge, createPrototypeCommunityBridge } from "./prototype-community-bridge";
+import { parseXPostUrl, readShareVerification, verificationEndpoint } from "./share-verification";
 import {
   type CommunityChannel,
   type CommunityCompleteResult,
@@ -58,6 +60,7 @@ async function waitlistRequest<T>(
     query?: Record<string, string | number | undefined>;
     body?: unknown;
     userToken?: string;
+    signal?: AbortSignal;
   } = {},
 ) {
   const url = new URL(path, `${apiBase()}/`);
@@ -80,6 +83,7 @@ async function waitlistRequest<T>(
       method: options.method ?? "GET",
       headers,
       cache: "no-store",
+      signal: options.signal,
       body: options.body === undefined ? undefined : JSON.stringify(options.body),
     });
     payload = (await response.json()) as WaitlistEnvelope<T>;
@@ -246,14 +250,24 @@ export const waitlistApi = {
       method: "POST",
       body: { channel },
       userToken,
+      signal: AbortSignal.timeout(15_000),
     });
   },
 
-  shareComplete(userToken: string) {
-    return waitlistRequest<true>("/user/share_complete", {
+  async verifyShare(postUrl: string, userToken: string) {
+    const post = parseXPostUrl(postUrl);
+    if (!post) throw new WaitlistApiError(400, "INVALID_POST_URL", "user");
+    const path = verificationEndpoint(process.env.NEXT_PUBLIC_WAITLIST_SHARE_VERIFY_PATH);
+    if (!path) throw new WaitlistApiError(503, "SHARE_VERIFICATION_UNAVAILABLE", "user");
+    const raw = await waitlistRequest<unknown>(path, {
       method: "POST",
+      body: { postUrl: post.url },
       userToken,
+      signal: AbortSignal.timeout(20_000),
     });
+    const verification = readShareVerification(raw);
+    if (verification.status === "unverified") throw new WaitlistApiError(502, "SHARE_VERIFICATION_UNAVAILABLE", "user", path);
+    return verification;
   },
 
   getRank(userToken: string) {
@@ -277,3 +291,17 @@ export const waitlistApi = {
     return waitlistRequest<UserInfo>("/user/info", { userToken });
   },
 };
+
+/** Explicitly mutating compatibility step; ordinary getMyResult and polling stay read-only. */
+export const resolvePrototypeResult = createPrototypeCommunityBridge({
+  enabled: () => typeof window !== "undefined" && canUsePrototypeCommunityBridge({
+    enabled: process.env.NEXT_PUBLIC_WAITLIST_LEGACY_COMMUNITY_BRIDGE,
+    nodeEnv: process.env.NODE_ENV,
+    pageOrigin: window.location.origin,
+    apiBase: apiBase(),
+  }),
+  isCurrentSession: (token) => getUserToken() === token,
+  complete: (channel, token) => waitlistApi.completeCommunity(channel, token),
+  getResult: (token) => waitlistApi.getMyResult(token),
+  wait: (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
+});
