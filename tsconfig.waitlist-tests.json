@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.blog-tests.json",
+  "include": [
+    "tests/waitlist/**/*.ts",
+    "src/lib/waitlist/share-verification.ts",
+    "src/lib/waitlist/prototype-community-bridge.ts",
+    "src/lib/waitlist/routing.ts",
+    "src/lib/waitlist/types.ts"
+  ]
+}

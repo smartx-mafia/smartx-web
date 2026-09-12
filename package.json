@@ -15,7 +15,8 @@
     "compile": "lingui compile",
     "trans": "npm run extract && npm run compile",
     "typecheck": "tsc --noEmit",
-    "test": "npm run test:blog",
+    "test": "npm run test:blog && npm run test:waitlist",
+    "test:waitlist": "tsc -p tsconfig.waitlist-tests.json && node --test .test-dist/tests/waitlist/*.test.js",
     "test:blog": "tsc -p tsconfig.blog-tests.json && node --test .test-dist/tests/blog/*.test.js"
   },
   "dependencies": {
