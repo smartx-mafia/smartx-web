@@ -129,6 +129,21 @@
 - `Stay connected` 保留 Telegram 与 `Follow SmartX`，新增可选 `Follow SmartX Founder` 外链：`https://x.com/David_MetaWorld`。新标签页打开，不写入任务或验证状态。
 - 两项调整均同步中英日韩；类型检查、lint、20 项 Waitlist 测试通过。桌面截图/录屏和四语言手机端截图已验收，无横向溢出；产物为 `output/playwright/share-dialog-single-layer-*` 与 `stay-connected-founder-*`。
 
+### 2026-09-12 · 独立移动端结果页
+
+- 设计依据：Figma `24508:39739`，桌面保留 `24473:39724` 已确认方案。共享 Home 导航不改。
+- 移动端按账号、人格、排名与操作、邀请、社群排序；账号右侧直接退出，点击身份查看账号底部面板。X 绑定后 handle 为主身份，邮箱为副身份。
+- 移动端隐藏人格关系；整个人格说明卡可展开/收起，保留引号、展开图标和键盘操作。桌面说明与 A 方案人格关系不变。
+- `Current ranking` 后跟提示图标；手机点击标题、图标或排名都打开同一底部面板，桌面保留 hover/focus 说明。
+- 账号、排名、下载、分享验证统一使用原生 dialog：桌面居中、手机贴底；含焦点约束、Escape、焦点归还、滚动与 visualViewport 软键盘避让。
+- 验证三个步骤为 `Post on X with your invite link` / `Copy your post link` / `Paste it below`。第一步可重新打开 intent；失败保留输入和就地错误；处理中禁止重复提交。
+- 只有服务端确认的 verified 才关闭面板并显示成功 Toast，包括轮询从 pending 变 verified。刷新已有已验证账号不重复提示；后续分享不再打开验证面板。
+- 独立 Waitlist Toast：复制成功、开始下载、绑定成功等；同时只显示一条，普通 4 秒、错误 6 秒，hover/focus/后台暂停，含读屏播报与 reduced-motion。验证错误仍留在表单，不用短暂 Toast 代替。
+- 下载点击后才选 X / Story；沿用 `/waitlist/og/` 数据和资源，新增 `format=story` 输出 1080×1920，默认 X 仍为 1200×630。手机调用系统分享/保存，不能确认用户已保存时不声称“图片已保存”。
+- 将账号依赖的 Waitlist 交互视图放在 hydration 后挂载，避免共享语言初始化与流式 Suspense 的时序冲突。分享 metadata 与 OG 路由继续服务端渲染，不改变爬虫预览。
+- 中英日韩文案同步。浏览器模拟覆盖 320/390/430 宽度、390×844 与 320×420 短视口、桌面 1440×900、焦点、展开、错误、验证成功与轮询、下载、Toast；真实导出另行检查英文/中文 PNG 尺寸和内容。
+- 真实手机软键盘与系统分享仍需实机验收。验证接口继续通过 `NEXT_PUBLIC_WAITLIST_SHARE_VERIFY_PATH` 显式配置，未启用旧分享完成接口；本次浏览器验证使用隔离模拟响应，不代表真实 X 服务端联调已完成。无新增依赖。
+
 ## 历史依赖风险记录（本轮 main 同步前）
 
 此前分享验证实施未新增或升级依赖，当时的依赖安全检查报告生产依赖共 44 项告警（8 low / 27 moderate / 8 high / 1 critical）。此数字属于同步 `5860477` 之前的基线，不代表本轮 main 依赖版本的最新审计结果。具体可利用性取决于部署与启用功能；依赖安全应单独复核，本轮不宣称依赖审计通过。

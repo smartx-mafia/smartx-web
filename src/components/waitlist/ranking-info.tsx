@@ -1,16 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import { useLingui } from "@lingui/react";
 import { t } from "@lingui/core/macro";
 import { Trans } from "@lingui/react/macro";
 import styles from "./waitlist.module.css";
+import { ResultDialog } from "./result-dialog";
 
 /** The same explanation is available with a mouse, keyboard, or touch. */
-export function RankingInfo() {
+export function RankingInfo({ children }: { children: ReactNode }) {
   useLingui();
   const [open, setOpen] = useState(false);
+  const [sheetOpen, setSheetOpen] = useState(false);
   const root = useRef<HTMLDivElement>(null);
   const id = useId();
 
@@ -31,8 +33,12 @@ export function RankingInfo() {
   }, [open]);
 
   return (
+    <div className={styles.rankingSummary}>
     <div className={styles.rankingLabel}>
-      <span><Trans>Current ranking</Trans></span>
+      <button type="button" className={styles.rankingTitle} onClick={() => {
+        if (window.matchMedia("(max-width: 750px)").matches) setSheetOpen(true);
+        else setOpen((value) => !value);
+      }}><Trans>Current ranking</Trans></button>
       <div
         className={styles.rankingInfo}
         ref={root}
@@ -48,7 +54,10 @@ export function RankingInfo() {
           aria-expanded={open}
           aria-describedby={open ? id : undefined}
           onFocus={(event) => { if (event.currentTarget.matches(":focus-visible")) setOpen(true); }}
-          onClick={() => setOpen((value) => !value)}
+          onClick={() => {
+            if (window.matchMedia("(max-width: 750px)").matches) { setOpen(false); setSheetOpen(true); }
+            else setOpen((value) => !value);
+          }}
         >
           <Image src="/assets/waitlist/result/info.svg" alt="" width={16} height={16} />
         </button>
@@ -56,6 +65,13 @@ export function RankingInfo() {
           <Trans>Your starting rank is based on when you connect X. Invite Boosts improve your position. Rankings are provisional and may change.</Trans>
         </div> : null}
       </div>
+    </div>
+    <div className={styles.rankingValue}>{children}
+      <button type="button" className={styles.mobileRankTrigger} aria-label={t`How ranking works`} aria-haspopup="dialog" onClick={() => setSheetOpen(true)} />
+    </div>
+    <ResultDialog open={sheetOpen} onClose={() => setSheetOpen(false)} title={t`Current ranking`}>
+      <p><Trans>Your starting rank is based on when you connect X. Invite Boosts improve your position. Rankings are provisional and may change.</Trans></p>
+    </ResultDialog>
     </div>
   );
 }

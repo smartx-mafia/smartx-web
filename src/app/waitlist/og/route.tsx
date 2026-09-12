@@ -3,6 +3,7 @@ import path from "node:path";
 
 import { ImageResponse } from "next/og";
 import type { NextRequest } from "next/server";
+import { StoryCard } from "./story-card";
 
 import { localeFromParam } from "@/lingui";
 import type { AppLocale } from "@/lingui";
@@ -152,9 +153,10 @@ export async function GET(request: NextRequest) {
   const cjkLayout = locale !== "en";
   const titleFontSize = cjkLayout ? (copy.name.length > 10 ? 44 : 56) : copy.name.length > 19 ? 52 : 64;
   const descriptionFontSize = copy.personaDescription.length > 155 ? 14 : 16;
+  const story = request.nextUrl.searchParams.get("format") === "story";
 
   return new ImageResponse(
-    (
+    story ? <StoryCard copy={copy} artUrl={artUrl} invite={invite} bodyFont={bodyFont} titleFont={titleFont} logo={assets.logoMark} yziLabs={assets.yziLabs} quote={assets.quoteMark} stats={parsed.stats} /> : (
       <div
         style={{
           width: "100%",
@@ -423,8 +425,8 @@ export async function GET(request: NextRequest) {
       </div>
     ),
     {
-      width: 1200,
-      height: 630,
+      width: story ? 1080 : 1200,
+      height: story ? 1920 : 630,
       fonts: [
         { name: "IBM Plex Sans", data: assets.plexRegular, weight: 400, style: "normal" },
         { name: "IBM Plex Sans", data: assets.plexMedium, weight: 500, style: "normal" },

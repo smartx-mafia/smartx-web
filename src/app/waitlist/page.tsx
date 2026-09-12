@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 
-import { WaitlistExperience } from "@/components/waitlist/waitlist-experience";
+import { WaitlistClientView } from "@/components/waitlist/waitlist-client-view";
 import { localeFromParam } from "@/lingui";
 import { QUIZ_ART_SRCS } from "@/lib/waitlist/persona";
 import { requestOrigin } from "@/lib/waitlist/public-share";
@@ -106,7 +106,7 @@ export default function WaitlistPage() {
         <link key={src} rel="preload" as="image" href={src} />
       ))}
       <Suspense>
-        <WaitlistExperience />
+        <WaitlistClientView />
       </Suspense>
     </>
   );

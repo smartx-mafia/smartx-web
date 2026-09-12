@@ -5951,6 +5951,29 @@
 .rankingInfo > button:focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; }
 .visuallyHidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 
+/* Mobile result review, Figma section 24508:39739. DOM reading order is
+   identity → personality → ranking/actions → invitation → community. */
+.resultIdentityCopy { padding: 0; border: 0; background: none; text-align: left; font: inherit; cursor: pointer; }
+.resultIdentityPrimary .accountChevron { display: none; }
+.accountDetails { display: grid; gap: 20px; }
+.accountDetails > div, .accountDetails > button { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.accountDetails img { flex-shrink: 0; }
+.accountDetails :is(strong, span) { overflow-wrap: anywhere; font-size: 15px; line-height: 24px; font-weight: 500; }
+.accountDetails > div:nth-last-child(2) { color: #a6a6a6; }
+.accountDetails > button { min-height: 52px; padding: 12px 16px; margin-top: 4px; border: 1px solid #303030; border-radius: 26px; background: #202020; color: #f5f5f5; font: inherit; cursor: pointer; justify-content: center; }
+.narrativeToggle, .mobileInviteExplanation, .mobileRankTrigger { display: none; }
+.rankingSummary { display: grid; gap: 16px; }
+.rankingTitle { padding: 0; min-height: 28px; border: 0; background: none; color: inherit; font: inherit; cursor: pointer; text-align: left; }
+.rankingTitle:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.rankingValue > strong { display: block; margin: 0; font-size: 64px; line-height: 76px; color: var(--result-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+.resultIdentityCopy:focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; border-radius: 4px; }
+@media (min-width: 1101px) {
+  .page[data-stage="result"] .resultStage { grid-template-rows: auto 1fr; row-gap: 32px; }
+  .page[data-stage="result"] .resultStage > .resultIdentity { grid-column: 2; grid-row: 1; }
+  .page[data-stage="result"] .resultStage > .personaPoster { grid-column: 1; grid-row: 1 / span 2; }
+  .page[data-stage="result"] .resultStage > .resultPanel { grid-column: 2; grid-row: 2; }
+}
+
 @media (hover: hover) and (pointer: fine) {
   .resultSignOut:hover { border-color: #a6a6a6; background: #161616; }
   .rankingInfo > button:hover { background: #303030; }
@@ -5995,4 +6018,64 @@
   .page[data-stage="result"] .chemistryBlock,
   .page[data-stage="result"] .resultActions { grid-template-columns: minmax(0, 1fr); }
   .page[data-stage="result"] .scoreAxis > div:first-child { flex-wrap: wrap; }
+}
+
+@media (max-width: 750px) {
+  .page[data-stage="result"] .stage { width: calc(100% - 40px); padding: 12px 0 max(32px, env(safe-area-inset-bottom)); }
+  .page[data-stage="result"] .resultStage, .page[data-stage="result"] .resultPanel { gap: 24px; }
+  .resultIdentity { min-height: 44px; align-items: center; gap: 12px; }
+  .resultIdentityCopy { min-height: 44px; }
+  .resultIdentityPrimary { gap: 8px; }
+  .resultIdentityPrimary img { width: 20px; height: 20px; flex-basis: 20px; }
+  .resultIdentityPrimary strong { flex: 1; font-size: 14px; line-height: 20px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .resultIdentityPrimary .accountChevron { display: block; width: 16px; height: 16px; flex-basis: 16px; transform: rotate(90deg); }
+  .resultIdentityEmail { margin: 2px 0 0 28px; font-size: 12px; line-height: 18px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .page[data-stage="result"] .posterIdentity { margin-bottom: 16px; }
+  .page[data-stage="result"] .posterIdentity h2 { font-size: clamp(36px, 10.25vw, 40px); line-height: 1.2; overflow-wrap: normal; }
+  .page[data-stage="result"] .personaArt { aspect-ratio: 700 / 330; }
+  .page[data-stage="result"] .posterScores { gap: 14px; margin-top: 16px; }
+  .page[data-stage="result"] .scoreAxis > div:first-child { gap: 4px; flex-wrap: nowrap; }
+  .page[data-stage="result"] .scoreAxis > div:first-child :is(span, strong) { font-size: 12px; line-height: 18px; }
+  .page[data-stage="result"] .scoreTrack, .page[data-stage="result"] .scoreTrack i { height: 4px; }
+  .page[data-stage="result"] .scoreTrack { background: #222; }
+  .page[data-stage="result"] .personaNarrative { position: relative; gap: 12px; margin-top: 16px; padding: 16px; border-radius: 12px; background: #111; }
+  .page[data-stage="result"] .personaNarrative > blockquote { padding-right: 36px; font-size: 16px; line-height: 24px; background: none; border-radius: 0; }
+  .page[data-stage="result"] .personaNarrative > blockquote::after { top: 0; right: 0; width: 24px; height: 20px; }
+  .page[data-stage="result"] .personaNarrative > .personaDescription { display: none; font-size: 14px; line-height: 22px; }
+  .page[data-stage="result"] .personaNarrative[data-expanded="true"] > .personaDescription { display: block; }
+  .page[data-stage="result"] .narrativeToggle { display: flex; justify-content: flex-end; align-items: center; height: 20px; padding: 0; border: 0; background: transparent; cursor: pointer; }
+  .narrativeToggle::before { position: absolute; inset: 0; content: ""; border-radius: 12px; }
+  .narrativeToggle:focus-visible { outline: none; }
+  .narrativeToggle:focus-visible::before { outline: 2px solid var(--teal); outline-offset: 3px; }
+  .narrativeToggle img { transform: rotate(90deg); }
+  .personaNarrative[data-expanded="true"] .narrativeToggle img { transform: rotate(-90deg); }
+  .page[data-stage="result"] .chemistryBlock { display: none; }
+  .page[data-stage="result"] .rankBlock { min-height: 0; gap: 12px; padding: 0; border: 0; border-radius: 0; background: none; }
+  .rankingSummary { display: flex; min-height: 44px; align-items: center; justify-content: space-between; gap: 12px; }
+  .rankingLabel { font-size: 14px; line-height: 20px; font-weight: 400; gap: 0; }
+  .rankingTitle { min-height: 44px; }
+  .rankingInfo > button { margin: 0; width: 32px; height: 44px; }
+  .rankingTooltip { display: none; }
+  .rankingValue { position: relative; min-height: 44px; display: flex; align-items: center; justify-content: flex-end; }
+  .rankingValue > strong { font-size: 24px; line-height: 44px; }
+  .mobileRankTrigger { display: block; position: absolute; inset: 0; min-width: 44px; border: 0; background: transparent; cursor: pointer; }
+  .mobileRankTrigger:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 4px; }
+  .page[data-stage="result"] .rankLocked { min-height: 44px; gap: 8px; }
+  .page[data-stage="result"] .rankLocked img { width: 20px; height: 20px; flex-basis: 20px; }
+  .page[data-stage="result"] .rankLocked p { display: none; }
+  .page[data-stage="result"] .rankSync { max-width: 160px; font-size: 12px; line-height: 18px; text-align: right; }
+  .page[data-stage="result"] .resultActions { grid-template-columns: minmax(104px, 128fr) minmax(0, 212fr); gap: 10px; }
+  .page[data-stage="result"] .downloadButton, .page[data-stage="result"] .rankBlock .shareButton { min-height: 52px; padding: 12px 8px; gap: 8px; font-size: 16px; line-height: 24px; }
+  .page[data-stage="result"] .invitationDeck { border-top: 1px solid #242424; padding-top: 20px; }
+  .page[data-stage="result"] .invitationDeck > header { margin-bottom: 12px; }
+  .page[data-stage="result"] .invitationDeck > header > span { font-size: 18px; line-height: 26px; }
+  .page[data-stage="result"] .primaryInviteCard { min-height: 64px; padding: 10px 8px 10px 12px; border-radius: 12px; }
+  .page[data-stage="result"] .primaryInviteCard > div span { display: none; }
+  .page[data-stage="result"] .primaryInviteCard > div strong { display: block; width: 100%; font-size: 13px; line-height: 20px; font-weight: 400; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .page[data-stage="result"] .inviteSteps { display: none; }
+  .mobileInviteExplanation { display: block; margin: 12px 0 0; color: #a6a6a6; font-size: 13px; line-height: 20px; }
+  .page[data-stage="result"] .optionalCommunity { padding-top: 20px; }
+  .page[data-stage="result"] .optionalCommunity > span { font-size: 13px; line-height: 20px; font-weight: 400; }
+  .page[data-stage="result"] .optionalCommunity > div { display: flex; flex-direction: column; align-items: flex-start; gap: 0; margin-top: 4px; }
+  .page[data-stage="result"] .optionalCommunity :is(button, a) { min-height: 44px; font-size: 14px; line-height: 20px; }
 }

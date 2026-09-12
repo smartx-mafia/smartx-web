@@ -10,7 +10,7 @@ import { Plural, Trans } from "@lingui/react/macro";
 import type { MessageDescriptor } from "@lingui/core";
 
 import { ConsumerHeader } from "@/components/consumer-network/consumer-header";
-import { notifyError, notifyNotice } from "@/components/site/app-notice";
+import { notifyError } from "@/components/site/app-notice";
 import { isInviteAccepted, inviteCheckMessage, isValidEmail, isValidInviteCode, normalizeEmail, normalizeInviteCode, resolvePrototypeResult, waitlistApi } from "@/lib/waitlist/api";
 import {
   hydrateQuestions,
@@ -25,14 +25,9 @@ import {
 } from "@/lib/waitlist/persona";
 import { localizedOptionLabel, localizedQuestionPrompt } from "@/lib/waitlist/quiz-i18n";
 import {
-  copyShareImage,
   createImagePreviewUrl,
-  downloadShareImage,
   isAndroid,
   isIOS,
-  isMobileSharePlatform,
-  SHARE_IMAGE_EXT,
-  shareFileName,
   type ShareImageAction,
   type ShareImageActionResult,
 } from "@/lib/waitlist/share-image";
@@ -75,7 +70,9 @@ import { WaitlistActionScope, WaitlistButton } from "./waitlist-button";
 import { ShareVerificationDialog } from "./share-verification-dialog";
 import { RankingInfo } from "./ranking-info";
 import { readShareVerification, verifiedInviteCount, verifiedRank, type ShareVerification } from "@/lib/waitlist/share-verification";
-import { fetchResultCard, type RenderedResultCard } from "./result-card-export";
+import { ResultDialog } from "./result-dialog";
+import { DownloadDialog } from "./download-dialog";
+import { ResultToast, useResultToast } from "./result-toast";
 import styles from "./waitlist.module.css";
 
 const WAITLIST_URL = "https://smartx.io/waitlist/";
@@ -311,19 +308,29 @@ function AccountSession({
 }) {
   useLingui();
 
+  const [accountOpen, setAccountOpen] = useState(false);
+
   if (resultIdentity) {
     return (
       <div className={styles.resultIdentity}>
-        <div className={styles.resultIdentityCopy}>
+        <button type="button" className={styles.resultIdentityCopy} aria-label={t`Account details`} aria-haspopup="dialog" onClick={() => setAccountOpen(true)}>
           <div className={styles.resultIdentityPrimary}>
             <Image src={xUsername ? "/assets/waitlist/x.svg" : "/assets/waitlist/result/mail.svg"} alt="" width={28} height={28} />
             <strong>{xUsername ? `@${xUsername}` : email || t`Email verified`}</strong>
+            <Image className={styles.accountChevron} src="/assets/waitlist/result/chevron.svg" alt="" width={16} height={16} />
           </div>
           {xUsername && email ? <p className={styles.resultIdentityEmail}>{email}</p> : null}
-        </div>
+        </button>
         <WaitlistButton className={styles.resultSignOut} type="button" onClick={onSignOut} aria-label={t`Sign out`} title={t`Sign out`}>
           <Image src="/assets/waitlist/result/log-out.svg" alt="" width={20} height={20} />
         </WaitlistButton>
+        <ResultDialog open={accountOpen} onClose={() => setAccountOpen(false)} title={t`Account details`}>
+          <div className={styles.accountDetails}>
+            {xUsername ? <div><Image src="/assets/waitlist/x.svg" alt="" width={20} height={20} /><strong>@{xUsername}</strong></div> : null}
+            <div><Image src="/assets/waitlist/result/mail.svg" alt="" width={20} height={20} /><span>{email || t`Email verified`}</span></div>
+            <button type="button" onClick={() => { setAccountOpen(false); onSignOut(); }}><Image src="/assets/waitlist/result/log-out.svg" alt="" width={20} height={20} /><Trans>Sign out</Trans></button>
+          </div>
+        </ResultDialog>
       </div>
     );
   }
@@ -379,6 +386,7 @@ function PersonaPoster({
   useLingui();
   const personaName = localizedPersonaName(outcome.persona);
   const personaDescription = localizedPersonaDescription(outcome.persona);
+  const [expanded, setExpanded] = useState(false);
   const titleStyle = { "--persona-title-fit": personaTitleFit(personaName) } as CSSProperties;
 
   return (
@@ -393,9 +401,10 @@ function PersonaPoster({
         <ScoreAxis label={t`Resilience`} score={outcome.stats.resilience} />
       </div>
       {outcome.persona.roast || personaDescription ? (
-        <div className={styles.personaNarrative}>
+        <div className={styles.personaNarrative} data-expanded={expanded}>
           {outcome.persona.roast ? <blockquote>{localizedPersonaRoast(outcome.persona)}</blockquote> : null}
           {personaDescription ? <p className={styles.personaDescription}>{personaDescription}</p> : null}
+          {personaDescription ? <button type="button" className={styles.narrativeToggle} aria-expanded={expanded} aria-label={expanded ? t`Collapse personality` : t`Expand personality`} onClick={() => setExpanded((value) => !value)}><Image src="/assets/waitlist/result/chevron.svg" alt="" width={16} height={16} /></button> : null}
         </div>
       ) : null}
       <section className={styles.chemistryBlock} aria-label={t`Persona chemistry`}>
@@ -451,12 +460,11 @@ export function WaitlistExperience() {
   const [verifiedFriends, setVerifiedFriends] = useState<number | null>(null);
   const [ownInviteCode, setOwnInviteCode] = useState("");
   const [rank, setRank] = useState<number | null>(null);
-  const [preparedCard, setPreparedCard] = useState<RenderedResultCard | null>(null);
-  const [exportError, setExportError] = useState(false);
+  const [downloadOpen, setDownloadOpen] = useState(false);
+  const { toast, showToast, dismissToast } = useResultToast();
+  const verificationRef = useRef(verification);
+  verificationRef.current = verification;
   const [sharePreview, setSharePreview] = useState<{ url: string; tip: string } | null>(null);
-  const [exporting, setExporting] = useState(false);
-  const preparedCardRef = useRef(preparedCard);
-  preparedCardRef.current = preparedCard;
   const activeTokenRef = useRef(userToken);
   activeTokenRef.current = userToken;
   const verificationRevisionRef = useRef(0);
@@ -530,6 +538,8 @@ export function WaitlistExperience() {
   };
 
   const resetAuth = (options?: { keepDraft?: boolean }) => {
+    setDownloadOpen(false);
+    dismissToast();
     activeTokenRef.current = "";
     verificationRevisionRef.current += 1;
     clearUserToken();
@@ -747,6 +757,10 @@ export function WaitlistExperience() {
         if (info.inviteCode) setOwnInviteCode(info.inviteCode);
         if (isUnlockedResult(result)) {
           const nextVerification = readShareVerification(result.shareVerification);
+          if (nextVerification.status === "verified" && verificationRef.current.status !== "verified") {
+            setVerificationOpen(false);
+            showToast(t`X connected. Your rank is unlocked.`);
+          }
           setRank(verifiedRank(nextVerification, result.rank));
           setVerification(nextVerification);
           setVerifiedFriends(verifiedInviteCount(result.verifiedInviteCount));
@@ -767,31 +781,7 @@ export function WaitlistExperience() {
       window.clearInterval(timer);
       document.removeEventListener("visibilitychange", onVisible);
     };
-  }, [stage, userToken]);
-
-  useEffect(() => {
-    if (stage !== "result" || !ownInviteCode || !shareResultCode) return;
-    let disposed = false;
-    let rendered: RenderedResultCard | null = null;
-    setPreparedCard(null);
-    setExportError(false);
-    fetchResultCard(ownInviteCode, locale, shareResultCode)
-      .then((card) => {
-        rendered = card;
-        if (disposed) {
-          URL.revokeObjectURL(card.href);
-          return;
-        }
-        setPreparedCard(card);
-      })
-      .catch(() => {
-        if (!disposed) setExportError(true);
-      });
-    return () => {
-      disposed = true;
-      if (rendered) URL.revokeObjectURL(rendered.href);
-    };
-  }, [stage, ownInviteCode, locale, shareResultCode]);
+  }, [stage, userToken, showToast]);
 
   const ensureQuestions = async () => {
     if (questions.length) return questions;
@@ -1150,6 +1140,8 @@ export function WaitlistExperience() {
       setVerification(next);
       setRank(null);
       if (next.status === "verified") {
+        setVerificationOpen(false);
+        showToast(t`X connected. Your rank is unlocked.`);
         try {
           const workspace = await fetchWorkspace(token);
           if (activeTokenRef.current === token && workspace.kind === "result") {
@@ -1171,12 +1163,13 @@ export function WaitlistExperience() {
     try {
       await navigator.clipboard.writeText(makeInvitationUrl(code, true));
       setInviteLinkCopied(true);
+      showToast(t`Invite link copied.`);
       window.setTimeout(() => setInviteLinkCopied(false), 1400);
     } catch (error) {
-      notifyError(
+      showToast(
         errorMessage(error) === GENERIC_ERROR
           ? t`Couldn’t copy the invite link. Try again.`
-          : localizeWaitlistMessage(errorMessage(error)),
+          : localizeWaitlistMessage(errorMessage(error)), "error",
       );
     }
   };
@@ -1184,7 +1177,7 @@ export function WaitlistExperience() {
   const shareImageFeedback = (action: ShareImageAction, result: Exclude<ShareImageActionResult, "cancelled">) => {
     if (result === "clipboard") return t`Copied!`;
     if (result === "share") return t`Selection successful`;
-    if (result === "download") return t`Image saved.`;
+    if (result === "download") return t`Download started.`;
     if (result === "tab") return t`Image opened in a new tab. Long press to save.`;
     if (isIOS()) {
       return action === "copy" ? t`Long press the image and tap Copy.` : t`Long press the image and tap Save Image.`;
@@ -1211,60 +1204,7 @@ export function WaitlistExperience() {
         return { url: createImagePreviewUrl(blob), tip };
       });
     }
-    notifyNotice(tip);
-  };
-
-  const runDownloadButtonAction = (card: RenderedResultCard) => {
-    const fileName = shareFileName(card.filename);
-    const pending = isMobileSharePlatform()
-      ? copyShareImage(card.blob, fileName)
-      : downloadShareImage(card.blob, fileName, card.href);
-    return pending
-      .then((result) => applyShareResult(isMobileSharePlatform() ? "copy" : "download", result, card.blob))
-      .catch(() => notifyError(t`Couldn’t export the image. Try again.`));
-  };
-
-  const downloadResultCard = () => {
-    const card = preparedCardRef.current;
-    if (card) {
-      void runDownloadButtonAction(card);
-      return;
-    }
-
-    if (!ownInviteCode || !shareResultCode || exporting) {
-      notifyNotice(t`Preparing…`);
-      return;
-    }
-
-    setExporting(true);
-    void fetchResultCard(ownInviteCode, locale, shareResultCode)
-      .then((rendered) => {
-        setPreparedCard(rendered);
-        setExportError(false);
-        return runDownloadButtonAction(rendered);
-      })
-      .catch(() => {
-        setExportError(true);
-        notifyError(t`Couldn’t export the image. Try again.`);
-      })
-      .finally(() => setExporting(false));
-  };
-
-  const onPreparedDownloadClick = (event: { preventDefault: () => void }) => {
-    const card = preparedCardRef.current;
-    if (!card) {
-      event.preventDefault();
-      downloadResultCard();
-      return;
-    }
-
-    if (isMobileSharePlatform()) {
-      event.preventDefault();
-      void runDownloadButtonAction(card);
-      return;
-    }
-
-    notifyNotice(t`Image saved.`);
+    showToast(tip, result === "download" || result === "clipboard" ? "success" : "info");
   };
 
   return (
@@ -1613,10 +1553,10 @@ export function WaitlistExperience() {
         {stage === "result-pending" && (
           <div className={styles.formStage}>
             <h1>
-              <Trans>Your result is saved</Trans>
+              <Trans>Couldn’t load your result</Trans>
             </h1>
             <p>
-              <Trans>Your result isn’t available from the server yet. You don’t need to join or follow to view it. Please try again shortly.</Trans>
+              <Trans>Please try again in a moment.</Trans>
             </p>
             <AccountSession
               email={verifiedEmail}
@@ -1631,41 +1571,29 @@ export function WaitlistExperience() {
 
         {stage === "result" && ownOutcome && (
           <div className={styles.resultStage}>
+            {loggedIn ? <AccountSession resultIdentity email={verifiedEmail} label={t`Signed in as`} xUsername={shareCompleted ? verification.xUser?.username : undefined} onSignOut={signOutWaitlist} /> : null}
             <PersonaPoster key={ownOutcome.persona.mark} outcome={ownOutcome} />
             {loggedIn ? (
             <aside className={styles.resultPanel}>
-              <AccountSession resultIdentity email={verifiedEmail} label={t`Signed in as`} xUsername={shareCompleted ? verification.xUser?.username : undefined} onSignOut={signOutWaitlist} />
               <div className={styles.rankBlock} data-boosted={shareCompleted}>
-                <RankingInfo />
+                <RankingInfo>
                 {shareCompleted ? <>
                 {rank !== null ? <strong key={rank}>#{rank.toLocaleString("en-US")}</strong> : <p className={styles.rankSync}><Trans>Your share is verified. Your ranking is updating.</Trans></p>}
                 </> : <div className={styles.rankLocked}>
                   <Image src="/assets/waitlist/result/lock.svg" alt={t`Rank locked`} width={48} height={48} />
                   {verification.status === "pending" ? <p role="status"><Trans>We’re checking your post</Trans></p> : null}
                 </div>}
+                </RankingInfo>
                 <div className={styles.resultActions}>
-                  {preparedCard ? (
-                    <a
-                      className={styles.downloadButton}
-                      href={preparedCard.href}
-                      download={`${shareFileName(preparedCard.filename)}.${SHARE_IMAGE_EXT}`}
-                      onClick={onPreparedDownloadClick}
-                    >
-                      <Image src="/assets/waitlist/download.svg" alt="" width={20} height={20} aria-hidden="true" />
-                      <Trans>Download</Trans>
-                    </a>
-                  ) : (
                     <button
                       type="button"
                       className={styles.downloadButton}
-                      disabled={exporting || !exportError}
-                      title={exportError ? t`Couldn’t export the image. Try again.` : undefined}
-                      onClick={downloadResultCard}
+                      disabled={!ownInviteCode || !shareResultCode}
+                      onClick={() => setDownloadOpen(true)}
                     >
                       <Image src="/assets/waitlist/download.svg" alt="" width={20} height={20} aria-hidden="true" />
-                      {exportError ? t`Download` : t`Preparing…`}
+                      <Trans>Download</Trans>
                     </button>
-                  )}
                   <WaitlistButton className={styles.shareButton} disabled={!ownInviteCode} onAction={shareResult}>
                     {verification.status === "pending" ? t`Check verification` : shareCompleted ? t`Share result` : t`Share to unlock`}
                   </WaitlistButton>
@@ -1707,6 +1635,7 @@ export function WaitlistExperience() {
                   <li><Trans>Friend joins via your link and connects X</Trans></li>
                   <li><Trans>You earn +5 Boost</Trans></li>
                 </ol>
+                <p className={styles.mobileInviteExplanation}><Trans>A friend joins via your link and connects X. You earn +5 Boost.</Trans></p>
               </section>
               <section className={styles.optionalCommunity} aria-label={t`Stay connected`}>
                 <span><Trans>Stay connected</Trans></span>
@@ -1722,7 +1651,9 @@ export function WaitlistExperience() {
         )}
       </section>
     </main>
-    {loggedIn && stage === "result" ? <ShareVerificationDialog key={userInfo?.userId ?? userToken} open={verificationOpen} onClose={() => setVerificationOpen(false)} verification={verification} onSubmit={verifySharedPost} /> : null}
+    {loggedIn && stage === "result" ? <ShareVerificationDialog key={userInfo?.userId ?? userToken} open={verificationOpen} onClose={() => setVerificationOpen(false)} verification={verification} onSubmit={verifySharedPost} onShare={shareResult} /> : null}
+    {loggedIn && stage === "result" && shareResultCode ? <DownloadDialog key={userToken} open={downloadOpen} onClose={() => setDownloadOpen(false)} inviteCode={ownInviteCode} locale={locale} result={shareResultCode} onResult={(action, blob) => applyShareResult("download", action, blob)} onError={() => showToast(t`Couldn’t export the image. Try again.`, "error")} /> : null}
+    <ResultToast toast={toast} onDismiss={dismissToast} />
     {sharePreview ? (
       <div className={styles.sharePreview} onClick={closeSharePreview}>
         <p>{sharePreview.tip}</p>
