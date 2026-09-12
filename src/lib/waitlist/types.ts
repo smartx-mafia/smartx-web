@@ -116,6 +116,8 @@ export type UserInfo = {
   shareCompleted: number;
   inviteCode: string;
   inviteNum: number;
+  validInviteNum?: number;
+  twitterBound?: number;
   marketingSubscribed: number;
 };
 
@@ -139,6 +141,8 @@ export type MyResultUnlocked = ResultCard & {
   rank?: number | null;
   shareVerification?: ShareVerification;
   verifiedInviteCount?: number;
+  twitterBound?: number;
+  validInviteNum?: number;
   totalUsers: number;
   shareCompleted: number;
   inviteNum: number;
@@ -165,11 +169,13 @@ export type CommunityCompleteResult = {
 export type InviteFriend = {
   userId: string;
   joinedAt: number;
+  twitterBound?: number;
 };
 
 export type InviteFriendsView = {
   list: InviteFriend[];
   total: number;
+  validTotal?: number;
   totalPages: number;
 };
 
@@ -199,8 +205,14 @@ export class WaitlistApiError extends Error {
   }
 }
 
+export const TWITTER_ALREADY_BOUND_MESSAGE = "Twitter account already bound";
+
 export function isWaitlistApiError(error: unknown): error is WaitlistApiError {
   return error instanceof WaitlistApiError;
+}
+
+export function isTwitterAlreadyBoundError(error: unknown): error is WaitlistApiError {
+  return isWaitlistApiError(error) && error.message === TWITTER_ALREADY_BOUND_MESSAGE;
 }
 
 export function isUserApiError(error: unknown): error is WaitlistApiError {

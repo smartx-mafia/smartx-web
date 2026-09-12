@@ -24,6 +24,17 @@ export function shareTweetText(
   return roast ? `${headline}\n\n“${roast}”\n\n${cta}` : `${headline}\n\n${cta}`;
 }
 
+/** Backend tweet checks look for the full `/waitlist/?invite=` URL as its own line. */
+export function shareTweetTextWithInvite(
+  persona: Pick<Persona, "name" | "cn" | "roast" | "roastZh" | "mark" | "code">,
+  locale: AppLocale,
+  inviteUrl: string,
+) {
+  const url = inviteUrl.trim();
+  const body = shareTweetText(persona, locale);
+  return url ? `${body}\n\n${url}` : body;
+}
+
 export function shareOgCopy(
   persona: Pick<Persona, "name" | "cn" | "roast" | "roastZh" | "mark" | "code"> &
     Partial<Pick<Persona, "description" | "descriptionZh">>,

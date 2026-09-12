@@ -27,29 +27,17 @@ msgstr "{0} 人已跟买"
 msgid "{minutes} min read"
 msgstr "阅读约 {minutes} 分钟"
 
-#: src/lib/waitlist/share-copy.ts:40
+#: src/lib/waitlist/share-copy.ts:51
 msgid "{name} — SmartX trader type card"
 msgstr "{name} — SmartX 交易人格卡"
 
-#: src/components/waitlist/waitlist-experience.tsx:1609
+#: src/components/waitlist/waitlist-experience.tsx:1722
 msgid "{verifiedFriends, plural, one {# verified friend} other {# verified friends}}"
 msgstr "{verifiedFriends} 位有效好友"
 
-#: src/components/waitlist/waitlist-experience.tsx:1705
-#~ msgid "{verifiedFriends} friends joined via your invite."
-#~ msgstr "{verifiedFriends} 位好友已通过你的邀请加入。"
-
-#: src/components/waitlist/waitlist-experience.tsx:1454
+#: src/components/waitlist/waitlist-experience.tsx:1567
 msgid "← Back"
 msgstr "← 返回"
-
-#: src/components/waitlist/waitlist-experience.tsx:1653
-#~ msgid "+10 Boost"
-#~ msgstr "+10 Boost"
-
-#: src/components/waitlist/waitlist-experience.tsx:1663
-#~ msgid "+5 Boost"
-#~ msgstr "+5 Boost"
 
 #: src/components/consumer-network/consumer-home.tsx:207
 msgid "<0>The social trading app for memes, perps,</0><1>stocks and prediction markets. Follow</1><2>verified traders and copy in one tap.</2>"
@@ -86,11 +74,11 @@ msgstr "5 USDC · {0} @ {1}"
 msgid "A coin you don't hold is up 40%. What do you do?"
 msgstr "你没持有的币涨了 40%，你会怎么做？"
 
-#: src/components/waitlist/waitlist-experience.tsx:1638
+#: src/components/waitlist/waitlist-experience.tsx:1751
 msgid "A friend joins via your link and connects X. You earn +5 Boost."
 msgstr "好友通过你的链接加入并绑定 X，你即可获得 +5 Boost。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1255
+#: src/components/waitlist/waitlist-experience.tsx:1368
 msgid "A result was shared with you"
 msgstr "有人向你分享了测试结果"
 
@@ -107,13 +95,13 @@ msgstr "你信任的交易员发了条很有把握的喊单，你怎么做？"
 msgid "A verified trader liked this"
 msgstr "一位实盘交易员赞了这个盘口"
 
-#: src/components/waitlist/waitlist-experience.tsx:316
-#: src/components/waitlist/waitlist-experience.tsx:327
+#: src/components/waitlist/waitlist-experience.tsx:346
+#: src/components/waitlist/waitlist-experience.tsx:357
 msgid "Account details"
 msgstr "账号信息"
 
-#: src/components/waitlist/waitlist-experience.tsx:1283
-#: src/components/waitlist/waitlist-experience.tsx:1325
+#: src/components/waitlist/waitlist-experience.tsx:1396
+#: src/components/waitlist/waitlist-experience.tsx:1438
 msgid "Already tested? View my result"
 msgstr "已经测过了？查看我的结果"
 
@@ -138,19 +126,19 @@ msgstr "平均成本 · 市值 $1.52B"
 msgid "Avg entry · $228.40"
 msgstr "平均成本 · $228.40"
 
-#: src/components/waitlist/waitlist-experience.tsx:1367
+#: src/components/waitlist/waitlist-experience.tsx:1480
 msgid "Back"
 msgstr "返回"
 
-#: src/components/waitlist/share-verification-dialog.tsx:65
+#: src/components/waitlist/share-verification-dialog.tsx:110
 msgid "Back to my result"
 msgstr "返回我的结果"
 
-#: src/components/waitlist/waitlist-experience.tsx:1345
+#: src/components/waitlist/waitlist-experience.tsx:1458
 msgid "Back to start"
 msgstr "返回开头"
 
-#: src/lib/waitlist/share-copy.ts:46
+#: src/lib/waitlist/share-copy.ts:57
 msgid "Backed by"
 msgstr "投资方"
 
@@ -158,7 +146,7 @@ msgstr "投资方"
 msgid "Be early"
 msgstr "抢先入场"
 
-#: src/components/waitlist/waitlist-experience.tsx:411
+#: src/components/waitlist/waitlist-experience.tsx:441
 msgid "Best match"
 msgstr "最佳搭档"
 
@@ -170,14 +158,6 @@ msgstr "最佳搭档"
 #: src/components/site/site-header.tsx:155
 msgid "Blog"
 msgstr "博客"
-
-#: src/components/waitlist/waitlist-experience.tsx:1668
-#~ msgid "Boost improves your position. Final rank is confirmed after all Boost is counted."
-#~ msgstr "Boost 可提升当前排位；所有 Boost 统计完成后确认最终名次。"
-
-#: src/components/waitlist/waitlist-experience.tsx:1633
-#~ msgid "Both are required to continue."
-#~ msgstr "两项都完成后才能继续。"
 
 #: src/lib/waitlist/quiz-i18n.ts:19
 msgid "Buy a small amount now and see how it goes."
@@ -191,7 +171,7 @@ msgstr "加仓，摊低成本。"
 msgid "Campaign"
 msgstr "活动"
 
-#: src/components/waitlist/waitlist-experience.tsx:1543
+#: src/components/waitlist/waitlist-experience.tsx:1656
 msgid "Change Email"
 msgstr "更换邮箱"
 
@@ -203,28 +183,28 @@ msgstr "图表、资金流、聪明钱钱包，链上全都追。自己进场很
 msgid "Check it against onchain data first."
 msgstr "先拿链上数据核对一下。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1598
+#: src/components/waitlist/waitlist-experience.tsx:1711
 msgid "Check verification"
 msgstr "查看验证进度"
 
-#: src/components/waitlist/waitlist-experience.tsx:1467
+#: src/components/waitlist/waitlist-experience.tsx:1580
 msgid "Check your inbox"
 msgstr "查收邮件"
 
-#: src/components/waitlist/waitlist-experience.tsx:1527
-#: src/components/waitlist/waitlist-experience.tsx:1539
+#: src/components/waitlist/waitlist-experience.tsx:1640
+#: src/components/waitlist/waitlist-experience.tsx:1652
 msgid "Checking code…"
 msgstr "正在验证…"
 
-#: src/components/waitlist/waitlist-experience.tsx:1245
+#: src/components/waitlist/waitlist-experience.tsx:1358
 msgid "Checking invite, result, and sign-in state."
 msgstr "正在检查邀请、结果与登录状态。"
 
-#: src/components/waitlist/share-verification-dialog.tsx:87
+#: src/components/waitlist/share-verification-dialog.tsx:132
 msgid "Checking your post…"
 msgstr "正在验证帖子…"
 
-#: src/components/waitlist/waitlist-experience.tsx:1483
+#: src/components/waitlist/waitlist-experience.tsx:1596
 msgid "Clear"
 msgstr "清空"
 
@@ -232,7 +212,7 @@ msgstr "清空"
 #: src/components/export-key/export-key-experience.tsx:293
 #: src/components/site/app-notice.tsx:56
 #: src/components/waitlist/result-dialog.tsx:45
-#: src/components/waitlist/waitlist-experience.tsx:1664
+#: src/components/waitlist/waitlist-experience.tsx:1777
 msgid "Close"
 msgstr "关闭"
 
@@ -245,11 +225,7 @@ msgstr "直接平仓，不跟群里对着干。"
 msgid "Close navigation"
 msgstr "关闭导航"
 
-#: src/components/waitlist/share-verification-dialog.tsx:76
-#~ msgid "Close verification"
-#~ msgstr "关闭验证窗口"
-
-#: src/components/waitlist/waitlist-experience.tsx:407
+#: src/components/waitlist/waitlist-experience.tsx:437
 msgid "Collapse personality"
 msgstr "收起人格说明"
 
@@ -261,32 +237,27 @@ msgstr "收起人格说明"
 msgid "Community"
 msgstr "社区"
 
-#: src/components/waitlist/waitlist-experience.tsx:1618
-#: src/components/waitlist/waitlist-experience.tsx:1625
-#~ msgid "Completed"
-#~ msgstr "已完成"
-
-#: src/components/waitlist/waitlist-experience.tsx:343
+#: src/components/waitlist/waitlist-experience.tsx:373
 msgid "Connected on X: @{xUsername}"
 msgstr "已绑定 X：@{xUsername}"
 
 #: src/components/export-key/export-key-experience.tsx:242
-#: src/components/waitlist/waitlist-experience.tsx:1539
+#: src/components/waitlist/waitlist-experience.tsx:1652
 msgid "Continue"
 msgstr "继续"
 
-#: src/components/waitlist/waitlist-experience.tsx:399
-#: src/lib/waitlist/share-copy.ts:41
+#: src/components/waitlist/waitlist-experience.tsx:429
+#: src/lib/waitlist/share-copy.ts:52
 msgid "Conviction"
 msgstr "信仰"
 
-#: src/components/waitlist/waitlist-experience.tsx:1625
-#: src/components/waitlist/waitlist-experience.tsx:1626
-#: src/components/waitlist/waitlist-experience.tsx:1630
+#: src/components/waitlist/waitlist-experience.tsx:1738
+#: src/components/waitlist/waitlist-experience.tsx:1739
+#: src/components/waitlist/waitlist-experience.tsx:1743
 msgid "Copied"
 msgstr "已复制"
 
-#: src/components/waitlist/waitlist-experience.tsx:1178
+#: src/components/waitlist/waitlist-experience.tsx:1291
 msgid "Copied!"
 msgstr "复制成功"
 
@@ -294,25 +265,20 @@ msgstr "复制成功"
 msgid "Copy"
 msgstr "跟买"
 
-#: src/components/waitlist/waitlist-experience.tsx:1723
-#~ msgctxt "invite-link"
-#~ msgid "Copy"
-#~ msgstr "复制"
-
-#: src/components/waitlist/waitlist-experience.tsx:1625
-#: src/components/waitlist/waitlist-experience.tsx:1626
+#: src/components/waitlist/waitlist-experience.tsx:1738
+#: src/components/waitlist/waitlist-experience.tsx:1739
 msgid "Copy invitation link"
 msgstr "复制邀请链接"
 
-#: src/components/waitlist/share-verification-dialog.tsx:74
+#: src/components/waitlist/share-verification-dialog.tsx:119
 msgid "Copy your post link"
 msgstr "复制你的帖子链接"
 
-#: src/components/waitlist/waitlist-experience.tsx:1171
+#: src/components/waitlist/waitlist-experience.tsx:1284
 msgid "Couldn’t copy the invite link. Try again."
 msgstr "邀请链接复制失败，请重试。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1655
+#: src/components/waitlist/waitlist-experience.tsx:1768
 msgid "Couldn’t export the image. Try again."
 msgstr "图片导出失败，请重试。"
 
@@ -320,17 +286,13 @@ msgstr "图片导出失败，请重试。"
 msgid "Couldn’t load image. Tap to retry."
 msgstr "图片加载失败，点击重试。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1338
+#: src/components/waitlist/waitlist-experience.tsx:1451
 msgid "Couldn’t load the test."
 msgstr "测试加载失败。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1556
+#: src/components/waitlist/waitlist-experience.tsx:1669
 msgid "Couldn’t load your result"
 msgstr "暂时无法加载结果"
-
-#: src/components/waitlist/waitlist-experience.tsx:1646
-#~ msgid "Current rank"
-#~ msgstr "当前排位"
 
 #: src/components/waitlist/ranking-info.tsx:41
 #: src/components/waitlist/ranking-info.tsx:72
@@ -360,7 +322,7 @@ msgstr "梭哈党"
 msgid "Demo profile"
 msgstr "演示账号"
 
-#: src/components/waitlist/waitlist-experience.tsx:1261
+#: src/components/waitlist/waitlist-experience.tsx:1374
 msgid "Different score, same type—or something else entirely? Six decisions reveal how you trade when it gets real."
 msgstr "不同的评分可能代表同一种交易人格，也可能完全不同。六个选项，揭示您在真实市场环境下的交易风格。"
 
@@ -377,11 +339,11 @@ msgstr "发现 · 关注 · 跟买"
 msgid "Dismiss notification"
 msgstr "关闭通知"
 
-#: src/components/waitlist/waitlist-experience.tsx:1258
+#: src/components/waitlist/waitlist-experience.tsx:1371
 msgid "Do you trade like they do?"
 msgstr "你和 TA 的交易风格一样吗？"
 
-#: src/components/waitlist/waitlist-experience.tsx:1595
+#: src/components/waitlist/waitlist-experience.tsx:1708
 msgid "Download"
 msgstr "下载"
 
@@ -389,48 +351,37 @@ msgstr "下载"
 msgid "Download result"
 msgstr "下载结果"
 
-#: src/components/waitlist/waitlist-experience.tsx:1180
+#: src/components/waitlist/waitlist-experience.tsx:1293
 msgid "Download started."
 msgstr "已开始下载。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1660
-#~ msgid "Each verified friend"
-#~ msgstr "每位完成预约的好友"
-
-#: src/components/waitlist/waitlist-experience.tsx:1659
-#~ msgid "Each verified friend (+{verifiedFriends})"
-#~ msgstr "每位完成预约的好友（+{verifiedFriends}）"
-
-#: src/components/waitlist/waitlist-experience.tsx:1427
-#: src/components/waitlist/waitlist-experience.tsx:1438
+#: src/components/waitlist/waitlist-experience.tsx:1540
+#: src/components/waitlist/waitlist-experience.tsx:1551
 msgid "Email address"
 msgstr "邮箱地址"
 
-#: src/components/waitlist/waitlist-experience.tsx:122
+#: src/components/waitlist/waitlist-experience.tsx:130
 msgid "Email send limit exceeded. Try again later."
 msgstr "发信次数已达上限，请稍后再试。"
 
-#: src/components/waitlist/waitlist-experience.tsx:319
-#: src/components/waitlist/waitlist-experience.tsx:330
-#: src/components/waitlist/waitlist-experience.tsx:342
+#: src/components/waitlist/waitlist-experience.tsx:349
+#: src/components/waitlist/waitlist-experience.tsx:360
+#: src/components/waitlist/waitlist-experience.tsx:372
 msgid "Email verified"
 msgstr "邮箱已验证"
 
-#: src/components/waitlist/share-verification-dialog.tsx:14
+#: src/components/waitlist/share-verification-dialog.tsx:17
+#: src/components/waitlist/waitlist-experience.tsx:141
 msgid "Enter a valid X post link, not a profile link."
 msgstr "请输入有效的 X 帖子链接，而不是个人主页链接。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1470
+#: src/components/waitlist/waitlist-experience.tsx:1583
 msgid "Enter the code sent to <0>{email}</0>."
 msgstr "输入发送至 <0>{email}</0> 的验证码。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1422
+#: src/components/waitlist/waitlist-experience.tsx:1535
 msgid "Enter the email you used for the test."
 msgstr "输入测试时使用的邮箱。"
-
-#: src/components/waitlist/waitlist-experience.tsx:1616
-#~ msgid "Enter the SmartX community"
-#~ msgstr "加入 SmartX 社区"
 
 #: src/components/consumer-network/network-product-previews.tsx:365
 msgid "Entry"
@@ -456,21 +407,13 @@ msgstr "SmartX 上每位交易员都经实盘成交验证——信息流按你�
 msgid "Everyone. I post it everywhere."
 msgstr "所有人，我会到处发。"
 
-#: src/components/waitlist/waitlist-experience.tsx:407
+#: src/components/waitlist/waitlist-experience.tsx:437
 msgid "Expand personality"
 msgstr "展开人格说明"
-
-#: src/components/export-key/export-key-experience.tsx:196
-#~ msgid "Export EVM (Base)"
-#~ msgstr "导出 EVM (Base)"
 
 #: src/components/export-key/export-key-experience.tsx:310
 msgid "Export EVM wallet"
 msgstr "导出 EVM 钱包"
-
-#: src/components/export-key/export-key-experience.tsx:119
-#~ msgid "Export failed"
-#~ msgstr "导出失败"
 
 #: src/components/export-key/export-key-experience.tsx:432
 msgid "Export key"
@@ -481,20 +424,11 @@ msgstr "导出密钥"
 msgid "Export keys"
 msgstr "导出密钥"
 
-#: src/components/export-key/export-key-experience.tsx:152
-#: src/components/export-key/export-key-experience.tsx:168
-#~ msgid "Export private key"
-#~ msgstr "导出私钥"
-
-#: src/components/export-key/export-key-experience.tsx:195
-#~ msgid "Export Solana"
-#~ msgstr "导出 Solana"
-
 #: src/components/export-key/export-key-experience.tsx:313
 msgid "Export Solana wallet"
 msgstr "导出 Solana 钱包"
 
-#: src/components/waitlist/waitlist-experience.tsx:123
+#: src/components/waitlist/waitlist-experience.tsx:131
 msgid "Failed to send verification code"
 msgstr "验证码发送失败"
 
@@ -502,8 +436,8 @@ msgstr "验证码发送失败"
 msgid "Fiat in · Markets open · Chains invisible"
 msgstr "法币入金 · 盘口即开 · 链上无感"
 
-#: src/components/waitlist/waitlist-experience.tsx:1275
-#: src/components/waitlist/waitlist-experience.tsx:1280
+#: src/components/waitlist/waitlist-experience.tsx:1388
+#: src/components/waitlist/waitlist-experience.tsx:1393
 msgid "Find my trader type"
 msgstr "测我的交易人格"
 
@@ -511,37 +445,25 @@ msgstr "测我的交易人格"
 msgid "Find out your trader type in 6 questions."
 msgstr "你是什么交易人格？测完六道题，马上知道。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1419
+#: src/components/waitlist/waitlist-experience.tsx:1532
 msgid "Find your result."
 msgstr "查看你的结果"
 
-#: src/components/waitlist/waitlist-experience.tsx:129
+#: src/components/waitlist/waitlist-experience.tsx:137
 msgid "Finish the test before unlocking your result."
 msgstr "请先完成测试，再解锁结果。"
-
-#: src/components/waitlist/waitlist-experience.tsx:1651
-#~ msgid "First-time share"
-#~ msgstr "首次分享"
 
 #: src/lib/waitlist/quiz-i18n.ts:33
 msgid "Follow immediately. Good calls don't wait."
 msgstr "直接跟上，好机会不等人。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1623
-#~ msgid "Follow product updates"
-#~ msgstr "关注产品动态"
-
-#: src/components/waitlist/waitlist-experience.tsx:1644
+#: src/components/waitlist/waitlist-experience.tsx:1757
 msgid "Follow SmartX"
 msgstr "关注 SmartX"
 
-#: src/components/waitlist/waitlist-experience.tsx:1645
+#: src/components/waitlist/waitlist-experience.tsx:1758
 msgid "Follow SmartX Founder"
 msgstr "关注 SmartX 创始人"
-
-#: src/components/waitlist/waitlist-experience.tsx:1623
-#~ msgid "Follow SmartX on X"
-#~ msgstr "在 X 上关注 SmartX"
 
 #: src/components/consumer-network/consumer-home.tsx:233
 msgid "Follow the best. Not the loudest."
@@ -555,7 +477,7 @@ msgstr "关注实盘交易员，一键跟买。"
 msgid "For You"
 msgstr "为你推荐"
 
-#: src/components/waitlist/waitlist-experience.tsx:1635
+#: src/components/waitlist/waitlist-experience.tsx:1748
 msgid "Friend joins via your link and connects X"
 msgstr "好友通过你的链接加入并绑定 X"
 
@@ -594,7 +516,7 @@ msgstr "继续持有，看看后面怎样。"
 msgid "Home"
 msgstr "首页"
 
-#: src/components/waitlist/waitlist-experience.tsx:1309
+#: src/components/waitlist/waitlist-experience.tsx:1422
 msgid "How do you trade<0/> when it gets <1>real?</1>"
 msgstr "真金白银上场时，<0/>你会怎么<1>交易？</1>"
 
@@ -619,14 +541,9 @@ msgstr "我做了功课，数据和基本面都支持。"
 msgid "Ignore the noise and do it alone."
 msgstr "当没听见，自己交易自己的。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1181
+#: src/components/waitlist/waitlist-experience.tsx:1294
 msgid "Image opened in a new tab. Long press to save."
 msgstr "已在新标签页打开，长按即可保存。"
-
-#: src/components/waitlist/waitlist-experience.tsx:1187
-#: src/components/waitlist/waitlist-experience.tsx:1267
-#~ msgid "Image saved."
-#~ msgstr "图片已保存。"
 
 #: src/components/blog/blog-i18n.tsx:20
 msgid "In this dispatch"
@@ -636,8 +553,8 @@ msgstr "本文目录"
 msgid "Income"
 msgstr "收益"
 
-#: src/components/waitlist/waitlist-experience.tsx:400
-#: src/lib/waitlist/share-copy.ts:42
+#: src/components/waitlist/waitlist-experience.tsx:430
+#: src/lib/waitlist/share-copy.ts:53
 msgid "Instinct"
 msgstr "嗅觉"
 
@@ -645,37 +562,29 @@ msgstr "嗅觉"
 msgid "Intelligence"
 msgstr "洞察"
 
-#: src/lib/waitlist/share-copy.ts:45
+#: src/lib/waitlist/share-copy.ts:56
 msgid "Invite Code"
 msgstr "邀请码"
 
-#: src/components/waitlist/waitlist-experience.tsx:117
+#: src/components/waitlist/waitlist-experience.tsx:125
 msgid "Invite code not recognized. Check the code and try again."
 msgstr "邀请码无法识别，请检查后重试。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1605
+#: src/components/waitlist/waitlist-experience.tsx:1718
 msgid "Invite friends"
 msgstr "邀请好友"
 
-#: src/components/waitlist/waitlist-experience.tsx:1166
+#: src/components/waitlist/waitlist-experience.tsx:1279
 msgid "Invite link copied."
 msgstr "邀请链接已复制。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1618
+#: src/components/waitlist/waitlist-experience.tsx:1731
 msgid "Invite link is being prepared"
 msgstr "正在生成邀请链接"
 
-#: src/components/waitlist/waitlist-experience.tsx:1616
-#~ msgid "Join SmartX on Telegram"
-#~ msgstr "加入 SmartX 社群"
-
-#: src/components/waitlist/waitlist-experience.tsx:1643
+#: src/components/waitlist/waitlist-experience.tsx:1756
 msgid "Join Telegram"
 msgstr "加入 Telegram"
-
-#: src/components/waitlist/waitlist-experience.tsx:1606
-#~ msgid "Join the SmartX community and follow product updates before your trader type is revealed."
-#~ msgstr "先加入 SmartX 社区并关注产品动态，随后揭晓你的交易人格。"
 
 #: src/components/blog/article-cta.tsx:32
 #: src/components/consumer-network/consumer-home.tsx:121
@@ -709,17 +618,9 @@ msgstr "启动 Alpha"
 msgid "Listen first, then decide."
 msgstr "先听听看，再决定。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1242
+#: src/components/waitlist/waitlist-experience.tsx:1355
 msgid "Loading your session..."
 msgstr "正在读取你的信息..."
-
-#: src/components/export-key/export-key-experience.tsx:143
-#~ msgid "Loading…"
-#~ msgstr "加载中…"
-
-#: src/components/export-key/export-key-experience.tsx:159
-#~ msgid "Log in"
-#~ msgstr "登录"
 
 #: src/components/export-key/export-key-experience.tsx:444
 msgid "Login"
@@ -729,27 +630,27 @@ msgstr "登录"
 msgid "LONE"
 msgstr "独行型"
 
-#: src/components/waitlist/waitlist-experience.tsx:1186
+#: src/components/waitlist/waitlist-experience.tsx:1299
 msgid "Long press the image and tap Copy image."
 msgstr "长按图片，然后点「复制图片」。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1183
+#: src/components/waitlist/waitlist-experience.tsx:1296
 msgid "Long press the image and tap Copy."
 msgstr "长按图片，然后点「拷贝」。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1186
+#: src/components/waitlist/waitlist-experience.tsx:1299
 msgid "Long press the image and tap Download image."
 msgstr "长按图片，然后点「下载图片」。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1183
+#: src/components/waitlist/waitlist-experience.tsx:1296
 msgid "Long press the image and tap Save Image."
 msgstr "长按图片，然后点「存储图像」。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1188
+#: src/components/waitlist/waitlist-experience.tsx:1301
 msgid "Long press the image to save or copy."
 msgstr "长按图片即可保存或复制。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1188
+#: src/components/waitlist/waitlist-experience.tsx:1301
 msgid "Long press the image to save to your album."
 msgstr "长按图片即可保存到相册。"
 
@@ -774,13 +675,9 @@ msgstr "我的核心交易群。"
 msgid "My SmartX trader type: “{shareName}.”"
 msgstr "我的 SmartX 交易人格是{shareName}。"
 
-#: src/components/waitlist/waitlist-experience.tsx:412
+#: src/components/waitlist/waitlist-experience.tsx:442
 msgid "Natural rival"
 msgstr "天生对手"
-
-#: src/components/export-key/export-key-experience.tsx:170
-#~ msgid "Never share your private key with anyone. Anyone with it can take your funds."
-#~ msgstr "不要把私钥发给任何人。拿到私钥就能转走你的资产。"
 
 #: src/components/blog/blog-i18n.tsx:16
 msgid "Newer"
@@ -795,7 +692,7 @@ msgstr "最新消息"
 msgid "No · Avg entry 61¢"
 msgstr "No · 平均成本 61¢"
 
-#: src/components/waitlist/waitlist-experience.tsx:128
+#: src/components/waitlist/waitlist-experience.tsx:136
 msgid "No account was found for this email."
 msgstr "该邮箱尚未注册账号。"
 
@@ -811,15 +708,11 @@ msgstr "不变"
 msgid "No data, no consensus, no problem. You trade the vibe, call it conviction, and reach enlightenment one block before reincarnation."
 msgstr "不看数据，也不等人点头。别人下单靠表，你下单靠「我悟了」。每次梭哈前都觉得自己开了天眼，下一秒就开始轮回。"
 
-#: src/components/export-key/export-key-experience.tsx:202
-#~ msgid "No embedded wallet found on this account."
-#~ msgstr "这个账号下没有可导出的钱包。"
-
 #: src/components/consumer-network/consumer-home.tsx:349
 msgid "No more scrolling through noise. SmartX learns what you trade and shows you the traders and markets that fit you."
 msgstr "别再刷无效信息。SmartX 学习你的交易方式，把对口的交易员和市场推给你。"
 
-#: src/components/waitlist/waitlist-experience.tsx:114
+#: src/components/waitlist/waitlist-experience.tsx:122
 msgid "No saved result is linked to this email. Take the test to create one."
 msgstr "该邮箱没有已保存的结果。完成测试即可创建。"
 
@@ -843,27 +736,14 @@ msgstr "一个账户<0/>所有市场"
 msgid "One friend I really trust."
 msgstr "一个我最信任的朋友。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1600
-#~ msgid "One last step"
-#~ msgstr "最后一步"
-
 #: src/components/consumer-network/consumer-home.tsx:38
 msgid "One tap to trade"
 msgstr "一键跟买"
-
-#: src/components/waitlist/waitlist-experience.tsx:1618
-#: src/components/waitlist/waitlist-experience.tsx:1625
-#~ msgid "Open"
-#~ msgstr "打开"
 
 #: src/components/consumer-network/consumer-header.tsx:83
 #: src/components/site/site-header.tsx:98
 msgid "Open navigation"
 msgstr "打开导航"
-
-#: src/components/export-key/export-key-experience.tsx:193
-#~ msgid "Opening Privy…"
-#~ msgstr "正在打开 Privy…"
 
 #: src/components/consumer-network/network-product-previews.tsx:133
 msgid "Opinion"
@@ -881,19 +761,15 @@ msgstr "抱团型"
 msgid "Paparazzi for the whole chain. Blind spot: your pocket."
 msgstr "整条链你都在监控跟拍，除了自己的钱包。"
 
-#: src/components/waitlist/share-verification-dialog.tsx:78
+#: src/components/waitlist/share-verification-dialog.tsx:123
 msgid "Paste it below"
 msgstr "在下方粘贴"
-
-#: src/components/waitlist/share-verification-dialog.tsx:97
-#~ msgid "Paste the link below"
-#~ msgstr "在下方粘贴链接"
 
 #: src/components/consumer-network/consumer-home.tsx:45
 msgid "Performance"
 msgstr "战绩"
 
-#: src/components/waitlist/waitlist-experience.tsx:410
+#: src/components/waitlist/waitlist-experience.tsx:440
 msgid "Persona chemistry"
 msgstr "人格化学反应"
 
@@ -905,15 +781,15 @@ msgstr "为你定制"
 msgid "Picked for you"
 msgstr "为你精选"
 
-#: src/components/waitlist/waitlist-experience.tsx:115
+#: src/components/waitlist/waitlist-experience.tsx:123
 msgid "Please enter a valid email address."
 msgstr "请输入有效的邮箱地址。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1559
+#: src/components/waitlist/waitlist-experience.tsx:1672
 msgid "Please try again in a moment."
 msgstr "请稍后重试。"
 
-#: src/components/waitlist/waitlist-experience.tsx:121
+#: src/components/waitlist/waitlist-experience.tsx:129
 msgid "Please wait before requesting a new code."
 msgstr "请稍后再请求新的验证码。"
 
@@ -925,7 +801,7 @@ msgstr "竖版 · 1080 × 1920"
 msgid "Position value"
 msgstr "仓位价值"
 
-#: src/components/waitlist/share-verification-dialog.tsx:70
+#: src/components/waitlist/share-verification-dialog.tsx:115
 msgid "Post on X with your invite link"
 msgstr "在 X 发帖并附上你的邀请链接"
 
@@ -933,7 +809,7 @@ msgstr "在 X 发帖并附上你的邀请链接"
 msgid "Post opinions backed by your real positions. Climb the leaderboard, grow your following, and earn a share of the revenue you create."
 msgstr "用真实仓位给观点背书。上榜、涨粉，并分走你创造的收益。"
 
-#: src/components/waitlist/share-verification-dialog.tsx:21
+#: src/components/waitlist/share-verification-dialog.tsx:39
 msgid "Post verification isn’t available yet. You can still share your result and return later to verify."
 msgstr "帖子验证暂未开放。你仍可分享结果，稍后回来完成验证。"
 
@@ -955,13 +831,13 @@ msgstr "纯直觉。说不清楚，但我信自己的感觉。"
 msgid "Put in a small amount."
 msgstr "先买一点点。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1370
+#: src/components/waitlist/waitlist-experience.tsx:1483
 msgid "Question"
 msgstr "题目"
 
 #. placeholder {0}: questionIndex + 1
 #. placeholder {1}: questions.length
-#: src/components/waitlist/waitlist-experience.tsx:1375
+#: src/components/waitlist/waitlist-experience.tsx:1488
 msgid "Question {0} of {1}"
 msgstr "第 {0} 题 / 共 {1} 题"
 
@@ -969,7 +845,7 @@ msgstr "第 {0} 题 / 共 {1} 题"
 msgid "Rank"
 msgstr "排名"
 
-#: src/components/waitlist/waitlist-experience.tsx:1583
+#: src/components/waitlist/waitlist-experience.tsx:1696
 msgid "Rank locked"
 msgstr "排名尚未解锁"
 
@@ -985,21 +861,21 @@ msgstr "阅读全文"
 msgid "Reading theme"
 msgstr "阅读主题"
 
-#: src/components/waitlist/waitlist-experience.tsx:130
+#: src/components/waitlist/waitlist-experience.tsx:138
 msgid "Required information is missing. Try again."
 msgstr "缺少必要信息，请重试。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1546
+#: src/components/waitlist/waitlist-experience.tsx:1659
 msgid "Resend Code"
 msgstr "重新发送"
 
 #. placeholder {0}: formatClock(otpCooldown)
-#: src/components/waitlist/waitlist-experience.tsx:1546
+#: src/components/waitlist/waitlist-experience.tsx:1659
 msgid "Resend Code ({0})"
 msgstr "重新发送（{0}）"
 
-#: src/components/waitlist/waitlist-experience.tsx:401
-#: src/lib/waitlist/share-copy.ts:43
+#: src/components/waitlist/waitlist-experience.tsx:431
+#: src/lib/waitlist/share-copy.ts:54
 msgid "Resilience"
 msgstr "韧性"
 
@@ -1011,19 +887,15 @@ msgstr "克制型"
 msgid "Return to SmartX"
 msgstr "返回 SmartX"
 
-#: src/components/waitlist/waitlist-experience.tsx:1423
+#: src/components/waitlist/waitlist-experience.tsx:1536
 msgid "Return to your result anytime and stay updated on SmartX."
 msgstr "随时回来查看结果，并及时了解 SmartX 的最新动态。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1630
-#~ msgid "Reveal my result"
-#~ msgstr "揭晓我的结果"
-
-#: src/components/waitlist/waitlist-experience.tsx:1419
+#: src/components/waitlist/waitlist-experience.tsx:1532
 msgid "Save your result"
 msgstr "保存你的结果"
 
-#: src/components/waitlist/waitlist-experience.tsx:1179
+#: src/components/waitlist/waitlist-experience.tsx:1292
 msgid "Selection successful"
 msgstr "已完成分享"
 
@@ -1031,27 +903,25 @@ msgstr "已完成分享"
 msgid "Sell a bit to reduce the risk."
 msgstr "先减点仓，降低风险。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1448
+#: src/components/waitlist/waitlist-experience.tsx:1561
 msgid "Send code"
 msgstr "发送验证码"
 
-#: src/components/waitlist/waitlist-experience.tsx:125
+#: src/components/waitlist/share-verification-dialog.tsx:37
+#: src/components/waitlist/waitlist-experience.tsx:133
+#: src/components/waitlist/waitlist-experience.tsx:147
 msgid "Service is busy. Try again in a moment."
 msgstr "服务繁忙，请稍后再试。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1662
+#: src/components/waitlist/waitlist-experience.tsx:1775
 msgid "Share image"
 msgstr "分享图片"
 
-#: src/components/waitlist/waitlist-experience.tsx:1651
-#~ msgid "Share recorded"
-#~ msgstr "分享已计入"
-
-#: src/components/waitlist/waitlist-experience.tsx:1598
+#: src/components/waitlist/waitlist-experience.tsx:1711
 msgid "Share result"
 msgstr "分享结果"
 
-#: src/components/waitlist/waitlist-experience.tsx:1598
+#: src/components/waitlist/waitlist-experience.tsx:1711
 msgid "Share to unlock"
 msgstr "分享解锁排名"
 
@@ -1059,20 +929,16 @@ msgstr "分享解锁排名"
 msgid "Sign in to export your private key"
 msgstr "登录后导出私钥"
 
-#: src/components/export-key/export-key-experience.tsx:154
-#~ msgid "Sign in with the same SmartX account. Your private key is assembled in this browser and never sent to our servers."
-#~ msgstr "请用 App 里同一个账号登录。私钥只在本页本地组装，不会经过我们的服务器。"
-
 #: src/components/export-key/export-key-experience.tsx:439
-#: src/components/waitlist/waitlist-experience.tsx:324
-#: src/components/waitlist/waitlist-experience.tsx:324
-#: src/components/waitlist/waitlist-experience.tsx:331
-#: src/components/waitlist/waitlist-experience.tsx:346
+#: src/components/waitlist/waitlist-experience.tsx:354
+#: src/components/waitlist/waitlist-experience.tsx:354
+#: src/components/waitlist/waitlist-experience.tsx:361
+#: src/components/waitlist/waitlist-experience.tsx:376
 msgid "Sign out"
 msgstr "退出登录"
 
-#: src/components/waitlist/waitlist-experience.tsx:1563
-#: src/components/waitlist/waitlist-experience.tsx:1574
+#: src/components/waitlist/waitlist-experience.tsx:1676
+#: src/components/waitlist/waitlist-experience.tsx:1687
 msgid "Signed in as"
 msgstr "当前登录"
 
@@ -1081,11 +947,11 @@ msgstr "当前登录"
 msgid "Site navigation"
 msgstr "站点导航"
 
-#: src/components/waitlist/waitlist-experience.tsx:1312
+#: src/components/waitlist/waitlist-experience.tsx:1425
 msgid "Six decisions reveal your risk, signal, and social instincts."
 msgstr "六个决定，看清你的风险偏好、盘口判断和社交本能。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1498
+#: src/components/waitlist/waitlist-experience.tsx:1611
 msgid "Six-digit code"
 msgstr "6 位验证码"
 
@@ -1109,7 +975,7 @@ msgstr "跳到最新文章"
 msgid "Skip to the SmartX network story"
 msgstr "跳到 SmartX 网络故事"
 
-#: src/components/waitlist/waitlist-experience.tsx:1214
+#: src/components/waitlist/waitlist-experience.tsx:1327
 msgid "Skip to waitlist"
 msgstr "跳到预约页面"
 
@@ -1160,7 +1026,7 @@ msgstr "smartX <0>永远不会</0>向你索要私钥"
 msgid "SNIPER"
 msgstr "狙击党"
 
-#: src/components/waitlist/waitlist-experience.tsx:116
+#: src/components/waitlist/waitlist-experience.tsx:124
 msgid "Something went wrong. Please try again."
 msgstr "出了点问题，请重试。"
 
@@ -1168,12 +1034,12 @@ msgstr "出了点问题，请重试。"
 msgid "Square"
 msgstr "广场"
 
-#: src/components/waitlist/waitlist-experience.tsx:1321
+#: src/components/waitlist/waitlist-experience.tsx:1434
 msgid "Start the test"
 msgstr "开始测试"
 
-#: src/components/waitlist/waitlist-experience.tsx:1640
-#: src/components/waitlist/waitlist-experience.tsx:1641
+#: src/components/waitlist/waitlist-experience.tsx:1753
+#: src/components/waitlist/waitlist-experience.tsx:1754
 msgid "Stay connected"
 msgstr "关注最新动态"
 
@@ -1181,15 +1047,11 @@ msgstr "关注最新动态"
 msgid "Story image"
 msgstr "Story 图片"
 
-#: src/components/export-key/export-key-experience.tsx:173
-#~ msgid "Tap a wallet to open the Privy export sheet."
-#~ msgstr "点对应地址，才会弹出 Privy 导出层。"
-
-#: src/components/waitlist/waitlist-experience.tsx:131
+#: src/components/waitlist/waitlist-experience.tsx:139
 msgid "That community step could not be recorded. Try again."
 msgstr "社区步骤未能记录，请重试。"
 
-#: src/components/waitlist/waitlist-experience.tsx:127
+#: src/components/waitlist/waitlist-experience.tsx:135
 msgid "That result could not be found."
 msgstr "找不到该结果。"
 
@@ -1217,10 +1079,6 @@ msgstr "面向个人的交易网络正在成形。"
 #: src/lib/waitlist/persona.ts:131
 msgid "The Dip Ringleader"
 msgstr "抄底团长"
-
-#: src/lib/waitlist/persona.ts:151
-#~ msgid "The limit order was perfect. Shame you two never met again."
-#~ msgstr "那张限价单无懈可击，可惜你们再也没有相遇。"
 
 #: src/lib/waitlist/persona.ts:147
 msgid "The limit order was perfect. Shame you two never met."
@@ -1250,7 +1108,7 @@ msgstr "链上狗仔"
 msgid "The page you requested is no longer at this address."
 msgstr "你访问的页面已不存在。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1341
+#: src/components/waitlist/waitlist-experience.tsx:1454
 msgid "The questions didn’t come through. Check your connection and try again."
 msgstr "题目没有加载出来。请检查网络后重试。"
 
@@ -1263,7 +1121,7 @@ msgid "The smartX team will never ask you for your private key."
 msgstr "smartX 团队永远不会向你索要私钥。"
 
 #: src/components/consumer-network/consumer-home.tsx:198
-#: src/lib/waitlist/share-copy.ts:50
+#: src/lib/waitlist/share-copy.ts:61
 msgid "The social trading app for memes, perps, stocks and prediction markets."
 msgstr "面向 Meme、永续合约、股票和预测市场的社交交易应用。"
 
@@ -1287,19 +1145,22 @@ msgstr "别人研究怎么翻倍一次，你研究怎么一直留在牌桌上。
 msgid "This market moved."
 msgstr "这个盘口已不在。"
 
-#: src/components/waitlist/share-verification-dialog.tsx:16
+#: src/components/waitlist/share-verification-dialog.tsx:23
+#: src/components/waitlist/waitlist-experience.tsx:144
 msgid "This post doesn’t include your invite link. Publish a post with your own link and try again."
 msgstr "这条帖子未包含你的邀请链接。请发布包含你自己链接的帖子后重试。"
 
-#: src/components/waitlist/share-verification-dialog.tsx:19
+#: src/components/waitlist/share-verification-dialog.tsx:31
+#: src/components/waitlist/waitlist-experience.tsx:142
 msgid "This post has already been used for verification."
 msgstr "这条帖子已经用于验证。"
 
-#: src/components/waitlist/share-verification-dialog.tsx:15
+#: src/components/waitlist/share-verification-dialog.tsx:20
+#: src/components/waitlist/waitlist-experience.tsx:148
 msgid "This X account is already connected to another SmartX account. Use a different X account."
 msgstr "该 X 账号已绑定其他 SmartX 账号，请使用另一个 X 账号。"
 
-#: src/components/waitlist/waitlist-experience.tsx:119
+#: src/components/waitlist/waitlist-experience.tsx:127
 msgid "Those answers didn’t go through. Check all six questions and try again."
 msgstr "答案未提交成功。请确认六道题都已作答后再试。"
 
@@ -1307,12 +1168,12 @@ msgstr "答案未提交成功。请确认六道题都已作答后再试。"
 msgid "Three hours of research. Two-word thesis: send it."
 msgstr "研究三小时，结论两个字：冲了。"
 
-#: src/components/waitlist/share-verification-dialog.tsx:20
+#: src/components/waitlist/share-verification-dialog.tsx:34
 msgid "Too many attempts. Please wait a moment and try again."
 msgstr "尝试过于频繁，请稍后重试。"
 
-#: src/components/waitlist/waitlist-experience.tsx:124
-#: src/components/waitlist/waitlist-experience.tsx:126
+#: src/components/waitlist/waitlist-experience.tsx:132
+#: src/components/waitlist/waitlist-experience.tsx:134
 msgid "Too many requests. Try again later."
 msgstr "请求过于频繁，请稍后再试。"
 
@@ -1324,7 +1185,7 @@ msgstr "下单像购物一样顺畅。"
 msgid "Trade your edge"
 msgstr "用你的优势交易"
 
-#: src/components/waitlist/waitlist-experience.tsx:1567
+#: src/components/waitlist/waitlist-experience.tsx:1680
 msgid "Try again"
 msgstr "重试"
 
@@ -1332,17 +1193,9 @@ msgstr "重试"
 msgid "Turn influence into income"
 msgstr "把影响力变成收入"
 
-#: src/components/waitlist/share-verification-dialog.tsx:61
+#: src/components/waitlist/share-verification-dialog.tsx:106
 msgid "Unlock your rank"
 msgstr "解锁你的排名"
-
-#: src/components/waitlist/waitlist-experience.tsx:1603
-#~ msgid "Unlock your result"
-#~ msgstr "解锁你的结果"
-
-#: src/components/export-key/export-key-experience.tsx:212
-#~ msgid "Use a different account"
-#~ msgstr "换一个账号"
 
 #: src/components/blog/blog-theme-toggle.tsx:37
 msgid "Use dark reading theme"
@@ -1352,26 +1205,26 @@ msgstr "切换到深色阅读主题"
 msgid "Use light reading theme"
 msgstr "切换到浅色阅读主题"
 
-#: src/components/waitlist/waitlist-experience.tsx:1464
+#: src/components/waitlist/waitlist-experience.tsx:1577
 msgid "Verification"
 msgstr "邮箱验证"
 
-#: src/components/waitlist/waitlist-experience.tsx:1475
+#: src/components/waitlist/waitlist-experience.tsx:1588
 msgid "Verification code"
 msgstr "验证码"
 
-#: src/components/waitlist/waitlist-experience.tsx:120
+#: src/components/waitlist/waitlist-experience.tsx:128
 msgid "Verification code is incorrect or expired"
 msgstr "验证码错误或已过期"
 
-#: src/components/waitlist/waitlist-experience.tsx:1295
-#: src/components/waitlist/waitlist-experience.tsx:1356
+#: src/components/waitlist/waitlist-experience.tsx:834
+msgid "Verification is taking longer than expected. Come back later to see your rank."
+msgstr "验证时间比预期更长。你可以稍后再回来查看排名。"
+
+#: src/components/waitlist/waitlist-experience.tsx:1408
+#: src/components/waitlist/waitlist-experience.tsx:1469
 msgid "Verified as"
 msgstr "已验证"
-
-#: src/components/waitlist/waitlist-experience.tsx:1681
-#~ msgid "Verified invites: {verifiedFriends}"
-#~ msgstr "有效邀请：{verifiedFriends}"
 
 #: src/components/consumer-network/network-product-previews.tsx:12
 msgid "Verified profile"
@@ -1381,15 +1234,11 @@ msgstr "已验证"
 msgid "Verified, not claimed"
 msgstr "实盘验证，不是自封"
 
-#: src/components/waitlist/share-verification-dialog.tsx:107
-#~ msgid "Verify & connect X"
-#~ msgstr "验证并绑定 X"
-
-#: src/components/waitlist/share-verification-dialog.tsx:87
+#: src/components/waitlist/share-verification-dialog.tsx:132
 msgid "Verify post"
 msgstr "验证帖子"
 
-#: src/components/waitlist/waitlist-experience.tsx:1270
+#: src/components/waitlist/waitlist-experience.tsx:1383
 msgid "View my result"
 msgstr "查看我的结果"
 
@@ -1403,21 +1252,25 @@ msgstr "等一个好价格再进。"
 #: src/components/site/site-footer.tsx:77
 #: src/components/site/site-header.tsx:55
 #: src/components/site/site-header.tsx:131
-#: src/components/waitlist/waitlist-experience.tsx:1239
-#: src/components/waitlist/waitlist-experience.tsx:1335
+#: src/components/waitlist/waitlist-experience.tsx:1352
+#: src/components/waitlist/waitlist-experience.tsx:1448
 msgid "Waitlist"
 msgstr "预约"
 
-#: src/components/waitlist/share-verification-dialog.tsx:17
+#: src/components/waitlist/share-verification-dialog.tsx:26
+#: src/components/waitlist/waitlist-experience.tsx:145
 msgid "We couldn’t find this post. Check the link, or try again in a moment if you just posted."
 msgstr "未找到这条帖子。请检查链接；如果刚刚发布，请稍后重试。"
 
-#: src/components/waitlist/share-verification-dialog.tsx:22
+#: src/components/waitlist/share-verification-dialog.tsx:42
+#: src/components/waitlist/share-verification-dialog.tsx:46
+#: src/components/waitlist/waitlist-experience.tsx:146
+#: src/components/waitlist/waitlist-experience.tsx:149
 msgid "We couldn’t verify your post. Please try again."
 msgstr "暂时无法验证帖子，请重试。"
 
-#: src/components/waitlist/share-verification-dialog.tsx:61
-#: src/components/waitlist/waitlist-experience.tsx:1584
+#: src/components/waitlist/share-verification-dialog.tsx:106
+#: src/components/waitlist/waitlist-experience.tsx:1697
 msgid "We’re checking your post"
 msgstr "正在验证你的帖子"
 
@@ -1429,8 +1282,10 @@ msgstr "什么让你决定进场？"
 msgid "While everyone hunts the next 10x, you check size, invalidation, and tomorrow’s bankroll. You plan to stay seated when the next cycle starts."
 msgstr "别人在找下一个 10 倍，你在看仓位、失效条件和明天还能不能开盘。你的计划是：下一轮开始时，你还坐在桌上。"
 
-#: src/components/waitlist/waitlist-experience.tsx:762
-#: src/components/waitlist/waitlist-experience.tsx:1144
+#: src/components/waitlist/waitlist-experience.tsx:143
+#: src/components/waitlist/waitlist-experience.tsx:798
+#: src/components/waitlist/waitlist-experience.tsx:844
+#: src/components/waitlist/waitlist-experience.tsx:1233
 msgid "X connected. Your rank is unlocked."
 msgstr "X 已绑定，排名已解锁。"
 
@@ -1454,17 +1309,13 @@ msgstr "图也看了，钱包也查了，帖也读了。分析像军师，结论
 msgid "You diagnose the market from one look at the tape. Indicators are lab results; the final call is vibes, and every loss gets a clean post-mortem."
 msgstr "行情看一眼就能号脉。指标是化验单，下结论靠手感，亏了也能写出一份完整病历。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1636
+#: src/components/waitlist/waitlist-experience.tsx:1749
 msgid "You earn +5 Boost"
 msgstr "你获得 +5 Boost"
 
 #: src/lib/waitlist/quiz-i18n.ts:13
 msgid "You just made 10× on a trade. Who finds out first?"
 msgstr "你抓到一波 10 倍，谁会第一个知道？"
-
-#: src/lib/waitlist/persona.ts:146
-#~ msgid "You know everyone’s position except, occasionally, your own."
-#~ msgstr "所有人的持仓你都一清二楚，偶尔除了你自己的。"
 
 #: src/lib/waitlist/persona.ts:148
 msgid "You place the perfect bid one tick below destiny and wait. Missing the trade is acceptable; paying market is not."
@@ -1478,10 +1329,6 @@ msgstr "你专等绿盘变红，并管它叫机会。第一笔靠感觉，后面
 msgid "You’ll catch every knife. You’ll never finish the bottom."
 msgstr "没有你接不住的刀，只有永远抄不完的底。"
 
-#: src/lib/waitlist/persona.ts:136
-#~ msgid "You’re not buying the dip. You’re giving the downtrend a demo."
-#~ msgstr "你不是在抄底，是在给下跌趋势做演示。"
-
 #: src/lib/waitlist/persona.ts:112
 msgid "You’re not trading. You’re funding the ecosystem."
 msgstr "你不是在交易，你是在资助整个生态。"
@@ -1494,15 +1341,15 @@ msgstr "图上的线比地铁图还密。你信结构，不信群聊。支撑、
 msgid "Your group chat hates your trade. What do you do?"
 msgstr "群里都喷你这笔单，你怎么办？"
 
-#: src/components/waitlist/waitlist-experience.tsx:1602
+#: src/components/waitlist/waitlist-experience.tsx:1715
 msgid "Your invitation link"
 msgstr "你的邀请链接"
 
-#: src/components/waitlist/waitlist-experience.tsx:1616
+#: src/components/waitlist/waitlist-experience.tsx:1729
 msgid "Your link"
 msgstr "你的邀请链接"
 
-#: src/components/waitlist/share-verification-dialog.tsx:18
+#: src/components/waitlist/share-verification-dialog.tsx:28
 msgid "Your post needs to be public so we can verify it."
 msgstr "请将帖子设为公开，以便完成验证。"
 
@@ -1510,32 +1357,20 @@ msgstr "请将帖子设为公开，以便完成验证。"
 msgid "Your private key is an unchangeable password for your account. If someone gets access, they can steal all of your funds."
 msgstr "私钥相当于账户的不可更改密码。一旦被他人获取，他们就能转走你的全部资金。"
 
-#: src/components/waitlist/share-verification-dialog.tsx:77
-#~ msgid "Your rank is unlocked"
-#~ msgstr "排名已解锁"
-
-#: src/components/waitlist/share-verification-dialog.tsx:64
+#: src/components/waitlist/share-verification-dialog.tsx:109
 msgid "Your rank will appear when verification is complete."
 msgstr "验证通过后，即可查看排名。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1616
-#~ msgid "Your result is saved"
-#~ msgstr "结果已保存"
-
-#: src/components/waitlist/waitlist-experience.tsx:1267
+#: src/components/waitlist/waitlist-experience.tsx:1380
 msgid "Your result is saved as {savedPersonaName}."
 msgstr "你的结果已保存为{savedPersonaName}。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1619
-#~ msgid "Your result isn’t available from the server yet. You don’t need to join or follow to view it. Please try again shortly."
-#~ msgstr "服务器暂未返回结果，无需入群或关注即可查看。请稍后重试。"
-
-#: src/components/waitlist/waitlist-experience.tsx:118
-#: src/components/waitlist/waitlist-experience.tsx:132
+#: src/components/waitlist/waitlist-experience.tsx:126
+#: src/components/waitlist/waitlist-experience.tsx:140
 msgid "Your session expired. Sign in again to continue."
 msgstr "登录已过期，请重新验证邮箱后继续。"
 
-#: src/components/waitlist/waitlist-experience.tsx:1581
+#: src/components/waitlist/waitlist-experience.tsx:1694
 msgid "Your share is verified. Your ranking is updating."
 msgstr "分享已验证，排名正在更新。"
 
@@ -1548,11 +1383,7 @@ msgstr "初始排名由绑定 X 的时间决定，邀请获得的 Boost 可提�
 msgid "Your trade is down 20% from where you bought in. What do you do?"
 msgstr "你的仓位从买入价跌了 20%，你会怎么做？"
 
-#: src/components/waitlist/waitlist-experience.tsx:479
-#: src/lib/waitlist/share-copy.ts:44
+#: src/components/waitlist/waitlist-experience.tsx:509
+#: src/lib/waitlist/share-copy.ts:55
 msgid "your trader type"
 msgstr "你的交易人格"
-
-#: src/components/waitlist/share-verification-dialog.tsx:79
-#~ msgid "Your X account is connected. You’re on the leaderboard."
-#~ msgstr "X 账号已绑定，你已进入排行榜。"

@@ -2,7 +2,7 @@ import { i18n, toAppLocale } from "@/lingui";
 
 import { getUserToken } from "./session";
 import { canUsePrototypeCommunityBridge, createPrototypeCommunityBridge } from "./prototype-community-bridge";
-import { parseXPostUrl, readShareVerification, verificationEndpoint } from "./share-verification";
+import { parseXPostUrl, readTwitterBindStatus } from "./share-verification";
 import {
   type CommunityChannel,
   type CommunityCompleteResult,
@@ -254,20 +254,37 @@ export const waitlistApi = {
     });
   },
 
-  async verifyShare(postUrl: string, userToken: string) {
-    const post = parseXPostUrl(postUrl);
-    if (!post) throw new WaitlistApiError(400, "INVALID_POST_URL", "user");
-    const path = verificationEndpoint(process.env.NEXT_PUBLIC_WAITLIST_SHARE_VERIFY_PATH);
-    if (!path) throw new WaitlistApiError(503, "SHARE_VERIFICATION_UNAVAILABLE", "user");
-    const raw = await waitlistRequest<unknown>(path, {
+  async submitTweetLink(tweetLink: string, userToken: string) {
+    const post = parseXPostUrl(tweetLink);
+    if (!post) throw new WaitlistApiError(400, "Invalid tweet link format", "user", "/user/submit_tweet_link");
+    const data = await waitlistRequest<{ status?: number }>("/user/submit_tweet_link", {
       method: "POST",
-      body: { postUrl: post.url },
+      body: { tweetLink: post.url },
       userToken,
       signal: AbortSignal.timeout(20_000),
     });
-    const verification = readShareVerification(raw);
-    if (verification.status === "unverified") throw new WaitlistApiError(502, "SHARE_VERIFICATION_UNAVAILABLE", "user", path);
-    return verification;
+    const status = Number(data?.status);
+    if (status !== 1 && status !== 2) {
+      throw new WaitlistApiError(502, GENERIC_ERROR, "user", "/user/submit_tweet_link");
+    }
+    return { status: status as 1 | 2, tweetLink: post.url };
+  },
+
+  async getTwitterBindStatus(userToken: string) {
+    const bind = readTwitterBindStatus(
+      await waitlistRequest<unknown>("/user/twitter_bind_status", { userToken }),
+    );
+    if (!bind) throw new WaitlistApiError(502, GENERIC_ERROR, "user", "/user/twitter_bind_status");
+    return bind;
+  },
+
+  async checkTweetLink(tweetLink: string) {
+    const post = parseXPostUrl(tweetLink);
+    if (!post) throw new WaitlistApiError(400, "Invalid tweet link format", "public", "/waitlist_public/check_tweet_link");
+    const data = await waitlistRequest<{ used?: boolean }>("/waitlist_public/check_tweet_link", {
+      query: { tweetLink: post.url },
+    });
+    return { used: data?.used === true };
   },
 
   getRank(userToken: string) {
@@ -280,9 +297,11 @@ export const waitlistApi = {
       userToken,
     });
     const total = Number(data?.total);
+    const validTotal = Number(data?.validTotal);
     return {
       list: data?.list ?? [],
       total: Number.isFinite(total) && total > 0 ? Math.floor(total) : 0,
+      validTotal: Number.isFinite(validTotal) && validTotal >= 0 ? Math.floor(validTotal) : 0,
       totalPages: Number(data?.totalPages) || 0,
     };
   },

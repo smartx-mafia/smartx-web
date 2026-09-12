@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { parseXPostUrl, readShareVerification, verificationEndpoint, verifiedInviteCount, verifiedRank } from "../../src/lib/waitlist/share-verification";
+import { parseXPostUrl, readShareVerification, readTwitterBindStatus, verificationFromTwitterBind, verifiedInviteCount, verifiedRank } from "../../src/lib/waitlist/share-verification";
 import { decideWaitlistEntry, isOwnResultAvailable } from "../../src/lib/waitlist/routing";
 import { isUnlockedResult, type MyResult } from "../../src/lib/waitlist/types";
 
@@ -21,32 +21,88 @@ test("reject profiles, malformed IDs, deceptive hosts, credentials and non-HTTPS
     "https://x.com.evil.test/a/status/123", "https://x.com@evil.test/a/status/123",
     "https://evil.test@x.com/a/status/123", "https://x.com:444/a/status/123",
     "https://x.com/a/status/123/anything", "https://x.com/a/status/123\n456", "https://t.co/abc",
-    "https://x.com/a/status/123?x=" + "x".repeat(2048)]) {
+    "https://x.com/a/status/123?x=" + "x".repeat(500)]) {
     assert.equal(parseXPostUrl(value), null, value);
   }
 });
 
-test("the new endpoint is explicitly configured and cannot use the old click-completion route", () => {
-  assert.equal(verificationEndpoint(undefined), null);
-  for (const value of ["", "/user/share_complete", "/user/share_complete/", "//evil.test", "https://evil.test/user/verify", "/user/../share_complete"]) {
-    assert.equal(verificationEndpoint(value), null);
-  }
-  assert.equal(verificationEndpoint(" /user/verify_share "), "/user/verify_share");
-});
-
 test("legacy click flags and malformed responses never verify a share", () => {
-  for (const raw of [undefined, null, true, 1, { shareCompleted: 1 }, { status: "success" }, { status: "verified" },
-    { status: "verified", xUser: { id: 123, username: "example" } },
-    { status: "verified", xUser: { id: "123", username: "bad/name" } }]) {
+  for (const raw of [undefined, null, true, 1, { shareCompleted: 1 }, { status: "success" }]) {
     assert.deepEqual(readShareVerification(raw), { status: "unverified" });
   }
 });
 
-test("only an explicit verified response with an X identity unlocks a valid server rank", () => {
-  const verified = readShareVerification({ status: "verified", xUser: { id: "123", username: "example" } });
+test("verified bind can omit an X identity for fake verification", () => {
+  assert.deepEqual(readShareVerification({ status: "verified" }), { status: "verified" });
+  assert.deepEqual(readShareVerification({
+    status: "verified",
+    xUser: { id: "123", username: "example" },
+  }), { status: "verified", xUser: { id: "123", username: "example" } });
+});
+
+test("an explicit verified response unlocks a valid server rank", () => {
+  const verified = readShareVerification({ status: "verified" });
   assert.equal(verifiedRank(verified, 42), 42);
   for (const status of ["unverified", "pending", "rejected"] as const) assert.equal(verifiedRank({ status }, 42), null);
   for (const rank of [null, undefined, 0, -1, "42", NaN, Infinity, 1.5]) assert.equal(verifiedRank(verified, rank), null);
+});
+
+test("twitter bind status maps pending, success, failure and restore", () => {
+  assert.deepEqual(verificationFromTwitterBind({ twitterBound: 0 }), { status: "unverified" });
+  assert.deepEqual(verificationFromTwitterBind({ twitterBound: 1 }), { status: "verified" });
+  assert.deepEqual(verificationFromTwitterBind({
+    twitterBound: 0,
+    bind: {
+      status: 1,
+      tweetLink: "https://x.com/foo/status/123?s=20",
+      twitterAccount: "",
+      failCode: 0,
+      failMessage: "",
+    },
+  }), { status: "pending", postUrl: "https://x.com/foo/status/123" });
+  assert.deepEqual(verificationFromTwitterBind({
+    bind: {
+      status: 2,
+      tweetLink: "https://x.com/foo/status/123",
+      twitterAccount: "foo",
+      failCode: 0,
+      failMessage: "",
+    },
+  }), { status: "verified", postUrl: "https://x.com/foo/status/123", xUser: { username: "foo" } });
+  assert.deepEqual(verificationFromTwitterBind({
+    bind: {
+      status: 2,
+      tweetLink: "https://x.com/foo/status/123",
+      twitterAccount: "",
+      failCode: 0,
+      failMessage: "",
+    },
+  }), { status: "verified", postUrl: "https://x.com/foo/status/123" });
+  assert.deepEqual(verificationFromTwitterBind({
+    bind: {
+      status: 3,
+      tweetLink: "https://x.com/foo/status/123",
+      twitterAccount: "",
+      failCode: 8,
+      failMessage: "Your tweet must contain your own invite link (?invite=...).",
+    },
+  }), {
+    status: "rejected",
+    postUrl: "https://x.com/foo/status/123",
+    reason: "Your tweet must contain your own invite link (?invite=...).",
+  });
+});
+
+test("bind status parser rejects unknown payloads", () => {
+  assert.equal(readTwitterBindStatus(null), null);
+  assert.equal(readTwitterBindStatus({ status: 9 }), null);
+  assert.deepEqual(readTwitterBindStatus({
+    status: 0,
+    tweetLink: "",
+    twitterAccount: "",
+    failCode: 0,
+    failMessage: "",
+  }), { status: 0, tweetLink: "", twitterAccount: "", failCode: 0, failMessage: "" });
 });
 
 test("verified invitation counts never fall back to unverified totals", () => {

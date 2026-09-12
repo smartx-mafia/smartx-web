@@ -32,7 +32,7 @@ import {
   type ShareImageActionResult,
 } from "@/lib/waitlist/share-image";
 import { i18n, toAppLocale } from "@/lingui";
-import { shareTweetText } from "@/lib/waitlist/share-copy";
+import { shareTweetTextWithInvite } from "@/lib/waitlist/share-copy";
 import { encodeShareResult, WAITLIST_SHARE_CARD_VERSION } from "@/lib/waitlist/share-result";
 import {
   decideWaitlistEntry,
@@ -62,6 +62,7 @@ import {
   type UserInfo,
   type WaitlistStage,
   isMissingUserError,
+  isTwitterAlreadyBoundError,
   isUnlockedResult,
   isWaitlistApiError,
 } from "@/lib/waitlist/types";
@@ -69,7 +70,14 @@ import {
 import { WaitlistActionScope, WaitlistButton } from "./waitlist-button";
 import { ShareVerificationDialog } from "./share-verification-dialog";
 import { RankingInfo } from "./ranking-info";
-import { readShareVerification, verifiedInviteCount, verifiedRank, type ShareVerification } from "@/lib/waitlist/share-verification";
+import {
+  BIND_POLL_INTERVAL_MS,
+  BIND_POLL_TIMEOUT_MS,
+  verificationFromTwitterBind,
+  verifiedInviteCount,
+  verifiedRank,
+  type ShareVerification,
+} from "@/lib/waitlist/share-verification";
 import { ResultDialog } from "./result-dialog";
 import { DownloadDialog } from "./download-dialog";
 import { ResultToast, useResultToast } from "./result-toast";
@@ -130,6 +138,15 @@ const WAITLIST_MESSAGE_L10N: Record<string, MessageDescriptor> = {
   "parameters missing": msg`Required information is missing. Try again.`,
   "invalid channel": msg`That community step could not be recorded. Try again.`,
   "authorization required": msg`Your session expired. Sign in again to continue.`,
+  "Invalid tweet link format": msg`Enter a valid X post link, not a profile link.`,
+  "This post has already been used.": msg`This post has already been used for verification.`,
+  "Twitter account already bound": msg`X connected. Your rank is unlocked.`,
+  "Your tweet must contain your own invite link (?invite=...).": msg`This post doesn’t include your invite link. Publish a post with your own link and try again.`,
+  "Tweet not found. Make sure the post is public and the link is correct.": msg`We couldn’t find this post. Check the link, or try again in a moment if you just posted.`,
+  "Verification failed. Please check the tweet and resubmit.": msg`We couldn’t verify your post. Please try again.`,
+  "Verification service is busy. Please resubmit in a minute.": msg`Service is busy. Try again in a moment.`,
+  "This Twitter account is already bound to another user.": msg`This X account is already connected to another SmartX account. Use a different X account.`,
+  "Account state changed. Please contact support.": msg`We couldn’t verify your post. Please try again.`,
 };
 
 function localizeWaitlistMessage(message: string) {
@@ -220,22 +237,35 @@ function publicShareCard(data: { hidden?: boolean; card?: ResultCard | null } | 
   return data.card;
 }
 
+async function readBindStatus(token: string) {
+  try {
+    return await waitlistApi.getTwitterBindStatus(token);
+  } catch (error) {
+    if (isWaitlistApiError(error) && (error.code === 401 || error.message === "user not found")) throw error;
+    return null;
+  }
+}
+
 async function fetchWorkspace(token: string): Promise<Workspace> {
-  const [initialResult, community, info] = await Promise.all([
+  const [initialResult, community, info, bind] = await Promise.all([
     waitlistApi.getMyResult(token),
     waitlistApi.getCommunityInfo(token).catch(() => null),
     waitlistApi.getUserInfo(token),
+    readBindStatus(token),
   ]);
   const result = await resolvePrototypeResult(token, initialResult);
   const links = communityLinksFrom(community);
   if (isUnlockedResult(result)) {
-    const verification = readShareVerification(result.shareVerification);
+    const verification = verificationFromTwitterBind({
+      twitterBound: info.twitterBound ?? result.twitterBound,
+      bind,
+    });
     return {
       kind: "result" as const,
       outcome: mapCardToOutcome(result),
       rank: verifiedRank(verification, result.rank),
       verification,
-      verifiedFriends: verifiedInviteCount(result.verifiedInviteCount),
+      verifiedFriends: verifiedInviteCount(info.validInviteNum ?? result.validInviteNum),
       inviteCode: info.inviteCode || "",
       links,
       info,
@@ -755,16 +785,23 @@ export function WaitlistExperience() {
         if (cancelled || activeTokenRef.current !== userToken || revision !== verificationRevisionRef.current) return;
         setUserInfo(info);
         if (info.inviteCode) setOwnInviteCode(info.inviteCode);
-        if (isUnlockedResult(result)) {
-          const nextVerification = readShareVerification(result.shareVerification);
-          if (nextVerification.status === "verified" && verificationRef.current.status !== "verified") {
-            setVerificationOpen(false);
-            showToast(t`X connected. Your rank is unlocked.`);
-          }
-          setRank(verifiedRank(nextVerification, result.rank));
-          setVerification(nextVerification);
-          setVerifiedFriends(verifiedInviteCount(result.verifiedInviteCount));
+        const bound = info.twitterBound === 1;
+        const nextVerification = bound
+          ? {
+              status: "verified" as const,
+              postUrl: verificationRef.current.postUrl,
+              xUser: verificationRef.current.xUser,
+            }
+          : verificationRef.current;
+        if (bound && verificationRef.current.status !== "verified") {
+          setVerificationOpen(false);
+          showToast(t`X connected. Your rank is unlocked.`);
         }
+        if (bound) setVerification(nextVerification);
+        if (isUnlockedResult(result)) {
+          setRank(verifiedRank(nextVerification, result.rank));
+        }
+        setVerifiedFriends(verifiedInviteCount(info.validInviteNum ?? (isUnlockedResult(result) ? result.validInviteNum : undefined)));
       } catch (error) {
         if (!cancelled && activeTokenRef.current === userToken) handleUserApiErrorRef.current(error);
       } finally {
@@ -782,6 +819,61 @@ export function WaitlistExperience() {
       document.removeEventListener("visibilitychange", onVisible);
     };
   }, [stage, userToken, showToast]);
+
+  useEffect(() => {
+    if (stage !== "result" || !userToken || verification.status !== "pending") return;
+    let cancelled = false;
+    let timer: number | undefined;
+    const token = userToken;
+    const revision = verificationRevisionRef.current;
+    const started = Date.now();
+
+    const tick = async () => {
+      if (cancelled) return;
+      if (Date.now() - started >= BIND_POLL_TIMEOUT_MS) {
+        showToast(t`Verification is taking longer than expected. Come back later to see your rank.`, "info");
+        return;
+      }
+      try {
+        const bind = await waitlistApi.getTwitterBindStatus(token);
+        if (cancelled || activeTokenRef.current !== token || revision !== verificationRevisionRef.current) return;
+        if (bind.status === 2) {
+          const next = verificationFromTwitterBind({ twitterBound: 1, bind });
+          setVerification(next);
+          setVerificationOpen(false);
+          showToast(t`X connected. Your rank is unlocked.`);
+          try {
+            const workspace = await fetchWorkspace(token);
+            if (cancelled || activeTokenRef.current !== token) return;
+            if (workspace.kind === "result") {
+              applyWorkspace({ ...workspace, verification: next, rank: verifiedRank(next, workspace.rank) });
+            }
+          } catch (error) {
+            if (!cancelled && activeTokenRef.current === token) handleUserApiErrorRef.current(error);
+          }
+          return;
+        }
+        if (bind.status === 3) {
+          setVerification(verificationFromTwitterBind({ bind }));
+          return;
+        }
+      } catch (error) {
+        if (cancelled) return;
+        if (handleUserApiErrorRef.current(error)) return;
+      }
+      timer = window.setTimeout(() => {
+        void tick();
+      }, BIND_POLL_INTERVAL_MS);
+    };
+
+    timer = window.setTimeout(() => {
+      void tick();
+    }, BIND_POLL_INTERVAL_MS);
+    return () => {
+      cancelled = true;
+      if (timer) window.clearTimeout(timer);
+    };
+  }, [stage, userToken, verification.status, showToast]);
 
   const ensureQuestions = async () => {
     if (questions.length) return questions;
@@ -1123,9 +1215,9 @@ export function WaitlistExperience() {
     if (!ownOutcome || !ownInviteCode) return;
     if (!shareCompleted) setVerificationOpen(true);
     if (verification.status === "pending") return;
+    const invitationUrl = makeInvitationUrl(ownInviteCode, true, { locale, result: shareResultCode });
     const shareUrl = new URL("https://twitter.com/intent/tweet");
-    shareUrl.searchParams.set("text", shareTweetText(ownOutcome.persona, locale));
-    shareUrl.searchParams.set("url", makeInvitationUrl(ownInviteCode, true, { locale, result: shareResultCode }));
+    shareUrl.searchParams.set("text", shareTweetTextWithInvite(ownOutcome.persona, locale, invitationUrl));
     window.open(shareUrl.toString(), "_blank", "noopener,noreferrer");
   };
 
@@ -1133,26 +1225,47 @@ export function WaitlistExperience() {
     const token = userToken;
     if (!token) return;
     verificationRevisionRef.current += 1;
-    try {
-      const next = await waitlistApi.verifyShare(postUrl, token);
+
+    const applyVerified = async (next: ShareVerification) => {
       if (activeTokenRef.current !== token) return;
-      verificationRevisionRef.current += 1;
       setVerification(next);
+      setVerificationOpen(false);
+      showToast(t`X connected. Your rank is unlocked.`);
+      try {
+        const workspace = await fetchWorkspace(token);
+        if (activeTokenRef.current === token && workspace.kind === "result") {
+          applyWorkspace({ ...workspace, verification: next, rank: verifiedRank(next, workspace.rank) });
+        }
+      } catch (error) {
+        if (activeTokenRef.current === token) handleUserApiError(error);
+      }
+    };
+
+    try {
+      const submitted = await waitlistApi.submitTweetLink(postUrl, token);
+      if (activeTokenRef.current !== token) return;
+      if (submitted.status === 2) {
+        await applyVerified(verificationFromTwitterBind({
+          twitterBound: 1,
+          bind: await readBindStatus(token),
+        }));
+        return;
+      }
+      setVerification({ status: "pending", postUrl: submitted.tweetLink });
       setRank(null);
-      if (next.status === "verified") {
-        setVerificationOpen(false);
-        showToast(t`X connected. Your rank is unlocked.`);
+    } catch (error) {
+      if (isTwitterAlreadyBoundError(error)) {
         try {
-          const workspace = await fetchWorkspace(token);
-          if (activeTokenRef.current === token && workspace.kind === "result") {
-            // A confirmed verification is not undone by a stale read immediately after submission.
-            applyWorkspace({ ...workspace, verification: next, rank: verifiedRank(next, workspace.rank) });
-          }
-        } catch (error) {
-          if (activeTokenRef.current === token) handleUserApiError(error);
+          await applyVerified(verificationFromTwitterBind({
+            twitterBound: 1,
+            bind: await readBindStatus(token),
+          }));
+          return;
+        } catch (bindError) {
+          if (activeTokenRef.current === token) handleUserApiError(bindError);
+          throw bindError;
         }
       }
-    } catch (error) {
       if (activeTokenRef.current === token) handleUserApiError(error);
       throw error;
     }
