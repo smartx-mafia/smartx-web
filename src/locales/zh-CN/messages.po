@@ -130,7 +130,7 @@ msgstr "平均成本 · $228.40"
 msgid "Back"
 msgstr "返回"
 
-#: src/components/waitlist/share-verification-dialog.tsx:110
+#: src/components/waitlist/share-verification-dialog.tsx:113
 msgid "Back to my result"
 msgstr "返回我的结果"
 
@@ -138,7 +138,7 @@ msgstr "返回我的结果"
 msgid "Back to start"
 msgstr "返回开头"
 
-#: src/lib/waitlist/share-copy.ts:57
+#: src/lib/waitlist/share-copy.ts:59
 msgid "Backed by"
 msgstr "投资方"
 
@@ -200,7 +200,7 @@ msgstr "正在验证…"
 msgid "Checking invite, result, and sign-in state."
 msgstr "正在检查邀请、结果与登录状态。"
 
-#: src/components/waitlist/share-verification-dialog.tsx:132
+#: src/components/waitlist/share-verification-dialog.tsx:135
 msgid "Checking your post…"
 msgstr "正在验证帖子…"
 
@@ -270,7 +270,7 @@ msgstr "跟买"
 msgid "Copy invitation link"
 msgstr "复制邀请链接"
 
-#: src/components/waitlist/share-verification-dialog.tsx:119
+#: src/components/waitlist/share-verification-dialog.tsx:122
 msgid "Copy your post link"
 msgstr "复制你的帖子链接"
 
@@ -563,6 +563,7 @@ msgid "Intelligence"
 msgstr "洞察"
 
 #: src/lib/waitlist/share-copy.ts:56
+#: src/lib/waitlist/share-copy.ts:58
 msgid "Invite Code"
 msgstr "邀请码"
 
@@ -761,7 +762,7 @@ msgstr "抱团型"
 msgid "Paparazzi for the whole chain. Blind spot: your pocket."
 msgstr "整条链你都在监控跟拍，除了自己的钱包。"
 
-#: src/components/waitlist/share-verification-dialog.tsx:123
+#: src/components/waitlist/share-verification-dialog.tsx:126
 msgid "Paste it below"
 msgstr "在下方粘贴"
 
@@ -801,7 +802,7 @@ msgstr "竖版 · 1080 × 1920"
 msgid "Position value"
 msgstr "仓位价值"
 
-#: src/components/waitlist/share-verification-dialog.tsx:115
+#: src/components/waitlist/share-verification-dialog.tsx:118
 msgid "Post on X with your invite link"
 msgstr "在 X 发帖并附上你的邀请链接"
 
@@ -1121,7 +1122,7 @@ msgid "The smartX team will never ask you for your private key."
 msgstr "smartX 团队永远不会向你索要私钥。"
 
 #: src/components/consumer-network/consumer-home.tsx:198
-#: src/lib/waitlist/share-copy.ts:61
+#: src/lib/waitlist/share-copy.ts:63
 msgid "The social trading app for memes, perps, stocks and prediction markets."
 msgstr "面向 Meme、永续合约、股票和预测市场的社交交易应用。"
 
@@ -1193,7 +1194,7 @@ msgstr "重试"
 msgid "Turn influence into income"
 msgstr "把影响力变成收入"
 
-#: src/components/waitlist/share-verification-dialog.tsx:106
+#: src/components/waitlist/share-verification-dialog.tsx:109
 msgid "Unlock your rank"
 msgstr "解锁你的排名"
 
@@ -1234,7 +1235,7 @@ msgstr "已验证"
 msgid "Verified, not claimed"
 msgstr "实盘验证，不是自封"
 
-#: src/components/waitlist/share-verification-dialog.tsx:132
+#: src/components/waitlist/share-verification-dialog.tsx:135
 msgid "Verify post"
 msgstr "验证帖子"
 
@@ -1269,7 +1270,7 @@ msgstr "未找到这条帖子。请检查链接；如果刚刚发布，请稍后
 msgid "We couldn’t verify your post. Please try again."
 msgstr "暂时无法验证帖子，请重试。"
 
-#: src/components/waitlist/share-verification-dialog.tsx:106
+#: src/components/waitlist/share-verification-dialog.tsx:109
 #: src/components/waitlist/waitlist-experience.tsx:1697
 msgid "We’re checking your post"
 msgstr "正在验证你的帖子"
@@ -1277,6 +1278,10 @@ msgstr "正在验证你的帖子"
 #: src/lib/waitlist/quiz-i18n.ts:11
 msgid "What actually convinces you to enter a trade?"
 msgstr "什么让你决定进场？"
+
+#: src/lib/waitlist/share-copy.ts:57
+msgid "What’s your trader type?"
+msgstr "你是哪种交易人格？"
 
 #: src/lib/waitlist/persona.ts:153
 msgid "While everyone hunts the next 10x, you check size, invalidation, and tomorrow’s bankroll. You plan to stay seated when the next cycle starts."
@@ -1357,7 +1362,7 @@ msgstr "请将帖子设为公开，以便完成验证。"
 msgid "Your private key is an unchangeable password for your account. If someone gets access, they can steal all of your funds."
 msgstr "私钥相当于账户的不可更改密码。一旦被他人获取，他们就能转走你的全部资金。"
 
-#: src/components/waitlist/share-verification-dialog.tsx:109
+#: src/components/waitlist/share-verification-dialog.tsx:112
 msgid "Your rank will appear when verification is complete."
 msgstr "验证通过后，即可查看排名。"
 

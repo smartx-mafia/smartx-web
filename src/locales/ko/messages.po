@@ -130,7 +130,7 @@ msgstr "평균 진입가 · $228.40"
 msgid "Back"
 msgstr "뒤로"
 
-#: src/components/waitlist/share-verification-dialog.tsx:110
+#: src/components/waitlist/share-verification-dialog.tsx:113
 msgid "Back to my result"
 msgstr "내 결과로 돌아가기"
 
@@ -138,7 +138,7 @@ msgstr "내 결과로 돌아가기"
 msgid "Back to start"
 msgstr "처음으로 돌아가기"
 
-#: src/lib/waitlist/share-copy.ts:57
+#: src/lib/waitlist/share-copy.ts:59
 msgid "Backed by"
 msgstr "투자"
 
@@ -200,7 +200,7 @@ msgstr "인증 코드 확인 중…"
 msgid "Checking invite, result, and sign-in state."
 msgstr "초대, 결과, 로그인 상태를 확인하는 중입니다."
 
-#: src/components/waitlist/share-verification-dialog.tsx:132
+#: src/components/waitlist/share-verification-dialog.tsx:135
 msgid "Checking your post…"
 msgstr "게시물 확인 중…"
 
@@ -270,7 +270,7 @@ msgstr "카피"
 msgid "Copy invitation link"
 msgstr "초대 링크 복사"
 
-#: src/components/waitlist/share-verification-dialog.tsx:119
+#: src/components/waitlist/share-verification-dialog.tsx:122
 msgid "Copy your post link"
 msgstr "내 게시물 링크 복사"
 
@@ -563,6 +563,7 @@ msgid "Intelligence"
 msgstr "인텔리전스"
 
 #: src/lib/waitlist/share-copy.ts:56
+#: src/lib/waitlist/share-copy.ts:58
 msgid "Invite Code"
 msgstr "초대 코드"
 
@@ -761,7 +762,7 @@ msgstr "무리형"
 msgid "Paparazzi for the whole chain. Blind spot: your pocket."
 msgstr "남들 포지션은 다 꿰고 있는데, 가끔 자기 것만 모른다."
 
-#: src/components/waitlist/share-verification-dialog.tsx:123
+#: src/components/waitlist/share-verification-dialog.tsx:126
 msgid "Paste it below"
 msgstr "아래에 붙여넣기"
 
@@ -801,7 +802,7 @@ msgstr "세로형 · 1080 × 1920"
 msgid "Position value"
 msgstr "포지션 가치"
 
-#: src/components/waitlist/share-verification-dialog.tsx:115
+#: src/components/waitlist/share-verification-dialog.tsx:118
 msgid "Post on X with your invite link"
 msgstr "초대 링크를 포함해 X에 게시"
 
@@ -1121,7 +1122,7 @@ msgid "The smartX team will never ask you for your private key."
 msgstr "smartX 팀은 개인키를 절대 요구하지 않습니다."
 
 #: src/components/consumer-network/consumer-home.tsx:198
-#: src/lib/waitlist/share-copy.ts:61
+#: src/lib/waitlist/share-copy.ts:63
 msgid "The social trading app for memes, perps, stocks and prediction markets."
 msgstr "밈, 선물, 주식, 예측 시장을 위한 소셜 트레이딩 앱"
 
@@ -1193,7 +1194,7 @@ msgstr "다시 시도"
 msgid "Turn influence into income"
 msgstr "영향력을 수익으로"
 
-#: src/components/waitlist/share-verification-dialog.tsx:106
+#: src/components/waitlist/share-verification-dialog.tsx:109
 msgid "Unlock your rank"
 msgstr "내 순위 잠금 해제"
 
@@ -1234,7 +1235,7 @@ msgstr "검증된 프로필"
 msgid "Verified, not claimed"
 msgstr "실거래 검증, 자칭이 아님"
 
-#: src/components/waitlist/share-verification-dialog.tsx:132
+#: src/components/waitlist/share-verification-dialog.tsx:135
 msgid "Verify post"
 msgstr "게시물 확인"
 
@@ -1269,7 +1270,7 @@ msgstr "게시물을 찾을 수 없습니다. 링크를 확인하거나, 방금 
 msgid "We couldn’t verify your post. Please try again."
 msgstr "게시물을 인증할 수 없습니다. 다시 시도해 주세요."
 
-#: src/components/waitlist/share-verification-dialog.tsx:106
+#: src/components/waitlist/share-verification-dialog.tsx:109
 #: src/components/waitlist/waitlist-experience.tsx:1697
 msgid "We’re checking your post"
 msgstr "게시물을 확인하고 있어요"
@@ -1277,6 +1278,10 @@ msgstr "게시물을 확인하고 있어요"
 #: src/lib/waitlist/quiz-i18n.ts:11
 msgid "What actually convinces you to enter a trade?"
 msgstr "진입 전에 가장 설득력 있는 근거는?"
+
+#: src/lib/waitlist/share-copy.ts:57
+msgid "What’s your trader type?"
+msgstr "당신의 트레이더 유형은?"
 
 #: src/lib/waitlist/persona.ts:153
 msgid "While everyone hunts the next 10x, you check size, invalidation, and tomorrow’s bankroll. You plan to stay seated when the next cycle starts."
@@ -1357,7 +1362,7 @@ msgstr "인증할 수 있도록 게시물을 공개로 설정해 주세요."
 msgid "Your private key is an unchangeable password for your account. If someone gets access, they can steal all of your funds."
 msgstr "개인키는 계정의 변경할 수 없는 비밀번호입니다. 다른 사람이 얻으면 자금을 모두 훔칠 수 있습니다."
 
-#: src/components/waitlist/share-verification-dialog.tsx:109
+#: src/components/waitlist/share-verification-dialog.tsx:112
 msgid "Your rank will appear when verification is complete."
 msgstr "인증이 완료되면 순위가 표시됩니다."
 

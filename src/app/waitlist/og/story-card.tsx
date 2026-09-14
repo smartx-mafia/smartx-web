@@ -1,41 +1,258 @@
 import type { shareOgCopy } from "@/lib/waitlist/share-copy";
 
-/** Portrait download uses the same result, localized copy and assets as X. */
-export function StoryCard({ copy, artUrl, invite, bodyFont, titleFont, logo, yziLabs, quote, stats }: {
-  copy: ReturnType<typeof shareOgCopy>; artUrl: string; invite: string; bodyFont: string; titleFont: string;
-  logo: string; yziLabs: string; quote: string; stats: { conviction: number; instinct: number; resilience: number };
+const AXES = [
+  { key: "conviction", fill: "#08dfb5", track: "#082c24" },
+  { key: "instinct", fill: "#a957d6", track: "#291732" },
+  { key: "resilience", fill: "#f69002", track: "#2d1d06" },
+] as const;
+
+/** Portrait download. Layout follows Figma 24771:42242; X / Twitter cards stay on the landscape route. */
+export function StoryCard({
+  copy,
+  artUrl,
+  invite,
+  bodyFont,
+  titleFont,
+  logo,
+  yziLabs,
+  quote,
+  stats,
+  cjk,
+}: {
+  copy: ReturnType<typeof shareOgCopy>;
+  artUrl: string;
+  invite: string;
+  bodyFont: string;
+  titleFont: string;
+  logo: string;
+  yziLabs: string;
+  quote: string;
+  stats: { conviction: number; instinct: number; resilience: number };
+  cjk?: boolean;
 }) {
-  return <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", padding: "100px 64px", background: "#010101", color: "#f5f5f5", fontFamily: bodyFont }}>
-    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-      <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={logo} alt="" width={60} height={48} /><span style={{ fontFamily: "Lexend", fontSize: 48, fontWeight: 700, color: "#08dfb5" }}>SmartX</span>
+  const longName = copy.name.length > 20;
+  const titleSize = cjk ? (copy.name.length > 8 ? 80 : 96) : longName ? 86 : 104;
+  const roastLong = copy.roast.length > 52;
+  const roastSize = roastLong ? 36 : 44;
+  const descriptionLong = copy.personaDescription.length > 140;
+  const descriptionSize = descriptionLong ? 30 : 36;
+  const code = invite.toUpperCase() || "—";
+
+  return (
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        background: "#010101",
+        color: "#ffffff",
+        fontFamily: bodyFont,
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          width: 1080,
+          height: 530,
+          padding: "120px 72px 0",
+          gap: 48,
+        }}
+      >
+        <div style={{ display: "flex", flexDirection: "column", width: 936, gap: 24 }}>
+          <div
+            style={{
+              display: "flex",
+              width: 936,
+              height: 97,
+              alignItems: "flex-end",
+              justifyContent: "space-between",
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={logo} alt="" width={70} height={57} />
+              <span style={{ fontFamily: "Lexend", fontWeight: 700, fontSize: 51, color: "#08dfb5", lineHeight: 1 }}>
+                SmartX
+              </span>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 10, width: 209 }}>
+              <span style={{ fontSize: 24, lineHeight: "30px", color: "#a3a3a3" }}>{copy.backedBy}</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={yziLabs} alt="" width={209} height={51} />
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              width: 936,
+              height: 80,
+              fontSize: 30,
+              lineHeight: "40px",
+              color: "#b3b3b3",
+              fontWeight: 400,
+            }}
+          >
+            {copy.tagline}
+          </div>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            width: 936,
+            fontFamily: titleFont,
+            fontWeight: 500,
+            fontSize: titleSize,
+            lineHeight: 1.2,
+            color: "#ffffff",
+          }}
+        >
+          {copy.name}
+        </div>
       </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "flex-end" }}>
-        <span style={{ fontSize: 22, color: "#a6a6a6" }}>{copy.backedBy}</span>
+
+      <div style={{ display: "flex", width: 1080, height: 558, position: "relative" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={yziLabs} alt="" width={200} height={49} />
+        <img
+          src={artUrl}
+          alt=""
+          width={1080}
+          height={510}
+          style={{ position: "absolute", left: 0, top: 24, width: 1080, height: 510, objectFit: "cover" }}
+        />
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          width: 1080,
+          height: 160,
+          padding: "24px 72px 0",
+          gap: 36,
+        }}
+      >
+        {AXES.map((axis) => {
+          const value = Math.max(0, Math.min(100, stats[axis.key]));
+          return (
+            <div key={axis.key} style={{ display: "flex", flexDirection: "column", width: 288, gap: 16 }}>
+              <div
+                style={{
+                  display: "flex",
+                  width: 288,
+                  height: 52,
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <span style={{ fontSize: 30, color: "#b3b3b3", fontWeight: 400 }}>{copy[axis.key]}</span>
+                <span style={{ fontSize: 40, color: "#ffffff", fontWeight: 600 }}>{value}</span>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  width: 288,
+                  height: 10,
+                  borderRadius: 4,
+                  overflow: "hidden",
+                  background: axis.track,
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    width: `${Math.max(value, 2)}%`,
+                    height: 10,
+                    borderRadius: 4,
+                    background: axis.fill,
+                  }}
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div style={{ display: "flex", width: 1080, height: 384, padding: "0 72px", position: "relative" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: 936,
+            padding: 32,
+            gap: 20,
+            borderRadius: 20,
+            background: "#121212",
+            position: "relative",
+          }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={quote}
+            alt=""
+            width={48}
+            height={40}
+            style={{ position: "absolute", top: -12, right: 32, transform: "rotate(180deg)" }}
+          />
+          {copy.roast ? (
+            <div
+              style={{
+                display: "flex",
+                width: 852,
+                fontSize: roastSize,
+                fontWeight: 500,
+                lineHeight: roastLong ? "48px" : "58px",
+                color: "#ffffff",
+              }}
+            >
+              {copy.roast}
+            </div>
+          ) : null}
+          {copy.personaDescription ? (
+            <div
+              style={{
+                display: "flex",
+                width: 872,
+                fontSize: descriptionSize,
+                fontWeight: 400,
+                lineHeight: descriptionLong ? "40px" : "48px",
+                color: "#b3b3b3",
+              }}
+            >
+              {copy.personaDescription}
+            </div>
+          ) : null}
+        </div>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          width: 1080,
+          height: 288,
+          padding: "28px 72px 0",
+          gap: 12,
+        }}
+      >
+        <span style={{ fontSize: 44, fontWeight: 600, lineHeight: "58px", color: "#08dfb5" }}>{copy.storyPrompt}</span>
+        <div
+          style={{
+            display: "flex",
+            width: 936,
+            height: 42,
+            alignItems: "center",
+            justifyContent: "space-between",
+            fontSize: 34,
+            fontWeight: 500,
+          }}
+        >
+          <span style={{ color: "#b3b3b3" }}>
+            {copy.storyInviteCode}: {code}
+          </span>
+          <span style={{ color: "#ffffff" }}>smartx.io/waitlist</span>
+        </div>
       </div>
     </div>
-    <div style={{ display: "flex", marginTop: 44, fontSize: 28, lineHeight: 1.4, color: "#a6a6a6" }}>{copy.tagline}</div>
-    <div style={{ display: "flex", marginTop: 64, fontFamily: titleFont, fontSize: copy.name.length > 24 ? 64 : 78, lineHeight: 1.2, fontWeight: 500 }}>{copy.name}</div>
-    {/* eslint-disable-next-line @next/next/no-img-element */}
-    <img src={artUrl} alt="" width={952} height={449} style={{ marginTop: 40, borderRadius: 12, objectFit: "cover" }} />
-    <div style={{ display: "flex", gap: 32, marginTop: 40 }}>
-      {(["conviction", "instinct", "resilience"] as const).map((axis, index) => <div key={axis} style={{ display: "flex", flexDirection: "column", width: 296, gap: 12 }}>
-        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 26 }}><span style={{ color: "#a6a6a6" }}>{copy[axis]}</span><span>{stats[axis]}</span></div>
-        <div style={{ display: "flex", height: 8, borderRadius: 4, background: "#242424" }}><div style={{ width: `${Math.max(0, Math.min(100, stats[axis]))}%`, height: 8, borderRadius: 4, background: ["#08dfb5", "#a957d6", "#f69002"][index] }} /></div>
-      </div>)}
-    </div>
-    <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 28, marginTop: 44, padding: 36, borderRadius: 24, background: "#121212" }}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={quote} alt="" width={48} height={40} style={{ position: "absolute", top: 28, right: 28, transform: "rotate(180deg)" }} />
-      <div style={{ display: "flex", paddingRight: 48, fontSize: 36, fontWeight: 500, lineHeight: 1.35 }}>{copy.roast}</div>
-      <div style={{ display: "flex", fontSize: 28, lineHeight: 1.45, color: "#a6a6a6" }}>{copy.personaDescription}</div>
-    </div>
-    <div style={{ display: "flex", flexDirection: "column", gap: 14, marginTop: "auto", paddingTop: 40, fontSize: 30 }}>
-      <span style={{ color: "#08dfb5" }}>{copy.inviteCode}: {invite.toUpperCase() || "—"}</span>
-      <span style={{ color: "#a6a6a6", fontSize: 26 }}>smartx.io/waitlist</span>
-    </div>
-  </div>;
+  );
 }

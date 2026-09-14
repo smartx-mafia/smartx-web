@@ -54,6 +54,8 @@ export function shareOgCopy(
     resilience: catalog._(msg`Resilience`),
     traderType: locale === "en" ? "Your Trader Type" : catalog._(msg`your trader type`),
     inviteCode: locale === "en" ? "Invitation code" : catalog._(msg`Invite Code`),
+    storyPrompt: catalog._(msg`What’s your trader type?`),
+    storyInviteCode: locale === "en" ? "Invite code" : catalog._(msg`Invite Code`),
     backedBy: catalog._(msg`Backed by`),
     tagline:
       locale === "en"

@@ -130,7 +130,7 @@ msgstr "平均エントリー · $228.40"
 msgid "Back"
 msgstr "戻る"
 
-#: src/components/waitlist/share-verification-dialog.tsx:110
+#: src/components/waitlist/share-verification-dialog.tsx:113
 msgid "Back to my result"
 msgstr "結果に戻る"
 
@@ -138,7 +138,7 @@ msgstr "結果に戻る"
 msgid "Back to start"
 msgstr "スタートに戻る"
 
-#: src/lib/waitlist/share-copy.ts:57
+#: src/lib/waitlist/share-copy.ts:59
 msgid "Backed by"
 msgstr "出資"
 
@@ -200,7 +200,7 @@ msgstr "コードを確認中…"
 msgid "Checking invite, result, and sign-in state."
 msgstr "招待・結果・ログイン状態を確認しています。"
 
-#: src/components/waitlist/share-verification-dialog.tsx:132
+#: src/components/waitlist/share-verification-dialog.tsx:135
 msgid "Checking your post…"
 msgstr "投稿を確認中…"
 
@@ -270,7 +270,7 @@ msgstr "コピー"
 msgid "Copy invitation link"
 msgstr "招待リンクをコピー"
 
-#: src/components/waitlist/share-verification-dialog.tsx:119
+#: src/components/waitlist/share-verification-dialog.tsx:122
 msgid "Copy your post link"
 msgstr "投稿リンクをコピー"
 
@@ -563,6 +563,7 @@ msgid "Intelligence"
 msgstr "インテリジェンス"
 
 #: src/lib/waitlist/share-copy.ts:56
+#: src/lib/waitlist/share-copy.ts:58
 msgid "Invite Code"
 msgstr "招待コード"
 
@@ -761,7 +762,7 @@ msgstr "群れ型"
 msgid "Paparazzi for the whole chain. Blind spot: your pocket."
 msgstr "全員のポジションを把握している。たまに自分のだけ抜けるけど。"
 
-#: src/components/waitlist/share-verification-dialog.tsx:123
+#: src/components/waitlist/share-verification-dialog.tsx:126
 msgid "Paste it below"
 msgstr "下に貼り付ける"
 
@@ -801,7 +802,7 @@ msgstr "縦長 · 1080 × 1920"
 msgid "Position value"
 msgstr "ポジション価値"
 
-#: src/components/waitlist/share-verification-dialog.tsx:115
+#: src/components/waitlist/share-verification-dialog.tsx:118
 msgid "Post on X with your invite link"
 msgstr "招待リンクを添えて X に投稿"
 
@@ -1121,7 +1122,7 @@ msgid "The smartX team will never ask you for your private key."
 msgstr "smartX チームが秘密鍵を尋ねることはありません。"
 
 #: src/components/consumer-network/consumer-home.tsx:198
-#: src/lib/waitlist/share-copy.ts:61
+#: src/lib/waitlist/share-copy.ts:63
 msgid "The social trading app for memes, perps, stocks and prediction markets."
 msgstr "予測市場が中心のソーシャル取引アプリ。ミーム、無期限、株式にも対応。"
 
@@ -1193,7 +1194,7 @@ msgstr "もう一度試す"
 msgid "Turn influence into income"
 msgstr "影響力を収益に"
 
-#: src/components/waitlist/share-verification-dialog.tsx:106
+#: src/components/waitlist/share-verification-dialog.tsx:109
 msgid "Unlock your rank"
 msgstr "ランキングを解放"
 
@@ -1234,7 +1235,7 @@ msgstr "実取引で検証"
 msgid "Verified, not claimed"
 msgstr "自称ではなく、実取引で検証"
 
-#: src/components/waitlist/share-verification-dialog.tsx:132
+#: src/components/waitlist/share-verification-dialog.tsx:135
 msgid "Verify post"
 msgstr "投稿を確認"
 
@@ -1269,7 +1270,7 @@ msgstr "投稿が見つかりません。リンクを確認してください。
 msgid "We couldn’t verify your post. Please try again."
 msgstr "投稿を確認できませんでした。もう一度お試しください。"
 
-#: src/components/waitlist/share-verification-dialog.tsx:106
+#: src/components/waitlist/share-verification-dialog.tsx:109
 #: src/components/waitlist/waitlist-experience.tsx:1697
 msgid "We’re checking your post"
 msgstr "投稿を確認しています"
@@ -1277,6 +1278,10 @@ msgstr "投稿を確認しています"
 #: src/lib/waitlist/quiz-i18n.ts:11
 msgid "What actually convinces you to enter a trade?"
 msgstr "実際のところ、何があればエントリーする？"
+
+#: src/lib/waitlist/share-copy.ts:57
+msgid "What’s your trader type?"
+msgstr "あなたのトレーダータイプは？"
 
 #: src/lib/waitlist/persona.ts:153
 msgid "While everyone hunts the next 10x, you check size, invalidation, and tomorrow’s bankroll. You plan to stay seated when the next cycle starts."
@@ -1357,7 +1362,7 @@ msgstr "確認できるよう、投稿を公開してください。"
 msgid "Your private key is an unchangeable password for your account. If someone gets access, they can steal all of your funds."
 msgstr "秘密鍵はアカウントの変更できないパスワードです。他人に渡ると、資金をすべて盗まれる可能性があります。"
 
-#: src/components/waitlist/share-verification-dialog.tsx:109
+#: src/components/waitlist/share-verification-dialog.tsx:112
 msgid "Your rank will appear when verification is complete."
 msgstr "確認が完了すると順位が表示されます。"
 

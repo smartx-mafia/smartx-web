@@ -130,7 +130,7 @@ msgstr "Avg entry · $228.40"
 msgid "Back"
 msgstr "Back"
 
-#: src/components/waitlist/share-verification-dialog.tsx:110
+#: src/components/waitlist/share-verification-dialog.tsx:113
 msgid "Back to my result"
 msgstr "Back to my result"
 
@@ -138,7 +138,7 @@ msgstr "Back to my result"
 msgid "Back to start"
 msgstr "Back to start"
 
-#: src/lib/waitlist/share-copy.ts:57
+#: src/lib/waitlist/share-copy.ts:59
 msgid "Backed by"
 msgstr "Backed by"
 
@@ -200,7 +200,7 @@ msgstr "Checking code…"
 msgid "Checking invite, result, and sign-in state."
 msgstr "Checking invite, result, and sign-in state."
 
-#: src/components/waitlist/share-verification-dialog.tsx:132
+#: src/components/waitlist/share-verification-dialog.tsx:135
 msgid "Checking your post…"
 msgstr "Checking your post…"
 
@@ -270,7 +270,7 @@ msgstr "Copy"
 msgid "Copy invitation link"
 msgstr "Copy invitation link"
 
-#: src/components/waitlist/share-verification-dialog.tsx:119
+#: src/components/waitlist/share-verification-dialog.tsx:122
 msgid "Copy your post link"
 msgstr "Copy your post link"
 
@@ -563,6 +563,7 @@ msgid "Intelligence"
 msgstr "Intelligence"
 
 #: src/lib/waitlist/share-copy.ts:56
+#: src/lib/waitlist/share-copy.ts:58
 msgid "Invite Code"
 msgstr "Invite Code"
 
@@ -761,7 +762,7 @@ msgstr "PACK"
 msgid "Paparazzi for the whole chain. Blind spot: your pocket."
 msgstr "Paparazzi for the whole chain. Blind spot: your pocket."
 
-#: src/components/waitlist/share-verification-dialog.tsx:123
+#: src/components/waitlist/share-verification-dialog.tsx:126
 msgid "Paste it below"
 msgstr "Paste it below"
 
@@ -801,7 +802,7 @@ msgstr "Portrait · 1080 × 1920"
 msgid "Position value"
 msgstr "Position value"
 
-#: src/components/waitlist/share-verification-dialog.tsx:115
+#: src/components/waitlist/share-verification-dialog.tsx:118
 msgid "Post on X with your invite link"
 msgstr "Post on X with your invite link"
 
@@ -1121,7 +1122,7 @@ msgid "The smartX team will never ask you for your private key."
 msgstr "The smartX team will never ask you for your private key."
 
 #: src/components/consumer-network/consumer-home.tsx:198
-#: src/lib/waitlist/share-copy.ts:61
+#: src/lib/waitlist/share-copy.ts:63
 msgid "The social trading app for memes, perps, stocks and prediction markets."
 msgstr "The social trading app for memes, perps, stocks and prediction markets."
 
@@ -1193,7 +1194,7 @@ msgstr "Try again"
 msgid "Turn influence into income"
 msgstr "Turn influence into income"
 
-#: src/components/waitlist/share-verification-dialog.tsx:106
+#: src/components/waitlist/share-verification-dialog.tsx:109
 msgid "Unlock your rank"
 msgstr "Unlock your rank"
 
@@ -1234,7 +1235,7 @@ msgstr "Verified profile"
 msgid "Verified, not claimed"
 msgstr "Verified, not claimed"
 
-#: src/components/waitlist/share-verification-dialog.tsx:132
+#: src/components/waitlist/share-verification-dialog.tsx:135
 msgid "Verify post"
 msgstr "Verify post"
 
@@ -1269,7 +1270,7 @@ msgstr "We couldn’t find this post. Check the link, or try again in a moment i
 msgid "We couldn’t verify your post. Please try again."
 msgstr "We couldn’t verify your post. Please try again."
 
-#: src/components/waitlist/share-verification-dialog.tsx:106
+#: src/components/waitlist/share-verification-dialog.tsx:109
 #: src/components/waitlist/waitlist-experience.tsx:1697
 msgid "We’re checking your post"
 msgstr "We’re checking your post"
@@ -1277,6 +1278,10 @@ msgstr "We’re checking your post"
 #: src/lib/waitlist/quiz-i18n.ts:11
 msgid "What actually convinces you to enter a trade?"
 msgstr "What actually convinces you to enter a trade?"
+
+#: src/lib/waitlist/share-copy.ts:57
+msgid "What’s your trader type?"
+msgstr "What’s your trader type?"
 
 #: src/lib/waitlist/persona.ts:153
 msgid "While everyone hunts the next 10x, you check size, invalidation, and tomorrow’s bankroll. You plan to stay seated when the next cycle starts."
@@ -1357,7 +1362,7 @@ msgstr "Your post needs to be public so we can verify it."
 msgid "Your private key is an unchangeable password for your account. If someone gets access, they can steal all of your funds."
 msgstr "Your private key is an unchangeable password for your account. If someone gets access, they can steal all of your funds."
 
-#: src/components/waitlist/share-verification-dialog.tsx:109
+#: src/components/waitlist/share-verification-dialog.tsx:112
 msgid "Your rank will appear when verification is complete."
 msgstr "Your rank will appear when verification is complete."
 

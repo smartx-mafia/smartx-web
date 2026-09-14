@@ -156,7 +156,7 @@ export async function GET(request: NextRequest) {
   const story = request.nextUrl.searchParams.get("format") === "story";
 
   return new ImageResponse(
-    story ? <StoryCard copy={copy} artUrl={artUrl} invite={invite} bodyFont={bodyFont} titleFont={titleFont} logo={assets.logoMark} yziLabs={assets.yziLabs} quote={assets.quoteMark} stats={parsed.stats} /> : (
+    story ? <StoryCard copy={copy} artUrl={artUrl} invite={invite} bodyFont={bodyFont} titleFont={titleFont} logo={assets.logoMark} yziLabs={assets.yziLabs} quote={assets.quoteMark} stats={parsed.stats} cjk={cjkLayout} /> : (
       <div
         style={{
           width: "100%",
