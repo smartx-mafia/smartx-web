@@ -1735,11 +1735,18 @@ export function WaitlistExperience() {
                       type="button"
                       lock={false}
                       disabled={!ownInviteCode}
+                      data-copied={inviteLinkCopied ? "true" : undefined}
                       aria-label={inviteLinkCopied ? t`Copied` : t`Copy invitation link`}
                       title={inviteLinkCopied ? t`Copied` : t`Copy invitation link`}
                       onClick={() => { void copyInvitation(ownInviteCode); }}
                     >
-                      <Image src="/assets/waitlist/copy.svg" alt="" width={20} height={20} aria-hidden="true" />
+                      <Image
+                        src={inviteLinkCopied ? "/assets/waitlist/checkbox-selected.svg" : "/assets/waitlist/copy.svg"}
+                        alt=""
+                        width={20}
+                        height={20}
+                        aria-hidden="true"
+                      />
                       <span className={styles.visuallyHidden} role="status">{inviteLinkCopied ? t`Copied` : ""}</span>
                     </WaitlistButton>
                   </div>
